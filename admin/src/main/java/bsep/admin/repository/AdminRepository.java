@@ -1,11 +1,11 @@
 package bsep.admin.repository;
 
-import bsep.admin.model.Person;
+import bsep.admin.model.Admin;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PersonRepository extends JpaRepository<Person, Integer> {
+public interface AdminRepository extends JpaRepository<Admin, Integer> {
 
-    Person findByUsername(String username);
+    Admin findByUsername(String username);
 }

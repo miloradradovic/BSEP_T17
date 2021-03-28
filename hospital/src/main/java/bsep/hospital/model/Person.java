@@ -8,19 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class Person implements UserDetails {
+@Table(name = "staff")
+public class Person implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PERSON_SEQ")
-    @SequenceGenerator(sequenceName = "person_seq", name = "PERSON_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "username", unique = true, nullable = false)
     private String username;
 
-    @Column(name = "email", unique = true, nullable = false)
-    private String email;
+    @Column(name = "name", unique = false, nullable = false)
+    private String name;
+
+    @Column(name = "surname", unique = false, nullable = false)
+    private String surname;
 
     @Column(name = "password", unique = false, nullable = false)
     private String password;
@@ -45,19 +47,6 @@ public abstract class Person implements UserDetails {
         this.id = id;
     }
 
-    public Person(Integer id, String email, String username, String password) {
-        this.id = id;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-    }
-
-    public Person(String email, String username, String password) {
-        this.email = email;
-        this.username = username;
-        this.password = password;
-    }
-
     public int getId() {
         return id;
     }
@@ -74,12 +63,20 @@ public abstract class Person implements UserDetails {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
+    public String getName() {
+        return name;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getPassword() {
@@ -117,7 +114,7 @@ public abstract class Person implements UserDetails {
 
     @Override
     public String toString() {
-        return "Person [id=" + id + ", username=" + username + ", email=" + email + ", password=" + password
+        return "Staff [id=" + id + ", username=" + username + ", name=" + name + ", surname=" + surname + ", password=" + password
                 + ", verified=" + verified + ", lastPasswordResetDate=" + lastPasswordResetDate + ", authorities="
                 + authorities + "]";
     }
@@ -131,7 +128,26 @@ public abstract class Person implements UserDetails {
         Person person = (Person) o;
         return id == person.id &&
                 Objects.equals(username, person.username) &&
-                Objects.equals(email, person.email) &&
                 Objects.equals(password, person.password);
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return this.isVerified();
     }
 }

@@ -2,7 +2,7 @@ package bsep.admin.api;
 
 import bsep.admin.dto.UserLoginDTO;
 import bsep.admin.dto.UserTokenStateDTO;
-import bsep.admin.model.Person;
+import bsep.admin.model.Admin;
 import bsep.admin.security.TokenUtils;
 import bsep.admin.service.AuthorityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +50,7 @@ public class AuthenticationController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
         // Kreiraj token za tog korisnika
-        Person person = (Person) authentication.getPrincipal();
+        Admin person = (Admin) authentication.getPrincipal();
         String jwt = tokenUtils.generateToken(person.getUsername(), person.getId(), person.getAuthorities().get(0).getAuthority()); // prijavljujemo se na sistem sa email adresom
 
         // Vrati token kao odgovor na uspesnu autentifikaciju

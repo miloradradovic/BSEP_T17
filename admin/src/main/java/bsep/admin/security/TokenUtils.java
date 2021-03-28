@@ -1,6 +1,6 @@
 package bsep.admin.security;
 
-import bsep.admin.model.Person;
+import bsep.admin.model.Admin;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -89,7 +89,7 @@ public class TokenUtils {
 
     // Funkcija za validaciju JWT tokena
     public Boolean validateToken(String token, UserDetails userDetails) {
-        Person user = (Person) userDetails;
+        Admin user = (Admin) userDetails;
         final String username = getUsernameFromToken(token);
         final Date created = getIssuedAtDateFromToken(token);
 
