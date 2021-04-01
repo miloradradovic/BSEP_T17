@@ -6,11 +6,13 @@ import bsep.admin.exceptions.CertificateNotFoundException;
 import bsep.admin.exceptions.InvalidIssuerException;
 import bsep.admin.exceptions.IssuerNotCAException;
 import bsep.admin.model.Admin;
+import bsep.admin.model.CerRequestInfo;
 import bsep.admin.security.TokenUtils;
 import bsep.admin.service.AuthorityService;
 import bsep.admin.service.CertificateService;
 import org.bouncycastle.operator.OperatorCreationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -85,6 +87,14 @@ public class AuthenticationController {
 
         // Vrati token kao odgovor na uspesnu autentifikaciju
         return ResponseEntity.ok(new UserTokenStateDTO(jwt));
+    }
+
+    @PostMapping("/test-api")
+    public ResponseEntity<?> testApi(@RequestBody byte[] encryptedData) {
+
+        System.out.println("USAOOO");
+        System.out.println(encryptedData);
+        return new ResponseEntity(HttpStatus.OK);
     }
 
         /*

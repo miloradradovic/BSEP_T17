@@ -1,23 +1,20 @@
-package bsep.admin.dto;
+package bsep.hospital.dto;
 
-public class CerRequestInfoDTO {
+public class CertificateRequestDTO {
 
-    private int id;
     private String commonName;
     private String surname;
     private String givenName;
     private String organization;
     private String organizationUnit;
     private String country;
-    private String userId;
+    private int userId;
     private String email;
 
-    public CerRequestInfoDTO() {
-
+    public CertificateRequestDTO() {
     }
 
-    public CerRequestInfoDTO(int id, String commonName, String surname, String givenName, String organization, String organizationUnit, String country, String userId) {
-        this.id = id;
+    public CertificateRequestDTO(String commonName, String surname, String givenName, String organization, String organizationUnit, String country, int userId, String email) {
         this.commonName = commonName;
         this.surname = surname;
         this.givenName = givenName;
@@ -25,14 +22,7 @@ public class CerRequestInfoDTO {
         this.organizationUnit = organizationUnit;
         this.country = country;
         this.userId = userId;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.email = email;
     }
 
     public String getCommonName() {
@@ -83,11 +73,11 @@ public class CerRequestInfoDTO {
         this.country = country;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
@@ -101,9 +91,8 @@ public class CerRequestInfoDTO {
 
     @Override
     public String toString() {
-        return "CerRequestInfoDTO{" +
-                "id=" + id +
-                ", commonName='" + commonName + '\'' +
+        return "CertificateRequestDTO{" +
+                "commonName='" + commonName + '\'' +
                 ", surname='" + surname + '\'' +
                 ", givenName='" + givenName + '\'' +
                 ", organization='" + organization + '\'' +

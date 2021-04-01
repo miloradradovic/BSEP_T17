@@ -62,6 +62,12 @@
 			<artifactId>jjwt</artifactId>
 			<version>0.4</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcpkix-jdk15on</artifactId>
+			<version>1.68</version>
+		</dependency>
 	</dependencies>
 
 	<build>
