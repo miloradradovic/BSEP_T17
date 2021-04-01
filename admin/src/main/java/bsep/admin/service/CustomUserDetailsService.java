@@ -17,12 +17,12 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     // Funkcija koja na osnovu username-a iz baze vraca objekat User-a
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         // ako se ne radi nasledjivanje, paziti gde sve treba da se proveri email
 
-        Admin person = adminRepository.findByUsername(username);
+        Admin person = adminRepository.findByEmail(email);
         if (person == null) {
-            throw new UsernameNotFoundException(String.format("No user found with username '%s'.", username));
+            throw new UsernameNotFoundException(String.format("No user found with email '%s'.", email));
         } else {
             return person;
         }

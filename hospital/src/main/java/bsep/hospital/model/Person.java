@@ -15,8 +15,8 @@ public class Person implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "username", unique = true, nullable = false)
-    private String username;
+    @Column(name = "email", unique = true, nullable = false)
+    private String email;
 
     @Column(name = "name", unique = false, nullable = false)
     private String name;
@@ -55,12 +55,12 @@ public class Person implements UserDetails {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getName() {
@@ -81,6 +81,11 @@ public class Person implements UserDetails {
 
     public String getPassword() {
         return password;
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
     }
 
     public void setPassword(String password) {
@@ -114,7 +119,7 @@ public class Person implements UserDetails {
 
     @Override
     public String toString() {
-        return "Staff [id=" + id + ", username=" + username + ", name=" + name + ", surname=" + surname + ", password=" + password
+        return "Staff [id=" + id + ", email=" + email + ", name=" + name + ", surname=" + surname + ", password=" + password
                 + ", verified=" + verified + ", lastPasswordResetDate=" + lastPasswordResetDate + ", authorities="
                 + authorities + "]";
     }
@@ -127,7 +132,7 @@ public class Person implements UserDetails {
 
         Person person = (Person) o;
         return id == person.id &&
-                Objects.equals(username, person.username) &&
+                Objects.equals(email, person.email) &&
                 Objects.equals(password, person.password);
     }
 

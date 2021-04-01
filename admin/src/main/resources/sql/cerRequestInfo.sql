@@ -1,0 +1,2 @@
+insert into requests (common_name, surname, given_name, organization, organization_unit, country, user_id, email)
+values ('Fred Billy', 'Fred', 'Billy', 'IDK', 'IDK unit', 'RS', '1',  'fred.billy@hospital.com');

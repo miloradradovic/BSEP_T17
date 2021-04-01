@@ -41,14 +41,14 @@ public class TokenUtils {
     private SignatureAlgorithm SIGNATURE_ALGORITHM = SignatureAlgorithm.HS512;
 
     // Funkcija za generisanje JWT token
-    public String generateToken(String username, Integer id, String role) {
+    public String generateToken(String email, Integer id, String role) {
         return Jwts.builder()
                 .setIssuer(APP_NAME)
-                .setSubject(username)
+                .setSubject(email)
                 .setAudience(generateAudience())
                 .setIssuedAt(new Date())
                 .setExpiration(generateExpirationDate())
-                .claim("username", username) //moguce je postavljanje proizvoljnih podataka u telo JWT tokena
+                .claim("email", email) //moguce je postavljanje proizvoljnih podataka u telo JWT tokena
                 .claim("id", id)
                 .claim("role", role)
                 .signWith(SIGNATURE_ALGORITHM, SECRET).compact();
@@ -97,22 +97,22 @@ public class TokenUtils {
     // Funkcija za validaciju JWT tokena
     public Boolean validateToken(String token, UserDetails userDetails) {
         Person user = (Person) userDetails;
-        final String username = getUsernameFromToken(token);
+        final String email = getUsernameFromToken(token);
         final Date created = getIssuedAtDateFromToken(token);
 
-        return (username != null && username.equals(((Person) userDetails).getUsername())
+        return (email != null && email.equals((userDetails).getUsername())
                 && !isCreatedBeforeLastPasswordReset(created, user.getLastPasswordResetDate()));
     }
 
     public String getUsernameFromToken(String token) {
-        String username;
+        String email;
         try {
             final Claims claims = this.getAllClaimsFromToken(token);
-            username = claims.getSubject();
+            email = claims.getSubject();
         } catch (Exception e) {
-            username = null;
+            email = null;
         }
-        return username;
+        return email;
     }
 
     public Date getIssuedAtDateFromToken(String token) {

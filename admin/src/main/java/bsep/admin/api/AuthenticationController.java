@@ -1,10 +1,15 @@
 package bsep.admin.api;
 
-import bsep.admin.dto.UserLoginDTO;
-import bsep.admin.dto.UserTokenStateDTO;
+import bsep.admin.dto.*;
+import bsep.admin.exceptions.AliasAlreadyExistsException;
+import bsep.admin.exceptions.CertificateNotFoundException;
+import bsep.admin.exceptions.InvalidIssuerException;
+import bsep.admin.exceptions.IssuerNotCAException;
 import bsep.admin.model.Admin;
 import bsep.admin.security.TokenUtils;
 import bsep.admin.service.AuthorityService;
+import bsep.admin.service.CertificateService;
+import org.bouncycastle.operator.OperatorCreationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +23,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.math.BigInteger;
+import java.security.cert.CRLException;
+import java.security.cert.CertificateException;
 
 @RestController
 @RequestMapping(value = "/auth", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -32,6 +41,9 @@ public class AuthenticationController {
     @Autowired
     AuthorityService authorityService;
 
+    @Autowired
+    CertificateService certificateService;
+
 
     public AuthenticationController() {
     }
@@ -40,10 +52,10 @@ public class AuthenticationController {
     // Tada zna samo svoje korisnicko ime i lozinku i to prosledjuje na backend.
     @PostMapping("/log-in")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody UserLoginDTO authenticationRequest,
-                                                       HttpServletResponse response) {
+                                                       HttpServletResponse response) throws CertificateException, IOException, CRLException, OperatorCreationException, AliasAlreadyExistsException, IssuerNotCAException, InvalidIssuerException, CertificateNotFoundException {
 
         Authentication authentication = authenticationManager
-                .authenticate(new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(),
+                .authenticate(new UsernamePasswordAuthenticationToken(authenticationRequest.getEmail(),
                         authenticationRequest.getPassword()));
 
         // Ubaci korisnika u trenutni security kontekst
@@ -52,6 +64,24 @@ public class AuthenticationController {
         // Kreiraj token za tog korisnika
         Admin person = (Admin) authentication.getPrincipal();
         String jwt = tokenUtils.generateToken(person.getUsername(), person.getId(), person.getAuthorities().get(0).getAuthority()); // prijavljujemo se na sistem sa email adresom
+
+
+        CertificateCreationDTO certificateCreationDTO = new CertificateCreationDTO();
+        certificateCreationDTO.setSubjectID(1);
+
+        ExtendedKeyUsageDTO extendedKeyUsageDTO = new ExtendedKeyUsageDTO(true, false, false, false, true, true);
+
+        certificateCreationDTO.setExtendedKeyUsageDTO(extendedKeyUsageDTO);
+
+        KeyUsageDTO keyUsageDTO = new KeyUsageDTO(false, false, false, true, true, false, true, true, false);
+
+        certificateCreationDTO.setKeyUsageDTO(keyUsageDTO);
+
+        certificateService.createAdminCertificate(certificateCreationDTO,"superAdmin");
+
+        //certificateService.revokeCertificate(new RevokeCertificateDTO("1617209007888","UNSPECIFIED"),"superAdmin");
+
+
 
         // Vrati token kao odgovor na uspesnu autentifikaciju
         return ResponseEntity.ok(new UserTokenStateDTO(jwt));
