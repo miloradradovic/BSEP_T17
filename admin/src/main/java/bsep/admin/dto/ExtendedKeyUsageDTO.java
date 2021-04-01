@@ -2,22 +2,28 @@ package bsep.admin.dto;
 
 import org.bouncycastle.asn1.x509.KeyPurposeId;
 
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ExtendedKeyUsageDTO {
 
+    @NotNull
     private boolean serverAuth;
 
+    @NotNull
     private boolean clientAuth;
 
+    @NotNull
     private boolean codeSigning;
 
+    @NotNull
     private boolean emailProtection;
 
+    @NotNull
     private boolean timeStamping;
 
+    @NotNull
     private boolean OCSPSigning;
 
     public ExtendedKeyUsageDTO(){

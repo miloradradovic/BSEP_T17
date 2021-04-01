@@ -3,15 +3,15 @@ package bsep.admin.enums;
 //https://docs.oracle.com/javase/7/docs/api/java/security/cert/CRLReason.html
 public enum RevocationReason {
 
-    AA_COMPROMISE,
-    AFFILIATION_CHANGED,
-    CA_COMPROMISE,
-    CERTIFICATE_HOLD,
-    CESSATION_OF_OPERATION,
-    KEY_COMPROMISE,
-    PRIVILEGE_WITHDRAWN,
-    REMOVE_FROM_CRL,
-    SUPERSEDED,
     UNSPECIFIED,
-    UNUSED
+    KEY_COMPROMISE,
+    CA_COMPROMISE,
+    AFFILIATION_CHANGED,
+    SUPERSEDED,
+    CESSATION_OF_OPERATION,
+    CERTIFICATE_HOLD,
+    REMOVE_FROM_CRL,
+    PRIVILEGE_WITHDRAWN,
+    AA_COMPROMISE
+
 }

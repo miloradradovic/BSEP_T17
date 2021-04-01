@@ -1,23 +1,29 @@
 package bsep.admin.dto;
 
+import javax.validation.constraints.NotNull;
+
 public class RevokeCertificateDTO {
-    private String serialNumber;
+
+    @NotNull
+    private String subjectAlias;
+
+    @NotNull
     private String revocationReason;
 
     public RevokeCertificateDTO() {
     }
 
-    public RevokeCertificateDTO(String serialNumber, String revocationReason) {
-        this.serialNumber = serialNumber;
+    public RevokeCertificateDTO(String subjectAlias, String revocationReason) {
+        this.subjectAlias = subjectAlias;
         this.revocationReason = revocationReason;
     }
 
-    public String getSerialNumber() {
-        return serialNumber;
+    public String getSubjectAlias() {
+        return subjectAlias;
     }
 
-    public void setSerialNumber(String serialNumber) {
-        this.serialNumber = serialNumber;
+    public void setSubjectAlias(String subjectAlias) {
+        this.subjectAlias = subjectAlias;
     }
 
     public String getRevocationReason() {

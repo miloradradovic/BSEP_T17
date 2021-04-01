@@ -62,7 +62,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "admin-client:build"
+            "browserTarget": "admin-client:build",
+            "host": "admin.com"
           },
           "configurations": {
             "production": {

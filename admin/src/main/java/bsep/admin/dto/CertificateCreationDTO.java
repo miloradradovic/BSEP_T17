@@ -1,12 +1,20 @@
 package bsep.admin.dto;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+
 public class CertificateCreationDTO {
 
+    @Positive
     private int subjectID;
+
+    @NotNull
     private KeyUsageDTO keyUsageDTO;
+
+    @NotNull
     private ExtendedKeyUsageDTO extendedKeyUsageDTO;
 
-    public  CertificateCreationDTO(){
+    public CertificateCreationDTO() {
 
     }
 
