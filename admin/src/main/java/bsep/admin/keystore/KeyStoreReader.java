@@ -12,11 +12,11 @@ import javax.annotation.PostConstruct;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.math.BigInteger;
 import java.security.*;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+import java.util.Enumeration;
 
 @Service
 public class KeyStoreReader {
@@ -78,22 +78,6 @@ public class KeyStoreReader {
         return null;
     }
 
-    public PrivateKey readPrivateKey(String alias, String keyPass) {
-        try {
-            BufferedInputStream in = new BufferedInputStream(new FileInputStream(path));
-            keyStore.load(in, password.toCharArray());
-
-            if (keyStore.isKeyEntry(alias)) {
-                PrivateKey pk = (PrivateKey) keyStore.getKey(alias, keyPass.toCharArray());
-                return pk;
-            }
-        } catch (KeyStoreException | NoSuchAlgorithmException | CertificateException
-                | IOException | UnrecoverableKeyException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     public Certificate[] readCertificateChain(String alias) {
         try {
             BufferedInputStream in = new BufferedInputStream(new FileInputStream(path));
@@ -102,6 +86,18 @@ public class KeyStoreReader {
             if (keyStore.isKeyEntry(alias)) {
                 return keyStore.getCertificateChain(alias);
             }
+        } catch (KeyStoreException | NoSuchAlgorithmException | CertificateException | IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Enumeration<String> getAllAliases() {
+        try {
+            BufferedInputStream in = new BufferedInputStream(new FileInputStream(path));
+            keyStore.load(in, password.toCharArray());
+
+            return keyStore.aliases();
         } catch (KeyStoreException | NoSuchAlgorithmException | CertificateException | IOException e) {
             e.printStackTrace();
         }

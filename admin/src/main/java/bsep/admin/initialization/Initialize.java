@@ -174,7 +174,7 @@ public class Initialize {
 
         // klasa X500NameBuilder pravi X500Name objekat koji predstavlja podatke o vlasniku
         X500NameBuilder builder = new X500NameBuilder(BCStyle.INSTANCE);
-        builder.addRDN(BCStyle.CN, "Neil Martin");
+        builder.addRDN(BCStyle.CN, "admin.com");
         builder.addRDN(BCStyle.SURNAME, "Martin");
         builder.addRDN(BCStyle.GIVENNAME, "Neil");
         builder.addRDN(BCStyle.O, "FTN");

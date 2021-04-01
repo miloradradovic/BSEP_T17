@@ -1,8 +1,13 @@
 package bsep.admin.dto;
 
+import javax.validation.constraints.NotNull;
+
 public class UserLoginDTO {
 
+    @NotNull
     private String email;
+
+    @NotNull
     private String password;
 
     public UserLoginDTO() {

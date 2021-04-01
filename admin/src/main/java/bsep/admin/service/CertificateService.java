@@ -1,9 +1,6 @@
 package bsep.admin.service;
 
-import bsep.admin.dto.CertificateCreationDTO;
-import bsep.admin.dto.ExtendedKeyUsageDTO;
-import bsep.admin.dto.KeyUsageDTO;
-import bsep.admin.dto.RevokeCertificateDTO;
+import bsep.admin.dto.*;
 import bsep.admin.enums.RevocationReason;
 import bsep.admin.exceptions.AliasAlreadyExistsException;
 import bsep.admin.exceptions.CertificateNotFoundException;
@@ -18,13 +15,17 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x500.X500NameBuilder;
 import org.bouncycastle.asn1.x500.style.BCStyle;
+import org.bouncycastle.asn1.x500.style.IETFUtils;
+import org.bouncycastle.asn1.x509.BasicConstraints;
 import org.bouncycastle.asn1.x509.ExtendedKeyUsage;
 import org.bouncycastle.asn1.x509.Extension;
 import org.bouncycastle.asn1.x509.KeyUsage;
 import org.bouncycastle.cert.*;
 import org.bouncycastle.cert.jcajce.JcaX509CRLConverter;
 import org.bouncycastle.cert.jcajce.JcaX509CertificateConverter;
+import org.bouncycastle.cert.jcajce.JcaX509CertificateHolder;
 import org.bouncycastle.cert.jcajce.JcaX509v3CertificateBuilder;
+import org.bouncycastle.jcajce.provider.asymmetric.X509;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.operator.ContentSigner;
 import org.bouncycastle.operator.OperatorCreationException;
@@ -42,10 +43,7 @@ import java.security.cert.*;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.TimeZone;
+import java.util.*;
 
 @Service
 public class CertificateService {
@@ -64,7 +62,7 @@ public class CertificateService {
         Security.addProvider(new BouncyCastleProvider());
     }
 
-    public boolean createAdminCertificate(CertificateCreationDTO certificateCreationDTO, String issuerAlias) throws CertificateNotFoundException, OperatorCreationException, IssuerNotCAException, InvalidIssuerException, AliasAlreadyExistsException, CertificateException, CRLException, IOException {
+    public void createAdminCertificate(CertificateCreationDTO certificateCreationDTO, String issuerAlias) throws CertificateNotFoundException, OperatorCreationException, IssuerNotCAException, InvalidIssuerException, AliasAlreadyExistsException, CertificateException, CRLException, IOException {
 
         Certificate[] issuerCertificateChain = keyStoreReader.readCertificateChain(issuerAlias);
 
@@ -89,11 +87,11 @@ public class CertificateService {
                 throw new AliasAlreadyExistsException();
         }
 
-        return generateAdminCertificate(certificateCreationDTO, issuerCertificateChain, alias, issuerAlias);
+        generateAdminCertificate(certificateCreationDTO, issuerCertificateChain, alias, issuerAlias);
 
     }
 
-    private boolean generateAdminCertificate(CertificateCreationDTO certificateCreationDTO, Certificate[] issuerCertificateChain, String alias, String issuerAlias) throws CertificateNotFoundException, OperatorCreationException, CertificateException {
+    private void generateAdminCertificate(CertificateCreationDTO certificateCreationDTO, Certificate[] issuerCertificateChain, String alias, String issuerAlias) throws CertificateNotFoundException, OperatorCreationException, CertificateException {
         KeyPair keyPair = generateKeyPair();
         SubjectData subjectData = generateSubjectData(certificateCreationDTO.getSubjectID());
         assert subjectData != null;
@@ -135,6 +133,8 @@ public class CertificateService {
 
         try {
             certGen.addExtension(Extension.keyUsage, false, k);
+            if (keyUsageDTO.iscRLSign())
+                certGen.addExtension(Extension.basicConstraints, true, new BasicConstraints(true));
         } catch (CertIOException e) {
             e.printStackTrace();
         }
@@ -159,7 +159,6 @@ public class CertificateService {
         Certificate[] newCertificateChain = ArrayUtils.insert(0, issuerCertificateChain, createdCertificate);
         keyStoreWriter.write(alias, keyPair.getPrivate(), newCertificateChain);
         keyStoreWriter.saveKeyStore();
-        return true;
     }
 
     private KeyPair generateKeyPair() {
@@ -197,12 +196,13 @@ public class CertificateService {
 
         // klasa X500NameBuilder pravi X500Name objekat koji predstavlja podatke o vlasniku
         X500NameBuilder builder = new X500NameBuilder(BCStyle.INSTANCE);
-        builder.addRDN(BCStyle.CN, cerRequestInfo.getCommonName());
+        builder.addRDN(BCStyle.CN, cerRequestInfo.getCommonName()); //domain za koji se izdaje i koji treba da protect-uje - Fully Qualified Domain Name
         builder.addRDN(BCStyle.SURNAME, cerRequestInfo.getSurname());
         builder.addRDN(BCStyle.GIVENNAME, cerRequestInfo.getGivenName());
         builder.addRDN(BCStyle.O, cerRequestInfo.getOrganization());
         builder.addRDN(BCStyle.OU, cerRequestInfo.getOrganizationUnit());
         builder.addRDN(BCStyle.C, cerRequestInfo.getCountry());
+        builder.addRDN(BCStyle.E, cerRequestInfo.getEmail());
 
         // UID (USER ID) je ID korisnika
         builder.addRDN(BCStyle.UID, String.valueOf(cerRequestInfo.getUserId()));
@@ -274,7 +274,23 @@ public class CertificateService {
         return crl.isRevoked(cer);
     }
 
-    public void revokeCertificate(RevokeCertificateDTO revokeCertificateDTO, String issuerAlias) throws IOException, CertificateException, CRLException, CertificateNotFoundException, OperatorCreationException {
+    public String getRevocationReason(Certificate cer) throws IOException, CertificateException, CRLException {
+
+        CertificateFactory factory = CertificateFactory.getInstance("X.509");
+
+        File file = new File("src/main/resources/adminCRLs.crl");
+
+        byte[] bytes = Files.readAllBytes(file.toPath());
+        X509CRL crl = (X509CRL) factory.generateCRL(new ByteArrayInputStream(bytes));
+
+        X509CRLEntry c = crl.getRevokedCertificate((X509Certificate) cer);
+
+        CRLReason reason = c.getRevocationReason();
+
+        return reason != null ? c.getRevocationReason().toString() : "UNSPECIFIED";
+    }
+
+    public void revokeCertificate(RevokeCertificateDTO revokeCertificateDTO, String issuerAlias) throws IOException, CRLException, CertificateNotFoundException, OperatorCreationException, CertificateEncodingException {
 
         File file = new File("src/main/resources/adminCRLs.crl");
 
@@ -284,8 +300,10 @@ public class CertificateService {
         X509CRLHolder holder = new X509CRLHolder(bytes);
         X509v2CRLBuilder crlBuilder = new X509v2CRLBuilder(holder);
 
-        crlBuilder.addCRLEntry(BigInteger.valueOf(Long.parseLong(revokeCertificateDTO.getSerialNumber()))/*The serial number of the revoked certificate*/, new Date() /*Revocation time*/, RevocationReason.valueOf(revokeCertificateDTO.getRevocationReason()).ordinal() /*Reason for cancellation*/);
+        Certificate cer = keyStoreReader.readCertificate(revokeCertificateDTO.getSubjectAlias());
+        JcaX509CertificateHolder certHolder = new JcaX509CertificateHolder((X509Certificate) cer);
 
+        crlBuilder.addCRLEntry(certHolder.getSerialNumber()/*The serial number of the revoked certificate*/, new Date() /*Revocation time*/, RevocationReason.valueOf(revokeCertificateDTO.getRevocationReason()).ordinal() /*Reason for cancellation*/);
 
 
         JcaContentSignerBuilder contentSignerBuilder = new JcaContentSignerBuilder("SHA256WithRSA");
@@ -307,4 +325,119 @@ public class CertificateService {
         os.write(bytes);
         os.close();
     }
+
+    public CertificateInfoDTO getCertificates() {
+
+        List<Certificate> certificates = new ArrayList<>();
+
+        Enumeration<String> aliases = keyStoreReader.getAllAliases();
+        while (aliases.hasMoreElements()) {
+            String alias = aliases.nextElement();
+            Certificate cer = keyStoreReader.readCertificate(alias);
+            certificates.add(cer);
+        }
+
+        try {
+            return makeTree(certificates);
+        } catch (CertificateException | CRLException | IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public CertificateInfoDTO makeTree(List<Certificate> certificates) throws CertificateException, CRLException, IOException {
+        CertificateInfoDTO tree = findRoot(certificates);
+        certificates.remove(Integer.parseInt(tree.getEmail().split("\\|")[1]));
+        tree.setEmail(tree.getEmail().split("\\|")[0]);
+
+        tree = findIntermediate(certificates, tree, tree.getEmail());
+        tree = findEnd(certificates, tree, tree.getEmail());
+
+        return tree;
+    }
+
+    public CertificateInfoDTO findRoot(List<Certificate> certificates) throws CertificateException, CRLException, IOException {
+        CertificateInfoDTO tree = new CertificateInfoDTO();
+        for (Certificate cer : certificates) {
+            JcaX509CertificateHolder certHolder = new JcaX509CertificateHolder((X509Certificate) cer);
+            X500Name i = certHolder.getIssuer();
+            X500Name subject = certHolder.getSubject();
+
+            if (IETFUtils.valueToString(i.getRDNs(BCStyle.E)[0].getFirst().getValue()).equals(IETFUtils.valueToString(subject.getRDNs(BCStyle.E)[0].getFirst().getValue()))) {
+                tree.setEmail(IETFUtils.valueToString(subject.getRDNs(BCStyle.E)[0].getFirst().getValue()));
+                tree.setCommonName(IETFUtils.valueToString(subject.getRDNs(BCStyle.CN)[0].getFirst().getValue()));
+                tree.setFullName(IETFUtils.valueToString(subject.getRDNs(BCStyle.GIVENNAME)[0].getFirst().getValue()) + " " + IETFUtils.valueToString(subject.getRDNs(BCStyle.SURNAME)[0].getFirst().getValue()));
+                tree.setEmail(tree.getEmail() + "|" + certificates.indexOf(cer));
+
+                if (((X509Certificate) cer).getBasicConstraints() != -1 || ((X509Certificate) cer).getKeyUsage()[5])
+                    tree.setCA(true);
+
+                if(isRevoked(cer)){
+                    tree.setRevoked(true);
+                    tree.setRevocationReason(getRevocationReason(cer));
+                }
+            }
+        }
+
+        return tree;
+
+    }
+
+    public CertificateInfoDTO findIntermediate(List<Certificate> certificates, CertificateInfoDTO parent, String issuerEmail) throws CertificateException, CRLException, IOException {
+
+        for (Certificate cer : certificates) {
+            JcaX509CertificateHolder certHolder = new JcaX509CertificateHolder((X509Certificate) cer);
+            X500Name i = certHolder.getIssuer();
+            X500Name subject = certHolder.getSubject();
+
+            if (IETFUtils.valueToString(i.getRDNs(BCStyle.E)[0].getFirst().getValue()).equals(issuerEmail)) {
+                CertificateInfoDTO tree = new CertificateInfoDTO();
+                tree.setEmail(IETFUtils.valueToString(subject.getRDNs(BCStyle.E)[0].getFirst().getValue()));
+                tree.setCommonName(IETFUtils.valueToString(subject.getRDNs(BCStyle.CN)[0].getFirst().getValue()));
+                tree.setFullName(IETFUtils.valueToString(subject.getRDNs(BCStyle.GIVENNAME)[0].getFirst().getValue()) + " " + IETFUtils.valueToString(subject.getRDNs(BCStyle.SURNAME)[0].getFirst().getValue()));
+                tree.setEmail(tree.getEmail());
+
+                if (((X509Certificate) cer).getBasicConstraints() != -1 || ((X509Certificate) cer).getKeyUsage()[5])
+                    tree.setCA(true);
+
+                if(isRevoked(cer)){
+                    tree.setRevoked(true);
+                    tree.setRevocationReason(getRevocationReason(cer));
+                }
+
+                parent.getChildren().add(tree);
+            }
+        }
+        return parent;
+    }
+
+    public CertificateInfoDTO findEnd(List<Certificate> certificates, CertificateInfoDTO parent, String issuerEmail) throws CertificateException, CRLException, IOException {
+
+        for (CertificateInfoDTO child: parent.getChildren()) {
+            for (Certificate cer : certificates) {
+                JcaX509CertificateHolder certHolder = new JcaX509CertificateHolder((X509Certificate) cer);
+                X500Name i = certHolder.getIssuer();
+                X500Name subject = certHolder.getSubject();
+
+                if (IETFUtils.valueToString(i.getRDNs(BCStyle.E)[0].getFirst().getValue()).equals(child.getEmail())) {
+                    CertificateInfoDTO tree = new CertificateInfoDTO();
+                    tree.setEmail(IETFUtils.valueToString(subject.getRDNs(BCStyle.E)[0].getFirst().getValue()));
+                    tree.setCommonName(IETFUtils.valueToString(subject.getRDNs(BCStyle.CN)[0].getFirst().getValue()));
+                    tree.setFullName(IETFUtils.valueToString(subject.getRDNs(BCStyle.GIVENNAME)[0].getFirst().getValue()) + " " + IETFUtils.valueToString(subject.getRDNs(BCStyle.SURNAME)[0].getFirst().getValue()));
+                    tree.setEmail(tree.getEmail());
+                    tree.setCA(false);
+
+                    if(isRevoked(cer)){
+                        tree.setRevoked(true);
+                        tree.setRevocationReason(getRevocationReason(cer));
+                    }
+
+                    child.getChildren().add(tree);
+                }
+            }
+        }
+
+        return parent;
+    }
+
 }

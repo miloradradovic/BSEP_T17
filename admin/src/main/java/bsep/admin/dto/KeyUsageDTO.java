@@ -2,24 +2,35 @@ package bsep.admin.dto;
 
 import org.bouncycastle.asn1.x509.KeyUsage;
 
+import javax.validation.constraints.NotNull;
+
 public class KeyUsageDTO {
 
+    @NotNull
     private boolean cRLSign;
 
+    @NotNull
     private boolean dataEncipherment;
 
+    @NotNull
     private boolean decipherOnly;
 
+    @NotNull
     private boolean digitalSignature;
 
+    @NotNull
     private boolean encipherOnly;
 
+    @NotNull
     private boolean keyAgreement;
 
+    @NotNull
     private boolean keyCertSign;
 
+    @NotNull
     private boolean keyEncipherment;
 
+    @NotNull
     private boolean nonRepudiation;
 
     public KeyUsageDTO() {
