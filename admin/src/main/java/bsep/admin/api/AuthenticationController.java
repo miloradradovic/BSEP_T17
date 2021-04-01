@@ -19,10 +19,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -89,12 +86,11 @@ public class AuthenticationController {
         return ResponseEntity.ok(new UserTokenStateDTO(jwt));
     }
 
-    @PostMapping("/test-api")
-    public ResponseEntity<?> testApi(@RequestBody byte[] encryptedData) {
+    @PostMapping("/verify-certificate-request/{encrypted}")
+    public ResponseEntity<?> verifyCertificateRequest(@PathVariable String encrypted) {
 
-        System.out.println("USAOOO");
-        System.out.println(encryptedData);
-        return new ResponseEntity(HttpStatus.OK);
+        // TODO
+        return null;
     }
 
         /*
