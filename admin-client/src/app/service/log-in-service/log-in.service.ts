@@ -2,20 +2,21 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {StorageService} from '../storage-service/storage.service';
+import {LogIn} from '../../model/log-in';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class LogInService {
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor(private http: HttpClient, private storageService: StorageService
   ) {
   }
 
-  logIn(auth: any): Observable<any> {
+  logIn(auth: LogIn): Observable<any> {
     return this.http.post('http://localhost:8080/auth/log-in',
-      auth, {headers: this.headers, responseType: 'text'});
+      auth, {headers: this.headers, responseType: 'json'});
   }
 
   logOut(): void {

@@ -15,7 +15,6 @@ public class UserLoginDTO {
 
     @NotNull
     @NotBlank
-    @Length(min = 8)
     private String password;
 
     public UserLoginDTO() {

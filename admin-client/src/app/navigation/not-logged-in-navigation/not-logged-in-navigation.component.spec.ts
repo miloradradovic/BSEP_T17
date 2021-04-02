@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NotLoggedinNavigationComponent } from './not-loggedin-navigation.component';
+import { NotLoggedinNavigationComponent } from './not-logged-in-navigation.component';
 
 describe('NotLoggedinNavigationComponent', () => {
   let component: NotLoggedinNavigationComponent;
