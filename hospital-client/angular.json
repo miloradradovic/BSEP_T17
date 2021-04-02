@@ -63,7 +63,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "port": 4205,
-            "host": "hospital.com",
+            // "host": "hospital.com",
             "browserTarget": "hospital-client:build"
           },
           "configurations": {

@@ -20,8 +20,7 @@ import {NotLoggedInNavigationComponent} from './not-logged-in-navigation/not-log
   exports: [NavigationComponent,
     AdminNavigationComponent,
     DoctorNavigationComponent,
-    NotLoggedInNavigationComponent,
-    AppRoutingModule
+    NotLoggedInNavigationComponent
   ],
   providers: []
 })

@@ -5,7 +5,7 @@ import {LoginService} from '../services/login/login.service';
 @Injectable({
   providedIn: 'root'
 })
-export class SignInGuard implements CanActivate {
+export class LoginGuard implements CanActivate {
 
   constructor(
     public auth: LoginService,
@@ -16,7 +16,7 @@ export class SignInGuard implements CanActivate {
   canActivate(): boolean {
     const role = this.auth.getRole();
     if (role === 'ROLE_ADMIN') {
-      this.router.navigate(['/main-page-admin']);
+      this.router.navigate(['/create-request']);
       return false;
     } else if (role === 'ROLE_DOCTOR') {
       this.router.navigate(['/main-page-doctor']);
