@@ -12,7 +12,7 @@ import java.security.*;
 public class CryptingUtil {
 
     // data = user email + secret word
-    private byte[] encrypt(String data, PublicKey key) {
+    public byte[] encrypt(String data, PublicKey key) {
         try {
             // Kada se definise sifra potrebno je navesti njenu konfiguraciju, sto u ovom slucaju ukljucuje:
             //	- Algoritam koji se koristi (ECIES)
@@ -33,7 +33,7 @@ public class CryptingUtil {
         return null;
     }
 
-    private byte[] decrypt(byte[] cipherText, PrivateKey key) {
+    public byte[] decrypt(byte[] cipherText, PrivateKey key) {
         try {
             Cipher rsaCipherDec = Cipher.getInstance("ECIES", "BC");
 

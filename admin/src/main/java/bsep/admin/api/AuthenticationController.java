@@ -6,6 +6,7 @@ import bsep.admin.model.Admin;
 import bsep.admin.model.CerRequestInfo;
 import bsep.admin.security.TokenUtils;
 import bsep.admin.service.AuthorityService;
+import bsep.admin.service.CerRequestInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -30,6 +31,9 @@ public class AuthenticationController {
 
     @Autowired
     AuthorityService authorityService;
+
+    @Autowired
+    CerRequestInfoService cerRequestInfoService;
 
 
     public AuthenticationController() {

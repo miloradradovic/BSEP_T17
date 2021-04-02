@@ -34,6 +34,9 @@ public class CerRequestInfo {
     @Column(name = "email", unique = false, nullable = false)
     private String email;
 
+    @Column(name = "verified", unique = false, nullable = false)
+    private boolean verified;
+
     public CerRequestInfo() {
 
     }
@@ -47,6 +50,31 @@ public class CerRequestInfo {
         this.organizationUnit = organizationUnit;
         this.country = country;
         this.userId = userId;
+    }
+
+    public CerRequestInfo(int id, String commonName, String surname, String givenName, String organization, String organizationUnit, String country, int userId, String email, boolean verified) {
+        this.id = id;
+        this.commonName = commonName;
+        this.surname = surname;
+        this.givenName = givenName;
+        this.organization = organization;
+        this.organizationUnit = organizationUnit;
+        this.country = country;
+        this.userId = userId;
+        this.email = email;
+        this.verified = verified;
+    }
+
+    public CerRequestInfo(String commonName, String surname, String givenName, String organization, String organizationUnit, String country, int userId, String email, boolean verified) {
+        this.commonName = commonName;
+        this.surname = surname;
+        this.givenName = givenName;
+        this.organization = organization;
+        this.organizationUnit = organizationUnit;
+        this.country = country;
+        this.userId = userId;
+        this.email = email;
+        this.verified = verified;
     }
 
     public int getId() {
@@ -119,5 +147,13 @@ public class CerRequestInfo {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public boolean isVerified() {
+        return verified;
+    }
+
+    public void setVerified(boolean verified) {
+        this.verified = verified;
     }
 }

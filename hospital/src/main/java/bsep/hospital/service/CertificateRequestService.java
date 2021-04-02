@@ -45,7 +45,7 @@ public class CertificateRequestService {
         if (csr != null){
             RestTemplate restTemplate = new RestTemplate();
             HttpEntity<byte[]> request = new HttpEntity<>(csr);
-            ResponseEntity responseEntity = restTemplate.exchange("http://localhost:8080/auth/test-api", HttpMethod.POST, request, ResponseEntity.class);
+            ResponseEntity responseEntity = restTemplate.exchange("http://localhost:8080/certificate-request/send-certificate-request", HttpMethod.POST, request, ResponseEntity.class);
             return responseEntity.getStatusCode() == HttpStatus.OK;
         }
         return false;
@@ -66,6 +66,7 @@ public class CertificateRequestService {
             x500NameBuilder.addRDN(BCStyle.OU, certificateRequestDTO.getOrganizationUnit());
             x500NameBuilder.addRDN(BCStyle.C, certificateRequestDTO.getCountry());
             x500NameBuilder.addRDN(BCStyle.E, certificateRequestDTO.getEmail());
+            x500NameBuilder.addRDN(BCStyle.UID, String.valueOf(certificateRequestDTO.getUserId()));
             X500Name x500Name = x500NameBuilder.build();
             byte[] encoded = publicKey.getEncoded();
             SubjectPublicKeyInfo subjectPublicKeyInfo = new SubjectPublicKeyInfo(
