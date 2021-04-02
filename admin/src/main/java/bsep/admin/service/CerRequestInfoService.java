@@ -13,11 +13,14 @@ import org.bouncycastle.pkcs.jcajce.JcaPKCS10CertificationRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.apache.commons.codec.binary.Hex;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.util.Arrays;
+import java.util.Base64;
 import java.util.List;
 
 @Service
@@ -92,7 +95,9 @@ public class CerRequestInfoService implements ServiceInterface<CerRequestInfo> {
         PublicKey publicKey = keyStoreReader.readCertificate("super.admin@admin.com").getPublicKey();
         // PrivateKey privateKey = keyStoreReader.readIssuerFromStore("super.admin@admin.com").getPrivateKey();
         byte[] encrypted = cryptingUtil.encrypt(email + "trimusketara", publicKey);
-        return new String(encrypted);
+        return Hex.encodeHexString(encrypted);
+        // return Arrays.toString(Hex.encode(encrypted));
+        // return Base64.getEncoder().encodeToString(encrypted);
     }
 
     private CerRequestInfo generateAndSaveCertificateRequest(X500Name x500Name) {
@@ -113,4 +118,8 @@ public class CerRequestInfoService implements ServiceInterface<CerRequestInfo> {
     }
 
 
+    public boolean verifyCertificateRequest(String encrypted) {
+
+        return false;
+    }
 }

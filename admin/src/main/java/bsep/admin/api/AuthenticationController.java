@@ -7,6 +7,7 @@ import bsep.admin.security.TokenUtils;
 import bsep.admin.service.AuthorityService;
 import bsep.admin.service.CerRequestInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -58,11 +59,15 @@ public class AuthenticationController {
         return ResponseEntity.ok(new UserTokenStateDTO(jwt));
     }
 
-    @PostMapping("/verify-certificate-request/{encrypted}")
+    @RequestMapping(value = "/verify-certificate-request/{encrypted}", method = RequestMethod.GET)
     public ResponseEntity<?> verifyCertificateRequest(@PathVariable String encrypted) {
 
-        // TODO
-        return null;
+        boolean success = cerRequestInfoService.verifyCertificateRequest(encrypted);
+        if (success) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
     }
 
         /*
