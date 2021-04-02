@@ -5,7 +5,9 @@ import bsep.admin.model.Issuer;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.cert.jcajce.JcaX509CertificateHolder;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -27,6 +29,7 @@ public class KeyStoreReader {
 
     @Value("${keystore.password}")
     private String password;
+
 
     private KeyStore keyStore;
 

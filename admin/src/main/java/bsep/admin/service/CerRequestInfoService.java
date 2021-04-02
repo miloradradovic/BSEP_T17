@@ -45,6 +45,11 @@ public class CerRequestInfoService implements ServiceInterface<CerRequestInfo> {
         return cerRequestInfoRepository.findAll();
     }
 
+    public List<CerRequestInfo> findAllVerified() {
+        return cerRequestInfoRepository.findByVerifiedTrue();
+    }
+
+
     @Override
     public Page<CerRequestInfo> findAll(Pageable pageable) {
         return cerRequestInfoRepository.findAll(pageable);

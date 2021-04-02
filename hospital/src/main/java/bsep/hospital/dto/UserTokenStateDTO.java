@@ -1,6 +1,12 @@
 package bsep.hospital.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class UserTokenStateDTO {
+
+    @NotNull
+    @NotBlank
     private String accessToken;
 
     public UserTokenStateDTO() {

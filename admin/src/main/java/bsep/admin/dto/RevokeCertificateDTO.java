@@ -1,13 +1,16 @@
 package bsep.admin.dto;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 public class RevokeCertificateDTO {
 
     @NotNull
+    @NotBlank
     private String subjectAlias;
 
     @NotNull
+    @NotBlank
     private String revocationReason;
 
     public RevokeCertificateDTO() {

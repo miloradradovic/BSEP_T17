@@ -8,6 +8,7 @@ import bsep.admin.exceptions.CertificateNotFoundException;
 import bsep.admin.exceptions.InvalidIssuerException;
 import bsep.admin.exceptions.IssuerNotCAException;
 import bsep.admin.model.Admin;
+import bsep.admin.service.CerRequestInfoService;
 import bsep.admin.service.CertificateService;
 import org.bouncycastle.operator.OperatorCreationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,9 @@ public class CertificateController {
     @Autowired
     CertificateService certificateService;
 
+    @Autowired
+    CerRequestInfoService cerRequestInfoService;
+
     @PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> createCertificate(@Valid @RequestBody CertificateCreationDTO certificateCreationDTO) {
@@ -43,6 +47,7 @@ public class CertificateController {
 
         try {
             certificateService.createAdminCertificate(certificateCreationDTO, loggedIn.getEmail());
+            cerRequestInfoService.delete(certificateCreationDTO.getSubjectID());
             return new ResponseEntity<>(HttpStatus.CREATED);
 
         } catch (CertificateNotFoundException e) {

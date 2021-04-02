@@ -1,14 +1,40 @@
 package bsep.hospital.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+
 public class CertificateRequestDTO {
 
+    @NotNull
+    @NotBlank
     private String commonName;
+
+    @NotNull
+    @NotBlank
     private String surname;
+
+    @NotNull
+    @NotBlank
     private String givenName;
+
+    @NotNull
+    @NotBlank
     private String organization;
+
+    @NotNull
+    @NotBlank
     private String organizationUnit;
+
+    @NotNull
+    @NotBlank
     private String country;
+
+    @Positive
     private int userId;
+
+    @NotNull
+    @NotBlank
     private String email;
 
     public CertificateRequestDTO() {

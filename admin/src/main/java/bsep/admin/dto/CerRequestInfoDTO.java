@@ -1,22 +1,51 @@
 package bsep.admin.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+
 public class CerRequestInfoDTO {
 
+    @Positive
     private int id;
+
+    @NotNull
+    @NotBlank
     private String commonName;
+
+    @NotNull
+    @NotBlank
     private String surname;
+
+    @NotNull
+    @NotBlank
     private String givenName;
+
+    @NotNull
+    @NotBlank
     private String organization;
+
+    @NotNull
+    @NotBlank
     private String organizationUnit;
+
+    @NotNull
+    @NotBlank
     private String country;
+
+    @NotNull
+    @NotBlank
     private String userId;
+
+    @NotNull
+    @NotBlank
     private String email;
 
     public CerRequestInfoDTO() {
 
     }
 
-    public CerRequestInfoDTO(int id, String commonName, String surname, String givenName, String organization, String organizationUnit, String country, String userId) {
+    public CerRequestInfoDTO(int id, String commonName, String surname, String givenName, String organization, String organizationUnit, String country, String userId, String email) {
         this.id = id;
         this.commonName = commonName;
         this.surname = surname;
@@ -25,6 +54,7 @@ public class CerRequestInfoDTO {
         this.organizationUnit = organizationUnit;
         this.country = country;
         this.userId = userId;
+        this.email = email;
     }
 
     public int getId() {

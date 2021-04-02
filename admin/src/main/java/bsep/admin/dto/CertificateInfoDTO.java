@@ -1,21 +1,35 @@
 package bsep.admin.dto;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CertificateInfoDTO {
 
+    @NotNull
+    @NotBlank
     private String commonName;
 
+    @NotNull
+    @NotBlank
     private String fullName;
 
+    @NotNull
+    @NotBlank
+    @Email
     private String email;
 
+    @NotNull
     private Boolean revoked;
 
+    @NotNull
+    @NotBlank
     private String revocationReason;
 
 
+    @NotNull
     private boolean isCA;
 
     private List<CertificateInfoDTO> children;
