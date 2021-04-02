@@ -9,24 +9,21 @@ import bsep.admin.model.SubjectData;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x500.X500NameBuilder;
 import org.bouncycastle.asn1.x500.style.BCStyle;
-import org.bouncycastle.asn1.x509.BasicConstraints;
-import org.bouncycastle.asn1.x509.ExtendedKeyUsage;
-import org.bouncycastle.asn1.x509.Extension;
-import org.bouncycastle.asn1.x509.KeyUsage;
+import org.bouncycastle.asn1.x509.*;
 import org.bouncycastle.cert.*;
 import org.bouncycastle.cert.jcajce.JcaX509CRLConverter;
 import org.bouncycastle.cert.jcajce.JcaX509CertificateConverter;
 import org.bouncycastle.cert.jcajce.JcaX509v3CertificateBuilder;
+import org.bouncycastle.openssl.jcajce.JcaPEMWriter;
 import org.bouncycastle.operator.ContentSigner;
 import org.bouncycastle.operator.OperatorCreationException;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
+import org.bouncycastle.util.io.pem.PemObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.math.BigInteger;
 import java.security.*;
 import java.security.cert.CRLException;
@@ -117,6 +114,9 @@ public class Initialize {
 
         try {
             certGen.addExtension(Extension.extendedKeyUsage, false, eku);
+
+            GeneralNames subjectAltName = new GeneralNames(new GeneralName(GeneralName.dNSName, "admin.com"));
+            certGen.addExtension(X509Extensions.SubjectAlternativeName, false, subjectAltName);
         } catch (CertIOException e) {
             e.printStackTrace();
         }
@@ -132,6 +132,8 @@ public class Initialize {
         keyStoreWriter.saveKeyStore();
 
         createCRL(keyPair.getPrivate(), subjectData.getX500name());
+        //writeCertificateToPEM(createdCertificate);
+        //writePrivateKeyToPEM(keyPair.getPrivate());
     }
 
     private void createCRL(PrivateKey pk, X500Name issuerName) throws CRLException, IOException, OperatorCreationException {
@@ -206,4 +208,22 @@ public class Initialize {
         }
         return null;
     }
+
+    /*
+    public void writeCertificateToPEM(X509Certificate certificate) throws IOException {
+        JcaPEMWriter pemWriter = new JcaPEMWriter(new FileWriter(new File("admin.crt")));
+        pemWriter.writeObject(certificate);
+        pemWriter.flush();
+        pemWriter.close();
+    }
+
+    public void writePrivateKeyToPEM(PrivateKey privateKey) throws IOException {
+        PemObject pemFile = new PemObject("PRIVATE KEY", privateKey.getEncoded());
+
+        JcaPEMWriter pemWriter = new JcaPEMWriter(new FileWriter(new File("admin.key")));
+        pemWriter.writeObject(pemFile);
+        pemWriter.flush();
+        pemWriter.close();
+    }
+   */
 }

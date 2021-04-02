@@ -16,16 +16,13 @@ import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x500.X500NameBuilder;
 import org.bouncycastle.asn1.x500.style.BCStyle;
 import org.bouncycastle.asn1.x500.style.IETFUtils;
-import org.bouncycastle.asn1.x509.BasicConstraints;
-import org.bouncycastle.asn1.x509.ExtendedKeyUsage;
 import org.bouncycastle.asn1.x509.Extension;
-import org.bouncycastle.asn1.x509.KeyUsage;
+import org.bouncycastle.asn1.x509.*;
 import org.bouncycastle.cert.*;
 import org.bouncycastle.cert.jcajce.JcaX509CRLConverter;
 import org.bouncycastle.cert.jcajce.JcaX509CertificateConverter;
 import org.bouncycastle.cert.jcajce.JcaX509CertificateHolder;
 import org.bouncycastle.cert.jcajce.JcaX509v3CertificateBuilder;
-import org.bouncycastle.jcajce.provider.asymmetric.X509;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.operator.ContentSigner;
 import org.bouncycastle.operator.OperatorCreationException;
@@ -38,6 +35,7 @@ import java.io.*;
 import java.math.BigInteger;
 import java.nio.file.Files;
 import java.security.*;
+import java.security.cert.CRLReason;
 import java.security.cert.Certificate;
 import java.security.cert.*;
 import java.time.LocalDateTime;
@@ -144,9 +142,14 @@ public class CertificateService {
 
         try {
             certGen.addExtension(Extension.extendedKeyUsage, false, eku);
+
+
+            GeneralNames subjectAltName = new GeneralNames(new GeneralName(GeneralName.dNSName, IETFUtils.valueToString(subjectData.getX500name().getRDNs(BCStyle.CN)[0].getFirst().getValue())));
+            certGen.addExtension(X509Extensions.SubjectAlternativeName, false, subjectAltName);
         } catch (CertIOException e) {
             e.printStackTrace();
         }
+
 
         X509CertificateHolder certHolder = certGen.build(contentSigner);
 
@@ -159,6 +162,7 @@ public class CertificateService {
         Certificate[] newCertificateChain = ArrayUtils.insert(0, issuerCertificateChain, createdCertificate);
         keyStoreWriter.write(alias, keyPair.getPrivate(), newCertificateChain);
         keyStoreWriter.saveKeyStore();
+
     }
 
     private KeyPair generateKeyPair() {
@@ -351,7 +355,7 @@ public class CertificateService {
         tree.setEmail(tree.getEmail().split("\\|")[0]);
 
         tree = findIntermediate(certificates, tree, tree.getEmail());
-        tree = findEnd(certificates, tree, tree.getEmail());
+        tree = findEnd(certificates, tree);
 
         return tree;
     }
@@ -372,7 +376,7 @@ public class CertificateService {
                 if (((X509Certificate) cer).getBasicConstraints() != -1 || ((X509Certificate) cer).getKeyUsage()[5])
                     tree.setCA(true);
 
-                if(isRevoked(cer)){
+                if (isRevoked(cer)) {
                     tree.setRevoked(true);
                     tree.setRevocationReason(getRevocationReason(cer));
                 }
@@ -400,7 +404,7 @@ public class CertificateService {
                 if (((X509Certificate) cer).getBasicConstraints() != -1 || ((X509Certificate) cer).getKeyUsage()[5])
                     tree.setCA(true);
 
-                if(isRevoked(cer)){
+                if (isRevoked(cer)) {
                     tree.setRevoked(true);
                     tree.setRevocationReason(getRevocationReason(cer));
                 }
@@ -411,9 +415,9 @@ public class CertificateService {
         return parent;
     }
 
-    public CertificateInfoDTO findEnd(List<Certificate> certificates, CertificateInfoDTO parent, String issuerEmail) throws CertificateException, CRLException, IOException {
+    public CertificateInfoDTO findEnd(List<Certificate> certificates, CertificateInfoDTO parent) throws CertificateException, CRLException, IOException {
 
-        for (CertificateInfoDTO child: parent.getChildren()) {
+        for (CertificateInfoDTO child : parent.getChildren()) {
             for (Certificate cer : certificates) {
                 JcaX509CertificateHolder certHolder = new JcaX509CertificateHolder((X509Certificate) cer);
                 X500Name i = certHolder.getIssuer();
@@ -427,7 +431,7 @@ public class CertificateService {
                     tree.setEmail(tree.getEmail());
                     tree.setCA(false);
 
-                    if(isRevoked(cer)){
+                    if (isRevoked(cer)) {
                         tree.setRevoked(true);
                         tree.setRevocationReason(getRevocationReason(cer));
                     }
@@ -439,5 +443,55 @@ public class CertificateService {
 
         return parent;
     }
+
+    /*
+    public void generate() {
+
+        try {
+            createAdminCertificate(new CertificateCreationDTO(1, new KeyUsageDTO(), new ExtendedKeyUsageDTO()), "super.admin@admin.com");
+
+            Certificate cer = keyStoreReader.readCertificate("fred.billy@hospital.com");
+            PrivateKey pk = keyStoreReader.readPrivateKey("fred.billy@hospital.com");
+            writeCertificateToPEM((X509Certificate) cer);
+            writePrivateKeyToPEM(pk);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (CertificateNotFoundException e) {
+            e.printStackTrace();
+        } catch (OperatorCreationException e) {
+            e.printStackTrace();
+        } catch (IssuerNotCAException e) {
+            e.printStackTrace();
+        } catch (CertificateException e) {
+            e.printStackTrace();
+        } catch (AliasAlreadyExistsException e) {
+            e.printStackTrace();
+        } catch (CRLException e) {
+            e.printStackTrace();
+        } catch (InvalidIssuerException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    public void writeCertificateToPEM(X509Certificate certificate) throws IOException {
+        JcaPEMWriter pemWriter = new JcaPEMWriter(new FileWriter(new File("admin.crt")));
+        pemWriter.writeObject(certificate);
+        pemWriter.flush();
+        pemWriter.close();
+    }
+
+    public void writePrivateKeyToPEM(PrivateKey privateKey) throws IOException {
+        PemObject pemFile = new PemObject("PRIVATE KEY", privateKey.getEncoded());
+
+        JcaPEMWriter pemWriter = new JcaPEMWriter(new FileWriter(new File("admin.key")));
+        pemWriter.writeObject(pemFile);
+        pemWriter.flush();
+        pemWriter.close();
+    }
+
+     */
+
 
 }
