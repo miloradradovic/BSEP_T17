@@ -2,10 +2,12 @@ package bsep.admin.api;
 
 import bsep.admin.dto.UserLoginDTO;
 import bsep.admin.dto.UserTokenStateDTO;
+import bsep.admin.exceptions.CertificateNotFoundException;
 import bsep.admin.model.Admin;
 import bsep.admin.security.TokenUtils;
 import bsep.admin.service.AuthorityService;
 import bsep.admin.service.CerRequestInfoService;
+import org.apache.commons.codec.DecoderException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -60,11 +62,11 @@ public class AuthenticationController {
     }
 
     @RequestMapping(value = "/verify-certificate-request/{encrypted}", method = RequestMethod.GET)
-    public ResponseEntity<?> verifyCertificateRequest(@PathVariable String encrypted) {
+    public ResponseEntity<?> verifyCertificateRequest(@PathVariable String encrypted) throws DecoderException, CertificateNotFoundException {
 
         boolean success = cerRequestInfoService.verifyCertificateRequest(encrypted);
         if (success) {
-            return new ResponseEntity<>(HttpStatus.OK);
+            return new ResponseEntity<>("Successfully verified!", HttpStatus.OK);
         }else{
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }

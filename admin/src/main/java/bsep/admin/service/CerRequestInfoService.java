@@ -5,6 +5,7 @@ import bsep.admin.keystore.KeyStoreReader;
 import bsep.admin.model.CerRequestInfo;
 import bsep.admin.repository.CerRequestInfoRepository;
 import bsep.admin.utils.CryptingUtil;
+import org.apache.commons.codec.DecoderException;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.x500.RDN;
 import org.bouncycastle.asn1.x500.X500Name;
@@ -75,7 +76,8 @@ public class CerRequestInfoService implements ServiceInterface<CerRequestInfo> {
 
     @Override
     public CerRequestInfo update(CerRequestInfo entity) {
-        return null;
+        entity.setVerified(true);
+        return cerRequestInfoRepository.save(entity);
     }
 
     public boolean createCertificateRequest(byte[] encryptedCSR) throws IOException, CertificateNotFoundException {
@@ -118,8 +120,18 @@ public class CerRequestInfoService implements ServiceInterface<CerRequestInfo> {
     }
 
 
-    public boolean verifyCertificateRequest(String encrypted) {
-
-        return false;
+    public boolean verifyCertificateRequest(String encrypted) throws DecoderException, CertificateNotFoundException {
+        byte[] encryptedByte = Hex.decodeHex(encrypted);
+        PrivateKey privateKey = keyStoreReader.readIssuerFromStore("super.admin@admin.com").getPrivateKey();
+        byte[] decryptedByte = cryptingUtil.decrypt(encryptedByte, privateKey);
+        String decrypted = new String(decryptedByte);
+        String email = decrypted.substring(0, decrypted.length() - 12);
+        CerRequestInfo cerRequestInfo = cerRequestInfoRepository.findByEmail(email);
+        if (cerRequestInfo == null){
+            return false;
+        }else{
+            CerRequestInfo updated = update(cerRequestInfo);
+            return updated != null;
+        }
     }
 }

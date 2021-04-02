@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CerRequestInfoRepository extends JpaRepository<CerRequestInfo, Integer> {
     CerRequestInfo findByUserId(int id);
+
+    CerRequestInfo findByEmail(String email);
 }

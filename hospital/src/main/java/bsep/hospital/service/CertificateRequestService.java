@@ -41,6 +41,7 @@ public class CertificateRequestService {
             return false;
         }
         certificateRequestDTO.setUserId(loggedIn.getId());
+        certificateRequestDTO.setEmail(loggedIn.getEmail());
         byte[] csr = generateCSR(certificateRequestDTO);
         if (csr != null){
             RestTemplate restTemplate = new RestTemplate();
@@ -58,8 +59,9 @@ public class CertificateRequestService {
             KeyPair keypair = keyPairGenerator.generateKeyPair();
             PublicKey publicKey = keypair.getPublic();
             PrivateKey privateKey = keypair.getPrivate();
+            String commonName = certificateRequestDTO.getEmail().split("@")[1];
             X500NameBuilder x500NameBuilder = new X500NameBuilder(BCStyle.INSTANCE);
-            x500NameBuilder.addRDN(BCStyle.CN, certificateRequestDTO.getCommonName());
+            x500NameBuilder.addRDN(BCStyle.CN, commonName);
             x500NameBuilder.addRDN(BCStyle.SURNAME, certificateRequestDTO.getSurname());
             x500NameBuilder.addRDN(BCStyle.GIVENNAME, certificateRequestDTO.getGivenName());
             x500NameBuilder.addRDN(BCStyle.O, certificateRequestDTO.getOrganization());
