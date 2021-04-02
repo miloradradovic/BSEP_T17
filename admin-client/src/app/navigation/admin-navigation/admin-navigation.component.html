@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+
+  <a routerLink="/pocetna-stranica-gradjanin" id="home-nav" style="margin-left: 0.1%;" ><mat-icon
+    [ngStyle]="{'color':'white'}">admin_panel_settings</mat-icon></a>
+  <span style="padding-left: 1%">Admin application</span>
+
+  <span style="width: 80%"></span>
+  <a routerLink="/" style="margin-left: 0.5%;" ><mat-icon (click)="logOutUser()" [ngStyle]="{'color':'white'}">exit_to_app</mat-icon></a>
+</mat-toolbar>
