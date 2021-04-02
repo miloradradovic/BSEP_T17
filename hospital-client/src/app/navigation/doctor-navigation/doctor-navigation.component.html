@@ -1,1 +1,9 @@
-<p>doctor-navigation works!</p>
+<mat-toolbar color="primary">
+
+  <a routerLink="/" id="home-nav" style="margin-left: 0.1%;" ><mat-icon [ngStyle]="{'color':'white'}">admin_panel_settings</mat-icon></a>
+  <span>Hospital application</span>
+
+  <span style="padding-left:5%" class="example-spacer"> </span>
+  <a routerLink="/" style="margin-left: 0.5%;" ><mat-icon (click)="logOutUser()" [ngStyle]="{'color':'white'}">exit_to_app</mat-icon></a>
+
+</mat-toolbar>

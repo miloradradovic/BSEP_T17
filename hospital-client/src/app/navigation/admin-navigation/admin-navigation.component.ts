@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin-navigation',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminNavigationComponent implements OnInit {
 
-  constructor() { }
+  @Output() logOut = new EventEmitter<void>();
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  logOutUser(): void {
+    this.logOut.emit();
   }
 
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-doctor-navigation',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorNavigationComponent implements OnInit {
 
-  constructor() { }
+  @Output() logOut = new EventEmitter<void>();
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  logOutUser(): void {
+    this.logOut.emit();
   }
 
 }

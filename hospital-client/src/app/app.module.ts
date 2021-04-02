@@ -3,22 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavigationComponent } from './navigation/navigation.component';
-import { AdminNavigationComponent } from './navigation/admin-navigation/admin-navigation.component';
-import { DoctorNavigationComponent } from './navigation/doctor-navigation/doctor-navigation.component';
-import { NotLoggedInNavigationComponent } from './navigation/not-logged-in-navigation/not-logged-in-navigation.component';
+import {SharedModule} from './shared/shared.module';
+import {NavigationModule} from './navigation/navigation.module';
+import {MaterialModule} from './shared/material.module';
+import {AppRoutingModule} from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavigationComponent,
-    AdminNavigationComponent,
-    DoctorNavigationComponent,
-    NotLoggedInNavigationComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule,
+    NavigationModule,
+    MaterialModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
