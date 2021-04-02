@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.*;
 import java.security.cert.Certificate;
@@ -99,6 +100,36 @@ public class KeyStoreReader {
 
             return keyStore.aliases();
         } catch (KeyStoreException | NoSuchAlgorithmException | CertificateException | IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public PrivateKey readPrivateKey(String alias) {
+        try {
+            //kreiramo instancu KeyStore
+            KeyStore ks = KeyStore.getInstance("JKS", "SUN");
+            //ucitavamo podatke
+            BufferedInputStream in = new BufferedInputStream(new FileInputStream(path));
+            ks.load(in, password.toCharArray());
+
+            if(ks.isKeyEntry(alias)) {
+                PrivateKey pk = (PrivateKey) ks.getKey(alias, password.toCharArray());
+                return pk;
+            }
+        } catch (KeyStoreException e) {
+            e.printStackTrace();
+        } catch (NoSuchProviderException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (CertificateException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (UnrecoverableKeyException e) {
             e.printStackTrace();
         }
         return null;

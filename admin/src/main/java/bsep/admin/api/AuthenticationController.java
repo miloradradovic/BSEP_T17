@@ -3,11 +3,9 @@ package bsep.admin.api;
 import bsep.admin.dto.UserLoginDTO;
 import bsep.admin.dto.UserTokenStateDTO;
 import bsep.admin.model.Admin;
-import bsep.admin.model.CerRequestInfo;
 import bsep.admin.security.TokenUtils;
 import bsep.admin.service.AuthorityService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -51,6 +49,7 @@ public class AuthenticationController {
         Admin person = (Admin) authentication.getPrincipal();
         String jwt = tokenUtils.generateToken(person.getEmail(), person.getId(), person.getAuthorities().get(0).getAuthority()); // prijavljujemo se na sistem sa email adresom
 
+
         // Vrati token kao odgovor na uspesnu autentifikaciju
         return ResponseEntity.ok(new UserTokenStateDTO(jwt));
     }
@@ -63,43 +62,6 @@ public class AuthenticationController {
     }
 
         /*
-    // Endpoint za registraciju novog korisnika
-    @PostMapping("/sign-up")
-    public ResponseEntity<?> signUp(@Valid @RequestBody UserDTO userRequest) throws Exception {
-
-        Registered existReg = this.regService.findByUsernameOrEmail(userRequest.getUsername(), userRequest.getEmail());
-        Administrator existAdmin = this.adminService.findByUsernameOrEmail(userRequest.getUsername(), userRequest.getEmail());
-        if (existReg != null || existAdmin != null) {
-            return new ResponseEntity<>("Username or email already exists.", HttpStatus.BAD_REQUEST);
-        }
-        existReg = regMapper.toEntity(userRequest);
-        existReg.setPassword(passwordEncoder.encode(userRequest.getPassword()));
-
-        long role = 2;
-        List<Authority> auth = authorityService.findById(role);
-        existReg.setAuthorities(auth);
-        existReg.setVerified(false);
-
-        Registered newReg = regService.registerUser(existReg);
-
-        if(newReg == null){
-            return new ResponseEntity<>("Username or email already exists.", HttpStatus.BAD_REQUEST);
-        }
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
-
-
-    // Endpoint za aktivaciju naloga
-    @PostMapping("/activate/{id}")
-    public ResponseEntity<?> activate(@PathVariable Integer id) {
-        Registered regUser = regService.activateAccount(id);
-
-        if(regUser == null)
-            return new ResponseEntity<>("Activation failed.", HttpStatus.BAD_REQUEST);
-
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
-
     // U slucaju isteka vazenja JWT tokena, endpoint koji se poziva da se token osvezi
     @PostMapping(value = "/refresh")
     public ResponseEntity<UserTokenStateDTO> refreshAuthenticationToken(HttpServletRequest request) {

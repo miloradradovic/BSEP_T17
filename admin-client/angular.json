@@ -63,7 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "admin-client:build",
-            "host": "admin.com"
+            "host": "admin.com",
+            //"ssl": true,
+            //"sslCert": "./ssl/admin.crt",
+            //"sslKey": "./ssl/admin.key"
           },
           "configurations": {
             "production": {
