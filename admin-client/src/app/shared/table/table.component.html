@@ -1,0 +1,17 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="{{columnsToDisplay[i]}}" *ngFor="let column of columnsToIterate; let i = index">
+      <th mat-header-cell *matHeaderCellDef> {{columnsToDisplay[i]}} </th>
+      <td id="row{{element.id}}" mat-cell *matCellDef="let element" (click)="clicked(element.id)" (dblclick)="doubleClicked(element.id)"> {{column==='publishedDate' ? (element[column] | date) : element[column]}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> delete </th>
+      <td mat-cell *matCellDef="let element">  <button mat-raised-button color="warn" (click)="deleted(element.id)" id="{{element.id}}">Delete</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+  </table>
+</div>

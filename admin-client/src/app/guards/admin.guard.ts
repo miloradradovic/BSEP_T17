@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
 import {CanActivate, Router} from '@angular/router';
-import {LoginService} from '../service/login-service/login.service';
+import {LogInService} from '../service/log-in-service/log-in.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminGuard implements CanActivate {
   constructor(
-    public auth: LoginService,
+    public auth: LogInService,
     public router: Router
   ) {
   }

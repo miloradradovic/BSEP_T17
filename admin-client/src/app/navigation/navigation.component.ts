@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {StorageService} from '../service/storage-service/storage.service';
 import {Router} from '@angular/router';
-import {LoginService} from '../service/login-service/login.service';
+import {LogInService} from '../service/log-in-service/log-in.service';
 
 @Component({
   selector: 'app-navigation',
@@ -13,7 +13,7 @@ export class NavigationComponent implements OnInit {
   role: string;
 
   constructor(private storageService: StorageService,
-              private loginService: LoginService,
+              private loginService: LogInService,
               public router: Router) {
   }
 
@@ -35,7 +35,7 @@ export class NavigationComponent implements OnInit {
     }
   }
 
-  signOut($event: any): void {
+  logOut($event: any): void {
     this.loginService.logOut();
   }
 

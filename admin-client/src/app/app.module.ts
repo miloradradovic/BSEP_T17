@@ -3,31 +3,25 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NavigationComponent} from './navigation/navigation.component';
-import {AdminNavigationComponent} from './navigation/admin-navigation/admin-navigation.component';
-import {NotLoggedinNavigationComponent} from './navigation/not-loggedin-navigation/not-loggedin-navigation.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {RouterModule} from '@angular/router';
-import {MatToolbarModule} from '@angular/material/toolbar';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing/app-routing.module';
+import {SharedModule} from './shared/shared.module';
+import {NavigationModule} from './navigation/navigation.module';
+import {LogInModule} from './features/log-in/log-in.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavigationComponent,
-    AdminNavigationComponent,
-    NotLoggedinNavigationComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatIconModule,
-    MatButtonModule,
+    HttpClientModule,
     AppRoutingModule,
-    MatToolbarModule,
-    HttpClientModule
+    SharedModule,
+    NavigationModule,
+    LogInModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
