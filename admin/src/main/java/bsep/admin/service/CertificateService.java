@@ -464,6 +464,11 @@ public class CertificateService {
         return parent;
     }
 
+    public boolean checkCertificate(String alias) throws CertificateException, CRLException, IOException {
+        Certificate[] chain = keyStoreReader.readCertificateChain(alias);
+        return isCertificateValid(chain);
+
+    }
     /*
     public void generate() {
 

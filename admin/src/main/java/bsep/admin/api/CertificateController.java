@@ -3,10 +3,7 @@ package bsep.admin.api;
 import bsep.admin.dto.CertificateCreationDTO;
 import bsep.admin.dto.CertificateInfoDTO;
 import bsep.admin.dto.RevokeCertificateDTO;
-import bsep.admin.exceptions.AliasAlreadyExistsException;
 import bsep.admin.exceptions.CertificateNotFoundException;
-import bsep.admin.exceptions.InvalidIssuerException;
-import bsep.admin.exceptions.IssuerNotCAException;
 import bsep.admin.model.Admin;
 import bsep.admin.service.CerRequestInfoService;
 import bsep.admin.service.CertificateService;
@@ -59,6 +56,19 @@ public class CertificateController {
 
         CertificateInfoDTO certificateInfoDTO = certificateService.getCertificates();
         return new ResponseEntity<>(certificateInfoDTO, HttpStatus.OK);
+
+    }
+
+    @PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
+    @RequestMapping(value = "/isValid/{alias}", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<CertificateInfoDTO> checkIsValid(@PathVariable String alias) {
+
+        try {
+            certificateService.checkCertificate(alias);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (CertificateException | CRLException | IOException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
 
     }
 
