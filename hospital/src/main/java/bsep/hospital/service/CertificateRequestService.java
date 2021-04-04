@@ -37,16 +37,18 @@ public class CertificateRequestService {
     public boolean sendCertificateRequest(CertificateRequestDTO certificateRequestDTO) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Person loggedIn = (Person) authentication.getPrincipal();
-        if (!loggedIn.getEmail().equals(certificateRequestDTO.getEmail())){ // lose poslat email sa fronta
+
+        if (!loggedIn.getEmail().equals(certificateRequestDTO.getEmail())) { // lose poslat email sa fronta
             return false;
         }
         certificateRequestDTO.setUserId(loggedIn.getId());
         certificateRequestDTO.setEmail(loggedIn.getEmail());
+
         byte[] csr = generateCSR(certificateRequestDTO);
-        if (csr != null){
+        if (csr != null) {
             RestTemplate restTemplate = new RestTemplate();
             HttpEntity<byte[]> request = new HttpEntity<>(csr);
-            ResponseEntity responseEntity = restTemplate.exchange("http://localhost:8080/certificate-request/send-certificate-request", HttpMethod.POST, request, ResponseEntity.class);
+            ResponseEntity<?> responseEntity = restTemplate.exchange("http://localhost:8080/certificate-request/send-certificate-request", HttpMethod.POST, request, ResponseEntity.class);
             return responseEntity.getStatusCode() == HttpStatus.OK;
         }
         return false;
@@ -57,8 +59,10 @@ public class CertificateRequestService {
             KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
             keyPairGenerator.initialize(2048, new SecureRandom());
             KeyPair keypair = keyPairGenerator.generateKeyPair();
+
             PublicKey publicKey = keypair.getPublic();
             PrivateKey privateKey = keypair.getPrivate();
+
             String commonName = certificateRequestDTO.getEmail().split("@")[1];
             X500NameBuilder x500NameBuilder = new X500NameBuilder(BCStyle.INSTANCE);
             x500NameBuilder.addRDN(BCStyle.CN, commonName);
@@ -70,16 +74,21 @@ public class CertificateRequestService {
             x500NameBuilder.addRDN(BCStyle.E, certificateRequestDTO.getEmail());
             x500NameBuilder.addRDN(BCStyle.UID, String.valueOf(certificateRequestDTO.getUserId()));
             X500Name x500Name = x500NameBuilder.build();
+
             byte[] encoded = publicKey.getEncoded();
+
             SubjectPublicKeyInfo subjectPublicKeyInfo = new SubjectPublicKeyInfo(
                     ASN1Sequence.getInstance(encoded));
+
             PKCS10CertificationRequestBuilder pkcs10Builder = new PKCS10CertificationRequestBuilder(x500Name, subjectPublicKeyInfo);
+
             JcaContentSignerBuilder jcaContentSignerBuilder = new JcaContentSignerBuilder("SHA256WithRSAEncryption");
             jcaContentSignerBuilder = jcaContentSignerBuilder.setProvider("BC");
 
 
             ContentSigner contentSigner = jcaContentSignerBuilder.build(privateKey);
             PKCS10CertificationRequest certificationRequest = pkcs10Builder.build(contentSigner);
+
             return certificationRequest.getEncoded();
         } catch (NoSuchAlgorithmException | OperatorCreationException | IOException e) {
             e.printStackTrace();

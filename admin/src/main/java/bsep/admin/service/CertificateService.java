@@ -2,10 +2,7 @@ package bsep.admin.service;
 
 import bsep.admin.dto.*;
 import bsep.admin.enums.RevocationReason;
-import bsep.admin.exceptions.AliasAlreadyExistsException;
-import bsep.admin.exceptions.CertificateNotFoundException;
-import bsep.admin.exceptions.InvalidIssuerException;
-import bsep.admin.exceptions.IssuerNotCAException;
+import bsep.admin.exceptions.*;
 import bsep.admin.keystore.KeyStoreReader;
 import bsep.admin.keystore.KeyStoreWriter;
 import bsep.admin.model.CerRequestInfo;
@@ -28,7 +25,12 @@ import org.bouncycastle.operator.ContentSigner;
 import org.bouncycastle.operator.OperatorCreationException;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
 import java.io.*;
@@ -60,7 +62,7 @@ public class CertificateService {
         Security.addProvider(new BouncyCastleProvider());
     }
 
-    public void createAdminCertificate(CertificateCreationDTO certificateCreationDTO, String issuerAlias) throws CertificateNotFoundException, OperatorCreationException, IssuerNotCAException, InvalidIssuerException, AliasAlreadyExistsException, CertificateException, CRLException, IOException {
+    public void createAdminCertificate(CertificateCreationDTO certificateCreationDTO, String issuerAlias) throws CertificateNotFoundException, OperatorCreationException, IssuerNotCAException, InvalidIssuerException, AliasAlreadyExistsException, CertificateException, CRLException, IOException, CertificateSendFailException {
 
         Certificate[] issuerCertificateChain = keyStoreReader.readCertificateChain(issuerAlias);
 
@@ -89,7 +91,7 @@ public class CertificateService {
 
     }
 
-    private void generateAdminCertificate(CertificateCreationDTO certificateCreationDTO, Certificate[] issuerCertificateChain, String alias, String issuerAlias) throws CertificateNotFoundException, OperatorCreationException, CertificateException {
+    private void generateAdminCertificate(CertificateCreationDTO certificateCreationDTO, Certificate[] issuerCertificateChain, String alias, String issuerAlias) throws CertificateNotFoundException, OperatorCreationException, CertificateException, CertificateSendFailException {
         KeyPair keyPair = generateKeyPair();
         SubjectData subjectData = generateSubjectData(certificateCreationDTO.getSubjectID());
         assert subjectData != null;
@@ -162,6 +164,24 @@ public class CertificateService {
         Certificate[] newCertificateChain = ArrayUtils.insert(0, issuerCertificateChain, createdCertificate);
         keyStoreWriter.write(alias, keyPair.getPrivate(), newCertificateChain);
         keyStoreWriter.saveKeyStore();
+
+        if (!sendCertificateToAdmin(createdCertificate)) {
+            throw new CertificateSendFailException();
+        }
+
+
+    }
+
+    public boolean sendCertificateToAdmin(Certificate cer) throws CertificateEncodingException {
+        byte[] bytes = cer.getEncoded();
+        if (bytes != null) {
+            RestTemplate restTemplate = new RestTemplate();
+            HttpEntity<byte[]> request = new HttpEntity<>(bytes);
+            ResponseEntity<?> responseEntity = restTemplate.exchange("http://localhost:8085/certificate", HttpMethod.POST, request, ResponseEntity.class);
+            return responseEntity.getStatusCode() == HttpStatus.OK;
+        }
+
+        return false;
 
     }
 

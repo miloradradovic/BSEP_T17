@@ -52,7 +52,7 @@ public class KeyStoreReader {
             if (keyStore.isKeyEntry(alias)) {
                 cert = keyStore.getCertificate(alias);
             } else {
-                throw new CertificateNotFoundException("");
+                throw new CertificateNotFoundException();
             }
 
             PrivateKey privateKey = (PrivateKey) keyStore.getKey(alias, password.toCharArray());
@@ -117,22 +117,9 @@ public class KeyStoreReader {
             ks.load(in, password.toCharArray());
 
             if(ks.isKeyEntry(alias)) {
-                PrivateKey pk = (PrivateKey) ks.getKey(alias, password.toCharArray());
-                return pk;
+                return (PrivateKey) ks.getKey(alias, password.toCharArray());
             }
-        } catch (KeyStoreException e) {
-            e.printStackTrace();
-        } catch (NoSuchProviderException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (CertificateException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (UnrecoverableKeyException e) {
+        } catch (KeyStoreException | NoSuchAlgorithmException | CertificateException | IOException | NoSuchProviderException | UnrecoverableKeyException e) {
             e.printStackTrace();
         }
         return null;

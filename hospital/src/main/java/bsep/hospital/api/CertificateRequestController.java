@@ -21,13 +21,13 @@ public class CertificateRequestController {
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity createAndSendCertificateRequest(@RequestBody CertificateRequestDTO certificateRequestDTO){
+    public ResponseEntity<?> createAndSendCertificateRequest(@RequestBody CertificateRequestDTO certificateRequestDTO) {
 
         boolean success = certificateRequestService.sendCertificateRequest(certificateRequestDTO);
-        if(success){
-            return new ResponseEntity(HttpStatus.OK);
-        }else{
-            return new ResponseEntity(HttpStatus.BAD_REQUEST);
+        if (success) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 }
