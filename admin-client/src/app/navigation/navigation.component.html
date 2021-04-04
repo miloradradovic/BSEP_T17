@@ -1,7 +1,7 @@
-<div *ngIf="role === 'ROLE_SUPER_ADMIN'">
+<div *ngIf="this.role === this.superAdmin">
   <app-admin-navigation (logOut)="logOut($event)"></app-admin-navigation>
 </div>
 
-<div *ngIf="role === ''">
+<div *ngIf="role === this.unauthorized">
   <app-not-logged-in-navigation></app-not-logged-in-navigation>
 </div>

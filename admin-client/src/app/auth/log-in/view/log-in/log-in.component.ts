@@ -46,12 +46,12 @@ export class LogInComponent implements OnInit {
         const role = info.role;
         const user = new LogInModel(info.email, info.id, info.role);
         localStorage.setItem('user', JSON.stringify(user));
-
+        this.storageService.setStorageItem('user', JSON.stringify(user))
 
         this.snackBar.open('Successfully logged in!', 'Ok', {duration: 2000});
 
         if (role === 'ROLE_SUPER_ADMIN') {
-          this.router.navigate(['/view-requests']);
+          this.router.navigate(['/home']);
         }
       },
       error => {

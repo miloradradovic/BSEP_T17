@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(value = "/certificate-request", produces = MediaType.APPLICATION_JSON_VALUE)
 public class CertificateRequestController {

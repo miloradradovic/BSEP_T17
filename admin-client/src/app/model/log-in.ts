@@ -7,3 +7,9 @@ export class LogIn {
     this.password = password;
   }
 }
+
+
+export enum UserRole{
+  UNAUTHORIZED,
+  ROLE_SUPER_ADMIN
+}

@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {CanActivate, Router} from '@angular/router';
+import { UserRole } from '../model/log-in';
 import {LogInService} from '../service/log-in-service/log-in.service';
 
 @Injectable({
@@ -15,8 +16,8 @@ export class LogInGuard implements CanActivate {
 
   canActivate(): boolean {
     const role = this.auth.getRole();
-    if (role === 'ROLE_SUPER_ADMIN') {
-      this.router.navigate(['/view-requests']);
+    if (role === UserRole.ROLE_SUPER_ADMIN) {
+      this.router.navigate(['/home']);
       return false;
     }
     return true;
