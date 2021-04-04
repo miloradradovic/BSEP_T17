@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {StorageService} from '../service/storage-service/storage.service';
 import {Router} from '@angular/router';
 import {LogInService} from '../service/log-in-service/log-in.service';
+import { UserRole } from '../model/log-in';
 
 @Component({
   selector: 'app-navigation',
@@ -10,33 +11,30 @@ import {LogInService} from '../service/log-in-service/log-in.service';
 })
 export class NavigationComponent implements OnInit {
 
-  role: string;
+  role: UserRole;
+  superAdmin: UserRole = UserRole.ROLE_SUPER_ADMIN;
+  unauthorized: UserRole = UserRole.UNAUTHORIZED;
 
   constructor(private storageService: StorageService,
               private loginService: LogInService,
               public router: Router) {
-  }
 
-  ngOnInit(): void {
     this.storageService.watchStorage().subscribe(() => {
       const user = JSON.parse(localStorage.getItem('user'));
-      if (user === null) {
-        this.role = '';
-      } else {
-        this.role = user.role;
-      }
+      this.role = user ? UserRole.ROLE_SUPER_ADMIN : UserRole.UNAUTHORIZED;
     });
 
     const user = JSON.parse(localStorage.getItem('user'));
-    if (user === null) {
-      this.role = '';
-    } else {
-      this.role = user.role;
-    }
+    this.role = user ? UserRole.ROLE_SUPER_ADMIN : UserRole.UNAUTHORIZED;
+  }
+
+  ngOnInit(): void {
+    
   }
 
   logOut($event: any): void {
     this.loginService.logOut();
+    this.role = UserRole.UNAUTHORIZED;
   }
 
 }
