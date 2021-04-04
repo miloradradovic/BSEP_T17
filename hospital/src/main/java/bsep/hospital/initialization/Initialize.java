@@ -26,6 +26,10 @@ public class Initialize {
 
     public void createKeyStore() {
         if (!keyStoreWriter.loadKeyStore())
+        {
             keyStoreWriter.createKeyStore();
+            keyStoreWriter.saveKeyStore();
+        }
+
     }
 }
