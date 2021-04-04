@@ -18,16 +18,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.io.IOException;
 import java.security.cert.CRLException;
 import java.security.cert.CertificateException;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(value = "/certificate", produces = MediaType.APPLICATION_JSON_VALUE)
 public class CertificateController {
@@ -50,20 +48,9 @@ public class CertificateController {
             cerRequestInfoService.delete(certificateCreationDTO.getSubjectID());
             return new ResponseEntity<>(HttpStatus.CREATED);
 
-        } catch (CertificateNotFoundException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-        } catch (OperatorCreationException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-        } catch (IssuerNotCAException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-        } catch (InvalidIssuerException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-        } catch (AliasAlreadyExistsException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-        } catch (CertificateException | CRLException | IOException e) {
+        } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
-
     }
 
     @PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
@@ -84,9 +71,7 @@ public class CertificateController {
 
         try {
             certificateService.revokeCertificate(revokeCertificateDTO, loggedIn.getEmail());
-        } catch (IOException | CRLException | CertificateException | OperatorCreationException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-        } catch (CertificateNotFoundException e) {
+        } catch (IOException | CRLException | CertificateException | OperatorCreationException | CertificateNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>(HttpStatus.CREATED);

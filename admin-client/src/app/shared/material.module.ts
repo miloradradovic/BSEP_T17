@@ -4,7 +4,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatDividerModule} from '@angular/material/divider';
 import {HttpClientModule} from '@angular/common/http';
-import {AppRoutingModule} from '../app-routing/app-routing.module';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -18,7 +17,6 @@ import {MatIconModule} from '@angular/material/icon';
     MatFormFieldModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule,
     MatInputModule,
     MatButtonModule,
     MatSnackBarModule,

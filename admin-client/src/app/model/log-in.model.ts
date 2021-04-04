@@ -1,3 +1,5 @@
+import { UserRole } from "./log-in";
+
 export class LogInModel {
   constructor(
     private email: string,
@@ -6,7 +8,7 @@ export class LogInModel {
   ) {
   }
 
-  getRole(): string {
-    return this.role;
+  getRole(): UserRole {
+    return this.role === "ROLE_SUPER_ADMIN" ? UserRole.ROLE_SUPER_ADMIN : UserRole.UNAUTHORIZED;
   }
 }
