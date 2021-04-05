@@ -79,7 +79,9 @@ public class CertificateService {
         } catch (NullPointerException ignored) {
         }
 
-        String alias = cerRequestInfoService.findOne(certificateCreationDTO.getSubjectID()).getEmail();
+        //String alias = cerRequestInfoService.findOne(certificateCreationDTO.getSubjectID()).getEmail();
+        String alias = getLastAlias(cerRequestInfoService.findOne(certificateCreationDTO.getSubjectID()).getEmail());
+
 
         Certificate certInfo = keyStoreReader.readCertificate(alias);
         if (certInfo != null) {
@@ -87,7 +89,8 @@ public class CertificateService {
                 throw new AliasAlreadyExistsException();
         }
 
-        generateAdminCertificate(certificateCreationDTO, issuerCertificateChain, alias, issuerAlias);
+        String generatedAlias = generateAlias(cerRequestInfoService.findOne(certificateCreationDTO.getSubjectID()).getEmail());
+        generateAdminCertificate(certificateCreationDTO, issuerCertificateChain, generatedAlias, issuerAlias);
 
     }
 
@@ -170,6 +173,46 @@ public class CertificateService {
         }
 
 
+    }
+
+    private String generateAlias(String email) {
+
+        int lastAliasNumber = 0;
+        Enumeration<String> aliases = keyStoreReader.getAllAliases();
+        while (aliases.hasMoreElements()) {
+            String alias = aliases.nextElement();
+            if (alias.contains(email) && alias.contains("|")) {
+                int number = Integer.parseInt(alias.split("\\|")[1]);
+                lastAliasNumber = Math.max(number, lastAliasNumber);
+            }
+
+        }
+        if (lastAliasNumber != 0) {
+            email += lastAliasNumber + 1;
+        }
+
+
+        return email;
+    }
+
+    private String getLastAlias(String email) {
+
+        int lastAliasNumber = 0;
+        Enumeration<String> aliases = keyStoreReader.getAllAliases();
+        while (aliases.hasMoreElements()) {
+            String alias = aliases.nextElement();
+            if (alias.contains(email) && alias.contains("|")) {
+                int number = Integer.parseInt(alias.split("\\|")[1]);
+                lastAliasNumber = Math.max(number, lastAliasNumber);
+            }
+
+        }
+        if (lastAliasNumber != 0) {
+            email += lastAliasNumber;
+        }
+
+
+        return email;
     }
 
     public boolean sendCertificateToAdmin(Certificate cer) throws CertificateEncodingException {
