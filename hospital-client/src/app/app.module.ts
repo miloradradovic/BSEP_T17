@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {SharedModule} from './shared/shared.module';
-import {NavigationModule} from './navigation/navigation.module';
-import {MaterialModule} from './shared/material.module';
-import {AppRoutingModule} from './app-routing/app-routing.module';
-import {LogInModule} from './features/log-in/log-in.module';
+import { SharedModule } from './shared/shared.module';
+import { NavigationModule } from './navigation/navigation.module';
+import { MaterialModule } from './shared/material.module';
+import { FeaturesModule } from './features/features.module';
+import { RouterModule } from '@angular/router';
+import { routes } from './routes';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,9 @@ import {LogInModule} from './features/log-in/log-in.module';
     SharedModule,
     NavigationModule,
     MaterialModule,
-    AppRoutingModule,
-    LogInModule
+    FeaturesModule,
+    AuthModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,6 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {AppRoutingModule} from '../app-routing/app-routing.module';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -21,7 +20,6 @@ import {MatMenuModule} from '@angular/material/menu';
     MatFormFieldModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule,
     MatInputModule,
     MatButtonModule,
     MatSnackBarModule,

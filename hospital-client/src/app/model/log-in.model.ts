@@ -6,7 +6,17 @@ export class LogInModel {
   ) {
   }
 
-  getRole(): string {
-    return this.role;
+  getRole(): UserRole {
+    switch(this.role){
+      case 'ROLE_ADMIN': return UserRole.ADMIN;
+      case 'ROLE_DOCTOR': return UserRole.DOCTOR;
+      default : return UserRole.UNAUTHORIZED;
+    }
   }
+}
+
+export enum UserRole{
+  ADMIN,
+  DOCTOR,
+  UNAUTHORIZED
 }

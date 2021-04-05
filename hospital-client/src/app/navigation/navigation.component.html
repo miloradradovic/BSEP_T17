@@ -1,11 +1,11 @@
-<div *ngIf="role === 'ROLE_ADMIN'">
+<div *ngIf="role === adminRole">
   <app-admin-navigation (signOut)="signOut($event)"></app-admin-navigation>
 </div>
 
-<div *ngIf="role === 'ROLE_DOCTOR'">
+<div *ngIf="role === doctorRole">
   <app-doctor-navigation (signOut)="signOut($event)"></app-doctor-navigation>
 </div>
 
-<div *ngIf="role === ''">
+<div *ngIf="role === unauthorizedRole">
   <app-not-logged-in-navigation></app-not-logged-in-navigation>
 </div>

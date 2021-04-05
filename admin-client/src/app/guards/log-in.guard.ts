@@ -17,7 +17,7 @@ export class LogInGuard implements CanActivate {
   canActivate(): boolean {
     const role = this.auth.getRole();
     if (role === UserRole.ROLE_SUPER_ADMIN) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/manage-certificates']);
       return false;
     }
     return true;

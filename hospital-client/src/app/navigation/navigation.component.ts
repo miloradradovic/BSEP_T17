@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {StorageService} from '../services/storage/storage.service';
 import {LoginService} from '../services/login/login.service';
 import {Router} from '@angular/router';
+import { UserRole } from '../model/log-in.model';
 
 @Component({
   selector: 'app-navigation',
@@ -10,7 +11,11 @@ import {Router} from '@angular/router';
 })
 export class NavigationComponent implements OnInit {
 
-  role: string;
+  role: UserRole;
+  adminRole: UserRole = UserRole.ADMIN;
+  doctorRole: UserRole = UserRole.DOCTOR;
+  unauthorizedRole: UserRole = UserRole.UNAUTHORIZED;
+
 
   constructor(private storageService: StorageService,
               private loginService: LoginService,
@@ -21,17 +26,17 @@ export class NavigationComponent implements OnInit {
     this.storageService.watchStorage().subscribe(() => {
       const user = JSON.parse(localStorage.getItem('user'));
       if (user === null) {
-        this.role = '';
+        this.role = UserRole.UNAUTHORIZED;
       } else {
-        this.role = user.role;
+        this.role = user.role === "ROLE_ADMIN" ? UserRole.ADMIN : UserRole.DOCTOR;
       }
     });
 
     const user = JSON.parse(localStorage.getItem('user'));
     if (user === null) {
-      this.role = '';
+      this.role = UserRole.UNAUTHORIZED;
     } else {
-      this.role = user.role;
+      this.role = user.role === "ROLE_ADMIN" ? UserRole.ADMIN : UserRole.DOCTOR;
     }
   }
 
