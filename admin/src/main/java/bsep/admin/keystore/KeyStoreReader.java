@@ -5,15 +5,12 @@ import bsep.admin.model.Issuer;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.cert.jcajce.JcaX509CertificateHolder;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.*;
 import java.security.cert.Certificate;
@@ -116,7 +113,7 @@ public class KeyStoreReader {
             BufferedInputStream in = new BufferedInputStream(new FileInputStream(path));
             ks.load(in, password.toCharArray());
 
-            if(ks.isKeyEntry(alias)) {
+            if (ks.isKeyEntry(alias)) {
                 return (PrivateKey) ks.getKey(alias, password.toCharArray());
             }
         } catch (KeyStoreException | NoSuchAlgorithmException | CertificateException | IOException | NoSuchProviderException | UnrecoverableKeyException e) {

@@ -6,22 +6,19 @@ import bsep.admin.model.CerRequestInfo;
 import bsep.admin.repository.CerRequestInfoRepository;
 import bsep.admin.utils.CryptingUtil;
 import org.apache.commons.codec.DecoderException;
+import org.apache.commons.codec.binary.Hex;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
-import org.bouncycastle.asn1.x500.RDN;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x500.style.BCStyle;
 import org.bouncycastle.pkcs.jcajce.JcaPKCS10CertificationRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.apache.commons.codec.binary.Hex;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.security.PrivateKey;
 import java.security.PublicKey;
-import java.util.Arrays;
-import java.util.Base64;
 import java.util.List;
 
 @Service
@@ -109,14 +106,14 @@ public class CerRequestInfoService implements ServiceInterface<CerRequestInfo> {
 
     private CerRequestInfo generateAndSaveCertificateRequest(X500Name x500Name) {
         CerRequestInfo cerRequestInfo = new CerRequestInfo(getRDNValue(x500Name, BCStyle.CN),
-                                                            getRDNValue(x500Name, BCStyle.SURNAME),
-                                                            getRDNValue(x500Name, BCStyle.GIVENNAME),
-                                                            getRDNValue(x500Name, BCStyle.O),
-                                                            getRDNValue(x500Name, BCStyle.OU),
-                                                            getRDNValue(x500Name, BCStyle.C),
-                                                            Integer.parseInt(getRDNValue(x500Name, BCStyle.UID)),
-                                                            getRDNValue(x500Name, BCStyle.E),
-                                                            false);
+                getRDNValue(x500Name, BCStyle.SURNAME),
+                getRDNValue(x500Name, BCStyle.GIVENNAME),
+                getRDNValue(x500Name, BCStyle.O),
+                getRDNValue(x500Name, BCStyle.OU),
+                getRDNValue(x500Name, BCStyle.C),
+                Integer.parseInt(getRDNValue(x500Name, BCStyle.UID)),
+                getRDNValue(x500Name, BCStyle.E),
+                false);
         return saveOne(cerRequestInfo);
     }
 
@@ -132,9 +129,9 @@ public class CerRequestInfoService implements ServiceInterface<CerRequestInfo> {
         String decrypted = new String(decryptedByte);
         String email = decrypted.substring(0, decrypted.length() - 12);
         CerRequestInfo cerRequestInfo = cerRequestInfoRepository.findByEmail(email);
-        if (cerRequestInfo == null){
+        if (cerRequestInfo == null) {
             return false;
-        }else{
+        } else {
             CerRequestInfo updated = update(cerRequestInfo);
             return updated != null;
         }
