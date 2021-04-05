@@ -39,7 +39,7 @@
             type="ball-scale-multiple">
             <p style="font-size: 20px; color: white">Sending...</p>
             </ngx-spinner>
-            <button (click)="sendRequest()" mat-raised-button color="primary">Send</button>
+            <button (click)="sendRequest()" [disabled]="this.formData.invalid" mat-raised-button color="primary">Send</button>
         </div>
     </form>
 </mat-card>

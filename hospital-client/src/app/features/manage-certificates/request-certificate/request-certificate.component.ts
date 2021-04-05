@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { RequestCertificateService } from 'src/app/services/request-certificate/request-certificate.service';
@@ -18,9 +18,9 @@ export class RequestCertificateComponent implements OnInit {
       "commonName": null,
       "surname": null,
       "givenName": null,
-      "organization": null,
-      "organizationUnit": null,
-      "country": null,
+      "organization": [null,Validators.required],
+      "organizationUnit": [null,Validators.required],
+      "country": [null,Validators.required],
       "userId": null,
       "email": null,
     });
