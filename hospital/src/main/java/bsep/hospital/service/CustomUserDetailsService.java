@@ -24,11 +24,11 @@ public class CustomUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         // ako se ne radi nasledjivanje, paziti gde sve treba da se proveri email
 
-        Person person = personRepository.findByEmail(email);
-        if (person == null) {
-            throw new UsernameNotFoundException(String.format("No user found with email '%s'.", email));
-        } else {
-            return person;
+            Person person = personRepository.findByEmail(email);
+            if (person == null) {
+                throw new UsernameNotFoundException(String.format("No user found with email '%s'.", email));
+            } else {
+                return person;
         }
     }
 }

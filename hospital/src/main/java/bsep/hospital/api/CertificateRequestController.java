@@ -25,9 +25,9 @@ public class CertificateRequestController {
 
         boolean success = certificateRequestService.sendCertificateRequest(certificateRequestDTO);
         if (success) {
-            return new ResponseEntity<>(HttpStatus.OK);
+            return new ResponseEntity<>(true,HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(false,HttpStatus.BAD_REQUEST);
         }
     }
 }

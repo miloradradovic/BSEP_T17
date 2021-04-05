@@ -27,6 +27,7 @@ export class NavigationComponent implements OnInit {
       const user = JSON.parse(localStorage.getItem('user'));
       if (user === null) {
         this.role = UserRole.UNAUTHORIZED;
+        this.router.navigate(['/'])
       } else {
         this.role = user.role === "ROLE_ADMIN" ? UserRole.ADMIN : UserRole.DOCTOR;
       }
@@ -42,6 +43,7 @@ export class NavigationComponent implements OnInit {
 
   signOut($event: any): void {
     this.loginService.logOut();
+    this.role = UserRole.UNAUTHORIZED;
   }
 
 }

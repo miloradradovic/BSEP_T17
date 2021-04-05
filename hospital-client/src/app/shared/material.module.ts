@@ -11,6 +11,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgxSpinnerModule } from 'ngx-spinner';
+
+
+
 
 @NgModule({
   declarations: [],
@@ -27,7 +33,10 @@ import {MatMenuModule} from '@angular/material/menu';
     MatTableModule,
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule,
+    FlexLayoutModule,
+    NgxSpinnerModule
   ],
   exports: [
     CommonModule,
@@ -41,7 +50,10 @@ import {MatMenuModule} from '@angular/material/menu';
     MatIconModule,
     MatTableModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    FlexLayoutModule,
+    MatCardModule,
+    NgxSpinnerModule
   ],
   providers: []
 })

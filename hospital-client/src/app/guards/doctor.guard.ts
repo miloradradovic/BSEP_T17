@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Router, CanActivate} from '@angular/router';
+import { UserRole } from '../model/log-in.model';
 import {LoginService} from '../services/login/login.service';
 
 @Injectable({
@@ -14,10 +15,10 @@ export class DoctorGuard implements CanActivate {
   }
 
   canActivate(): boolean {
-    if (this.auth.getRole() !== 'ROLE_DOCTOR') {
+    if (this.auth.getRole() === UserRole.DOCTOR) {
       this.router.navigate(['/']);
-      return false;
+      return true;
     }
-    return true;
+    return false;
   }
 }

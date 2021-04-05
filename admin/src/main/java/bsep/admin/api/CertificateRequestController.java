@@ -27,9 +27,9 @@ public class CertificateRequestController {
         cerRequestInfoMapper = new CerRequestInfoMapper();
     }
 
-    @RequestMapping(value = "/send-certificate-request", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/send-certificate-request", method = RequestMethod.POST)
     public ResponseEntity<?> sendCertificateRequest(@RequestBody byte[] encryptedCSR) {
-
+        System.out.println("da");
         try {
             boolean success = cerRequestInfoService.createCertificateRequest(encryptedCSR);
 
