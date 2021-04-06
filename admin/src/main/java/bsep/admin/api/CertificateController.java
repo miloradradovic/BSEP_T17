@@ -39,7 +39,7 @@ public class CertificateController {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Admin loggedIn = (Admin) authentication.getPrincipal();
-
+        System.out.println("ovde");
         try {
             certificateService.createAdminCertificate(certificateCreationDTO, loggedIn.getEmail());
             cerRequestInfoService.delete(certificateCreationDTO.getSubjectID());

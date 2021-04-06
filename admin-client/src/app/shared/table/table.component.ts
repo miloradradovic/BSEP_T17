@@ -10,8 +10,8 @@ export class TableComponent implements OnChanges {
   @Input() dataSource = [];
   @Input() columnsToDisplay = [];
   @Input() columnsToIterate = [];
-  @Output() Delete = new EventEmitter<number>();
-  @Output() Click = new EventEmitter<number>();
+  @Output() Delete = new EventEmitter<any>();
+  @Output() Click = new EventEmitter<any>();
   @Output() DoubleClick = new EventEmitter<number>();
   @Output() Add = new EventEmitter<number>();
 
@@ -27,11 +27,11 @@ export class TableComponent implements OnChanges {
       }
     }
   }
-  deleted(id: number){
-    this.Delete.emit(id);
+  deleted(element){
+    this.Delete.emit(element);
   }
-  added(id: number){
-    this.Add.emit(id);
+  added(element){
+    this.Add.emit(element);
   }
   clicked(id: number){
     this.Click.emit(id);

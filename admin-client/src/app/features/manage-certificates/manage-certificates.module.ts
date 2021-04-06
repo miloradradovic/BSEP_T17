@@ -6,10 +6,11 @@ import { ManageCertificateComponent } from './manage-certificate.component';
 import { manageCertificateRoutes } from './manage-certificates.routing';
 import { MaterialModule } from 'src/app/shared/material.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { AddCertificateComponent } from './add-certificate/add-certificate.component';
 
 
 @NgModule({
-  declarations: [ManageRequestsComponent, ManageCertificateComponent],
+  declarations: [ManageRequestsComponent, ManageCertificateComponent, AddCertificateComponent],
   imports: [
     FeaturesModule,
     MaterialModule,

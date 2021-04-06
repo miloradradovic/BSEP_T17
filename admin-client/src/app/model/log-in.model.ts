@@ -4,6 +4,7 @@ export class LogInModel {
   constructor(
     private email: string,
     private accessToken: string,
+    private id: number,
     private role: string
   ) {
   }

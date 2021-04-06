@@ -14,7 +14,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxSpinnerModule } from 'ngx-spinner';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatCheckboxModule} from "@angular/material/checkbox"
 
 
 
@@ -36,7 +37,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     MatMenuModule,
     MatCardModule,
     FlexLayoutModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatDialogModule,
+    MatCheckboxModule
   ],
   exports: [
     CommonModule,
@@ -53,7 +56,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     MatMenuModule,
     FlexLayoutModule,
     MatCardModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatDialogModule,
+    MatCheckboxModule
   ],
   providers: []
 })

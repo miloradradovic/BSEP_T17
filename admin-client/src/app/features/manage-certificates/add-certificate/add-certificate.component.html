@@ -1,0 +1,54 @@
+<mat-card style="width: 95%; margin-top: 1%">
+    <div fxLayout="row">
+        <div fxFlex="33">
+            <button mat-icon-button matDialogClose>
+                <mat-icon matTooltip="Back">arrow_back_ios</mat-icon>
+            </button>
+        </div>
+        <div>
+            <mat-card-title>Create certificate request</mat-card-title>
+        </div>
+    </div>
+    <form [formGroup]="this.formData">
+        <mat-card style="margin-bottom: 2%;">
+            <mat-card-title style="margin-bottom: 2%;">Key usages</mat-card-title>
+            <div fxLayout="row">
+                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Naziv</mat-checkbox>
+                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Naziv</mat-checkbox>
+                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Naziv</mat-checkbox>
+                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Naziv</mat-checkbox>
+            </div>
+            <div fxLayout="row">
+                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Naziv</mat-checkbox>
+                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Naziv</mat-checkbox>
+                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Naziv</mat-checkbox>
+                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Naziv</mat-checkbox>
+            </div>
+        </mat-card>
+        <mat-card style="margin-bottom: 2%;">
+            <mat-card-title style="margin-bottom: 2%;">Extended key usages</mat-card-title>
+            <div fxLayout="row" style="margin-bottom: 2%;">
+                <mat-checkbox class="mr-1" color="warn" formControlName="serverAuth" fxFlex="33">SSL/TLS Web Server Authentication</mat-checkbox>
+                <mat-checkbox class="mr-1" color="warn" formControlName="emailProtection" fxFlex="33">E-mail Protection (S/MIME)</mat-checkbox>
+                <mat-checkbox class="mr-1" color="warn" formControlName="codeSigning" fxFlex="33">Code signing</mat-checkbox>
+            </div>
+            <div fxLayout="row">
+                <mat-checkbox class="mr-1" color="warn" formControlName="clientAuth" fxFlex="33">SSL/TLS Web Client Authentication</mat-checkbox>
+                <mat-checkbox class="mr-1" color="warn" formControlName="timeStamping" fxFlex="33">Trusted Timestamping</mat-checkbox>
+                <mat-checkbox class="mr-1" color="warn" formControlName="OCSPSigning" fxFlex="33">OCSP Signing</mat-checkbox>
+            </div>
+        </mat-card>
+        <div fxLayout="row" fxLayoutAlign="end center">
+            <ngx-spinner
+            bdColor="rgba(51,51,51,0.8)"
+            size="medium"
+            color="#fff"
+            type="ball-scale-multiple">
+            <p style="font-size: 20px; color: white">Sending...</p>
+            </ngx-spinner>
+            <button (click)="createCertificate()" [disabled]="this.formData.invalid" mat-raised-button color="primary">Send</button>
+        </div>    
+    </form>
+</mat-card>
+
+
