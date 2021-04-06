@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Router, CanActivate} from '@angular/router';
+import { UserRole } from '../model/log-in.model';
 import {LoginService} from '../services/login/login.service';
 
 @Injectable({
@@ -15,13 +16,14 @@ export class LoginGuard implements CanActivate {
 
   canActivate(): boolean {
     const role = this.auth.getRole();
-    if (role === 'ROLE_ADMIN') {
-      this.router.navigate(['/create-request']);
+    if (role === UserRole.ADMIN) {
+      this.router.navigate(['/manage-certificates']);
       return false;
-    } else if (role === 'ROLE_DOCTOR') {
+    } else if (role === UserRole.DOCTOR) {
       this.router.navigate(['/main-page-doctor']);
       return false;
     }
+    this.router.navigate(['']);
     return true;
   }
 }

@@ -1,20 +1,19 @@
 import {NgModule} from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { MaterialModule } from 'src/app/shared/material.module';
 import { FeaturesModule } from '../features.module';
-import { ManageRequestsComponent } from './manage-requests/view/create-certificate/manage-requests.component';
 import { ManageCertificateComponent } from './manage-certificate.component';
 import { manageCertificateRoutes } from './manage-certificates.routing';
-import { MaterialModule } from 'src/app/shared/material.module';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { RequestCertificateComponent } from './request-certificate/request-certificate.component';
+
 
 
 @NgModule({
-  declarations: [ManageRequestsComponent, ManageCertificateComponent],
+  declarations: [RequestCertificateComponent, ManageCertificateComponent],
   imports: [
     FeaturesModule,
     MaterialModule,
-    RouterModule.forChild(manageCertificateRoutes),
-    SharedModule
+    RouterModule.forChild(manageCertificateRoutes)
   ]
 })
 export class ManageCertificatesModule {

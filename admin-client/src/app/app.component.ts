@@ -15,12 +15,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.router.events.subscribe(e => {
-      if(e instanceof ActivationStart || e instanceof NavigationEnd){
-        console.log(e);
-      }
-
-    })
   }
 
 }

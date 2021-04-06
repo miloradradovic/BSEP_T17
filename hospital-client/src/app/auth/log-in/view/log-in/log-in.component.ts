@@ -7,6 +7,7 @@ import {LoginService} from '../../../../services/login/login.service';
 import {StorageService} from '../../../../services/storage/storage.service';
 import {LogIn} from '../../../../model/log-in';
 import {LogInModel} from '../../../../model/log-in.model';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-log-in',
@@ -24,7 +25,8 @@ export class LogInComponent implements OnInit {
     public snackBar: MatSnackBar,
     private logInService: LoginService,
     public router: Router,
-    private storageService: StorageService
+    private storageService: StorageService,
+    private spinnerService: NgxSpinnerService
   ) {
     this.fb = fb;
     this.form = this.fb.group({
@@ -38,26 +40,28 @@ export class LogInComponent implements OnInit {
 
   submit(): void {
     const logIn = new LogIn(this.form.value.email, this.form.value.password);
-
+    this.spinnerService.show();
     this.logInService.logIn(logIn).subscribe(
       result => {
         const jwt: JwtHelperService = new JwtHelperService();
         const info = jwt.decodeToken(result.accessToken);
         const role = info.role;
-        const user = new LogInModel(info.email, info.id, info.role);
+        const user = new LogInModel(info.email, result.accessToken, info.id, info.role);
         localStorage.setItem('user', JSON.stringify(user));
+        this.storageService.setStorageItem('user', JSON.stringify(user))
 
-
+        console.log('logged in');
         this.snackBar.open('Successfully logged in!', 'Ok', {duration: 2000});
-
         if (role === 'ROLE_ADMIN') {
-          this.router.navigate(['/create-request']);
+          this.router.navigate(['/manage-certificates/request-certificate']);
         }else{
           this.router.navigate(['/doctor-main-page']);
         }
+        this.spinnerService.hide();
       },
       error => {
         this.snackBar.open('Bad credentials!', 'Ok', {duration: 2000});
+        this.spinnerService.hide();
       }
     );
   }

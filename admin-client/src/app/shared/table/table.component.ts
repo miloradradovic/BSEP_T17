@@ -13,6 +13,8 @@ export class TableComponent implements OnChanges {
   @Output() Delete = new EventEmitter<number>();
   @Output() Click = new EventEmitter<number>();
   @Output() DoubleClick = new EventEmitter<number>();
+  @Output() Add = new EventEmitter<number>();
+
   constructor() {
 
   }
@@ -27,6 +29,9 @@ export class TableComponent implements OnChanges {
   }
   deleted(id: number){
     this.Delete.emit(id);
+  }
+  added(id: number){
+    this.Add.emit(id);
   }
   clicked(id: number){
     this.Click.emit(id);

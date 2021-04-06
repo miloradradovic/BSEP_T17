@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {StorageService} from '../storage/storage.service';
 import {Observable} from 'rxjs';
+import { UserRole } from 'src/app/model/log-in.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,10 +24,10 @@ export class LoginService {
     this.storageService.clearStorage();
   }
 
-  getRole(): string {
+  getRole(): UserRole {
     if (!localStorage.getItem('user')) {
-      return '';
+      return UserRole.UNAUTHORIZED;
     }
-    return JSON.parse(localStorage.getItem('user')).role;
+    return JSON.parse(localStorage.getItem('user')).role === "ROLE_ADMIN" ? UserRole.ADMIN : UserRole.DOCTOR;
   }
 }

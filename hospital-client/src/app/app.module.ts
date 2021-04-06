@@ -10,6 +10,9 @@ import { FeaturesModule } from './features/features.module';
 import { RouterModule } from '@angular/router';
 import { routes } from './routes';
 import { AuthModule } from './auth/auth.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpAuthInterceptor } from './interceptors/http.auth.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,7 @@ import { AuthModule } from './auth/auth.module';
     AuthModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpAuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
