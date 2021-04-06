@@ -7,31 +7,36 @@ import javax.validation.constraints.NotNull;
 public class KeyUsageDTO {
 
     @NotNull
-    private boolean cRLSign;
+    private boolean cRLSign; // the subject public key is used for verifying signatures on certificate revocation lists
 
     @NotNull
-    private boolean dataEncipherment;
+    private boolean dataEncipherment; // he subject public key is used for directly enciphering raw user data without the
+    // use of an intermediate symmetric cipher
 
     @NotNull
-    private boolean decipherOnly;
+    private boolean decipherOnly; //is asserted and the keyAgreement bit is also set, the subject public key may be used only
+    // for deciphering data while performing key agreement
 
     @NotNull
-    private boolean digitalSignature;
+    private boolean digitalSignature; // the subject public key is used for verifying digital signatures, such as those used in an
+    // entity authentication service, a data origin authentication service, and/or an integrity service
 
     @NotNull
-    private boolean encipherOnly;
+    private boolean encipherOnly; //is asserted and the keyAgreement bit is also set, the subject public key may be used only for
+    // enciphering data while performing key agreement
 
     @NotNull
-    private boolean keyAgreement;
+    private boolean keyAgreement; // the subject public key is used for key agreement
 
     @NotNull
-    private boolean keyCertSign;
+    private boolean keyCertSign;// the subject public key is used for verifying signatures on public key certificates
 
     @NotNull
-    private boolean keyEncipherment;
+    private boolean keyEncipherment; // the subject public key is used for enciphering private or secret keys, i.e., for key transport
 
     @NotNull
-    private boolean nonRepudiation;
+    private boolean nonRepudiation; // the subject public key is used to verify digital signatures, used to provide a non-repudiation
+    // service that protects against the signing entity falsely denying some action
 
     public KeyUsageDTO() {
 
@@ -58,7 +63,7 @@ public class KeyUsageDTO {
     }
 
     public int getcRLSign() {
-        if(this.cRLSign)
+        if (this.cRLSign)
             return KeyUsage.cRLSign;
         else
             return 0;
@@ -73,7 +78,7 @@ public class KeyUsageDTO {
     }
 
     public int getDataEncipherment() {
-        if(this.dataEncipherment)
+        if (this.dataEncipherment)
             return KeyUsage.dataEncipherment;
         else
             return 0;
@@ -88,7 +93,7 @@ public class KeyUsageDTO {
     }
 
     public int getDecipherOnly() {
-        if(this.decipherOnly)
+        if (this.decipherOnly)
             return KeyUsage.decipherOnly;
         else
             return 0;
@@ -103,7 +108,7 @@ public class KeyUsageDTO {
     }
 
     public int getDigitalSignature() {
-        if(this.digitalSignature)
+        if (this.digitalSignature)
             return KeyUsage.digitalSignature;
         else
             return 0;
@@ -118,7 +123,7 @@ public class KeyUsageDTO {
     }
 
     public int getEncipherOnly() {
-        if(this.encipherOnly)
+        if (this.encipherOnly)
             return KeyUsage.encipherOnly;
         else
             return 0;
@@ -133,7 +138,7 @@ public class KeyUsageDTO {
     }
 
     public int getKeyAgreement() {
-        if(this.keyAgreement)
+        if (this.keyAgreement)
             return KeyUsage.keyAgreement;
         else
             return 0;
@@ -148,7 +153,7 @@ public class KeyUsageDTO {
     }
 
     public int getKeyCertSign() {
-        if(this.keyCertSign)
+        if (this.keyCertSign)
             return KeyUsage.keyCertSign;
         else
             return 0;
@@ -163,7 +168,7 @@ public class KeyUsageDTO {
     }
 
     public int getKeyEncipherment() {
-        if(this.keyEncipherment)
+        if (this.keyEncipherment)
             return KeyUsage.keyEncipherment;
         else
             return 0;
@@ -178,7 +183,7 @@ public class KeyUsageDTO {
     }
 
     public int getNonRepudiation() {
-        if(this.nonRepudiation)
+        if (this.nonRepudiation)
             return KeyUsage.nonRepudiation;
         else
             return 0;
