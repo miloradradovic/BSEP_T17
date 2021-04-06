@@ -51,7 +51,7 @@ export class LogInComponent implements OnInit {
         this.snackBar.open('Successfully logged in!', 'Ok', {duration: 2000});
 
         if (role === 'ROLE_SUPER_ADMIN') {
-          this.router.navigate(['/manage-certificates']);
+          this.router.navigate(['/manage-certificates/manage-requests']);
         }
       },
       error => {

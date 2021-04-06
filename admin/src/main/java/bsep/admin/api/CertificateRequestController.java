@@ -42,7 +42,7 @@ public class CertificateRequestController {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
-    @RequestMapping(method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<CerRequestInfoDTO>> getCertificateRequests() {
 
         List<CerRequestInfoDTO> reqs = cerRequestInfoMapper.toDTOList(cerRequestInfoService.findAllVerified());
@@ -50,7 +50,7 @@ public class CertificateRequestController {
 
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> removeCertificateRequest(@PathVariable Integer id) {
 
         if (cerRequestInfoService.delete(id)) {
