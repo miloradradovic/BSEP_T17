@@ -34,8 +34,8 @@ export class ManageRequestsComponent implements OnInit {
       // height: "0vh",
       maxHeight: "95vh",
       disableClose: true,
-      data: {'subjectId': certificate.userId }
-    }).afterClosed().pipe(); 
+      data: {'subjectId': certificate.id }
+    }).afterClosed().pipe();
   }
 
   rejectRequest(certificate: CertificateRequest){
@@ -55,6 +55,6 @@ export class ManageRequestsComponent implements OnInit {
     })
   }
 
-  
+
 
 }

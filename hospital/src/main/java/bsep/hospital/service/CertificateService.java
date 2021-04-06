@@ -2,6 +2,10 @@ package bsep.hospital.service;
 
 import bsep.hospital.keystore.KeyStoreReader;
 import bsep.hospital.keystore.KeyStoreWriter;
+import org.bouncycastle.asn1.x500.X500Name;
+import org.bouncycastle.asn1.x500.style.BCStyle;
+import org.bouncycastle.asn1.x500.style.IETFUtils;
+import org.bouncycastle.cert.jcajce.JcaX509CertificateHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -25,14 +29,18 @@ public class CertificateService {
     @Autowired
     KeyStoreReader keyStoreReader;
 
-    public void saveCertificate(byte[] encodedCer, String email) throws CertificateException {
+    public void saveCertificate(byte[] encodedCer) throws CertificateException {
 
         CertificateFactory factory = CertificateFactory.getInstance("X.509");
 
 
         X509Certificate createdCertificate = (X509Certificate) factory.generateCertificate(new ByteArrayInputStream(encodedCer));
 
-        String alias = generateAlias(email);
+        JcaX509CertificateHolder certHolder = new JcaX509CertificateHolder(createdCertificate);
+
+        X500Name name = certHolder.getSubject();
+
+        String alias = generateAlias(IETFUtils.valueToString(name.getRDNs(BCStyle.E)[0].getFirst().getValue()));
 
         keyStoreWriter.write(alias, createdCertificate);
         keyStoreWriter.saveKeyStore();
