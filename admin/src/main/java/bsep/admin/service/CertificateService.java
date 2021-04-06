@@ -21,21 +21,19 @@ import org.bouncycastle.cert.jcajce.JcaX509CertificateConverter;
 import org.bouncycastle.cert.jcajce.JcaX509CertificateHolder;
 import org.bouncycastle.cert.jcajce.JcaX509v3CertificateBuilder;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import org.bouncycastle.openssl.jcajce.JcaPEMWriter;
 import org.bouncycastle.operator.ContentSigner;
 import org.bouncycastle.operator.OperatorCreationException;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
+import javax.mail.MessagingException;
 import java.io.*;
 import java.math.BigInteger;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.security.*;
 import java.security.cert.CRLReason;
 import java.security.cert.Certificate;
@@ -57,12 +55,15 @@ public class CertificateService {
     @Autowired
     private KeyStoreReader keyStoreReader;
 
+    @Autowired
+    private EmailService emailService;
+
     @PostConstruct
     private void init() {
         Security.addProvider(new BouncyCastleProvider());
     }
 
-    public void createAdminCertificate(CertificateCreationDTO certificateCreationDTO, String issuerAlias) throws CertificateNotFoundException, OperatorCreationException, IssuerNotCAException, InvalidIssuerException, AliasAlreadyExistsException, CertificateException, CRLException, IOException, CertificateSendFailException {
+    public void createAdminCertificate(CertificateCreationDTO certificateCreationDTO, String issuerAlias) throws CertificateNotFoundException, OperatorCreationException, IssuerNotCAException, InvalidIssuerException, AliasAlreadyExistsException, CertificateException, CRLException, IOException, CertificateSendFailException, MessagingException {
 
         Certificate[] issuerCertificateChain = keyStoreReader.readCertificateChain(issuerAlias);
 
@@ -94,7 +95,7 @@ public class CertificateService {
 
     }
 
-    private void generateAdminCertificate(CertificateCreationDTO certificateCreationDTO, Certificate[] issuerCertificateChain, String alias, String issuerAlias) throws CertificateNotFoundException, OperatorCreationException, CertificateException, CertificateSendFailException {
+    private void generateAdminCertificate(CertificateCreationDTO certificateCreationDTO, Certificate[] issuerCertificateChain, String alias, String issuerAlias) throws CertificateNotFoundException, OperatorCreationException, CertificateException, CertificateSendFailException, MessagingException, IOException {
         KeyPair keyPair = generateKeyPair();
         SubjectData subjectData = generateSubjectData(certificateCreationDTO.getSubjectID());
         assert subjectData != null;
@@ -168,7 +169,9 @@ public class CertificateService {
         keyStoreWriter.write(alias, keyPair.getPrivate(), newCertificateChain);
         keyStoreWriter.saveKeyStore();
 
-        if (!sendCertificateToAdmin(createdCertificate)) {
+        String email = IETFUtils.valueToString(subjectData.getX500name().getRDNs(BCStyle.E)[0].getFirst().getValue());
+        String fullName = IETFUtils.valueToString(subjectData.getX500name().getRDNs(BCStyle.SURNAME)[0].getFirst().getValue()) + " " + IETFUtils.valueToString(subjectData.getX500name().getRDNs(BCStyle.GIVENNAME)[0].getFirst().getValue());
+        if (!sendCertificateToAdmin(email, fullName, createdCertificate)) {
             throw new CertificateSendFailException();
         }
 
@@ -215,17 +218,15 @@ public class CertificateService {
         return email;
     }
 
-    public boolean sendCertificateToAdmin(Certificate cer) throws CertificateEncodingException {
-        byte[] bytes = cer.getEncoded();
-        if (bytes != null) {
-            RestTemplate restTemplate = new RestTemplate();
-            HttpEntity<byte[]> request = new HttpEntity<>(bytes);
-            ResponseEntity<?> responseEntity = restTemplate.exchange("http://localhost:8085/certificate", HttpMethod.POST, request, ResponseEntity.class);
-            return responseEntity.getStatusCode() == HttpStatus.OK;
-        }
+    public boolean sendCertificateToAdmin(String email, String fullName, X509Certificate cer) throws MessagingException, IOException {
+        writeCertificateToPEM(cer);
 
-        return false;
+        File file = new File("src/main/resources/sending.crt");
+        Path path = file.toPath();
+        byte[] bytes = Files.readAllBytes(path);
 
+        emailService.sendCertificate(email, fullName, bytes);
+        return true;
     }
 
     private KeyPair generateKeyPair() {
@@ -512,43 +513,16 @@ public class CertificateService {
         return isCertificateValid(chain);
 
     }
-    /*
-    public void generate() {
-
-        try {
-            createAdminCertificate(new CertificateCreationDTO(1, new KeyUsageDTO(), new ExtendedKeyUsageDTO()), "super.admin@admin.com");
-
-            Certificate cer = keyStoreReader.readCertificate("fred.billy@hospital.com");
-            PrivateKey pk = keyStoreReader.readPrivateKey("fred.billy@hospital.com");
-            writeCertificateToPEM((X509Certificate) cer);
-            writePrivateKeyToPEM(pk);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (CertificateNotFoundException e) {
-            e.printStackTrace();
-        } catch (OperatorCreationException e) {
-            e.printStackTrace();
-        } catch (IssuerNotCAException e) {
-            e.printStackTrace();
-        } catch (CertificateException e) {
-            e.printStackTrace();
-        } catch (AliasAlreadyExistsException e) {
-            e.printStackTrace();
-        } catch (CRLException e) {
-            e.printStackTrace();
-        } catch (InvalidIssuerException e) {
-            e.printStackTrace();
-        }
-    }
-
-
 
     public void writeCertificateToPEM(X509Certificate certificate) throws IOException {
-        JcaPEMWriter pemWriter = new JcaPEMWriter(new FileWriter(new File("admin.crt")));
+        JcaPEMWriter pemWriter = new JcaPEMWriter(new FileWriter(new File("src/main/resources/sending.crt")));
         pemWriter.writeObject(certificate);
         pemWriter.flush();
         pemWriter.close();
     }
+
+    /*
+
 
     public void writePrivateKeyToPEM(PrivateKey privateKey) throws IOException {
         PemObject pemFile = new PemObject("PRIVATE KEY", privateKey.getEncoded());
