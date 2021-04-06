@@ -1,0 +1,10 @@
+<mat-card style="width: 60%;margin-left: 20%;margin-top:5%">
+    <mat-card-title style="text-align: center;">View certificates</mat-card-title>
+    <mat-card-content>
+        <div>
+            <app-tree-table (Delete)="revoke($event)" [dataSource]="this.dataSource" [columnsToDisplay]="this.columnsToDisplay" [columnsToIterate]="this.columnsToIterate"></app-tree-table>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+

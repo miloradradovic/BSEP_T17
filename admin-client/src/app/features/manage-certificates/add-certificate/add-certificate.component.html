@@ -12,27 +12,30 @@
     <form [formGroup]="this.formData">
         <mat-card style="margin-bottom: 2%;">
             <mat-card-title style="margin-bottom: 2%;">Key usages</mat-card-title>
-            <div fxLayout="row">
-                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Naziv</mat-checkbox>
-                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Naziv</mat-checkbox>
-                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Naziv</mat-checkbox>
-                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Naziv</mat-checkbox>
+            <div fxLayout="row" style="margin-bottom: 2%; margin-left: 2%">
+                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Certificate revocation list Sign</mat-checkbox>
+                <mat-checkbox class="mr-1" color="warn" formControlName="dataEncipherment" fxFlex="25">Data Encipherment</mat-checkbox>
+                <mat-checkbox class="mr-1" color="warn" formControlName="decipherOnly" fxFlex="25">Decipher Only</mat-checkbox>
             </div>
-            <div fxLayout="row">
-                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Naziv</mat-checkbox>
-                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Naziv</mat-checkbox>
-                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Naziv</mat-checkbox>
-                <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Naziv</mat-checkbox>
+            <div fxLayout="row" style="margin-bottom: 2%; margin-left: 2%">
+                <mat-checkbox class="mr-1" color="warn" formControlName="encipherOnly" fxFlex="25">Encipher Only</mat-checkbox>
+                <mat-checkbox class="mr-1" color="warn" formControlName="keyCertSign" fxFlex="25">Certificate verifying Sign</mat-checkbox>
+                <mat-checkbox class="mr-1" color="warn" formControlName="keyAgreement" fxFlex="25">Key Agreement</mat-checkbox>
+            </div>
+            <div fxLayout="row" style="margin-bottom: 2%; margin-left: 2%">
+                <mat-checkbox class="mr-1" color="warn" formControlName="keyEncipherment" fxFlex="25">Key Encipherment</mat-checkbox>
+                <mat-checkbox class="mr-1" color="warn" formControlName="nonRepudiation" fxFlex="25">Non Repudiation</mat-checkbox>
+                <mat-checkbox class="mr-1" color="warn" formControlName="digitalSignature" fxFlex="25">Digital signature</mat-checkbox>
             </div>
         </mat-card>
         <mat-card style="margin-bottom: 2%;">
             <mat-card-title style="margin-bottom: 2%;">Extended key usages</mat-card-title>
-            <div fxLayout="row" style="margin-bottom: 2%;">
+            <div fxLayout="row" style="margin-bottom: 2%; margin-left: 2%">
                 <mat-checkbox class="mr-1" color="warn" formControlName="serverAuth" fxFlex="33">SSL/TLS Web Server Authentication</mat-checkbox>
                 <mat-checkbox class="mr-1" color="warn" formControlName="emailProtection" fxFlex="33">E-mail Protection (S/MIME)</mat-checkbox>
                 <mat-checkbox class="mr-1" color="warn" formControlName="codeSigning" fxFlex="33">Code signing</mat-checkbox>
             </div>
-            <div fxLayout="row">
+            <div fxLayout="row" style="margin-bottom: 2%; margin-left: 2%">
                 <mat-checkbox class="mr-1" color="warn" formControlName="clientAuth" fxFlex="33">SSL/TLS Web Client Authentication</mat-checkbox>
                 <mat-checkbox class="mr-1" color="warn" formControlName="timeStamping" fxFlex="33">Trusted Timestamping</mat-checkbox>
                 <mat-checkbox class="mr-1" color="warn" formControlName="OCSPSigning" fxFlex="33">OCSP Signing</mat-checkbox>

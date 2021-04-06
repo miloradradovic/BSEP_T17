@@ -50,7 +50,7 @@ public class CertificateController {
     }
 
     @PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
-    @RequestMapping(method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<CertificateInfoDTO> getAllCertificates() {
 
         CertificateInfoDTO certificateInfoDTO = certificateService.getCertificates();

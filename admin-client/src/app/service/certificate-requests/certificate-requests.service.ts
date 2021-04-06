@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { CertificateCreation, CertificateRequest } from 'src/app/model/consent-request/certificate-request.model';
+import { Certificate, CertificateCreation, CertificateRequest } from 'src/app/model/consent-request/certificate-request.model';
 
 @Injectable({ providedIn: 'root' })
 export class RequestCertificateService {
@@ -14,8 +14,12 @@ export class RequestCertificateService {
 
   getCertificateRequests = () => this.http.get<CertificateRequest[]>(this.baseUrl + "certificate-request");
 
+  getCertificates = () => this.http.get<Certificate>(this.baseUrl + "certificate");
+
   acceptRequest = (createViewModel: CertificateCreation) => this.http.post<void>(this.baseUrl + "certificate", createViewModel);
 
   rejectRequest = (id: number) => this.http.delete<void>(this.baseUrl + "certificate-request/" + id);
+
+  revokeCertificate = (revokation: {subjectAlias: string, revocationReason: string}) => this.http.put<void>(this.baseUrl + "certificate/", revokation);
 
 }

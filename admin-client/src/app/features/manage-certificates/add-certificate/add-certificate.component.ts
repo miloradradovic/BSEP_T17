@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CertificateCreation, ExtendedKeyUsages, KeyUsages } from 'src/app/model/consent-request/certificate-request.model';
 import { RequestCertificateService } from 'src/app/service/certificate-requests/certificate-requests.service';
 
@@ -14,7 +14,8 @@ export class AddCertificateComponent implements OnInit {
   formData: FormGroup;
 
   constructor(private fb: FormBuilder, private requestCertificateService: RequestCertificateService,
-    @Inject(MAT_DIALOG_DATA) 
+    public dialogRef: MatDialogRef<AddCertificateComponent>,
+    @Inject(MAT_DIALOG_DATA)
     public data: { subjectId: number}) {
     this.formData = fb.group({
       'subjectID': this.data.subjectId,
@@ -64,9 +65,9 @@ export class AddCertificateComponent implements OnInit {
     let certificate: CertificateCreation = {subjectID: this.data.subjectId, keyUsageDTO: keyUsageDTO, extendedKeyUsageDTO: extendedKeyUsages};
 
     this.requestCertificateService.acceptRequest(certificate).toPromise().then(result => {
-        console.log('success')
+        this.dialogRef.close(true);
     }, error =>{
-        console.log('fail')
+        this.dialogRef.close(false);
     });
   }
 

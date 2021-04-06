@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
@@ -16,6 +16,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCheckboxModule} from "@angular/material/checkbox"
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -39,7 +40,9 @@ import {MatCheckboxModule} from "@angular/material/checkbox"
     FlexLayoutModule,
     NgxSpinnerModule,
     MatDialogModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FormsModule,
+    MatSelectModule
   ],
   exports: [
     CommonModule,
@@ -58,7 +61,9 @@ import {MatCheckboxModule} from "@angular/material/checkbox"
     MatCardModule,
     NgxSpinnerModule,
     MatDialogModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FormsModule,
+    MatSelectModule
   ],
   providers: []
 })
