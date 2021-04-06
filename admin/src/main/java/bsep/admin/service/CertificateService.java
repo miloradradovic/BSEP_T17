@@ -8,6 +8,7 @@ import bsep.admin.keystore.KeyStoreWriter;
 import bsep.admin.model.CerRequestInfo;
 import bsep.admin.model.Issuer;
 import bsep.admin.model.SubjectData;
+import bsep.admin.utils.Pair;
 import org.apache.commons.lang3.ArrayUtils;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x500.X500NameBuilder;
@@ -396,13 +397,13 @@ public class CertificateService {
 
     public CertificateInfoDTO getCertificates() {
 
-        List<Certificate> certificates = new ArrayList<>();
+        List<Pair<String, Certificate>> certificates = new ArrayList<>();
 
         Enumeration<String> aliases = keyStoreReader.getAllAliases();
         while (aliases.hasMoreElements()) {
             String alias = aliases.nextElement();
             Certificate cer = keyStoreReader.readCertificate(alias);
-            certificates.add(cer);
+            certificates.add(new Pair<>(alias, cer));
         }
 
         try {
@@ -413,7 +414,7 @@ public class CertificateService {
         return null;
     }
 
-    public CertificateInfoDTO makeTree(List<Certificate> certificates) throws CertificateException, CRLException, IOException {
+    public CertificateInfoDTO makeTree(List<Pair<String, Certificate>> certificates) throws CertificateException, CRLException, IOException {
         CertificateInfoDTO tree = findRoot(certificates);
         certificates.remove(Integer.parseInt(tree.getEmail().split("\\|")[1]));
         tree.setEmail(tree.getEmail().split("\\|")[0]);
@@ -424,9 +425,12 @@ public class CertificateService {
         return tree;
     }
 
-    public CertificateInfoDTO findRoot(List<Certificate> certificates) throws CertificateException, CRLException, IOException {
+    public CertificateInfoDTO findRoot(List<Pair<String, Certificate>> certificates) throws CertificateException, CRLException, IOException {
         CertificateInfoDTO tree = new CertificateInfoDTO();
-        for (Certificate cer : certificates) {
+        for (Pair pair : certificates) {
+            Certificate cer = (Certificate) pair.getR();
+            String alias = (String) pair.getL();
+
             JcaX509CertificateHolder certHolder = new JcaX509CertificateHolder((X509Certificate) cer);
             X500Name i = certHolder.getIssuer();
             X500Name subject = certHolder.getSubject();
@@ -435,7 +439,8 @@ public class CertificateService {
                 tree.setEmail(IETFUtils.valueToString(subject.getRDNs(BCStyle.E)[0].getFirst().getValue()));
                 tree.setCommonName(IETFUtils.valueToString(subject.getRDNs(BCStyle.CN)[0].getFirst().getValue()));
                 tree.setFullName(IETFUtils.valueToString(subject.getRDNs(BCStyle.GIVENNAME)[0].getFirst().getValue()) + " " + IETFUtils.valueToString(subject.getRDNs(BCStyle.SURNAME)[0].getFirst().getValue()));
-                tree.setEmail(tree.getEmail() + "|" + certificates.indexOf(cer));
+                tree.setEmail(tree.getEmail() + "|" + certificates.indexOf(pair));
+                tree.setAlias(alias);
 
                 if (((X509Certificate) cer).getBasicConstraints() != -1 || ((X509Certificate) cer).getKeyUsage()[5])
                     tree.setCA(true);
@@ -451,9 +456,12 @@ public class CertificateService {
 
     }
 
-    public CertificateInfoDTO findIntermediate(List<Certificate> certificates, CertificateInfoDTO parent, String issuerEmail) throws CertificateException, CRLException, IOException {
+    public CertificateInfoDTO findIntermediate(List<Pair<String, Certificate>> certificates, CertificateInfoDTO parent, String issuerEmail) throws CertificateException, CRLException, IOException {
 
-        for (Certificate cer : certificates) {
+        for (Pair pair : certificates) {
+            Certificate cer = (Certificate) pair.getR();
+            String alias = (String) pair.getL();
+
             JcaX509CertificateHolder certHolder = new JcaX509CertificateHolder((X509Certificate) cer);
             X500Name i = certHolder.getIssuer();
             X500Name subject = certHolder.getSubject();
@@ -464,6 +472,7 @@ public class CertificateService {
                 tree.setCommonName(IETFUtils.valueToString(subject.getRDNs(BCStyle.CN)[0].getFirst().getValue()));
                 tree.setFullName(IETFUtils.valueToString(subject.getRDNs(BCStyle.GIVENNAME)[0].getFirst().getValue()) + " " + IETFUtils.valueToString(subject.getRDNs(BCStyle.SURNAME)[0].getFirst().getValue()));
                 tree.setEmail(tree.getEmail());
+                tree.setAlias(alias);
 
                 if (((X509Certificate) cer).getBasicConstraints() != -1 || ((X509Certificate) cer).getKeyUsage()[5])
                     tree.setCA(true);
@@ -479,10 +488,13 @@ public class CertificateService {
         return parent;
     }
 
-    public CertificateInfoDTO findEnd(List<Certificate> certificates, CertificateInfoDTO parent) throws CertificateException, CRLException, IOException {
+    public CertificateInfoDTO findEnd(List<Pair<String, Certificate>> certificates, CertificateInfoDTO parent) throws CertificateException, CRLException, IOException {
 
         for (CertificateInfoDTO child : parent.getChildren()) {
-            for (Certificate cer : certificates) {
+            for (Pair pair : certificates) {
+                Certificate cer = (Certificate) pair.getR();
+                String alias = (String) pair.getL();
+
                 JcaX509CertificateHolder certHolder = new JcaX509CertificateHolder((X509Certificate) cer);
                 X500Name i = certHolder.getIssuer();
                 X500Name subject = certHolder.getSubject();
@@ -494,6 +506,7 @@ public class CertificateService {
                     tree.setFullName(IETFUtils.valueToString(subject.getRDNs(BCStyle.GIVENNAME)[0].getFirst().getValue()) + " " + IETFUtils.valueToString(subject.getRDNs(BCStyle.SURNAME)[0].getFirst().getValue()));
                     tree.setEmail(tree.getEmail());
                     tree.setCA(false);
+                    tree.setAlias(alias);
 
                     if (isRevoked(cer)) {
                         tree.setRevoked(true);

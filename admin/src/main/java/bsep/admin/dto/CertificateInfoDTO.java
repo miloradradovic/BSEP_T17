@@ -14,6 +14,10 @@ public class CertificateInfoDTO {
 
     @NotNull
     @NotBlank
+    private String alias;
+
+    @NotNull
+    @NotBlank
     private String fullName;
 
     @NotNull
@@ -94,5 +98,13 @@ public class CertificateInfoDTO {
 
     public void setChildren(List<CertificateInfoDTO> children) {
         this.children = children;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
     }
 }
