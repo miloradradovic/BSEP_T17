@@ -135,8 +135,8 @@ public class CertificateService {
                 keyUsageDTO.getNonRepudiation());
 
         try {
-            certGen.addExtension(Extension.keyUsage, false, k);
-            if (keyUsageDTO.iscRLSign())
+            certGen.addExtension(Extension.keyUsage, true, k);
+            if (keyUsageDTO.isKeyCertSign())
                 certGen.addExtension(Extension.basicConstraints, true, new BasicConstraints(true));
         } catch (CertIOException e) {
             e.printStackTrace();
@@ -146,7 +146,7 @@ public class CertificateService {
         ExtendedKeyUsage eku = new ExtendedKeyUsage(extendedKeyUsageDTO.makeKeyPurposeIdArray());
 
         try {
-            certGen.addExtension(Extension.extendedKeyUsage, false, eku);
+            certGen.addExtension(Extension.extendedKeyUsage, true, eku);
 
 
             GeneralNames subjectAltName = new GeneralNames(new GeneralName(GeneralName.dNSName, IETFUtils.valueToString(subjectData.getX500name().getRDNs(BCStyle.CN)[0].getFirst().getValue())));
