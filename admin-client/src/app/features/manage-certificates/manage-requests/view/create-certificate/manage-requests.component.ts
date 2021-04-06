@@ -36,11 +36,11 @@ export class ManageRequestsComponent implements OnInit {
       data: {'subjectId': certificate.id }
     }).afterClosed().subscribe(success => {
       if(success){
-        this.snackBar.open('Successfully created sertificate!', 'Ok', {duration: 2000});
+        this.snackBar.open('Successfully created certificate!', 'Ok', {duration: 2000});
         this.getRequests();
       }
       else{
-        this.snackBar.open('Sertificate couldnt be created', 'Ok', {duration: 2000});
+        this.snackBar.open('Certificate could not be created', 'Ok', {duration: 2000});
       }
     })
   }

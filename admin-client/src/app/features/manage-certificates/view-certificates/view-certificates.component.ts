@@ -33,19 +33,19 @@ export class ViewCertificatesComponent implements OnInit {
       const dialogRef = this.dialog.open(RevokeDialog, {
         width: '600px'
       });
-  
+
       dialogRef.afterClosed().subscribe(result => {
         if(result){
           this.certificateService.revokeCertificate({subjectAlias: certificate.alias, revocationReason: result}).toPromise().then( result => {
             this.snackBar.open('Successfully revoked certificate!', 'Ok', {duration: 2000});
             this.getCertificates();
           }, err => {
-            this.snackBar.open('Sertificate revocation failed!', 'Ok', {duration: 2000});
+            this.snackBar.open('Certificate revocation failed!', 'Ok', {duration: 2000});
           })
         }
       });
     }
-  
+
 }
 
 @Component({

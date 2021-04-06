@@ -181,7 +181,7 @@ public class CertificateService {
 
     private String generateAlias(String email) {
 
-        int lastAliasNumber = 0;
+        int lastAliasNumber = -1;
         Enumeration<String> aliases = keyStoreReader.getAllAliases();
         while (aliases.hasMoreElements()) {
             String alias = aliases.nextElement();
@@ -191,9 +191,9 @@ public class CertificateService {
             }
 
         }
-        if (lastAliasNumber != 0) {
-            email += lastAliasNumber + 1;
-        }
+
+        lastAliasNumber += 1;
+        email += "|" + lastAliasNumber;
 
 
         return email;
@@ -201,7 +201,7 @@ public class CertificateService {
 
     private String getLastAlias(String email) {
 
-        int lastAliasNumber = 0;
+        int lastAliasNumber = -1;
         Enumeration<String> aliases = keyStoreReader.getAllAliases();
         while (aliases.hasMoreElements()) {
             String alias = aliases.nextElement();
@@ -211,9 +211,8 @@ public class CertificateService {
             }
 
         }
-        if (lastAliasNumber != 0) {
-            email += lastAliasNumber;
-        }
+
+        email += "|" + lastAliasNumber;
 
 
         return email;
