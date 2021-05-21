@@ -7,7 +7,7 @@ import {StorageService} from '../../../../service/storage-service/storage.servic
 import {LogIn} from '../../../../model/log-in';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import {LogInModel} from '../../../../model/log-in.model';
-
+/*
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
@@ -61,3 +61,4 @@ export class LogInComponent implements OnInit {
   }
 
 }
+*/

@@ -5,7 +5,7 @@ import { RequestCertificateService } from 'src/app/service/certificate-requests/
 @Component({
   selector: 'app-certificate-form',
   templateUrl: './manage-certificate.component.html',
-  
+
 })
 export class ManageCertificateComponent implements OnInit {
 

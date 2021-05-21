@@ -23,14 +23,14 @@ import javax.validation.Valid;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping(value = "/auth", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/authentication", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthenticationController {
 
     @Autowired
     private TokenUtils tokenUtils;
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
+    /*@Autowired
+    private AuthenticationManager authenticationManager;*/
 
     @Autowired
     AuthorityService authorityService;
@@ -44,7 +44,7 @@ public class AuthenticationController {
 
     // Prvi endpoint koji pogadja korisnik kada se loguje.
     // Tada zna samo svoje korisnicko ime i lozinku i to prosledjuje na backend.
-    @PostMapping("/log-in")
+    /*@PostMapping("/log-in")
     public ResponseEntity<?> createAuthenticationToken(@Valid @RequestBody UserLoginDTO authenticationRequest, HttpServletResponse response) {
 
         Authentication authentication = authenticationManager
@@ -61,7 +61,7 @@ public class AuthenticationController {
 
         // Vrati token kao odgovor na uspesnu autentifikaciju
         return ResponseEntity.ok(new UserTokenStateDTO(jwt));
-    }
+    }*/
 
     @RequestMapping(value = "/verify-certificate-request/{encrypted}", method = RequestMethod.GET)
     public ResponseEntity<?> verifyCertificateRequest(@PathVariable String encrypted) throws DecoderException, CertificateNotFoundException {
