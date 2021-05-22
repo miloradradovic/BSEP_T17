@@ -15,7 +15,7 @@ export class LogInService {
   }
 
   logIn(auth: LogIn): Observable<any> {
-    return this.http.post('http://localhost:8084/auth/log-in',
+    return this.http.post('https://localhost:8084/auth/log-in',
       auth, {headers: this.headers, responseType: 'json'});
   }
 

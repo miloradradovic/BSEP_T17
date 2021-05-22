@@ -5,7 +5,7 @@ import {Certificate, CertificateCreation, CertificateRequest} from 'src/app/mode
 @Injectable({providedIn: 'root'})
 export class RequestCertificateService {
 
-  baseUrl = 'http://localhost:8084/';
+  baseUrl = 'https://localhost:8084/';
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor(private http: HttpClient

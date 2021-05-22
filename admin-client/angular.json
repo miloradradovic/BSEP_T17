@@ -62,12 +62,12 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "admin-client:build"
-            
+            "browserTarget": "admin-client:build",
+
             //"port": 4200
-            //"ssl": true,
-            //"sslCert": "./ssl/admin.crt",
-            //"sslKey": "./ssl/admin.key"
+            "sslCert": "./ssl/localhost.cer",
+            "sslKey": "./ssl/localhost.key",
+            "ssl": true
           },
           "configurations": {
             "production": {

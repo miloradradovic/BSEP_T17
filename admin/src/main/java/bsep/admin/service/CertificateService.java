@@ -26,6 +26,7 @@ import org.bouncycastle.openssl.jcajce.JcaPEMWriter;
 import org.bouncycastle.operator.ContentSigner;
 import org.bouncycastle.operator.OperatorCreationException;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
+import org.bouncycastle.util.io.pem.PemObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -533,19 +534,15 @@ public class CertificateService {
         pemWriter.close();
     }
 
-    /*
-
 
     public void writePrivateKeyToPEM(PrivateKey privateKey) throws IOException {
         PemObject pemFile = new PemObject("PRIVATE KEY", privateKey.getEncoded());
 
-        JcaPEMWriter pemWriter = new JcaPEMWriter(new FileWriter(new File("admin.key")));
+        JcaPEMWriter pemWriter = new JcaPEMWriter(new FileWriter(new File("localhost.key")));
         pemWriter.writeObject(pemFile);
         pemWriter.flush();
         pemWriter.close();
     }
-
-     */
 
 
 }
