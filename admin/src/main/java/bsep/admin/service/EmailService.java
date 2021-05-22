@@ -33,7 +33,7 @@ public class EmailService {
         mail.setSubject("Please verify your email address");
         mail.setText("An attempt to create a certificate request was made by an account with your email.\n" +
                 "If that is you, verify by clicking the link below. Otherwise, ignore this email.\n" +
-                "http://localhost:8080/auth/verify-certificate-request/" + crypted);
+                "http://localhost:8084/authentication/verify-certificate-request/" + crypted);
         javaMailSender.send(mail);
     }
 

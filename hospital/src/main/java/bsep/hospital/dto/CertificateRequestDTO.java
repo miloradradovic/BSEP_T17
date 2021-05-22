@@ -1,33 +1,37 @@
 package bsep.hospital.dto;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
+import javax.validation.constraints.*;
 
 public class CertificateRequestDTO {
 
     @NotNull
     @NotBlank
+    @Pattern(regexp="[a-zA-Z0-9 ]+")
     private String commonName;
 
     @NotNull
     @NotBlank
+    @Pattern(regexp="[a-zA-Z0-9 ]+")
     private String surname;
 
     @NotNull
     @NotBlank
+    @Pattern(regexp="[a-zA-Z0-9 ]+")
     private String givenName;
 
     @NotNull
     @NotBlank
+    @Pattern(regexp="[a-zA-Z0-9 ]+")
     private String organization;
 
     @NotNull
     @NotBlank
+    @Pattern(regexp="[a-zA-Z0-9 ]+")
     private String organizationUnit;
 
     @NotNull
     @NotBlank
+    @Pattern(regexp="[a-zA-Z0-9 ]+")
     private String country;
 
     @Positive
@@ -35,6 +39,8 @@ public class CertificateRequestDTO {
 
     @NotNull
     @NotBlank
+    @Email
+    @Pattern(regexp = "[^;]+")
     private String email;
 
     public CertificateRequestDTO() {

@@ -48,7 +48,7 @@ public class CertificateRequestService {
         if (csr != null) {
             RestTemplate restTemplate = new RestTemplate();
             HttpEntity<byte[]> request = new HttpEntity<>(csr);
-            ResponseEntity<?> responseEntity = restTemplate.exchange("http://localhost:8080/certificate-request/send-certificate-request", HttpMethod.POST, request, ResponseEntity.class);
+            ResponseEntity<?> responseEntity = restTemplate.exchange("http://localhost:8084/certificate-request/send-certificate-request", HttpMethod.POST, request, ResponseEntity.class);
             return responseEntity.getStatusCode() == HttpStatus.OK;
         }
         return false;

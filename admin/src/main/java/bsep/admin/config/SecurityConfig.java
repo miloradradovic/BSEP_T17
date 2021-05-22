@@ -58,8 +58,8 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.OPTIONS, "/*").permitAll()
                 // .antMatchers("/auth/**","/certificate-request/**").permitAll()
                 .antMatchers("/auth/**", "/certificate-request/**")
-                .hasRole("SUPER_ADMIN")
-                .anyRequest()
+                //.hasRole("SUPER_ADMIN")
+                //.anyRequest()
                 .permitAll();
 
         http.cors().and().csrf().disable();

@@ -5,12 +5,17 @@ import bsep.hospital.dto.PersonDTO;
 import bsep.hospital.model.Person;
 import bsep.hospital.service.CertificateRequestService;
 import bsep.hospital.service.UserService;
+import org.hibernate.validator.internal.constraintvalidators.bv.EmailValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Pattern;
 
 
 @RestController
@@ -22,7 +27,8 @@ public class UserController {
 
     //@PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<?> getUserByEmail(@RequestParam String email) {
+    public ResponseEntity<?> getUserByEmail(@RequestParam @Email() @Pattern(regexp = "[^;]+") String email) {
+
         Person person = userService.loadUserByEmail(email);
         if (person != null) {
             PersonDTO dto = new PersonDTO(person.getEmail(), person.getName(), person.getSurname());
