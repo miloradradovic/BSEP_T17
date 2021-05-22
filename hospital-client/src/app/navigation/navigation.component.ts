@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {StorageService} from '../services/storage/storage.service';
 import {LoginService} from '../services/login/login.service';
 import {Router} from '@angular/router';
-import { UserRole } from '../model/log-in.model';
+import {UserRole} from '../model/log-in.model';
 
 @Component({
   selector: 'app-navigation',
@@ -27,9 +27,9 @@ export class NavigationComponent implements OnInit {
       const user = JSON.parse(localStorage.getItem('user'));
       if (user === null) {
         this.role = UserRole.UNAUTHORIZED;
-        this.router.navigate(['/'])
+        this.router.navigate(['/']);
       } else {
-        this.role = user.role === "ROLE_ADMIN" ? UserRole.ADMIN : UserRole.DOCTOR;
+        this.role = user.role === 'ADMIN' ? UserRole.ADMIN : UserRole.DOCTOR;
       }
     });
 
@@ -37,13 +37,14 @@ export class NavigationComponent implements OnInit {
     if (user === null) {
       this.role = UserRole.UNAUTHORIZED;
     } else {
-      this.role = user.role === "ROLE_ADMIN" ? UserRole.ADMIN : UserRole.DOCTOR;
+      this.role = user.role === 'ADMIN' ? UserRole.ADMIN : UserRole.DOCTOR;
     }
   }
 
   signOut($event: any): void {
-    this.loginService.logOut();
-    this.role = UserRole.UNAUTHORIZED;
+    //this.loginService.logOut();
+    //this.role = UserRole.UNAUTHORIZED;
+    window.location.href = 'http://localhost:8080/auth/realms/hospital-portal/protocol/openid-connect/logout?redirect_uri=http://localhost:4205';
   }
 
 }

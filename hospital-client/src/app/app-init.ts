@@ -1,14 +1,14 @@
 import {KeycloakService} from 'keycloak-angular';
 import jwtDecode from 'jwt-decode';
-import {StorageService} from './service/storage-service/storage.service';
+import {StorageService} from './services/storage/storage.service';
 
 export function initializer(keycloak: KeycloakService, storageService: StorageService): any {
   return () => {
     keycloak.init({
       config: {
         url: 'http://localhost:8080/auth',
-        realm: 'admin-portal',
-        clientId: 'admin-client',
+        realm: 'hospital-portal',
+        clientId: 'hospital-client',
       },
       initOptions: {
         onLoad: 'login-required',
@@ -30,7 +30,7 @@ export function initializer(keycloak: KeycloakService, storageService: StorageSe
       const user = {
         email: decoded['email'],
         token: keycloak.getKeycloakInstance().token,
-        role: decoded['realm_access']['roles'].includes('SUPER_ADMIN') ? 'SUPER_ADMIN' : 'UNAUTHORIZE'
+        role: decoded['realm_access']['roles'].includes('ADMIN') ? 'ADMIN' : 'DOCTOR'
       };
       storageService.setStorageItem('user', JSON.stringify(user));
     });
