@@ -18,8 +18,9 @@ export const routes: Routes = [
     children: [{
       path: '',
       component: ManageCertificateComponent,
-      loadChildren: () => import('./features/manage-certificates/manage-certificates.module').then(m => m.ManageCertificatesModule)
-      , canActivate: [AuthGuard]}]
+      loadChildren: () => import('./features/manage-certificates/manage-certificates.module').then(m => m.ManageCertificatesModule),
+      canActivate: [AuthGuard]
+    }]
   }
 
 ];

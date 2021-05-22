@@ -15,7 +15,7 @@ export class LogInService {
   }
 
   logIn(auth: LogIn): Observable<any> {
-    return this.http.post('http://localhost:8080/auth/log-in',
+    return this.http.post('http://localhost:8084/auth/log-in',
       auth, {headers: this.headers, responseType: 'json'});
   }
 
@@ -27,6 +27,6 @@ export class LogInService {
     if (!localStorage.getItem('user')) {
       return UserRole.UNAUTHORIZED;
     }
-    return JSON.parse(localStorage.getItem('user')).role === "ROLE_SUPER_ADMIN" ? UserRole.ROLE_SUPER_ADMIN : UserRole.UNAUTHORIZED;
+    return JSON.parse(localStorage.getItem('user')).role === 'SUPER_ADMIN' ? UserRole.SUPER_ADMIN : UserRole.UNAUTHORIZED;
   }
 }

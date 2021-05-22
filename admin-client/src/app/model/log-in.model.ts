@@ -10,6 +10,6 @@ export class LogInModel {
   }
 
   getRole(): UserRole {
-    return this.role === "ROLE_SUPER_ADMIN" ? UserRole.ROLE_SUPER_ADMIN : UserRole.UNAUTHORIZED;
+    return this.role === 'SUPER_ADMIN' ? UserRole.SUPER_ADMIN : UserRole.UNAUTHORIZED;
   }
 }

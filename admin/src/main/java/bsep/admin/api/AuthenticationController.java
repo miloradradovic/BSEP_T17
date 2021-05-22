@@ -1,10 +1,6 @@
 package bsep.admin.api;
 
-import bsep.admin.dto.UserLoginDTO;
-import bsep.admin.dto.UserTokenStateDTO;
 import bsep.admin.exceptions.CertificateNotFoundException;
-import bsep.admin.model.Admin;
-import bsep.admin.security.TokenUtils;
 import bsep.admin.service.AuthorityService;
 import bsep.admin.service.CerRequestInfoService;
 import org.apache.commons.codec.DecoderException;
@@ -12,22 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(value = "/authentication", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthenticationController {
-
-    @Autowired
-    private TokenUtils tokenUtils;
 
     /*@Autowired
     private AuthenticationManager authenticationManager;*/
@@ -69,7 +55,7 @@ public class AuthenticationController {
         boolean success = cerRequestInfoService.verifyCertificateRequest(encrypted);
         if (success) {
             return new ResponseEntity<>("Successfully verified!", HttpStatus.OK);
-        }else{
+        } else {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }

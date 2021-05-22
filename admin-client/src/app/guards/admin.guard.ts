@@ -14,7 +14,7 @@ export class AdminGuard implements CanActivate {
   }
 
   canActivate(): boolean {
-    if (this.auth.getRole() !== UserRole.ROLE_SUPER_ADMIN) {
+    if (this.auth.getRole() !== UserRole.SUPER_ADMIN) {
       this.router.navigate(['/']);
       return false;
     }

@@ -11,5 +11,5 @@ export class LogIn {
 
 export enum UserRole{
   UNAUTHORIZED,
-  ROLE_SUPER_ADMIN
+  SUPER_ADMIN
 }

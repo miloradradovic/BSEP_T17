@@ -18,6 +18,7 @@ export class StorageService {
   }
 
   clearStorage(): void {
+    localStorage.removeItem('user');
     localStorage.clear();
     this.storageSub.next();
   }

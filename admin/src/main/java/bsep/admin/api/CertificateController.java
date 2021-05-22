@@ -8,6 +8,10 @@ import bsep.admin.model.Admin;
 import bsep.admin.service.CerRequestInfoService;
 import bsep.admin.service.CertificateService;
 import org.bouncycastle.operator.OperatorCreationException;
+import org.keycloak.KeycloakPrincipal;
+import org.keycloak.KeycloakSecurityContext;
+import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
+import org.keycloak.representations.AccessToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -38,9 +42,12 @@ public class CertificateController {
     public ResponseEntity<?> createCertificate(@Valid @RequestBody CertificateCreationDTO certificateCreationDTO) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        Admin loggedIn = (Admin) authentication.getPrincipal();
+        KeycloakPrincipal kcp = (KeycloakPrincipal) authentication.getPrincipal();
+
+        KeycloakSecurityContext session = kcp.getKeycloakSecurityContext();
+        AccessToken accessToken = session.getToken();
         try {
-            certificateService.createAdminCertificate(certificateCreationDTO, loggedIn.getEmail());
+            certificateService.createAdminCertificate(certificateCreationDTO, accessToken.getEmail());
             cerRequestInfoService.delete(certificateCreationDTO.getSubjectID());
             return new ResponseEntity<>(HttpStatus.CREATED);
 
@@ -76,10 +83,13 @@ public class CertificateController {
     public ResponseEntity<?> revokeCertificate(@Valid @RequestBody RevokeCertificateDTO revokeCertificateDTO) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        Admin loggedIn = (Admin) authentication.getPrincipal();
+        KeycloakPrincipal kcp = (KeycloakPrincipal) authentication.getPrincipal();
+
+        KeycloakSecurityContext session = kcp.getKeycloakSecurityContext();
+        AccessToken accessToken = session.getToken();
 
         try {
-            certificateService.revokeCertificate(revokeCertificateDTO, loggedIn.getEmail());
+            certificateService.revokeCertificate(revokeCertificateDTO, accessToken.getEmail());
         } catch (IOException | CRLException | CertificateException | OperatorCreationException | CertificateNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }

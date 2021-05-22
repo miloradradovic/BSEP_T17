@@ -1,18 +1,18 @@
-import {KeycloakEvent, KeycloakEventType, KeycloakService} from 'keycloak-angular';
-import {LogInService} from './service/log-in-service/log-in.service';
-import {KeycloakLoginOptions} from 'keycloak-js';
+import {KeycloakService} from 'keycloak-angular';
+import jwtDecode from 'jwt-decode';
+import {StorageService} from './service/storage-service/storage.service';
 
-export function initializer(keycloak: KeycloakService): any {
-  return () =>
+export function initializer(keycloak: KeycloakService, storageService: StorageService): any {
+  return () => {
     keycloak.init({
       config: {
         url: 'http://localhost:8080/auth',
-        realm: 'AdminKeyCloak',
+        realm: 'admin-portal',
         clientId: 'admin-client',
       },
       initOptions: {
-        checkLoginIframe: true,
-        checkLoginIframeInterval: 25,
+        onLoad: 'login-required',
+        checkLoginIframe: false,
         /*onLoad: 'check-sso',
         checkLoginIframe: true,
         pkceMethod: 'S256'*/
@@ -21,39 +21,69 @@ export function initializer(keycloak: KeycloakService): any {
           window.location.origin + '/assets/silent-check-sso.html',*/
       },
       enableBearerInterceptor: true,
-      bearerExcludedUrls: ['/']
+      bearerPrefix: 'Bearer',
+      bearerExcludedUrls: [
+        '/assets']
+    }).then(() => {
+      const decoded = jwtDecode(keycloak.getKeycloakInstance().token);
+
+      const user = {
+        email: decoded['email'],
+        token: keycloak.getKeycloakInstance().token,
+        role: decoded['realm_access']['roles'][0]
+      };
+      storageService.setStorageItem('user', JSON.stringify(user));
     });
+  };
 }
 
 
-export function initializera(keycloak: KeycloakService, loginService: LogInService): () => Promise<any> {
+export function initializer_try(keycloak: KeycloakService, storageService: StorageService): () => Promise<any> {
   return (): Promise<any> => {
     return new Promise<void>(async (resolve, reject) => {
       try {
-        await keycloak.init({
-          config: {
-            url: 'http://localhost:8080/auth',
-            realm: 'AdminKeyCloak',
-            clientId: 'admin-client',
-          },
-          initOptions: {
-            checkLoginIframe: true,
-            checkLoginIframeInterval: 25
-            //onLoad: 'check-sso',
-            //checkLoginIframe: true,
-            //pkceMethod: 'S256'
-          },
-          enableBearerInterceptor: true,
-          bearerExcludedUrls: ['/']
-        }).then(async a => {
-          console.log('OVOO', a);
-          // loginService.logIn(a);  // passing authorization status: true or false to appservice for later use
-        });
+        await
+          keycloak.init({
+            config: {
+              url: 'http://localhost:8080/auth',
+              realm: 'admin-portal',
+              clientId: 'admin-client',
+            },
+            initOptions: {
+              onLoad: 'login-required',
+              checkLoginIframe: false,
+              /*onLoad: 'check-sso',
+              checkLoginIframe: true,
+              pkceMethod: 'S256'*/
+              /*onLoad: 'check-sso',
+              silentCheckSsoRedirectUri:
+                window.location.origin + '/assets/silent-check-sso.html',*/
+            },
+            enableBearerInterceptor: true,
+            bearerPrefix: 'Bearer',
+            bearerExcludedUrls: [
+              '/assets',
+              '/clients/public']
+          }).then(() => {
+            if (keycloak.getKeycloakInstance().refreshToken) {
+              console.log('hi');
+            }
+            const decoded = jwtDecode(keycloak.getKeycloakInstance().token);
+
+            const user = {
+              email: decoded['email'],
+              token: keycloak.getKeycloakInstance().token,
+              role: decoded['realm_access']['roles'][0]
+            };
+            storageService.setStorageItem('user', JSON.stringify(user));
+          });
+        debugger
         resolve();
       } catch (error) {
-        console.log('Hell', error);
         reject(error);
       }
+    }).catch((e) => {
+      console.log('Error thrown in init ' + e);
     });
   };
 }

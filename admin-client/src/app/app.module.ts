@@ -13,6 +13,7 @@ import {routes} from './app.routing';
 import {HttpAuthInterceptor} from './interceptors/http-auth.interceptor';
 import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
 import {initializer} from './app-init';
+import {StorageService} from './service/storage-service/storage.service';
 
 @NgModule({
   declarations: [
@@ -29,8 +30,8 @@ import {initializer} from './app-init';
     KeycloakAngularModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpAuthInterceptor, multi: true},
-    {provide: APP_INITIALIZER, useFactory: initializer, multi: true, deps: [KeycloakService]}],
+  providers: [// {provide: HTTP_INTERCEPTORS, useClass: HttpAuthInterceptor, multi: true},
+    {provide: APP_INITIALIZER, useFactory: initializer, multi: true, deps: [KeycloakService, StorageService]}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
