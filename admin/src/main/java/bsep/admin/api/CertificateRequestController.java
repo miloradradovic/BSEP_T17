@@ -10,6 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.Positive;
 import java.io.IOException;
 import java.util.List;
 
@@ -50,7 +51,7 @@ public class CertificateRequestController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<?> removeCertificateRequest(@PathVariable Integer id) {
+    public ResponseEntity<?> removeCertificateRequest(@PathVariable @Positive Integer id) {
 
         if (cerRequestInfoService.delete(id)) {
             return new ResponseEntity<>(HttpStatus.OK);

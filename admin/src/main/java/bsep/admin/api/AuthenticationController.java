@@ -10,6 +10,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.Pattern;
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(value = "/authentication", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -50,7 +52,7 @@ public class AuthenticationController {
     }*/
 
     @RequestMapping(value = "/verify-certificate-request/{encrypted}", method = RequestMethod.GET)
-    public ResponseEntity<?> verifyCertificateRequest(@PathVariable String encrypted) throws DecoderException, CertificateNotFoundException {
+    public ResponseEntity<?> verifyCertificateRequest(@PathVariable @Pattern(regexp="[a-zA-Z0-9 ]+") String encrypted) throws DecoderException, CertificateNotFoundException {
 
         boolean success = cerRequestInfoService.verifyCertificateRequest(encrypted);
         if (success) {

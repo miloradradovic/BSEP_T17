@@ -28,6 +28,6 @@ export class LoginService {
     if (!localStorage.getItem('user')) {
       return UserRole.UNAUTHORIZED;
     }
-    return JSON.parse(localStorage.getItem('user')).role === "ROLE_ADMIN" ? UserRole.ADMIN : UserRole.DOCTOR;
+    return JSON.parse(localStorage.getItem('user')).role === "ADMIN" ? UserRole.ADMIN : UserRole.DOCTOR;
   }
 }

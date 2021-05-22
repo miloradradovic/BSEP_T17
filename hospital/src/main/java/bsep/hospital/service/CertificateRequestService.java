@@ -13,6 +13,9 @@ import org.bouncycastle.operator.OperatorCreationException;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
 import org.bouncycastle.pkcs.PKCS10CertificationRequest;
 import org.bouncycastle.pkcs.PKCS10CertificationRequestBuilder;
+import org.keycloak.KeycloakPrincipal;
+import org.keycloak.KeycloakSecurityContext;
+import org.keycloak.representations.AccessToken;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
@@ -36,13 +39,15 @@ public class CertificateRequestService {
 
     public boolean sendCertificateRequest(CertificateRequestDTO certificateRequestDTO) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        Person loggedIn = (Person) authentication.getPrincipal();
+        KeycloakPrincipal kcp = (KeycloakPrincipal) authentication.getPrincipal();
 
-        if (!loggedIn.getEmail().equals(certificateRequestDTO.getEmail())) { // lose poslat email sa fronta
+        KeycloakSecurityContext session = kcp.getKeycloakSecurityContext();
+        AccessToken accessToken = session.getToken();
+
+        if (!accessToken.getEmail().equals(certificateRequestDTO.getEmail())) { // lose poslat email sa fronta
             return false;
         }
-        certificateRequestDTO.setUserId(loggedIn.getId());
-        certificateRequestDTO.setEmail(loggedIn.getEmail());
+        certificateRequestDTO.setEmail(accessToken.getEmail());
 
         byte[] csr = generateCSR(certificateRequestDTO);
         if (csr != null) {

@@ -8,7 +8,7 @@ import {StorageService} from '../../../../services/storage/storage.service';
 import {LogIn} from '../../../../model/log-in';
 import {LogInModel} from '../../../../model/log-in.model';
 import { NgxSpinnerService } from 'ngx-spinner';
-
+/*
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
@@ -67,3 +67,4 @@ export class LogInComponent implements OnInit {
   }
 
 }
+*/

@@ -9,8 +9,8 @@ export class LogInModel {
 
   getRole(): UserRole {
     switch(this.role){
-      case 'ROLE_ADMIN': return UserRole.ADMIN;
-      case 'ROLE_DOCTOR': return UserRole.DOCTOR;
+      case 'ADMIN': return UserRole.ADMIN;
+      case 'DOCTOR': return UserRole.DOCTOR;
       default : return UserRole.UNAUTHORIZED;
     }
   }

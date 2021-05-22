@@ -6,7 +6,7 @@ public class CertificateRequestDTO {
 
     @NotNull
     @NotBlank
-    @Pattern(regexp="[a-zA-Z0-9 ]+")
+    @Pattern(regexp="[a-zA-Z0-9. ]+")
     private String commonName;
 
     @NotNull
@@ -34,7 +34,6 @@ public class CertificateRequestDTO {
     @Pattern(regexp="[a-zA-Z0-9 ]+")
     private String country;
 
-    @Positive
     private int userId;
 
     @NotNull
