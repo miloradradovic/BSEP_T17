@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.Pattern;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://localhost:4200")
+
 @RestController
 @RequestMapping(value = "/authentication", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthenticationController {

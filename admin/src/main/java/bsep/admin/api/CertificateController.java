@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.security.cert.CRLException;
 import java.security.cert.CertificateException;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://localhost:4200")
 @RestController
 @RequestMapping(value = "/certificate", produces = MediaType.APPLICATION_JSON_VALUE)
 public class CertificateController {

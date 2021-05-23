@@ -6,6 +6,7 @@ import bsep.admin.dto.KeyUsageDTO;
 import bsep.admin.keystore.KeyStoreReader;
 import bsep.admin.keystore.KeyStoreWriter;
 import bsep.admin.model.SubjectData;
+import bsep.admin.service.CertificateService;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x500.X500NameBuilder;
 import org.bouncycastle.asn1.x500.style.BCStyle;
@@ -50,6 +51,9 @@ public class Initialize {
     @Autowired
     KeyStoreWriter keyStoreWriter;
 
+    @Autowired
+    CertificateService certificateService;
+
 
     @PostConstruct
     public void init() {
@@ -76,6 +80,8 @@ public class Initialize {
         assert keyPair != null;
 
         subjectData.setPublicKey(keyPair.getPublic());
+
+        certificateService.writePrivateKeyToPEM(keyPair.getPrivate());
 
 
         JcaContentSignerBuilder builder = new JcaContentSignerBuilder("SHA256WithRSAEncryption");
@@ -115,7 +121,8 @@ public class Initialize {
         try {
             certGen.addExtension(Extension.extendedKeyUsage, false, eku);
 
-            GeneralNames subjectAltName = new GeneralNames(new GeneralName(GeneralName.dNSName, "localhost.com"));
+            GeneralNames subjectAltName = new GeneralNames(new GeneralName(GeneralName.dNSName, "localhost"));
+
             certGen.addExtension(X509Extensions.SubjectAlternativeName, false, subjectAltName);
         } catch (CertIOException e) {
             e.printStackTrace();
