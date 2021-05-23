@@ -24,7 +24,7 @@ import javax.validation.constraints.Pattern;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
+@CrossOrigin(origins = "https://localhost:4205")
 @RestController
 @RequestMapping(value = "/user", produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {

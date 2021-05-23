@@ -3,9 +3,11 @@ package bsep.hospital.api;
 import bsep.hospital.service.CertificateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin(origins = "https://localhost:4205")
 @RestController
 @RequestMapping(value = "/certificate", produces = MediaType.APPLICATION_JSON_VALUE)
 public class CertificateController {

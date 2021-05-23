@@ -2,6 +2,10 @@ package bsep.hospital.service;
 
 import bsep.hospital.dto.CertificateRequestDTO;
 import bsep.hospital.model.Person;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.conn.ssl.TrustStrategy;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 import org.bouncycastle.asn1.ASN1Sequence;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x500.X500NameBuilder;
@@ -20,14 +24,17 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
+import javax.net.ssl.SSLContext;
 import java.io.IOException;
 import java.security.*;
+import java.security.cert.X509Certificate;
 
 @Service
 public class CertificateRequestService {
@@ -37,7 +44,7 @@ public class CertificateRequestService {
         Security.addProvider(new BouncyCastleProvider());
     }
 
-    public boolean sendCertificateRequest(CertificateRequestDTO certificateRequestDTO) {
+    public boolean sendCertificateRequest(CertificateRequestDTO certificateRequestDTO) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         KeycloakPrincipal kcp = (KeycloakPrincipal) authentication.getPrincipal();
 
@@ -51,9 +58,30 @@ public class CertificateRequestService {
 
         byte[] csr = generateCSR(certificateRequestDTO);
         if (csr != null) {
+
+            /*
+            TrustStrategy acceptingTrustStrategy = (X509Certificate[] chain, String authType) -> true;
+
+            SSLContext sslContext = org.apache.http.ssl.SSLContexts.custom()
+                    .loadTrustMaterial(null, acceptingTrustStrategy)
+                    .build();
+
+            SSLConnectionSocketFactory csf = new SSLConnectionSocketFactory(sslContext);
+
+            CloseableHttpClient httpClient = HttpClients.custom()
+                    .setSSLSocketFactory(csf)
+                    .build();
+
+            HttpComponentsClientHttpRequestFactory requestFactory =
+                    new HttpComponentsClientHttpRequestFactory();
+
+            requestFactory.setHttpClient(httpClient);
+            RestTemplate restTemplate = new RestTemplate(requestFactory);
+             */
+
             RestTemplate restTemplate = new RestTemplate();
             HttpEntity<byte[]> request = new HttpEntity<>(csr);
-            ResponseEntity<?> responseEntity = restTemplate.exchange("http://localhost:8084/certificate-request/send-certificate-request", HttpMethod.POST, request, ResponseEntity.class);
+            ResponseEntity<?> responseEntity = restTemplate.exchange("https://localhost:8084/certificate-request/send-certificate-request", HttpMethod.POST, request, ResponseEntity.class);
             return responseEntity.getStatusCode() == HttpStatus.OK;
         }
         return false;
