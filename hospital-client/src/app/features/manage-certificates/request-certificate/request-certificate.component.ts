@@ -18,9 +18,9 @@ export class RequestCertificateComponent implements OnInit {
       'commonName': null,
       'surname': null,
       'givenName': null,
-      'organization': [null, Validators.required],
-      'organizationUnit': [null, Validators.required],
-      'country': [null, Validators.required],
+      'organization': [null, Validators.compose([Validators.required, Validators.pattern('[a-zA-Z0-9. ]+')])],
+      'organizationUnit': [null, Validators.compose([Validators.required, Validators.pattern('[a-zA-Z0-9. ]+')])],
+      'country': [null, Validators.compose([Validators.required, Validators.pattern('[a-zA-Z0-9. ]+')])],
       'userId': null,
       'email': null,
     });
