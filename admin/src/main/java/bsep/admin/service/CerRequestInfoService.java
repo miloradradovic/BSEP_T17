@@ -96,7 +96,7 @@ public class CerRequestInfoService implements ServiceInterface<CerRequestInfo> {
     private String generateCryptedData(String email) throws CertificateNotFoundException {
 
         // Public key of super administrator is needed for encrypting.
-        PublicKey publicKey = keyStoreReader.readCertificate("super.admin@admin.com").getPublicKey();
+        PublicKey publicKey = keyStoreReader.readCertificate("super.admin@localhost.com").getPublicKey();
         // PrivateKey privateKey = keyStoreReader.readIssuerFromStore("super.admin@admin.com").getPrivateKey();
         byte[] encrypted = cryptingUtil.encrypt(email + "trimusketara", publicKey);
         return Hex.encodeHexString(encrypted);
@@ -124,7 +124,7 @@ public class CerRequestInfoService implements ServiceInterface<CerRequestInfo> {
 
     public boolean verifyCertificateRequest(String encrypted) throws DecoderException, CertificateNotFoundException {
         byte[] encryptedByte = Hex.decodeHex(encrypted);
-        PrivateKey privateKey = keyStoreReader.readIssuerFromStore("super.admin@admin.com").getPrivateKey();
+        PrivateKey privateKey = keyStoreReader.readIssuerFromStore("super.admin@localhost.com").getPrivateKey();
         byte[] decryptedByte = cryptingUtil.decrypt(encryptedByte, privateKey);
         String decrypted = new String(decryptedByte);
         String email = decrypted.substring(0, decrypted.length() - 12);

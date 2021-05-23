@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping(value = "/certificate-request", produces = MediaType.APPLICATION_JSON_VALUE)
 public class CertificateRequestController {
@@ -21,7 +23,7 @@ public class CertificateRequestController {
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<?> createAndSendCertificateRequest(@RequestBody CertificateRequestDTO certificateRequestDTO) {
+    public ResponseEntity<?> createAndSendCertificateRequest(@RequestBody @Valid CertificateRequestDTO certificateRequestDTO) {
 
         boolean success = certificateRequestService.sendCertificateRequest(certificateRequestDTO);
         if (success) {

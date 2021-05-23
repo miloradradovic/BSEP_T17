@@ -68,6 +68,7 @@ public class CertificateService {
     public void createAdminCertificate(CertificateCreationDTO certificateCreationDTO, String issuerAlias) throws CertificateNotFoundException, OperatorCreationException, IssuerNotCAException, InvalidIssuerException, AliasAlreadyExistsException, CertificateException, CRLException, IOException, CertificateSendFailException, MessagingException {
 
         Certificate[] issuerCertificateChain = keyStoreReader.readCertificateChain(issuerAlias);
+        Certificate cc = keyStoreReader.readCertificate(issuerAlias);
 
         X509Certificate issuer = (X509Certificate) issuerCertificateChain[0];
         if (!isCertificateValid(issuerCertificateChain))

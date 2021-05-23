@@ -18,6 +18,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Pattern;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -30,9 +33,9 @@ public class UserController {
     UserService userService;
 
 
-    //@PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<?> getUserByEmail(@RequestParam String email) {
+    public ResponseEntity<?> getUserByEmail(@RequestParam @Email() @Pattern(regexp = "[^;]+") String email) {
        // Person person = userService.loadUserByEmail(email);
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

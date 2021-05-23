@@ -122,6 +122,7 @@ public class Initialize {
             certGen.addExtension(Extension.extendedKeyUsage, false, eku);
 
             GeneralNames subjectAltName = new GeneralNames(new GeneralName(GeneralName.dNSName, "localhost"));
+
             certGen.addExtension(X509Extensions.SubjectAlternativeName, false, subjectAltName);
         } catch (CertIOException e) {
             e.printStackTrace();
