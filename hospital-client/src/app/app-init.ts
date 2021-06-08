@@ -6,7 +6,7 @@ export function initializer(keycloak: KeycloakService, storageService: StorageSe
   return () => {
     keycloak.init({
       config: {
-        url: 'http://localhost:8080/auth',
+        url: 'https://localhost:8443/auth',
         realm: 'hospital-portal',
         clientId: 'hospital-client',
       },
@@ -45,7 +45,7 @@ export function initializer_try(keycloak: KeycloakService, storageService: Stora
         await
           keycloak.init({
             config: {
-              url: 'http://localhost:8080/auth',
+              url: 'https://localhost:8443/auth',
               realm: 'admin-portal',
               clientId: 'admin-client',
             },
