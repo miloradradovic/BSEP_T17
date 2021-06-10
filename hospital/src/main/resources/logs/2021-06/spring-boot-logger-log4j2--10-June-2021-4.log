@@ -1,0 +1,57 @@
+2021-06-10 21:54:53,515 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-06-10 21:54:53,560 INFO o.s.b.StartupInfoLogger Starting HospitalApplication on DESKTOP-MK6223H with PID 5704 (D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital\target\classes started by Milorad in D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital)
+2021-06-10 21:54:53,564 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
+2021-06-10 21:54:54,102 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-10 21:54:54,104 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-10 21:54:54,138 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data JPA - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.LogRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-06-10 21:54:54,152 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 44ms. Found 2 JPA repository interfaces.
+2021-06-10 21:54:54,169 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-10 21:54:54,169 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-06-10 21:54:54,174 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.AuthorityRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-10 21:54:54,174 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PersonRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-10 21:54:54,178 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 8ms. Found 1 MongoDB repository interfaces.
+2021-06-10 21:54:54,416 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@40de8f93' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-10 21:54:54,422 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-10 21:54:54,629 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8085 (https)
+2021-06-10 21:54:54,636 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-10 21:54:54,636 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
+2021-06-10 21:54:54,636 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-10 21:54:54,739 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
+2021-06-10 21:54:54,740 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1138 ms
+2021-06-10 21:54:54,779 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-10 21:54:54,855 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-10 21:54:54,884 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-10 21:54:54,962 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-10 21:54:55,017 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-10 21:54:55,160 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2021-06-10 21:54:55,170 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-10 21:54:55,781 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-10 21:54:55,790 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-10 21:54:56,201 INFO c.m.d.l.SLF4JLogger Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-06-10 21:54:56,235 INFO c.m.d.l.SLF4JLogger Opened connection [connectionId{localValue:1, serverValue:129}] to localhost:27017
+2021-06-10 21:54:56,238 INFO c.m.d.l.SLF4JLogger Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2259600}
+2021-06-10 21:54:56,550 INFO b.h.i.Initialize Executing operation Initialize
+2021-06-10 21:54:56,689 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@54816d7a, org.springframework.security.web.context.SecurityContextPersistenceFilter@41e43885, org.springframework.security.web.header.HeaderWriterFilter@1fe2c5ad, org.springframework.web.filter.CorsFilter@106ac5f4, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@5ae16aa, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@42805abe, org.springframework.security.web.authentication.logout.LogoutFilter@13fad0c7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@193c3b1c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3e3a07ab, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@1870b9b8, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@6d9ee75a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5eed2edf, org.springframework.security.web.session.SessionManagementFilter@74ed3be4, org.springframework.security.web.access.ExceptionTranslationFilter@3ec52163, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10664c3d]
+2021-06-10 21:54:56,860 INFO o.s.s.c.ExecutorConfigurationSupport Initializing ExecutorService 'taskScheduler'
+2021-06-10 21:54:56,882 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-10 21:54:56,962 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8085 (https) with context path ''
+2021-06-10 21:54:56,970 INFO o.s.b.StartupInfoLogger Started HospitalApplication in 3.676 seconds (JVM running for 4.627)
+2021-06-10 21:54:56,973 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
+java.time.format.DateTimeParseException: Text '	awt.toolkit = sun.' could not be parsed at index 0
+	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
+	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
+	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
+	at bsep.hospital.logging.LogParser.parseKeycloakLogs(LogParser.java:73) ~[classes/:?]
+	at bsep.hospital.service.LogService.scheduledTest(LogService.java:42) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
