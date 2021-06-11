@@ -53,8 +53,10 @@ public class CertificateRequestService {
         KeycloakPrincipal kcp = (KeycloakPrincipal) authentication.getPrincipal();
         KeycloakSecurityContext session = kcp.getKeycloakSecurityContext();
         AccessToken accessToken = session.getToken();
+        logger.info("Attempting to send certificate request.");
 
         if (!accessToken.getEmail().equals(certificateRequestDTO.getEmail())) { // lose poslat email sa fronta
+            logger.warn("Email sent from the client side is invalid.");
             return false;
         }
         certificateRequestDTO.setEmail(accessToken.getEmail());

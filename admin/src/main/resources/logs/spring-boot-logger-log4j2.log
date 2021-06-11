@@ -1,27 +1,31 @@
-2021-06-11 00:31:46,167 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
-2021-06-11 00:31:46,198 INFO o.s.b.StartupInfoLogger Starting AdminApplication on DESKTOP-MK6223H with PID 14592 (D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\admin\target\classes started by Milorad in D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\admin)
-2021-06-11 00:31:46,202 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
-2021-06-11 00:31:46,723 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-11 00:31:46,774 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 47ms. Found 3 JPA repository interfaces.
-2021-06-11 00:31:46,998 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@fb49fdf' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-06-11 00:31:47,004 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-06-11 00:31:47,199 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8084 (https)
-2021-06-11 00:31:47,208 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8084"]
-2021-06-11 00:31:47,209 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
-2021-06-11 00:31:47,209 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-06-11 00:31:47,326 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
-2021-06-11 00:31:47,326 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1087 ms
-2021-06-11 00:31:47,373 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-11 00:31:47,458 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-11 00:31:47,488 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-06-11 00:31:47,582 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-06-11 00:31:47,650 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
-2021-06-11 00:31:47,814 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
-2021-06-11 00:31:47,825 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2021-06-11 00:31:48,588 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-11 00:31:48,593 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-11 00:31:49,378 INFO b.a.i.Initialize Executing operation Initialize
-2021-06-11 00:31:49,549 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4bec6682, org.springframework.security.web.context.SecurityContextPersistenceFilter@79982bcc, org.springframework.security.web.header.HeaderWriterFilter@6097f225, org.springframework.web.filter.CorsFilter@2d97344c, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@d02c00, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@7836c79, org.springframework.security.web.authentication.logout.LogoutFilter@4e553d60, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@79f3f34c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@92de794, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@320ba79f, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@333a2df2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f839ec5, org.springframework.security.web.session.SessionManagementFilter@1e5e2e06, org.springframework.security.web.access.ExceptionTranslationFilter@7da6d695, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@c19bb2a]
-2021-06-11 00:31:49,757 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8084"]
-2021-06-11 00:31:49,837 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8084 (https) with context path ''
-2021-06-11 00:31:49,845 INFO o.s.b.StartupInfoLogger Started AdminApplication in 3.918 seconds (JVM running for 4.883)
+2021-06-11 20:55:50,439 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-06-11 20:55:50,522 INFO o.s.b.StartupInfoLogger Starting AdminApplication on DESKTOP-MK6223H with PID 13068 (D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\admin\target\classes started by Milorad in D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\admin)
+2021-06-11 20:55:50,527 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
+2021-06-11 20:55:51,572 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-11 20:55:51,678 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 96ms. Found 3 JPA repository interfaces.
+2021-06-11 20:55:52,147 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6d33a66e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-11 20:55:52,161 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-11 20:55:52,510 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8084 (https)
+2021-06-11 20:55:52,519 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8084"]
+2021-06-11 20:55:52,521 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
+2021-06-11 20:55:52,521 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-11 20:55:52,691 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
+2021-06-11 20:55:52,691 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2083 ms
+2021-06-11 20:55:52,787 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-11 20:55:52,929 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 20:55:52,971 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-11 20:55:53,079 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-11 20:55:53,161 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-11 20:55:53,350 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2021-06-11 20:55:53,365 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-11 20:55:54,573 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 20:55:54,580 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 20:55:55,539 INFO b.a.i.Initialize Executing operation Initialize
+2021-06-11 20:55:55,738 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d195d15, org.springframework.security.web.context.SecurityContextPersistenceFilter@7c0035dd, org.springframework.security.web.header.HeaderWriterFilter@2041c9a3, org.springframework.web.filter.CorsFilter@17b387ef, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@76134251, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@442310fd, org.springframework.security.web.authentication.logout.LogoutFilter@7054c068, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1164990a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23909b3, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@12f3fcd, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@6dc2e473, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@489b7559, org.springframework.security.web.session.SessionManagementFilter@2bed5828, org.springframework.security.web.access.ExceptionTranslationFilter@4efa7d2f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@19d0d1ab]
+2021-06-11 20:55:55,968 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8084"]
+2021-06-11 20:55:56,061 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8084 (https) with context path ''
+2021-06-11 20:55:56,069 INFO o.s.b.StartupInfoLogger Started AdminApplication in 6.011 seconds (JVM running for 7.738)
+2021-06-11 20:56:30,386 INFO o.a.j.l.DirectJDKLog Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-11 20:56:30,387 INFO o.s.w.s.FrameworkServlet Initializing Servlet 'dispatcherServlet'
+2021-06-11 20:56:30,398 INFO o.s.w.s.FrameworkServlet Completed initialization in 11 ms
+2021-06-11 20:56:31,209 INFO o.s.s.c.ExecutorConfigurationSupport Initializing ExecutorService 'applicationTaskExecutor'

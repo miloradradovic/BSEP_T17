@@ -1,5 +1,8 @@
 package bsep.hospital.logging;
 
+import bsep.hospital.keystore.KeyStoreReader;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -19,8 +22,10 @@ public class LogParser {
     @Value("${keycloak_log_path}")
     private String keycloakLogsPath;
 
+    private static Logger logger = LogManager.getLogger(LogParser.class);
 
     public List<LogModel> parseAppLogs(int startingRow)  {
+        logger.info("Attempting to parse application logs");
         int currentRow = 1;
         List<LogModel> models = new ArrayList<>();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -28,6 +33,7 @@ public class LogParser {
             FileInputStream fstream = new FileInputStream(appLogsPath);
             BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
             String strLine;
+            logger.info("Reading log file.");
             while ((strLine = br.readLine()) != null)   {
                 if (currentRow >= startingRow) {
                     String level = "";
@@ -50,13 +56,14 @@ public class LogParser {
             }
             fstream.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Couldn't parse logs because file path is invalid.");
         }
         return models;
 
     }
 
     public List<LogModel> parseKeycloakLogs(int startingRow) {
+        logger.info("Attempting to parse keycloak logs");
         int currentRow = 1;
         List<LogModel> models = new ArrayList<>();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -64,6 +71,7 @@ public class LogParser {
             FileInputStream fstream = new FileInputStream(keycloakLogsPath);
             BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
             String strLine;
+            logger.info("Reading log file.");
             while ((strLine = br.readLine()) != null)   {
                 if (currentRow >= startingRow) {
                     String level = "";
@@ -91,7 +99,7 @@ public class LogParser {
             }
             fstream.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Couldn't parse logs because file path is invalid.");
         }
         return models;
     }
