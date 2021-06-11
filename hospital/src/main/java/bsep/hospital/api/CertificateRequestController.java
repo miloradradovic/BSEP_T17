@@ -23,7 +23,7 @@ public class CertificateRequestController {
 
     //@PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<?> createAndSendCertificateRequest(@RequestBody @Valid CertificateRequestDTO certificateRequestDTO) throws NoSuchAlgorithmException, KeyStoreException, KeyManagementException {
+    public ResponseEntity<?> createAndSendCertificateRequest(@RequestBody @Valid CertificateRequestDTO certificateRequestDTO) {
 
         boolean success = certificateRequestService.sendCertificateRequest(certificateRequestDTO);
         if (success) {
