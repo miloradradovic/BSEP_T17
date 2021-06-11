@@ -24,9 +24,9 @@ export class LogInService {
   }
 
   getRole(): UserRole {
-    if (!localStorage.getItem('user')) {
+    if (!sessionStorage.getItem('user')) {
       return UserRole.UNAUTHORIZED;
     }
-    return JSON.parse(localStorage.getItem('user')).role === 'SUPER_ADMIN' ? UserRole.SUPER_ADMIN : UserRole.UNAUTHORIZED;
+    return JSON.parse(sessionStorage.getItem('user')).role === 'SUPER_ADMIN' ? UserRole.SUPER_ADMIN : UserRole.UNAUTHORIZED;
   }
 }

@@ -28,11 +28,9 @@ public class CertificateRequestController {
 
     @Autowired
     CertificateRequestService certificateRequestService;
-
     private static Logger logger = LogManager.getLogger(CertificateRequestController.class);
 
-
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    //@PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> createAndSendCertificateRequest(@RequestBody @Valid CertificateRequestDTO certificateRequestDTO) {
 

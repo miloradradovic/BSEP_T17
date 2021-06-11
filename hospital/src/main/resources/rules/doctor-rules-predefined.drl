@@ -1,0 +1,66 @@
+package rules;
+import bsep.hospital.model.Patient;
+import bsep.hospital.model.PatientStatus;
+import java.util.List;
+
+rule "hearth-beat-low"
+        no-loop true
+    when
+        $ps: PatientStatus($t:type, $t.toString() == "HEARTH_BEAT", $val: getValue(), $val <= 40.0 );
+    then
+       modify( $ps ){
+           setAlarm(true)
+       }
+end
+
+rule "hearth-beat-high"
+        no-loop true
+    when
+        $ps: PatientStatus($t:type, $t.toString() == "HEARTH_BEAT", $val: getValue(), $val >= 220.0 );
+    then
+       modify( $ps ){
+           setAlarm(true)
+       }
+end
+
+rule "temperature-low"
+        no-loop true
+    when
+        $ps: PatientStatus($t:type, $t.toString() == "TEMPERATURE", $val: getValue(), $val <= 34.0 );
+    then
+       modify( $ps ){
+           setAlarm(true)
+       }
+end
+
+rule "temperature-high"
+        no-loop true
+    when
+        $ps: PatientStatus($t:type, $t.toString() == "TEMPERATURE", $val: getValue(), $val >= 41.0 );
+    then
+       modify( $ps ){
+           setAlarm(true)
+       }
+end
+
+rule "pressure-low"
+        no-loop true
+    when
+        $ps: PatientStatus($t:type, $t.toString() == "PRESSURE", $val: getValue(), $val <= 60.0 );
+    then
+       modify( $ps ){
+           setAlarm(true)
+       }
+end
+
+
+rule "pressure-high"
+        no-loop true
+    when
+        $ps: PatientStatus($t:type, $t.toString() == "PRESSURE", $val: getValue(), $val >= 180.0 );
+    then
+       modify( $ps ){
+           setAlarm(true)
+       }
+end
+

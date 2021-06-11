@@ -1,0 +1,29 @@
+template header
+ruleName
+patientId
+type
+value
+operation
+
+package rules;
+
+import bsep.hospital.model.Patient;
+import bsep.hospital.model.PatientStatus;
+import java.util.List;
+
+template "doctor-template"
+
+
+rule "@{ruleName}"
+        no-loop true
+    when
+        $p: Patient($patId: id, id == @{patientId});
+        $ps: PatientStatus($pat: patient, $pat.id == $patId, $t:type, $t.toString() == "@{type}", $val: getValue(), $val @{operation} @{value} );
+
+    then
+       modify( $ps ){
+           setAlarm(true)
+       }
+end
+
+end template

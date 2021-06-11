@@ -16,6 +16,7 @@
     <properties>
         <java.version>11</java.version>
         <keycloak-adapter-bom.version>11.0.2</keycloak-adapter-bom.version>
+        <kie.version>7.17.0.Final</kie.version>
     </properties>
 
     <dependencyManagement>
@@ -114,6 +115,29 @@
             <artifactId>awaitility</artifactId>
             <version>3.1.2</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-ci</artifactId>
+            <version>${kie.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-templates</artifactId>
+            <version>${kie.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven.shared</groupId>
+            <artifactId>maven-invoker</artifactId>
+            <version>3.1.0</version>
         </dependency>
     </dependencies>
 

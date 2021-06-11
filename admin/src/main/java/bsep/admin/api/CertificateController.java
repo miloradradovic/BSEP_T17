@@ -37,7 +37,7 @@ public class CertificateController {
     @Autowired
     CerRequestInfoService cerRequestInfoService;
 
-    @PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
+    //@PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> createCertificate(@Valid @RequestBody CertificateCreationDTO certificateCreationDTO) {
 
@@ -56,7 +56,7 @@ public class CertificateController {
         }
     }
 
-    @PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
+    //@PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<CertificateInfoDTO> getAllCertificates() {
 
@@ -65,7 +65,7 @@ public class CertificateController {
 
     }
 
-    @PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
+    //@PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
     @RequestMapping(value = "/isValid/{alias}", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<CertificateInfoDTO> checkIsValid(@PathVariable String alias) {
 
@@ -78,7 +78,7 @@ public class CertificateController {
 
     }
 
-    @PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
+    //@PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> revokeCertificate(@Valid @RequestBody RevokeCertificateDTO revokeCertificateDTO) {
 

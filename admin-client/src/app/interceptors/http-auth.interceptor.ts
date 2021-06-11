@@ -11,10 +11,10 @@ export class HttpAuthInterceptor implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    if (localStorage.getItem('user')) {
+    if (sessionStorage.getItem('user')) {
       request = request.clone({
         setHeaders: {
-          Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken
+          Authorization: 'Bearer ' + JSON.parse(sessionStorage.getItem('user')).accessToken
         }
       });
     }

@@ -47,7 +47,7 @@ export class LogInComponent implements OnInit {
         const info = jwt.decodeToken(result.accessToken);
         const role = info.role;
         const user = new LogInModel(info.email, result.accessToken, info.id, info.role);
-        localStorage.setItem('user', JSON.stringify(user));
+        sessionStorage.setItem('user', JSON.stringify(user));
         this.storageService.setStorageItem('user', JSON.stringify(user))
 
         console.log('logged in');

@@ -1,911 +1,111 @@
-2021-06-11 20:52:35,994 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
-2021-06-11 20:52:36,037 INFO o.s.b.StartupInfoLogger Starting HospitalApplication on DESKTOP-MK6223H with PID 6936 (D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital\target\classes started by Milorad in D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital)
-2021-06-11 20:52:36,040 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
-2021-06-11 20:52:36,733 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-06-11 20:52:36,735 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-11 20:52:36,783 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data JPA - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.LogRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2021-06-11 20:52:36,800 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 58ms. Found 2 JPA repository interfaces.
-2021-06-11 20:52:36,828 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-06-11 20:52:36,829 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2021-06-11 20:52:36,833 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.AuthorityRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
-2021-06-11 20:52:36,835 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PersonRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
-2021-06-11 20:52:36,839 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 9ms. Found 1 MongoDB repository interfaces.
-2021-06-11 20:52:37,141 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3e1fd62b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-06-11 20:52:37,155 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-06-11 20:52:37,442 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8085 (https)
-2021-06-11 20:52:37,453 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8085"]
-2021-06-11 20:52:37,454 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
-2021-06-11 20:52:37,454 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-06-11 20:52:37,586 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
-2021-06-11 20:52:37,586 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1512 ms
-2021-06-11 20:52:37,632 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-11 20:52:37,761 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-11 20:52:37,814 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-06-11 20:52:37,940 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-06-11 20:52:38,043 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
-2021-06-11 20:52:38,222 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
-2021-06-11 20:52:38,237 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2021-06-11 20:52:39,249 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-11 20:52:39,258 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-11 20:52:39,898 INFO c.m.d.l.SLF4JLogger Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2021-06-11 20:52:39,979 INFO c.m.d.l.SLF4JLogger Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
-2021-06-11 20:52:39,985 INFO c.m.d.l.SLF4JLogger Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4918000}
-2021-06-11 20:52:40,596 INFO b.h.i.Initialize Executing operation Initialize
-2021-06-11 20:52:40,858 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@344acc03, org.springframework.security.web.context.SecurityContextPersistenceFilter@724e0a77, org.springframework.security.web.header.HeaderWriterFilter@7c816f46, org.springframework.web.filter.CorsFilter@50eae15a, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@23365142, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@76134251, org.springframework.security.web.authentication.logout.LogoutFilter@267e0ca0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15a591d9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6447dc25, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@2e030cc1, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@3f2ef402, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4bba2704, org.springframework.security.web.session.SessionManagementFilter@49c555c3, org.springframework.security.web.access.ExceptionTranslationFilter@235dacd7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3a61d819]
-2021-06-11 20:52:41,170 INFO o.s.s.c.ExecutorConfigurationSupport Initializing ExecutorService 'taskScheduler'
-2021-06-11 20:52:41,205 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8085"]
-2021-06-11 20:52:41,356 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8085 (https) with context path ''
-2021-06-11 20:52:41,377 INFO o.s.b.StartupInfoLogger Started HospitalApplication in 5.627 seconds (JVM running for 7.449)
-2021-06-11 20:52:41,639 INFO c.m.d.l.SLF4JLogger Opened connection [connectionId{localValue:2, serverValue:2}] to localhost:27017
-2021-06-11 20:53:56,379 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 0
-	at jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64) ~[?:?]
-	at jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70) ~[?:?]
-	at jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248) ~[?:?]
-	at java.util.Objects.checkIndex(Objects.java:372) ~[?:?]
-	at java.util.ArrayList.get(ArrayList.java:459) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseKeycloakLogs(LogParser.java:87) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:42) ~[classes/:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:54:01,383 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:54:06,387 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:54:11,377 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:54:16,381 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:54:21,376 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:54:26,374 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:54:31,381 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:54:36,385 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:54:41,381 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:54:46,382 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:54:51,374 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:54:56,381 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:55:01,383 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:55:06,390 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:55:09,788 INFO o.a.j.l.DirectJDKLog Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-06-11 20:55:09,789 INFO o.s.w.s.FrameworkServlet Initializing Servlet 'dispatcherServlet'
-2021-06-11 20:55:09,802 INFO o.s.w.s.FrameworkServlet Completed initialization in 13 ms
-2021-06-11 20:55:10,285 INFO o.k.a.KeycloakDeployment Loaded URLs from https://localhost:8443/auth/realms/hospital-portal/.well-known/openid-configuration
-2021-06-11 20:55:10,554 WARN o.a.j.l.DirectJDKLog Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [159] milliseconds.
-2021-06-11 20:55:11,377 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:55:16,384 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:55:21,380 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:55:26,373 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:55:31,373 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:55:36,386 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:55:41,382 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:55:46,376 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:55:51,380 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:55:56,387 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:56:01,378 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:56:06,378 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:56:11,378 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:56:16,378 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:56:21,384 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:56:26,377 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:56:31,389 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:56:36,376 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:56:41,376 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:56:46,389 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:56:51,384 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:56:56,383 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:57:01,377 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:57:06,381 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:57:11,374 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:57:16,381 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:57:21,378 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:57:26,383 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:57:31,378 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:57:36,382 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:57:41,380 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:57:46,384 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
-2021-06-11 20:57:51,377 ERROR o.s.s.s.TaskUtils$LoggingErrorHandler Unexpected error occurred in scheduled task
-java.time.format.DateTimeParseException: Text 'java.lang.IndexOutO' could not be parsed at index 0
-	at java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2046) ~[?:?]
-	at java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1948) ~[?:?]
-	at java.time.LocalDateTime.parse(LocalDateTime.java:492) ~[?:?]
-	at bsep.hospital.logging.LogParser.parseAppLogs(LogParser.java:37) ~[classes/:?]
-	at bsep.hospital.service.LogService.scheduledTest(LogService.java:40) ~[classes/:?]
-	at jdk.internal.reflect.GeneratedMethodAccessor46.invoke(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) [?:?]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
-	at java.lang.Thread.run(Thread.java:834) [?:?]
+2021-06-12 00:02:48,087 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 00:02:48,117 INFO o.s.b.StartupInfoLogger Starting HospitalApplication on DESKTOP-MK6223H with PID 9000 (D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital\target\classes started by Milorad in D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital)
+2021-06-12 00:02:48,120 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
+2021-06-12 00:02:48,676 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-12 00:02:48,677 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 00:02:48,717 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data JPA - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.LogRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-06-12 00:02:48,737 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 54ms. Found 4 JPA repository interfaces.
+2021-06-12 00:02:48,754 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-12 00:02:48,755 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-06-12 00:02:48,761 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.AuthorityRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-12 00:02:48,762 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PatientRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-12 00:02:48,763 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PatientStatusRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-12 00:02:48,763 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PersonRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-12 00:02:48,767 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 11ms. Found 1 MongoDB repository interfaces.
+2021-06-12 00:02:49,020 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@b61edb9' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 00:02:49,028 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 00:02:49,233 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8085 (https)
+2021-06-12 00:02:49,242 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-12 00:02:49,242 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
+2021-06-12 00:02:49,243 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 00:02:49,397 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
+2021-06-12 00:02:49,397 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1246 ms
+2021-06-12 00:02:49,438 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 00:02:49,535 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 00:02:49,579 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 00:02:49,654 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 00:02:49,722 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-12 00:02:49,867 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2021-06-12 00:02:49,878 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-12 00:02:50,493 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-12 00:02:50,493 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler relation "patient_status" does not exist, skipping
+2021-06-12 00:02:50,495 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-12 00:02:50,495 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler relation "user_authority" does not exist, skipping
+2021-06-12 00:02:50,497 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-12 00:02:50,497 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler relation "user_authority" does not exist, skipping
+2021-06-12 00:02:50,498 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-12 00:02:50,498 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "authorities" does not exist, skipping
+2021-06-12 00:02:50,499 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-12 00:02:50,500 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "patient_status" does not exist, skipping
+2021-06-12 00:02:50,501 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-12 00:02:50,501 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "patients" does not exist, skipping
+2021-06-12 00:02:50,502 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-12 00:02:50,502 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "staff" does not exist, skipping
+2021-06-12 00:02:50,503 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-12 00:02:50,504 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "user_authority" does not exist, skipping
+2021-06-12 00:02:50,567 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 00:02:50,572 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 00:02:50,927 INFO b.h.k.KeyStoreWriter Attempting to initialize keystore using bouncy castle provider.
+2021-06-12 00:02:50,934 INFO b.h.k.KeyStoreReader Attempting to initialize keystore using bouncy castle provider.
+2021-06-12 00:02:51,022 INFO c.m.d.l.SLF4JLogger Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-06-12 00:02:51,060 INFO c.m.d.l.SLF4JLogger Opened connection [connectionId{localValue:1, serverValue:6}] to localhost:27017
+2021-06-12 00:02:51,063 INFO c.m.d.l.SLF4JLogger Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2223600}
+2021-06-12 00:02:51,405 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Milorad/.m2/repository/org/kie/kie-ci/7.17.0.Final/kie-ci-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-12 00:02:51,408 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.scanner.KieScannerFactoryServiceImpl
+
+2021-06-12 00:02:51,409 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.scanner.MavenClassLoaderResolver
+
+2021-06-12 00:02:51,410 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Milorad/.m2/repository/org/drools/drools-core/7.17.0.Final/drools-core-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-12 00:02:51,411 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.io.impl.ResourceFactoryServiceImpl
+
+2021-06-12 00:02:51,412 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.marshalling.impl.MarshallerProviderImpl
+
+2021-06-12 00:02:51,412 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.concurrent.ExecutorProviderImpl
+
+2021-06-12 00:02:51,413 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Milorad/.m2/repository/org/drools/drools-compiler/7.17.0.Final/drools-compiler-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-12 00:02:51,414 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.compiler.kie.builder.impl.KieServicesImpl
+
+2021-06-12 00:02:51,415 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.compiler.builder.impl.KnowledgeBuilderFactoryServiceImpl
+
+2021-06-12 00:02:51,416 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Milorad/.m2/repository/org/kie/kie-internal/7.17.0.Final/kie-internal-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-12 00:02:51,417 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieAssemblersImpl
+
+2021-06-12 00:02:51,418 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieRuntimesImpl
+
+2021-06-12 00:02:51,418 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieWeaversImpl
+
+2021-06-12 00:02:51,419 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieBeliefsImpl
+
+2021-06-12 00:02:51,428 INFO o.d.c.k.b.i.ClasspathKieProject Found kmodule: file:/D:/Fakultet/8.%20semestar/PROJEKTI/bsep/BSEP_T17/hospital/target/classes/META-INF/kmodule.xml
+2021-06-12 00:02:51,589 WARN o.d.c.k.b.i.ClasspathKieProject Unable to find pom.properties in /D:/Fakultet/8. semestar/PROJEKTI/bsep/BSEP_T17/hospital/target/classes
+2021-06-12 00:02:51,596 WARN o.a.m.i.e.MavenSettings Environment variable M2_HOME is not set
+2021-06-12 00:02:54,733 INFO o.d.c.k.b.i.ClasspathKieProject Recursed up folders, found and used pom.xml D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital\pom.xml
+2021-06-12 00:02:54,740 INFO o.d.c.k.b.i.KieRepositoryImpl KieModule was added: FileKieModule[releaseId=bsep:hospital:0.0.1-SNAPSHOT,file=D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital\target\classes]
+2021-06-12 00:02:55,428 INFO b.h.i.Initialize Executing operation Initialize
+2021-06-12 00:02:55,428 INFO b.h.i.Initialize Attempting to create keystore.
+2021-06-12 00:02:55,428 INFO b.h.i.Initialize Checking if keystore already exists.
+2021-06-12 00:02:55,428 INFO b.h.k.KeyStoreWriter Attempting to load keystore.
+2021-06-12 00:02:55,429 INFO b.h.k.KeyStoreWriter Successfully loaded keystore.
+2021-06-12 00:02:55,429 INFO b.h.i.Initialize Keystore already exists.
+2021-06-12 00:02:55,589 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@152705d0, org.springframework.security.web.context.SecurityContextPersistenceFilter@219acda9, org.springframework.security.web.header.HeaderWriterFilter@a0c027a, org.springframework.web.filter.CorsFilter@7da43bda, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@66abc325, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@38a52072, org.springframework.security.web.authentication.logout.LogoutFilter@2b4a0be0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b9037b6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6767f1c4, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@49338f3, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@3c9971af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1343eae6, org.springframework.security.web.session.SessionManagementFilter@347544b7, org.springframework.security.web.access.ExceptionTranslationFilter@6513fd22, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@577d001f]
+2021-06-12 00:02:55,791 INFO o.s.s.c.ExecutorConfigurationSupport Initializing ExecutorService 'taskScheduler'
+2021-06-12 00:02:55,826 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-12 00:02:55,933 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8085 (https) with context path ''
+2021-06-12 00:02:55,940 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-12 00:02:55,941 INFO b.h.l.LogParser Reading log file.
+2021-06-12 00:02:55,942 INFO o.s.b.StartupInfoLogger Started HospitalApplication in 8.072 seconds (JVM running for 9.193)
+2021-06-12 00:02:55,946 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-12 00:02:55,947 INFO b.h.l.LogParser Reading log file.
+2021-06-12 00:02:55,995 INFO c.m.d.l.SLF4JLogger Opened connection [connectionId{localValue:2, serverValue:7}] to localhost:27017
+2021-06-12 00:03:00,945 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-12 00:03:00,947 INFO b.h.l.LogParser Reading log file.
+2021-06-12 00:03:00,948 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-12 00:03:00,950 INFO b.h.l.LogParser Reading log file.
+2021-06-12 00:03:05,955 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-12 00:03:05,956 INFO b.h.l.LogParser Reading log file.
+2021-06-12 00:03:05,958 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-12 00:03:05,959 INFO b.h.l.LogParser Reading log file.
+2021-06-12 00:03:10,950 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-12 00:03:10,952 INFO b.h.l.LogParser Reading log file.
+2021-06-12 00:03:10,953 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-12 00:03:10,955 INFO b.h.l.LogParser Reading log file.

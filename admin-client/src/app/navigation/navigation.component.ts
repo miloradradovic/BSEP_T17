@@ -22,11 +22,11 @@ export class NavigationComponent implements OnInit {
               public router: Router) {
 
     this.storageService.watchStorage().subscribe(() => {
-      const user = JSON.parse(localStorage.getItem('user'));
+      const user = JSON.parse(sessionStorage.getItem('user'));
       this.role = user ? UserRole.SUPER_ADMIN : UserRole.UNAUTHORIZED;
     });
 
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user = JSON.parse(sessionStorage.getItem('user'));
     this.role = user ? UserRole.SUPER_ADMIN : UserRole.UNAUTHORIZED;
   }
 
@@ -35,6 +35,6 @@ export class NavigationComponent implements OnInit {
   }
 
   logOut($event: any): void {
-    window.location.href = 'http://localhost:8080/auth/realms/admin-portal/protocol/openid-connect/logout?redirect_uri=http://localhost:4200';
+    window.location.href = 'https://localhost:8443/auth/realms/admin-portal/protocol/openid-connect/logout?redirect_uri=https://localhost:4200';
   }
 }

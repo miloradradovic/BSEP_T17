@@ -77,7 +77,6 @@ export function initializer_try(keycloak: KeycloakService, storageService: Stora
             };
             storageService.setStorageItem('user', JSON.stringify(user));
           });
-        debugger
         resolve();
       } catch (error) {
         reject(error);

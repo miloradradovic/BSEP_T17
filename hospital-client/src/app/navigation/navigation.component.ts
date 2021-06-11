@@ -24,7 +24,7 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit(): void {
     this.storageService.watchStorage().subscribe(() => {
-      const user = JSON.parse(localStorage.getItem('user'));
+      const user = JSON.parse(sessionStorage.getItem('user'));
       if (user === null) {
         this.role = UserRole.UNAUTHORIZED;
         this.router.navigate(['/']);
@@ -33,7 +33,7 @@ export class NavigationComponent implements OnInit {
       }
     });
 
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user = JSON.parse(sessionStorage.getItem('user'));
     if (user === null) {
       this.role = UserRole.UNAUTHORIZED;
     } else {
@@ -42,9 +42,7 @@ export class NavigationComponent implements OnInit {
   }
 
   signOut($event: any): void {
-    //this.loginService.logOut();
-    //this.role = UserRole.UNAUTHORIZED;
-    window.location.href = 'http://localhost:8080/auth/realms/hospital-portal/protocol/openid-connect/logout?redirect_uri=http://localhost:4205';
+    window.location.href = 'https://localhost:8443/auth/realms/hospital-portal/protocol/openid-connect/logout?redirect_uri=https://localhost:4205';
   }
 
 }
