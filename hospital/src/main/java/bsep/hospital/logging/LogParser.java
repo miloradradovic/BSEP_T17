@@ -33,18 +33,24 @@ public class LogParser {
                     String level = "";
                     String message = "";
                     LocalDateTime dateOfLog;
-                    String dateString = strLine.substring(0, 19);
-                    dateOfLog = LocalDateTime.parse(dateString, formatter);
-                    String tryLevel = strLine.substring(24, 29);
-                    if (tryLevel.equals("ERROR") || tryLevel.equals("TRACE") || tryLevel.equals("DEBUG")) {
-                        level = tryLevel;
-                        message = strLine.substring(30);
-                    } else {
-                        level = tryLevel.substring(0, 4);
-                        message = strLine.substring(29);
+                    try{
+                        String dateString = strLine.substring(0, 19);
+                        dateOfLog = LocalDateTime.parse(dateString, formatter);
+                        String tryLevel = strLine.substring(24, 29);
+                        if (tryLevel.equals("ERROR") || tryLevel.equals("TRACE") || tryLevel.equals("DEBUG")) {
+                            level = tryLevel;
+                            message = strLine.substring(30);
+                        } else {
+                            level = tryLevel.substring(0, 4);
+                            message = strLine.substring(29);
+                        }
+                        LogModel logModel = new LogModel(LogType.valueOf(level), message, dateOfLog, LogSource.APP);
+                        models.add(logModel);
+                    } catch(Exception e) {
+                        if (models.size() != 0) {
+                            models.get(models.size()-1).setMessage(models.get(models.size()-1).getMessage() + strLine);
+                        }
                     }
-                    LogModel logModel = new LogModel(LogType.valueOf(level), message, dateOfLog, LogSource.APP);
-                    models.add(logModel);
                 }
                 currentRow = currentRow + 1;
             }
@@ -84,7 +90,9 @@ public class LogParser {
                         LogModel logModel = new LogModel(LogType.valueOf(level), message, dateOfLog, LogSource.KEYCLOAK);
                         models.add(logModel);
                     } catch (Exception e) {
-                        models.get(models.size()-1).setMessage(models.get(models.size()-1).getMessage() + strLine);
+                        if (models.size() != 0) {
+                            models.get(models.size()-1).setMessage(models.get(models.size()-1).getMessage() + strLine);
+                        }
                     }
                 }
                 currentRow = currentRow + 1;

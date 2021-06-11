@@ -11,4 +11,5 @@ import java.util.List;
 public interface PatientStatusRepository extends JpaRepository<PatientStatus, Integer> {
 
     List<PatientStatus> findAllByAlarm(boolean alarm);
+    List<PatientStatus> findAllByPatient_Id(int patientId);
 }

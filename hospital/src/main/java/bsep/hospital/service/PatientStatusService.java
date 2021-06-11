@@ -16,11 +16,15 @@ public class PatientStatusService {
     PatientStatusRepository patientStatusRepository;
 
     public List<PatientStatus> findAll() {
-        return patientStatusRepository.findAll();
+        return (List<PatientStatus>) patientStatusRepository.findAll();
     }
 
     public List<PatientStatus> findAllAlarms() {
         return patientStatusRepository.findAllByAlarm(true);
+    }
+
+    public List<PatientStatus> findAllByPatientId(Integer patientId) {
+        return patientStatusRepository.findAllByPatient_Id(patientId);
     }
 
     public Page<PatientStatus> findAll(Pageable pageable) {

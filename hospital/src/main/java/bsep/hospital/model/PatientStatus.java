@@ -47,6 +47,13 @@ public class PatientStatus {
         this.message = message;
     }
 
+    public double getValue(){
+        int startIndex = message.indexOf("is: ") + 4;
+        int endIndex = message.indexOf(".", message.indexOf(".") + 1);
+        String sub = message.substring(startIndex, endIndex);
+        return  Double.parseDouble(message.substring(startIndex, endIndex));
+    }
+
     public int getId() {
         return id;
     }

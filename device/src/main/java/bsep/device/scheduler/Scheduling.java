@@ -21,7 +21,26 @@ public class Scheduling {
     public Scheduling() {
     }
 
-    @Scheduled(fixedRate = 3000, initialDelay = 3000)
+   /* @Scheduled(fixedRate = 10000)
+    public void test() {
+        try {
+
+            RestTemplate restTemplate = new RestTemplate();
+
+            HttpEntity<String> request = new HttpEntity<>("");
+            ResponseEntity<?> responseEntity = restTemplate.exchange("https://localhost:8085/rules", HttpMethod.POST, request, ResponseEntity.class);
+
+            System.out.println(
+                    "HearthBeat status code - " + responseEntity.getStatusCode());
+
+        } catch (Exception e) {
+            System.out.println(
+                    "HearthBeat error - " + e.getMessage());
+        }
+
+    }*/
+
+    @Scheduled(fixedRate = 10000, initialDelay = 10000)
     public void sendHearthBeat() {
         try {
 
@@ -46,7 +65,9 @@ public class Scheduling {
 
     }
 
-    @Scheduled(fixedRate = 3000, initialDelay = 3000)
+
+
+    @Scheduled(fixedRate = 10000, initialDelay = 10000)
     public void sendPressure() {
         try {
 
@@ -71,7 +92,7 @@ public class Scheduling {
 
     }
 
-    @Scheduled(fixedRate = 3000, initialDelay = 3000)
+    @Scheduled(fixedRate = 10000, initialDelay = 10000)
     public void sendTemperature() {
         try {
 

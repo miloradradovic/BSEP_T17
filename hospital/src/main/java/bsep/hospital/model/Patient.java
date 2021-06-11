@@ -1,6 +1,7 @@
 package bsep.hospital.model;
 
 import bsep.hospital.enums.BloodType;
+import org.hibernate.annotations.ColumnTransformer;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,7 +14,10 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name", unique = false, nullable = false)
+    @Column(name = "name", columnDefinition = "bytea", unique = false, nullable = false)
+    /*@ColumnTransformer(
+            read = "pgp_sym_decrypt(name::bytea, 'AES_KEY'::text)",
+            write = "pgp_sym_encrypt(?, 'AES_KEY'::text)")*/
     private String name;
 
     @Column(name = "surname", unique = false, nullable = false)

@@ -1,47 +1,45 @@
 package bsep.hospital.api;
 
-import bsep.hospital.dto.PatientStatusDTO;
-import bsep.hospital.model.PatientStatus;
-import org.apache.maven.shared.invoker.*;
+import bsep.hospital.dto.AdminRuleDTO;
+import bsep.hospital.dto.DoctorRuleDTO;
+import org.apache.maven.shared.invoker.DefaultInvocationRequest;
+import org.apache.maven.shared.invoker.DefaultInvoker;
+import org.apache.maven.shared.invoker.InvocationRequest;
+import org.apache.maven.shared.invoker.Invoker;
 import org.drools.template.ObjectDataCompiler;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.io.*;
-import java.text.SimpleDateFormat;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@CrossOrigin(origins = "https://localhost:4205")
 @RestController
 @RequestMapping(value = "/rules", produces = MediaType.APPLICATION_JSON_VALUE)
 public class RulesController {
 
-    @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<List<PatientStatusDTO>> createDoctorRule() {
-        InputStream template = null;
+    @RequestMapping(value = "doctor-rule", method = RequestMethod.POST)
+    public ResponseEntity<?> createDoctorRule(@RequestBody DoctorRuleDTO ruleDTO) {
         try {
-            template = new FileInputStream("../hospital/src/main/resources/rules/doctor-template.drt");
+            //DoctorRuleDTO ruleDTO = new DoctorRuleDTO("testRule", 1, "TEMPERATURE", 20.0, "==");
+            InputStream template = new FileInputStream("../hospital/src/main/resources/rules/doctor-template.drt");
 
-            List<IntervalDTO> arguments = new ArrayList<>();
-            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyy HH:mm");
-            arguments.add(new IntervalDTO("2021-06-05", "2021-06-07"));
+            List<DoctorRuleDTO> arguments = new ArrayList<>();
+            arguments.add(ruleDTO);
             ObjectDataCompiler compiler = new ObjectDataCompiler();
             String drl = compiler.compile(arguments, template);
 
-            FileOutputStream drlFile = new FileOutputStream(new File(
-                    "../hospital/src/main/resources/rules/interval-report.drl"), false);
+            FileOutputStream drlFile = new FileOutputStream("../hospital/src/main/resources/rules/" + ruleDTO.getRuleName() + ".drl", false);
             drlFile.write(drl.getBytes());
             drlFile.close();
 
             InvocationRequest request = new DefaultInvocationRequest();
-            //request.setInputStream(InputStream.nullInputStream());
             request.setPomFile(new File("../hospital/pom.xml"));
             request.setGoals(Arrays.asList("clean", "install"));
 
@@ -53,8 +51,37 @@ public class RulesController {
             e.printStackTrace();
         }
 
-
-
-
+        return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @RequestMapping(value = "admin-rule", method = RequestMethod.POST)
+    public ResponseEntity<?> createAdminRule(@RequestBody AdminRuleDTO ruleDTO) {
+        try {
+            InputStream template = new FileInputStream("../hospital/src/main/resources/rules/admin-template.drt");
+
+            List<AdminRuleDTO> arguments = new ArrayList<>();
+            arguments.add(ruleDTO);
+            ObjectDataCompiler compiler = new ObjectDataCompiler();
+            String drl = compiler.compile(arguments, template);
+
+            FileOutputStream drlFile = new FileOutputStream("../hospital/src/main/resources/rules/" + ruleDTO.getRuleName() + ".drl", false);
+            drlFile.write(drl.getBytes());
+            drlFile.close();
+
+            InvocationRequest request = new DefaultInvocationRequest();
+            request.setPomFile(new File("../hospital/pom.xml"));
+            request.setGoals(Arrays.asList("clean", "install"));
+
+            Invoker invoker = new DefaultInvoker();
+            invoker.setMavenHome(new File(System.getenv("M2_HOME")));
+            invoker.execute(request);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
 }
