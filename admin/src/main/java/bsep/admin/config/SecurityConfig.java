@@ -13,6 +13,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.authority.mapping.SimpleAuthorityMapper;
 import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy;
@@ -53,15 +54,18 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);
-        http
+        http.csrf().disable()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.OPTIONS, "/*").permitAll()
-                // .antMatchers("/auth/**","/certificate-request/**").permitAll()
-                .antMatchers("/auth/**", "/certificate-request/**")
-                //.hasRole("SUPER_ADMIN")
-                //.anyRequest()
-                .permitAll();
+                //.antMatchers(HttpMethod.OPTIONS, "/*").permitAll()
+                .antMatchers("/auth/**", "/certificate-request/**").permitAll()
+                .antMatchers( "/certificate/**").hasAnyRole("SUPER_ADMIN")
+                .anyRequest().authenticated()
+                .and().cors()
 
-        http.cors().and().csrf().disable();
+                ;
+        http.headers().xssProtection()
+        .and().contentSecurityPolicy("script-src 'self'");
     }
 }

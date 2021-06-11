@@ -25,9 +25,9 @@ export class LoginService {
   }
 
   getRole(): UserRole {
-    if (!localStorage.getItem('user')) {
+    if (!sessionStorage.getItem('user')) {
       return UserRole.UNAUTHORIZED;
     }
-    return JSON.parse(localStorage.getItem('user')).role === "ADMIN" ? UserRole.ADMIN : UserRole.DOCTOR;
+    return JSON.parse(sessionStorage.getItem('user')).role === "ADMIN" ? UserRole.ADMIN : UserRole.DOCTOR;
   }
 }

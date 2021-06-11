@@ -28,16 +28,16 @@ export class RequestCertificateComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.certificateService.getPerson(JSON.parse(localStorage.getItem('user')).email).toPromise().then(result => {
-      this.formData.controls['commonName'].patchValue(JSON.parse(localStorage.getItem('user')).email.split('@')[1]);
+    this.certificateService.getPerson(JSON.parse(sessionStorage.getItem('user')).email).toPromise().then(result => {
+      this.formData.controls['commonName'].patchValue(JSON.parse(sessionStorage.getItem('user')).email.split('@')[1]);
       this.formData.controls['surname'].patchValue(result.surname);
       this.formData.controls['givenName'].patchValue(result.name);
     });
   }
 
   sendRequest() {
-    this.formData.controls['userId'].patchValue(JSON.parse(localStorage.getItem('user')).id);
-    this.formData.controls['email'].patchValue(JSON.parse(localStorage.getItem('user')).email);
+    this.formData.controls['userId'].patchValue(JSON.parse(sessionStorage.getItem('user')).id);
+    this.formData.controls['email'].patchValue(JSON.parse(sessionStorage.getItem('user')).email);
     this.spinnerService.show();
     this.certificateService.sendCertificateRequest(this.formData.value).toPromise().then(result => {
       if (result) {

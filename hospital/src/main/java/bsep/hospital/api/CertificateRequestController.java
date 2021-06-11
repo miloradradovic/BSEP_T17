@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -22,15 +21,15 @@ public class CertificateRequestController {
     @Autowired
     CertificateRequestService certificateRequestService;
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    //@PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> createAndSendCertificateRequest(@RequestBody @Valid CertificateRequestDTO certificateRequestDTO) throws NoSuchAlgorithmException, KeyStoreException, KeyManagementException {
 
         boolean success = certificateRequestService.sendCertificateRequest(certificateRequestDTO);
         if (success) {
-            return new ResponseEntity<>(true,HttpStatus.OK);
+            return new ResponseEntity<>(true, HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(false,HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
         }
     }
 }
