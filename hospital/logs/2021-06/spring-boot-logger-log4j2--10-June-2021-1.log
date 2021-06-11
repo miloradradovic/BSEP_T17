@@ -1,0 +1,61 @@
+2021-06-10 14:53:01,403 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-06-10 14:53:01,435 INFO o.s.b.StartupInfoLogger [main] Starting HospitalApplication on DESKTOP-MK6223H with PID 7880 (D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital\target\classes started by Milorad in D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital)
+2021-06-10 14:53:01,438 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-06-10 14:53:02,029 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-10 14:53:02,030 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-10 14:53:02,070 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport [main] Spring Data JPA - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.LogRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-06-10 14:53:02,085 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 50ms. Found 2 JPA repository interfaces.
+2021-06-10 14:53:02,102 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-10 14:53:02,102 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-06-10 14:53:02,107 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport [main] Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.AuthorityRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-10 14:53:02,108 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport [main] Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PersonRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-10 14:53:02,111 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 8ms. Found 1 MongoDB repository interfaces.
+2021-06-10 14:53:02,346 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2262d6d5' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-10 14:53:02,354 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-10 14:53:02,583 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8085 (https)
+2021-06-10 14:53:02,590 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-10 14:53:02,590 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-06-10 14:53:02,591 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-10 14:53:02,701 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-06-10 14:53:02,701 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1231 ms
+2021-06-10 14:53:02,754 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-10 14:53:02,850 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-10 14:53:02,888 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-10 14:53:02,970 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-10 14:53:03,035 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-06-10 14:53:03,163 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-06-10 14:53:03,174 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-10 14:53:03,757 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [main] SQL Warning Code: 0, SQLState: 00000
+2021-06-10 14:53:03,757 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [main] relation "user_authority" does not exist, skipping
+2021-06-10 14:53:03,758 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [main] SQL Warning Code: 0, SQLState: 00000
+2021-06-10 14:53:03,758 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [main] relation "user_authority" does not exist, skipping
+2021-06-10 14:53:03,759 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [main] SQL Warning Code: 0, SQLState: 00000
+2021-06-10 14:53:03,760 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [main] table "authorities" does not exist, skipping
+2021-06-10 14:53:03,760 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [main] SQL Warning Code: 0, SQLState: 00000
+2021-06-10 14:53:03,761 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [main] table "staff" does not exist, skipping
+2021-06-10 14:53:03,762 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [main] SQL Warning Code: 0, SQLState: 00000
+2021-06-10 14:53:03,762 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler [main] table "user_authority" does not exist, skipping
+2021-06-10 14:53:03,816 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-10 14:53:03,823 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-10 14:53:04,285 INFO c.m.d.l.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-06-10 14:53:04,319 INFO c.m.d.l.SLF4JLogger [cluster-ClusterId{value='60c20b30250135131d765df9', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:100}] to localhost:27017
+2021-06-10 14:53:04,322 INFO c.m.d.l.SLF4JLogger [cluster-ClusterId{value='60c20b30250135131d765df9', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2131600}
+2021-06-10 14:53:04,681 INFO b.h.i.Initialize [main] Executing operation Initialize
+2021-06-10 14:53:04,833 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19834eb7, org.springframework.security.web.context.SecurityContextPersistenceFilter@7621c3f7, org.springframework.security.web.header.HeaderWriterFilter@4a7c8cb7, org.springframework.web.filter.CorsFilter@26361572, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@3d7caf9c, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@4cb58e8b, org.springframework.security.web.authentication.logout.LogoutFilter@2fcad739, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5608e254, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a61d819, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@8bde368, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@5065bdac, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5dc8448b, org.springframework.security.web.session.SessionManagementFilter@2351255a, org.springframework.security.web.access.ExceptionTranslationFilter@6d2f910b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4202bfe8]
+2021-06-10 14:53:05,044 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-10 14:53:05,156 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8085 (https) with context path ''
+2021-06-10 14:53:05,163 INFO o.s.b.StartupInfoLogger [main] Started HospitalApplication in 3.977 seconds (JVM running for 5.227)
+2021-06-10 14:53:16,602 INFO o.a.j.l.DirectJDKLog [https-jsse-nio-8085-exec-5] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-10 14:53:50,347 INFO o.s.w.s.FrameworkServlet [https-jsse-nio-8085-exec-5] Initializing Servlet 'dispatcherServlet'
+2021-06-10 14:53:50,347 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47s67ms349µs400ns).
+2021-06-10 14:54:03,511 INFO o.s.w.s.FrameworkServlet [https-jsse-nio-8085-exec-5] Completed initialization in 10 ms
+2021-06-10 14:54:06,148 INFO o.k.a.KeycloakDeployment [https-jsse-nio-8085-exec-5] Loaded URLs from https://localhost:8443/auth/realms/hospital-portal/.well-known/openid-configuration
+2021-06-10 14:54:11,614 WARN o.a.j.l.DirectJDKLog [https-jsse-nio-8085-exec-5] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [105] milliseconds.
+2021-06-10 14:54:13,492 INFO b.h.s.CertificateRequestService [https-jsse-nio-8085-exec-5] Hi
+2021-06-10 14:57:55,679 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m5s331ms539µs400ns).
+2021-06-10 14:57:55,728 INFO c.m.d.l.SLF4JLogger [https-jsse-nio-8085-exec-5] Opened connection [connectionId{localValue:2, serverValue:101}] to localhost:27017
+2021-06-10 14:57:58,860 INFO c.m.d.l.SLF4JLogger [SpringContextShutdownHook] Closed connection [connectionId{localValue:2, serverValue:101}] to localhost:27017 because the pool has been closed.
+2021-06-10 14:57:58,863 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-10 14:57:58,864 INFO o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-06-10 14:57:58,910 INFO c.z.h.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2021-06-10 14:57:58,921 INFO c.z.h.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
