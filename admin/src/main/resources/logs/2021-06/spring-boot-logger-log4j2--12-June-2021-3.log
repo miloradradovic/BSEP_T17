@@ -1,0 +1,40 @@
+2021-06-12 20:48:55,512 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 20:48:55,543 INFO o.s.b.StartupInfoLogger Starting AdminApplication on DESKTOP-MK6223H with PID 8752 (D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\admin\target\classes started by Milorad in D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\admin)
+2021-06-12 20:48:55,546 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
+2021-06-12 20:48:56,149 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 20:48:56,213 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 56ms. Found 3 JPA repository interfaces.
+2021-06-12 20:48:56,507 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@428bdd72' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 20:48:56,515 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 20:48:56,775 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8084 (https)
+2021-06-12 20:48:56,783 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8084"]
+2021-06-12 20:48:56,784 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
+2021-06-12 20:48:56,784 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 20:48:56,906 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
+2021-06-12 20:48:56,907 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1328 ms
+2021-06-12 20:48:56,955 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 20:48:57,068 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 20:48:57,103 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 20:48:57,178 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 20:48:57,240 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-12 20:48:57,369 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2021-06-12 20:48:57,380 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-12 20:48:58,114 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 20:48:58,122 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 20:48:58,769 INFO b.a.k.KeyStoreReader Attempting to initialize keystore using bouncy castle provider.
+2021-06-12 20:48:58,808 INFO b.a.k.KeyStoreWriter Attempting to initialize keystore using bouncy castle provider.
+2021-06-12 20:48:58,821 INFO b.a.i.Initialize Executing operation Initialize
+2021-06-12 20:48:58,822 INFO b.a.i.Initialize Attempting to create certificate and crl for root ca.
+2021-06-12 20:48:58,822 INFO b.a.k.KeyStoreWriter Attempting to load keystore.
+2021-06-12 20:48:58,824 INFO b.a.k.KeyStoreWriter Successfully loaded keystore.
+2021-06-12 20:48:58,824 INFO b.a.i.Initialize Successfully created certificate and crl for root ca.
+2021-06-12 20:48:59,008 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8ad182c, org.springframework.security.web.context.SecurityContextPersistenceFilter@68fa8ea5, org.springframework.security.web.header.HeaderWriterFilter@79982bcc, org.springframework.web.filter.CorsFilter@7e84af34, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@1ef5cde4, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@5d20195b, org.springframework.security.web.authentication.logout.LogoutFilter@5114c8a1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@ecb8b3e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b9bbaa8, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@5895c065, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@683fac7e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@218e186b, org.springframework.security.web.session.SessionManagementFilter@79f3f34c, org.springframework.security.web.access.ExceptionTranslationFilter@1e5e2e06, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6d84ab90]
+2021-06-12 20:48:59,241 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8084"]
+2021-06-12 20:48:59,335 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8084 (https) with context path ''
+2021-06-12 20:48:59,342 INFO o.s.b.StartupInfoLogger Started AdminApplication in 4.041 seconds (JVM running for 5.29)
+2021-06-12 20:49:03,040 INFO o.a.j.l.DirectJDKLog Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-12 20:49:03,041 INFO o.s.w.s.FrameworkServlet Initializing Servlet 'dispatcherServlet'
+2021-06-12 20:49:03,053 INFO o.s.w.s.FrameworkServlet Completed initialization in 12 ms
+2021-06-12 20:50:16,245 INFO o.s.o.j.AbstractEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 20:50:16,245 INFO o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-06-12 20:50:16,277 INFO c.z.h.HikariDataSource HikariPool-1 - Shutdown initiated...
+2021-06-12 20:50:16,287 INFO c.z.h.HikariDataSource HikariPool-1 - Shutdown completed.
