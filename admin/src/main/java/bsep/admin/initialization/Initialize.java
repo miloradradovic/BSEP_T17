@@ -7,6 +7,8 @@ import bsep.admin.keystore.KeyStoreReader;
 import bsep.admin.keystore.KeyStoreWriter;
 import bsep.admin.model.SubjectData;
 import bsep.admin.service.CertificateService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x500.X500NameBuilder;
 import org.bouncycastle.asn1.x500.style.BCStyle;
@@ -38,12 +40,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
-import java.util.logging.Logger;
 
 @Component
 public class Initialize {
 
-    private static final Logger LOG = Logger.getLogger(Initialize.class.getName());
 
     @Autowired
     KeyStoreReader keyStoreReader;
@@ -54,24 +54,35 @@ public class Initialize {
     @Autowired
     CertificateService certificateService;
 
+    private static Logger logger = LogManager.getLogger(Initialize.class);
+
 
     @PostConstruct
     public void init() {
-        LOG.info("Executing operation Initialize");
+        logger.info("Executing operation Initialize");
         createCerAndCrlForRootCA();
 
     }
 
     public void createCerAndCrlForRootCA() {
         try {
+            logger.info("Attempting to create certificate and crl for root ca.");
             if (!keyStoreWriter.loadKeyStore())
                 createCer();
-        } catch (OperatorCreationException | CertificateException | CRLException | IOException e) {
-            e.printStackTrace();
+                logger.info("Successfully created certificate and crl for root ca.");
+        } catch (OperatorCreationException operatorCreationException) {
+            logger.error("Couldn't create certificate and crl for root ca because of operator creation.");
+        } catch (CertificateException certificateException) {
+            logger.error("Couldn't create certificate and crl for root ca because something is wrong with certificate.");
+        } catch (CRLException crlException) {
+            logger.error("Couldn't create certificate and crl for root ca because something is wrong with crl.");
+        } catch (IOException ioException) {
+            logger.error("Couldn't create certificate and crl for root ca because keystore path is invalid.");
         }
     }
 
     private void createCer() throws OperatorCreationException, CertificateException, CRLException, IOException {
+        logger.info("Starting certificate creation.");
         keyStoreWriter.createKeyStore();
 
         KeyPair keyPair = generateKeyPair();
@@ -139,11 +150,13 @@ public class Initialize {
         keyStoreWriter.saveKeyStore();
 
         createCRL(keyPair.getPrivate(), subjectData.getX500name());
+        logger.info("Successfully generated certificate and crl for root ca.");
         //writeCertificateToPEM(createdCertificate);
         //writePrivateKeyToPEM(keyPair.getPrivate());
     }
 
     private void createCRL(PrivateKey pk, X500Name issuerName) throws CRLException, IOException, OperatorCreationException {
+        logger.info("Attempting to create crl.");
         X509v2CRLBuilder crlBuilder = new X509v2CRLBuilder(issuerName, new Date());
         crlBuilder.setNextUpdate(new Date(System.currentTimeMillis() + 86400 * 1000));
 
@@ -163,10 +176,12 @@ public class Initialize {
         OutputStream os = new FileOutputStream("src/main/resources/adminCRLs.crl");
         os.write(bytes);
         os.close();
+        logger.info("Successfully generated crl.");
     }
 
     private SubjectData generateSubjectDataPredefined() {
 
+        logger.info("Attempting to generate subject data predefined.");
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         // Datumi od kad do kad vazi sertifikat
@@ -199,19 +214,23 @@ public class Initialize {
         // - podatke o vlasniku
         // - serijski broj sertifikata
         // - od kada do kada vazi sertifikat
+        logger.info("Successfully generated subject data.");
         return new SubjectData(builder.build(), serialNumber, startDate, endDate);
 
     }
 
     private KeyPair generateKeyPair() {
         try {
+            logger.info("Attempting to generate keypair.");
             KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
             SecureRandom random = SecureRandom.getInstance("SHA1PRNG", "SUN");
             keyGen.initialize(2048, random);
-
+            logger.info("Successfully generated keypair.");
             return keyGen.generateKeyPair();
-        } catch (NoSuchAlgorithmException | NoSuchProviderException e) {
-            e.printStackTrace();
+        } catch (NoSuchAlgorithmException noSuchAlgorithmException) {
+            logger.error("Couldn't generate keypair because keystore algorithm is invalid.");
+        } catch (NoSuchProviderException noSuchProviderException) {
+            logger.error("Couldn't generate keypair because provider was not provided.");
         }
         return null;
     }

@@ -7,6 +7,8 @@ import bsep.admin.exceptions.CertificateNotFoundException;
 import bsep.admin.model.Admin;
 import bsep.admin.service.CerRequestInfoService;
 import bsep.admin.service.CertificateService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.bouncycastle.operator.OperatorCreationException;
 import org.keycloak.KeycloakPrincipal;
 import org.keycloak.KeycloakSecurityContext;
@@ -37,6 +39,8 @@ public class CertificateController {
     @Autowired
     CerRequestInfoService cerRequestInfoService;
 
+    private static Logger logger = LogManager.getLogger(CertificateController.class);
+
     //@PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> createCertificate(@Valid @RequestBody CertificateCreationDTO certificateCreationDTO) {
@@ -46,12 +50,15 @@ public class CertificateController {
 
         KeycloakSecurityContext session = kcp.getKeycloakSecurityContext();
         AccessToken accessToken = session.getToken();
+        logger.info("User with the email " + accessToken.getEmail() + " is attempting to create certificate.");
         try {
             certificateService.createAdminCertificate(certificateCreationDTO, accessToken.getEmail());
             cerRequestInfoService.delete(certificateCreationDTO.getSubjectID());
+            logger.info("Successfully created certificate.");
             return new ResponseEntity<>(HttpStatus.CREATED);
 
         } catch (Exception e) {
+            logger.error("Failed to create certificate.");
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
@@ -60,7 +67,9 @@ public class CertificateController {
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<CertificateInfoDTO> getAllCertificates() {
 
+        logger.info("Attempting to get all certificates.");
         CertificateInfoDTO certificateInfoDTO = certificateService.getCertificates();
+        logger.info("Successfully retrieved all certificates.");
         return new ResponseEntity<>(certificateInfoDTO, HttpStatus.OK);
 
     }
@@ -70,9 +79,12 @@ public class CertificateController {
     public ResponseEntity<CertificateInfoDTO> checkIsValid(@PathVariable String alias) {
 
         try {
+            logger.info("Attempting to check certificate validation.");
             certificateService.checkCertificate(alias);
+            logger.info("Successfully checked certificate validation.");
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (CertificateException | CRLException | IOException e) {
+            logger.error("Failed to check certificate validation.");
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
@@ -89,8 +101,11 @@ public class CertificateController {
         AccessToken accessToken = session.getToken();
 
         try {
+            logger.info("User with the email " + accessToken.getEmail() + " is attempting to revoke certificate.");
             certificateService.revokeCertificate(revokeCertificateDTO, accessToken.getEmail());
+            logger.info("Successfully revoked certificate.");
         } catch (IOException | CRLException | CertificateException | OperatorCreationException | CertificateNotFoundException e) {
+            logger.error("Failed to revoke certificate.");
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>(HttpStatus.CREATED);

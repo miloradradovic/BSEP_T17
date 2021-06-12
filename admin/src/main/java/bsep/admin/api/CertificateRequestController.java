@@ -4,6 +4,8 @@ import bsep.admin.dto.CerRequestInfoDTO;
 import bsep.admin.exceptions.CertificateNotFoundException;
 import bsep.admin.mappers.CerRequestInfoMapper;
 import bsep.admin.service.CerRequestInfoService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -24,6 +26,8 @@ public class CertificateRequestController {
 
     private final CerRequestInfoMapper cerRequestInfoMapper;
 
+    private static Logger logger = LogManager.getLogger(CertificateController.class);
+
     public CertificateRequestController() {
         cerRequestInfoMapper = new CerRequestInfoMapper();
     }
@@ -31,21 +35,29 @@ public class CertificateRequestController {
     @RequestMapping(value = "/send-certificate-request", method = RequestMethod.POST)
     public ResponseEntity<?> sendCertificateRequest(@RequestBody byte[] encryptedCSR) {
         try {
+            logger.info("Attempting to create certificate request.");
             boolean success = cerRequestInfoService.createCertificateRequest(encryptedCSR);
 
-            if (success)
+            if (success) {
+                logger.info("Successfully created certificate request.");
                 return new ResponseEntity<>(HttpStatus.OK);
+            } else {
+                logger.error("Failed to create certificate request.");
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
 
         } catch (IOException | CertificateNotFoundException e) {
+            logger.error("Failed to create certificate request.");
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<CerRequestInfoDTO>> getCertificateRequests() {
 
+        logger.info("Attempting to get certificate requests.");
         List<CerRequestInfoDTO> reqs = cerRequestInfoMapper.toDTOList(cerRequestInfoService.findAllVerified());
+        logger.info("Successfully retrieved all certificate requests.");
         return new ResponseEntity<>(reqs, HttpStatus.OK);
 
     }
@@ -53,9 +65,12 @@ public class CertificateRequestController {
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> removeCertificateRequest(@PathVariable @Positive Integer id) {
 
+        logger.info("Attempting to remove certificate request with id " + id.toString());
         if (cerRequestInfoService.delete(id)) {
+            logger.info("Successfully removed certificate request with id " + id.toString());
             return new ResponseEntity<>(HttpStatus.OK);
         }
+        logger.error("Failed to remove certificate request with id " + id.toString());
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 }

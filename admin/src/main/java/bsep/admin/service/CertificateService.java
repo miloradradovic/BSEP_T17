@@ -10,6 +10,8 @@ import bsep.admin.model.Issuer;
 import bsep.admin.model.SubjectData;
 import bsep.admin.utils.Pair;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x500.X500NameBuilder;
 import org.bouncycastle.asn1.x500.style.BCStyle;
@@ -60,6 +62,8 @@ public class CertificateService {
     @Autowired
     private EmailService emailService;
 
+    private static Logger logger = LogManager.getLogger(CertificateService.class);
+
     @PostConstruct
     private void init() {
         Security.addProvider(new BouncyCastleProvider());
@@ -67,17 +71,20 @@ public class CertificateService {
 
     public void createAdminCertificate(CertificateCreationDTO certificateCreationDTO, String issuerAlias) throws CertificateNotFoundException, OperatorCreationException, IssuerNotCAException, InvalidIssuerException, AliasAlreadyExistsException, CertificateException, CRLException, IOException, CertificateSendFailException, MessagingException {
 
+        logger.info("Attempting to create admin certificate, issuer alias " + issuerAlias);
         Certificate[] issuerCertificateChain = keyStoreReader.readCertificateChain(issuerAlias);
         Certificate cc = keyStoreReader.readCertificate(issuerAlias);
 
         X509Certificate issuer = (X509Certificate) issuerCertificateChain[0];
-        if (!isCertificateValid(issuerCertificateChain))
+        if (!isCertificateValid(issuerCertificateChain)) {
+            logger.error("Issuer alias is invalid " + issuerAlias);
             throw new InvalidIssuerException();
-
+        }
         try {
             if (issuer.getBasicConstraints() == -1 || !issuer.getKeyUsage()[5]) {
                 // Sertifikat nije CA
                 // https://stackoverflow.com/questions/12092457/how-to-check-if-x509certificate-is-ca-certificate
+                logger.error("Issuer is not CA.");
                 throw new IssuerNotCAException();
             }
         } catch (NullPointerException ignored) {
@@ -89,8 +96,10 @@ public class CertificateService {
 
         Certificate certInfo = keyStoreReader.readCertificate(alias);
         if (certInfo != null) {
-            if (!isRevoked(certInfo))
+            if (!isRevoked(certInfo)) {
+                logger.error("Alias " + alias + " already exists.");
                 throw new AliasAlreadyExistsException();
+            }
         }
 
         String generatedAlias = generateAlias(cerRequestInfoService.findOne(certificateCreationDTO.getSubjectID()).getEmail());
@@ -99,6 +108,7 @@ public class CertificateService {
     }
 
     private void generateAdminCertificate(CertificateCreationDTO certificateCreationDTO, Certificate[] issuerCertificateChain, String alias, String issuerAlias) throws CertificateNotFoundException, OperatorCreationException, CertificateException, CertificateSendFailException, MessagingException, IOException {
+        logger.info("Attempting to generate admin certificate.");
         KeyPair keyPair = generateKeyPair();
         SubjectData subjectData = generateSubjectData(certificateCreationDTO.getSubjectID());
         assert subjectData != null;
@@ -143,6 +153,7 @@ public class CertificateService {
             if (keyUsageDTO.isKeyCertSign())
                 certGen.addExtension(Extension.basicConstraints, true, new BasicConstraints(true));
         } catch (CertIOException e) {
+            logger.error("Failed to add extensions to certificate.");
             e.printStackTrace();
         }
 
@@ -156,6 +167,7 @@ public class CertificateService {
             GeneralNames subjectAltName = new GeneralNames(new GeneralName(GeneralName.dNSName, IETFUtils.valueToString(subjectData.getX500name().getRDNs(BCStyle.CN)[0].getFirst().getValue())));
             certGen.addExtension(X509Extensions.SubjectAlternativeName, false, subjectAltName);
         } catch (CertIOException e) {
+            logger.error("Failed to add extensions to certificate.");
             e.printStackTrace();
         }
 
@@ -174,7 +186,9 @@ public class CertificateService {
 
         String email = IETFUtils.valueToString(subjectData.getX500name().getRDNs(BCStyle.E)[0].getFirst().getValue());
         String fullName = IETFUtils.valueToString(subjectData.getX500name().getRDNs(BCStyle.SURNAME)[0].getFirst().getValue()) + " " + IETFUtils.valueToString(subjectData.getX500name().getRDNs(BCStyle.GIVENNAME)[0].getFirst().getValue());
+        logger.info("Created certificate. Sending it via email.");
         if (!sendCertificateToAdmin(email, fullName, createdCertificate)) {
+            logger.error("Failed to send certificate via email.");
             throw new CertificateSendFailException();
         }
 
@@ -183,6 +197,7 @@ public class CertificateService {
 
     private String generateAlias(String email) {
 
+        logger.info("Attempting to generate alias for email " + email);
         int lastAliasNumber = -1;
         Enumeration<String> aliases = keyStoreReader.getAllAliases();
         while (aliases.hasMoreElements()) {
@@ -197,12 +212,13 @@ public class CertificateService {
         lastAliasNumber += 1;
         email += "|" + lastAliasNumber;
 
-
+        logger.info("Successfully generated alias for email " + email);
         return email;
     }
 
     private String getLastAlias(String email) {
 
+        logger.info("Getting the last alias for email " + email);
         int lastAliasNumber = -1;
         Enumeration<String> aliases = keyStoreReader.getAllAliases();
         while (aliases.hasMoreElements()) {
@@ -216,40 +232,44 @@ public class CertificateService {
 
         email += "|" + lastAliasNumber;
 
-
+        logger.info("Successfully retrieved the last alias for email.");
         return email;
     }
 
     public boolean sendCertificateToAdmin(String email, String fullName, X509Certificate cer) throws MessagingException, IOException {
+        logger.info("Attempting to send certificate via email.");
         writeCertificateToPEM(cer);
 
         File file = new File("src/main/resources/sending.crt");
         Path path = file.toPath();
         byte[] bytes = Files.readAllBytes(path);
-
         emailService.sendCertificate(email, fullName, bytes);
         return true;
     }
 
     private KeyPair generateKeyPair() {
         try {
+            logger.info("Attempting to generate keypair.");
             KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
             SecureRandom random = SecureRandom.getInstance("SHA1PRNG", "SUN");
             keyGen.initialize(2048, random);
-
+            logger.info("Successfully generated keypair.");
             return keyGen.generateKeyPair();
         } catch (NoSuchAlgorithmException | NoSuchProviderException e) {
+            logger.error("Failed to generate keypair.");
             e.printStackTrace();
         }
         return null;
     }
 
     private SubjectData generateSubjectData(int subjectID) {
+        logger.info("Attempting to generate subject data for subject id " + subjectID);
         CerRequestInfo cerRequestInfo = cerRequestInfoService.findOne(subjectID);
 
-        if (cerRequestInfo == null)
+        if (cerRequestInfo == null) {
+            logger.error("Certificate request with id " + subjectID + " is not found.");
             return null;
-
+        }
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         // Datumi od kad do kad vazi sertifikat
@@ -282,13 +302,16 @@ public class CertificateService {
         // - podatke o vlasniku
         // - serijski broj sertifikata
         // - od kada do kada vazi sertifikat
+        logger.info("Successfully generated subject data for subject id " + subjectID);
         return new SubjectData(builder.build(), serialNumber, startDate, endDate);
 
     }
 
     public boolean isCertificateValid(Certificate[] chain) throws CertificateException, CRLException, IOException {
 
+        logger.info("Attempting to check if certificate is valid.");
         if (chain == null) {
+            logger.error("Chain is null.");
             return false;
         }
 
@@ -297,24 +320,29 @@ public class CertificateService {
             cert = (X509Certificate) chain[i];
 
             if (isRevoked(cert)) {
+                logger.error("Certificate is revoked.");
                 return false;
             }
 
             Date now = new Date();
 
             if (now.after(cert.getNotAfter()) || now.before(cert.getNotBefore())) {
+                logger.error("Date of certificate is invalid.");
                 return false;
             }
 
             try {
                 if (i == chain.length - 1) {
+                    logger.info("Successfully checked certificate validity.");
                     return isSelfSigned(cert);
                 }
                 X509Certificate issuer = (X509Certificate) chain[i + 1];
                 cert.verify(issuer.getPublicKey());
             } catch (SignatureException | InvalidKeyException e) {
+                logger.error("Certificate signature is invalid.");
                 return false;
             } catch (Exception e) {
+                logger.error("Something went wrong.");
                 throw new RuntimeException(e);
             }
         }
@@ -323,29 +351,35 @@ public class CertificateService {
 
     public static boolean isSelfSigned(X509Certificate cert) {
         try {
+            logger.info("Checking if certificate is self signed.");
             cert.verify(cert.getPublicKey());
+            logger.info("Successfully checked if certificate is self signed.");
             return true;
         } catch (SignatureException | InvalidKeyException e) {
+            logger.error("Failed to check if certificate is self signed because something is wrong with signature.");
             return false;
         } catch (Exception e) {
+            logger.error("Something went wrong.");
             throw new RuntimeException(e);
         }
     }
 
     public boolean isRevoked(Certificate cer) throws IOException, CertificateException, CRLException {
 
+        logger.info("Attempting to check if certificate is revoked.");
         CertificateFactory factory = CertificateFactory.getInstance("X.509");
 
         File file = new File("src/main/resources/adminCRLs.crl");
 
         byte[] bytes = Files.readAllBytes(file.toPath());
         X509CRL crl = (X509CRL) factory.generateCRL(new ByteArrayInputStream(bytes));
-
+        logger.info("Successfully checked if certificate is revoked.");
         return crl.isRevoked(cer);
     }
 
     public String getRevocationReason(Certificate cer) throws IOException, CertificateException, CRLException {
 
+        logger.info("Attempting to get revocation reason for certificate.");
         CertificateFactory factory = CertificateFactory.getInstance("X.509");
 
         File file = new File("src/main/resources/adminCRLs.crl");
@@ -357,11 +391,13 @@ public class CertificateService {
 
         CRLReason reason = c.getRevocationReason();
 
+        logger.info("Successfully retrieved revocation reason for certificate.");
         return reason != null ? c.getRevocationReason().toString() : "UNSPECIFIED";
     }
 
     public void revokeCertificate(RevokeCertificateDTO revokeCertificateDTO, String issuerAlias) throws IOException, CRLException, CertificateNotFoundException, OperatorCreationException, CertificateEncodingException {
 
+        logger.info("Attempting to revoke certificate.");
         File file = new File("src/main/resources/adminCRLs.crl");
 
         byte[] bytes = Files.readAllBytes(file.toPath());
@@ -394,10 +430,12 @@ public class CertificateService {
         OutputStream os = new FileOutputStream("src/main/resources/adminCRLs.crl");
         os.write(bytes);
         os.close();
+        logger.info("Successfully revoked certificate.");
     }
 
     public CertificateInfoDTO getCertificates() {
 
+        logger.info("Attempting to get all certificates from keystore.");
         List<Pair<String, Certificate>> certificates = new ArrayList<>();
 
         Enumeration<String> aliases = keyStoreReader.getAllAliases();
@@ -410,23 +448,26 @@ public class CertificateService {
         try {
             return makeTree(certificates);
         } catch (CertificateException | CRLException | IOException e) {
+            logger.error("Failed to get all certificates from keystore.");
             e.printStackTrace();
         }
         return null;
     }
 
     public CertificateInfoDTO makeTree(List<Pair<String, Certificate>> certificates) throws CertificateException, CRLException, IOException {
+        logger.info("Attempting to generate tree-like structure of certificates.");
         CertificateInfoDTO tree = findRoot(certificates);
         certificates.remove(Integer.parseInt(tree.getEmail().split("\\|")[1]));
         tree.setEmail(tree.getEmail().split("\\|")[0]);
 
         tree = findIntermediate(certificates, tree, tree.getEmail());
         tree = findEnd(certificates, tree);
-
+        logger.info("Successfully generated tree-like structure of certificates");
         return tree;
     }
 
     public CertificateInfoDTO findRoot(List<Pair<String, Certificate>> certificates) throws CertificateException, CRLException, IOException {
+        logger.info("Attempting to find the root certificate.");
         CertificateInfoDTO tree = new CertificateInfoDTO();
         for (Pair pair : certificates) {
             Certificate cer = (Certificate) pair.getR();
@@ -452,13 +493,14 @@ public class CertificateService {
                 }
             }
         }
-
+        logger.info("Successfully retrieved root certificate.");
         return tree;
 
     }
 
     public CertificateInfoDTO findIntermediate(List<Pair<String, Certificate>> certificates, CertificateInfoDTO parent, String issuerEmail) throws CertificateException, CRLException, IOException {
 
+        logger.info("Attempting to find intermediate certificates.");
         for (Pair pair : certificates) {
             Certificate cer = (Certificate) pair.getR();
             String alias = (String) pair.getL();
@@ -486,11 +528,13 @@ public class CertificateService {
                 parent.getChildren().add(tree);
             }
         }
+        logger.info("Successfully retrieved intermediate certificates.");
         return parent;
     }
 
     public CertificateInfoDTO findEnd(List<Pair<String, Certificate>> certificates, CertificateInfoDTO parent) throws CertificateException, CRLException, IOException {
 
+        logger.info("Attempting to retrieve the end certificate.");
         for (CertificateInfoDTO child : parent.getChildren()) {
             for (Pair pair : certificates) {
                 Certificate cer = (Certificate) pair.getR();
@@ -518,31 +562,37 @@ public class CertificateService {
                 }
             }
         }
-
+        logger.info("Successfully retrieved end certificate.");
         return parent;
     }
 
     public boolean checkCertificate(String alias) throws CertificateException, CRLException, IOException {
+        logger.info("Attempting to check certificate for alias " + alias);
         Certificate[] chain = keyStoreReader.readCertificateChain(alias);
+        logger.info("Successfully checked certificate for alias " + alias);
         return isCertificateValid(chain);
 
     }
 
     public void writeCertificateToPEM(X509Certificate certificate) throws IOException {
+        logger.info("Attempting to write certificate to pem.");
         JcaPEMWriter pemWriter = new JcaPEMWriter(new FileWriter(new File("src/main/resources/sending.crt")));
         pemWriter.writeObject(certificate);
         pemWriter.flush();
         pemWriter.close();
+        logger.info("Successfully wrote certificate to pem.");
     }
 
 
     public void writePrivateKeyToPEM(PrivateKey privateKey) throws IOException {
+        logger.info("Attempting to write private key to pem.");
         PemObject pemFile = new PemObject("PRIVATE KEY", privateKey.getEncoded());
 
         JcaPEMWriter pemWriter = new JcaPEMWriter(new FileWriter(new File("localhost.key")));
         pemWriter.writeObject(pemFile);
         pemWriter.flush();
         pemWriter.close();
+        logger.info("Successfully wrote private key to pem.");
     }
 
 
