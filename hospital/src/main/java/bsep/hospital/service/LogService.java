@@ -6,6 +6,7 @@ import bsep.hospital.repository.LogRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -43,6 +44,7 @@ public class LogService {
     }
 
     @Scheduled(fixedRate = 5000)
+    @Async
     public void scheduledTest() {
         logger.info("Parsing logs from files.");
         List<LogModel> parsedAppLogs = logParser.parseAppLogs(rowNumberAppLogs + 1);
