@@ -18,7 +18,7 @@ public class LogConfigController {
 
     @RequestMapping(value = "/send-log-config", method = RequestMethod.POST)
     public ResponseEntity<?> sendLogConfig(@RequestBody LogConfig logConfig) {
-        logService.saveNewConfig(logConfig);
+        logService.createNewConfig(logConfig);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

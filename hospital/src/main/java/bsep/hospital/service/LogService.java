@@ -35,21 +35,8 @@ public class LogService {
     private int rowNumberAppLogs = 0;
     private int rowNumberKeycloakLogs = 0;
 
-    @Value("${configuration_json_path1}")
-    private String pathToConfigJson1;
-
-    @Value("${configuration_json_path2}")
-    private String pathToConfigJson2;
-
-    @Value("${configuration_json_path3}")
-    private String pathToConfigJson3;
-
-    @Value("${simulator_path1}")
-    private String simulatorPath1;
-    @Value("${simulator_path2}")
-    private String simulatorPath2;
-    @Value("${simulator_path3}")
-    private String simulatorPath3;
+    @Value("${configuration_json_path}")
+    private String pathToConfigJson;
 
 
     public LogService() {
@@ -90,30 +77,9 @@ public class LogService {
     @Async
     public void simulateLogs() {
         try {
-            Gson gson = new Gson();
             logger.info("Parsing simulate logs");
-            List<LogConfig> configs = new ArrayList<>();
-            LogConfig logConfig1 = gson.fromJson(new FileReader(pathToConfigJson1), LogConfig.class);
-            LogConfig logConfig2 = gson.fromJson(new FileReader(pathToConfigJson2), LogConfig.class);
-            LogConfig logConfig3 = gson.fromJson(new FileReader(pathToConfigJson3), LogConfig.class);
-            if (logConfig1 != null) {
-                configs.add(logConfig1);
-            }
-            if (logConfig2 != null) {
-                configs.add(logConfig2);
-            }
-            if (logConfig3 != null) {
-                configs.add(logConfig3);
-            }
-
+            List<LogConfig> configs = getLogModelsFromConfig();
             for (LogConfig logConfig: configs) {
-                if (configs.indexOf(logConfig) == 0) {
-                    System.out.println("LOG CONFIG 1 PARSIRA");
-                } else if (configs.indexOf(logConfig) == 1) {
-                    System.out.println("LOG CONFIG 2 PARSIRA");
-                } else {
-                    System.out.println("LOG CONFIG 3 PARSIRA");
-                }
                 readSimulatorLogs(logConfig);
                 Thread.sleep(logConfig.getDuration() * 1000);
             }
@@ -129,7 +95,7 @@ public class LogService {
             Pair<List<LogModel>, Integer> parsed = logParser.parseSimulatorLogs(logConfig);
             parsedLogs = parsed.getValue0();
             logConfig.setCurrentRow(parsed.getValue1());
-            saveNewConfig(logConfig);
+            saveConfig(logConfig);
             save(parsedLogs);
             logger.info("Finished parsing simulator logs.");
         } catch (IOException ioException) {
@@ -137,59 +103,67 @@ public class LogService {
         }
     }
 
-    public void saveNewConfig(LogConfig logConfig) {
+    private void saveConfig(LogConfig logConfig) {
         try {
-            Gson gson = new Gson();
-
-            if (logConfig.getPath().equals(simulatorPath1)) {
-                LogConfig logConfig1 = gson.fromJson(new FileReader(pathToConfigJson1), LogConfig.class);
-                if (logConfig1 == null) {
-                    gson = new GsonBuilder().setPrettyPrinting().create();
-                    Writer configWriter = new FileWriter(pathToConfigJson1);
-                    gson.toJson(logConfig, configWriter);
-                    configWriter.close();
-                } else {
-                    logConfig1.setDuration(logConfig.getDuration());
+            List<LogConfig> configs = getLogModelsFromConfig();
+            boolean found = false;
+            for (LogConfig logConfig1: configs) {
+                if (logConfig1.getPath().equals(logConfig.getPath())) {
+                    found = true;
                     logConfig1.setRegexp(logConfig.getRegexp());
-                    // logConfig1.setCurrentRow(logConfig.getCurrentRow());
-                    gson = new GsonBuilder().setPrettyPrinting().create();
-                    Writer configWriter = new FileWriter(pathToConfigJson1);
-                    gson.toJson(logConfig1, configWriter);
-                    configWriter.close();
-                }
-            } else if (logConfig.getPath().equals(simulatorPath2)) {
-                LogConfig logConfig1 = gson.fromJson(new FileReader(pathToConfigJson2), LogConfig.class);
-                if (logConfig1 == null) {
-                    gson = new GsonBuilder().setPrettyPrinting().create();
-                    Writer configWriter = new FileWriter(pathToConfigJson2);
-                    gson.toJson(logConfig, configWriter);
-                    configWriter.close();
-                } else {
                     logConfig1.setDuration(logConfig.getDuration());
-                    logConfig1.setRegexp(logConfig.getRegexp());
-                    // logConfig1.setCurrentRow(logConfig.getCurrentRow());
-                    gson = new GsonBuilder().setPrettyPrinting().create();
-                    Writer configWriter = new FileWriter(pathToConfigJson2);
-                    gson.toJson(logConfig1, configWriter);
-                    configWriter.close();
-                }
-            } else {
-                LogConfig logConfig1 = gson.fromJson(new FileReader(pathToConfigJson3), LogConfig.class);
-                if (logConfig1 == null) {
-                    gson = new GsonBuilder().setPrettyPrinting().create();
-                    Writer configWriter = new FileWriter(pathToConfigJson3);
-                    gson.toJson(logConfig, configWriter);
-                    configWriter.close();
-                } else {
-                    logConfig1.setDuration(logConfig.getDuration());
-                    logConfig1.setRegexp(logConfig.getRegexp());
-                    // logConfig1.setCurrentRow(logConfig.getCurrentRow());
-                    gson = new GsonBuilder().setPrettyPrinting().create();
-                    Writer configWriter = new FileWriter(pathToConfigJson3);
-                    gson.toJson(logConfig1, configWriter);
-                    configWriter.close();
+                    logConfig1.setCurrentRow(logConfig.getCurrentRow());
                 }
             }
+            if (!found) {
+                configs.add(logConfig);
+            }
+
+            writeToConfigFile(configs);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private List<LogConfig> getLogModelsFromConfig() {
+        try {
+            Gson gson = new Gson();
+            return gson.fromJson(new FileReader(pathToConfigJson), new TypeToken<ArrayList<LogConfig>>(){}.getType());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new ArrayList<>();
+    }
+
+    public void createNewConfig(LogConfig logConfig) {
+        try {
+            List<LogConfig> configs = getLogModelsFromConfig();
+            boolean found = false;
+            for (LogConfig logConfig1: configs) {
+                if (logConfig1.getPath().equals(logConfig.getPath())) {
+                    found = true;
+                    logConfig1.setRegexp(logConfig.getRegexp());
+                    logConfig1.setDuration(logConfig.getDuration());
+                }
+            }
+            if (!found) {
+                configs.add(logConfig);
+            }
+
+            writeToConfigFile(configs);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void writeToConfigFile(List<LogConfig> configs) {
+        try{
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            Writer configWriter = new FileWriter(pathToConfigJson);
+            gson.toJson(configs, configWriter);
+            configWriter.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
