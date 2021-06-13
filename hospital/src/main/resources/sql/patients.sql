@@ -1,3 +1,5 @@
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
 insert into patients (name, surname, date_of_birth, blood_type) values ('Joan', 'Williams', '1990-02-18 06:17:52 UTC', 'A_POSITIVE');
 insert into patients (name, surname, date_of_birth, blood_type) values ('Resty', 'Greene', '1998-01-15 05:30:12 UTC', 'B_POSITIVE');
 insert into patients (name, surname, date_of_birth, blood_type) values ('Christine', 'Riggs', '1963-05-20 02:06:18 UTC', 'A_NEGATIVE');

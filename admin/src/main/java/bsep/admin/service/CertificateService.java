@@ -574,6 +574,19 @@ public class CertificateService {
 
     }
 
+    public boolean checkCertificateByEmail(String email) throws CertificateException, CRLException, IOException {
+        String alias = getLastAlias(email);
+        if (alias != null) {
+            logger.info("Attempting to check certificate for alias " + alias);
+            Certificate[] chain = keyStoreReader.readCertificateChain(alias);
+            logger.info("Successfully checked certificate for alias " + alias);
+            return isCertificateValid(chain);
+        }
+
+        return false;
+    }
+
+
     public void writeCertificateToPEM(X509Certificate certificate) throws IOException {
         logger.info("Attempting to write certificate to pem.");
         JcaPEMWriter pemWriter = new JcaPEMWriter(new FileWriter(new File("src/main/resources/sending.crt")));

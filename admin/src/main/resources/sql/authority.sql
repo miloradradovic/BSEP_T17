@@ -1,1 +1,3 @@
-insert into authorities (name) values ('ROLE_SUPER_ADMIN');
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
+insert into authorities (name) values ('SUPER_ADMIN');

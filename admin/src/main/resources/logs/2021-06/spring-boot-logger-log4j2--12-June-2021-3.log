@@ -1,0 +1,33 @@
+2021-06-12 19:08:02,322 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 19:08:02,357 INFO o.s.b.StartupInfoLogger Starting AdminApplication on Rocika-w10 with PID 19256 (D:\FAX\VIII semestar\Bezbednost u sistemima elektronskog poslovanja\Projekat\BSEP_T17\admin\target\classes started by Rocika in D:\FAX\VIII semestar\Bezbednost u sistemima elektronskog poslovanja\Projekat\BSEP_T17\admin)
+2021-06-12 19:08:02,360 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
+2021-06-12 19:08:02,880 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 19:08:02,929 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 43ms. Found 3 JPA repository interfaces.
+2021-06-12 19:08:03,179 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3252747e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 19:08:03,186 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 19:08:03,398 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8084 (https)
+2021-06-12 19:08:03,404 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8084"]
+2021-06-12 19:08:03,405 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
+2021-06-12 19:08:03,405 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 19:08:03,534 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
+2021-06-12 19:08:03,534 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1145 ms
+2021-06-12 19:08:03,575 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 19:08:03,654 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 19:08:03,683 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 19:08:03,764 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 19:08:03,824 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-12 19:08:03,896 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2021-06-12 19:08:03,909 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-12 19:08:04,634 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 19:08:04,640 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 19:08:05,297 INFO b.a.k.KeyStoreReader Attempting to initialize keystore using bouncy castle provider.
+2021-06-12 19:08:05,336 INFO b.a.k.KeyStoreWriter Attempting to initialize keystore using bouncy castle provider.
+2021-06-12 19:08:05,342 INFO b.a.i.Initialize Executing operation Initialize
+2021-06-12 19:08:05,342 INFO b.a.i.Initialize Attempting to create certificate and crl for root ca.
+2021-06-12 19:08:05,342 INFO b.a.k.KeyStoreWriter Attempting to load keystore.
+2021-06-12 19:08:05,343 INFO b.a.k.KeyStoreWriter Successfully loaded keystore.
+2021-06-12 19:08:05,343 INFO b.a.i.Initialize Successfully created certificate and crl for root ca.
+2021-06-12 19:08:05,491 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@a74c940, org.springframework.security.web.context.SecurityContextPersistenceFilter@56d3af4d, org.springframework.security.web.header.HeaderWriterFilter@1cd2e348, org.springframework.web.filter.CorsFilter@66576bd2, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@f9de1fd, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@9de1b85, org.springframework.security.web.authentication.logout.LogoutFilter@820b78a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@37fd496a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5c0f508b, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@3d3b4e09, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@5dc9d25a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51bc649e, org.springframework.security.web.session.SessionManagementFilter@27aa7294, org.springframework.security.web.access.ExceptionTranslationFilter@f7b7720, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@740fccd2]
+2021-06-12 19:08:05,681 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8084"]
+2021-06-12 19:08:05,771 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8084 (https) with context path ''
+2021-06-12 19:08:05,777 INFO o.s.b.StartupInfoLogger Started AdminApplication in 3.663 seconds (JVM running for 4.766)
