@@ -97,6 +97,7 @@ public class LogService {
         try {
             Pair<List<LogModel>, Integer> parsed = logParser.parseSimulatorLogs(logConfig);
             parsedLogs = parsed.getValue0();
+            // TODO romana ovdje su ti logovi :)
             logConfig.setCurrentRow(parsed.getValue1());
             saveConfig(logConfig);
             save(parsedLogs);

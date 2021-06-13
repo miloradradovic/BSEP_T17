@@ -3,7 +3,7 @@ from datetime import datetime
 import time
 
 log_types = ["INFO", "ERROR", "WARN", "TRACE"]
-files = ["simulator_logs1.log", "simulator_logs2.log", "simulator_logs3.log"]
+files = ["simulator_logs1.log", "simulator_logs2.log", "simulator_logs3.log", "simulator_logs4.log", "simulator_logs5.log"]
 states = ["no_attack", "error", "brute_force", "dangerous_ip", "dos"]
 dangerous_ips = []
 

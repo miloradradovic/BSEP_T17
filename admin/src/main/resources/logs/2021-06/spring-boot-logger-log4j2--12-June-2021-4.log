@@ -1,52 +1,52 @@
-2021-06-12 20:54:09,541 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
-2021-06-12 20:54:09,579 INFO o.s.b.StartupInfoLogger Starting AdminApplication on DESKTOP-MK6223H with PID 7472 (D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\admin\target\classes started by Milorad in D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\admin)
-2021-06-12 20:54:09,583 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
-2021-06-12 20:54:10,277 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-12 20:54:10,335 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 52ms. Found 3 JPA repository interfaces.
-2021-06-12 20:54:10,653 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3a6045c6' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-06-12 20:54:10,661 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-06-12 20:54:10,928 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8084 (https)
-2021-06-12 20:54:10,935 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8084"]
-2021-06-12 20:54:10,936 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
-2021-06-12 20:54:10,936 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-06-12 20:54:11,044 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
-2021-06-12 20:54:11,045 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1424 ms
-2021-06-12 20:54:11,107 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-12 20:54:11,212 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-12 20:54:11,251 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-06-12 20:54:11,362 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-06-12 20:54:11,462 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
-2021-06-12 20:54:11,603 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
-2021-06-12 20:54:11,616 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2021-06-12 20:54:12,314 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
-2021-06-12 20:54:12,315 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler relation "user_authority" does not exist, skipping
-2021-06-12 20:54:12,316 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
-2021-06-12 20:54:12,316 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler relation "user_authority" does not exist, skipping
-2021-06-12 20:54:12,318 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
-2021-06-12 20:54:12,318 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "admins" does not exist, skipping
-2021-06-12 20:54:12,319 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
-2021-06-12 20:54:12,319 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "authorities" does not exist, skipping
-2021-06-12 20:54:12,320 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
-2021-06-12 20:54:12,320 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "requests" does not exist, skipping
-2021-06-12 20:54:12,321 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
-2021-06-12 20:54:12,322 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "user_authority" does not exist, skipping
-2021-06-12 20:54:12,378 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-12 20:54:12,385 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-12 20:54:13,152 INFO b.a.k.KeyStoreReader Attempting to initialize keystore using bouncy castle provider.
-2021-06-12 20:54:13,193 INFO b.a.k.KeyStoreWriter Attempting to initialize keystore using bouncy castle provider.
-2021-06-12 20:54:13,205 INFO b.a.i.Initialize Executing operation Initialize
-2021-06-12 20:54:13,205 INFO b.a.i.Initialize Attempting to create certificate and crl for root ca.
-2021-06-12 20:54:13,205 INFO b.a.k.KeyStoreWriter Attempting to load keystore.
-2021-06-12 20:54:13,206 INFO b.a.k.KeyStoreWriter Successfully loaded keystore.
-2021-06-12 20:54:13,207 INFO b.a.i.Initialize Successfully created certificate and crl for root ca.
-2021-06-12 20:54:13,401 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@9863ed5, org.springframework.security.web.context.SecurityContextPersistenceFilter@5507584d, org.springframework.security.web.header.HeaderWriterFilter@477e5b69, org.springframework.web.filter.CorsFilter@763ddfc3, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@9a07409, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@6a3a56de, org.springframework.security.web.authentication.logout.LogoutFilter@28b7646, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@26c1f3eb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7e764e5c, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@510203de, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@5b0835cb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7010c9e4, org.springframework.security.web.session.SessionManagementFilter@74a991cf, org.springframework.security.web.access.ExceptionTranslationFilter@37f7ce20, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@362fd4e9]
-2021-06-12 20:54:13,646 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8084"]
-2021-06-12 20:54:13,746 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8084 (https) with context path ''
-2021-06-12 20:54:13,755 INFO o.s.b.StartupInfoLogger Started AdminApplication in 4.477 seconds (JVM running for 6.124)
-2021-06-12 20:54:26,395 INFO o.a.j.l.DirectJDKLog Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-06-12 20:54:26,396 INFO o.s.w.s.FrameworkServlet Initializing Servlet 'dispatcherServlet'
-2021-06-12 20:54:26,403 INFO o.s.w.s.FrameworkServlet Completed initialization in 6 ms
-2021-06-12 21:58:25,625 INFO o.s.o.j.AbstractEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-06-12 21:58:25,626 INFO o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2021-06-12 21:58:25,678 INFO c.z.h.HikariDataSource HikariPool-1 - Shutdown initiated...
-2021-06-12 21:58:25,685 INFO c.z.h.HikariDataSource HikariPool-1 - Shutdown completed.
+2021-06-12 22:12:45,149 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 22:12:45,191 INFO o.s.b.StartupInfoLogger Starting AdminApplication on DESKTOP-MK6223H with PID 8016 (D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\admin\target\classes started by Milorad in D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\admin)
+2021-06-12 22:12:45,195 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
+2021-06-12 22:12:45,840 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 22:12:45,903 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 57ms. Found 3 JPA repository interfaces.
+2021-06-12 22:12:46,191 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2db1b657' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 22:12:46,199 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 22:12:46,439 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8084 (https)
+2021-06-12 22:12:46,448 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8084"]
+2021-06-12 22:12:46,449 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
+2021-06-12 22:12:46,450 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 22:12:46,616 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
+2021-06-12 22:12:46,616 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1379 ms
+2021-06-12 22:12:46,680 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 22:12:46,819 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 22:12:46,874 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 22:12:46,998 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 22:12:47,087 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-12 22:12:47,258 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2021-06-12 22:12:47,276 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-12 22:12:47,953 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-12 22:12:47,953 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler relation "user_authority" does not exist, skipping
+2021-06-12 22:12:47,954 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-12 22:12:47,955 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler relation "user_authority" does not exist, skipping
+2021-06-12 22:12:47,956 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-12 22:12:47,956 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "admins" does not exist, skipping
+2021-06-12 22:12:47,957 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-12 22:12:47,957 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "authorities" does not exist, skipping
+2021-06-12 22:12:47,958 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-12 22:12:47,959 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "requests" does not exist, skipping
+2021-06-12 22:12:47,960 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-12 22:12:47,960 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "user_authority" does not exist, skipping
+2021-06-12 22:12:48,019 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-12 22:12:48,026 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 22:12:48,710 INFO b.a.k.KeyStoreReader Attempting to initialize keystore using bouncy castle provider.
+2021-06-12 22:12:48,753 INFO b.a.k.KeyStoreWriter Attempting to initialize keystore using bouncy castle provider.
+2021-06-12 22:12:48,768 INFO b.a.i.Initialize Executing operation Initialize
+2021-06-12 22:12:48,768 INFO b.a.i.Initialize Attempting to create certificate and crl for root ca.
+2021-06-12 22:12:48,768 INFO b.a.k.KeyStoreWriter Attempting to load keystore.
+2021-06-12 22:12:48,770 INFO b.a.k.KeyStoreWriter Successfully loaded keystore.
+2021-06-12 22:12:48,770 INFO b.a.i.Initialize Successfully created certificate and crl for root ca.
+2021-06-12 22:12:48,973 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@341889a1, org.springframework.security.web.context.SecurityContextPersistenceFilter@28b7646, org.springframework.security.web.header.HeaderWriterFilter@811d8d6, org.springframework.web.filter.CorsFilter@29693b1d, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@1eddca25, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@5af56240, org.springframework.security.web.authentication.logout.LogoutFilter@68b3de47, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4e553d60, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f26cd76, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@767b9d66, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@687fd6e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3a225534, org.springframework.security.web.session.SessionManagementFilter@6dcc7696, org.springframework.security.web.access.ExceptionTranslationFilter@3bf52f8f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@13bf5fd]
+2021-06-12 22:12:49,228 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8084"]
+2021-06-12 22:12:49,341 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8084 (https) with context path ''
+2021-06-12 22:12:49,349 INFO o.s.b.StartupInfoLogger Started AdminApplication in 4.457 seconds (JVM running for 5.875)
+2021-06-12 22:13:32,813 INFO o.a.j.l.DirectJDKLog Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-12 22:13:32,813 INFO o.s.w.s.FrameworkServlet Initializing Servlet 'dispatcherServlet'
+2021-06-12 22:13:32,827 INFO o.s.w.s.FrameworkServlet Completed initialization in 13 ms
+2021-06-12 22:15:35,618 INFO o.s.o.j.AbstractEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-12 22:15:35,618 INFO o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-06-12 22:15:35,663 INFO c.z.h.HikariDataSource HikariPool-1 - Shutdown initiated...
+2021-06-12 22:15:35,674 INFO c.z.h.HikariDataSource HikariPool-1 - Shutdown completed.

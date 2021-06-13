@@ -595,5 +595,17 @@ public class CertificateService {
         logger.info("Successfully wrote private key to pem.");
     }
 
+    public boolean checkCertificateByEmail(String email) throws CertificateException, CRLException, IOException {
+        String alias = getLastAlias(email);
+        if (alias != null) {
+            logger.info("Attempting to check certificate for alias " + alias);
+            Certificate[] chain = keyStoreReader.readCertificateChain(alias);
+            logger.info("Successfully checked certificate for alias " + alias);
+            return isCertificateValid(chain);
+        }
+
+        return false;
+    }
+
 
 }
