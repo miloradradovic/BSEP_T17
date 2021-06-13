@@ -1,31 +1,22 @@
-2021-06-13 23:28:15,259 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
-2021-06-13 23:28:15,364 INFO o.s.b.StartupInfoLogger Starting HospitalApplication on DESKTOP-L1TVSFT with PID 5964 (C:\Faks\BSEP\Projekat\BSEP_T17\hospital\target\classes started by Vukasin in C:\Faks\BSEP\Projekat\BSEP_T17\hospital)
-2021-06-13 23:28:15,377 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
-2021-06-13 23:28:16,452 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-06-13 23:28:16,460 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-13 23:28:16,584 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data JPA - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.LogRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
-2021-06-13 23:28:16,624 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 149ms. Found 4 JPA repository interfaces.
-2021-06-13 23:28:16,675 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-06-13 23:28:16,677 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2021-06-13 23:28:16,693 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.AuthorityRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
-2021-06-13 23:28:16,696 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PatientRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
-2021-06-13 23:28:16,697 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PatientStatusRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
-2021-06-13 23:28:16,699 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PersonRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
-2021-06-13 23:28:16,711 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 32ms. Found 1 MongoDB repository interfaces.
-2021-06-13 23:28:17,297 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@33eb6758' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-06-13 23:28:17,321 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-06-13 23:28:18,048 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8085 (https)
-2021-06-13 23:28:18,066 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8085"]
-2021-06-13 23:28:18,068 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
-2021-06-13 23:28:18,070 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-06-13 23:28:18,332 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
-2021-06-13 23:28:18,333 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2885 ms
-2021-06-13 23:28:18,430 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-13 23:28:18,696 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-13 23:28:18,781 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-06-13 23:28:18,980 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-06-13 23:28:19,180 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
-2021-06-13 23:28:20,435 ERROR c.z.h.p.HikariPool HikariPool-1 - Exception during pool initialization.
+2021-06-12 15:45:24,377 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-06-12 15:45:24,450 INFO o.s.b.StartupInfoLogger Starting AdminApplication on DESKTOP-L1TVSFT with PID 2004 (C:\Faks\BSEP\Projekat\BSEP_T17\admin\target\classes started by Vukasin in C:\Faks\BSEP\Projekat\BSEP_T17\admin)
+2021-06-12 15:45:24,455 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
+2021-06-12 15:45:25,335 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-12 15:45:25,460 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 110ms. Found 3 JPA repository interfaces.
+2021-06-12 15:45:25,881 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2577a95d' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 15:45:25,891 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-12 15:45:26,427 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8084 (https)
+2021-06-12 15:45:26,440 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8084"]
+2021-06-12 15:45:26,440 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
+2021-06-12 15:45:26,441 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-12 15:45:26,652 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
+2021-06-12 15:45:26,653 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2143 ms
+2021-06-12 15:45:26,721 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 15:45:26,905 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 15:45:26,987 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-12 15:45:27,170 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-12 15:45:27,339 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-12 15:45:28,567 ERROR c.z.h.p.HikariPool HikariPool-1 - Exception during pool initialization.
 org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
 	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:613) ~[postgresql-42.2.18.jar:42.2.18]
 	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:161) ~[postgresql-42.2.18.jar:42.2.18]
@@ -192,8 +183,8 @@ org.postgresql.util.PSQLException: FATAL: password authentication failed for use
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
-	at bsep.hospital.HospitalApplication.main(HospitalApplication.java:15) [classes/:?]
-2021-06-13 23:28:20,458 WARN o.h.e.j.e.i.JdbcEnvironmentInitiator HHH000342: Could not obtain connection to query metadata
+	at bsep.admin.AdminApplication.main(AdminApplication.java:12) [classes/:?]
+2021-06-12 15:45:28,602 WARN o.h.e.j.e.i.JdbcEnvironmentInitiator HHH000342: Could not obtain connection to query metadata
 org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
 	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:613) ~[postgresql-42.2.18.jar:42.2.18]
 	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:161) ~[postgresql-42.2.18.jar:42.2.18]
@@ -360,10 +351,10 @@ org.postgresql.util.PSQLException: FATAL: password authentication failed for use
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
-	at bsep.hospital.HospitalApplication.main(HospitalApplication.java:15) [classes/:?]
-2021-06-13 23:28:20,481 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2021-06-13 23:28:21,352 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
-2021-06-13 23:28:22,415 ERROR c.z.h.p.HikariPool HikariPool-1 - Exception during pool initialization.
+	at bsep.admin.AdminApplication.main(AdminApplication.java:12) [classes/:?]
+2021-06-12 15:45:28,623 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-12 15:45:29,516 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-12 15:45:30,607 ERROR c.z.h.p.HikariPool HikariPool-1 - Exception during pool initialization.
 org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
 	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:613) ~[postgresql-42.2.18.jar:42.2.18]
 	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:161) ~[postgresql-42.2.18.jar:42.2.18]
@@ -531,15 +522,15 @@ org.postgresql.util.PSQLException: FATAL: password authentication failed for use
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
-	at bsep.hospital.HospitalApplication.main(HospitalApplication.java:15) [classes/:?]
-2021-06-13 23:28:22,420 WARN o.h.e.j.s.SqlExceptionHelper SQL Error: 0, SQLState: 28P01
-2021-06-13 23:28:22,421 ERROR o.h.e.j.s.SqlExceptionHelper FATAL: password authentication failed for user "postgres"
-2021-06-13 23:28:22,429 ERROR o.s.o.j.AbstractEntityManagerFactoryBean Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
-2021-06-13 23:28:22,430 ERROR o.s.b.w.e.t.TomcatStarter Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through method 'setContentNegotationStrategy' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration': Unsatisfied dependency expressed through method 'setConfigurers' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'openEntityManagerInViewInterceptorConfigurer' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration$JpaWebConfiguration.class]: Unsatisfied dependency expressed through method 'openEntityManagerInViewInterceptorConfigurer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'openEntityManagerInViewInterceptor' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration$JpaWebConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
-2021-06-13 23:28:22,459 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-13 23:28:22,472 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-13 23:28:22,480 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
-2021-06-13 23:28:23,537 ERROR c.z.h.p.HikariPool HikariPool-1 - Exception during pool initialization.
+	at bsep.admin.AdminApplication.main(AdminApplication.java:12) [classes/:?]
+2021-06-12 15:45:30,615 WARN o.h.e.j.s.SqlExceptionHelper SQL Error: 0, SQLState: 28P01
+2021-06-12 15:45:30,616 ERROR o.h.e.j.s.SqlExceptionHelper FATAL: password authentication failed for user "postgres"
+2021-06-12 15:45:30,622 ERROR o.s.o.j.AbstractEntityManagerFactoryBean Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+2021-06-12 15:45:30,623 ERROR o.s.b.w.e.t.TomcatStarter Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through method 'setContentNegotationStrategy' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration': Unsatisfied dependency expressed through method 'setConfigurers' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'openEntityManagerInViewInterceptorConfigurer' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration$JpaWebConfiguration.class]: Unsatisfied dependency expressed through method 'openEntityManagerInViewInterceptorConfigurer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'openEntityManagerInViewInterceptor' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration$JpaWebConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+2021-06-12 15:45:30,649 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-12 15:45:30,660 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-12 15:45:30,666 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-12 15:45:31,713 ERROR c.z.h.p.HikariPool HikariPool-1 - Exception during pool initialization.
 org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
 	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:613) ~[postgresql-42.2.18.jar:42.2.18]
 	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:161) ~[postgresql-42.2.18.jar:42.2.18]
@@ -714,8 +705,8 @@ org.postgresql.util.PSQLException: FATAL: password authentication failed for use
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
-	at bsep.hospital.HospitalApplication.main(HospitalApplication.java:15) [classes/:?]
-2021-06-13 23:28:23,553 WARN o.h.e.j.e.i.JdbcEnvironmentInitiator HHH000342: Could not obtain connection to query metadata
+	at bsep.admin.AdminApplication.main(AdminApplication.java:12) [classes/:?]
+2021-06-12 15:45:31,721 WARN o.h.e.j.e.i.JdbcEnvironmentInitiator HHH000342: Could not obtain connection to query metadata
 org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
 	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:613) ~[postgresql-42.2.18.jar:42.2.18]
 	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:161) ~[postgresql-42.2.18.jar:42.2.18]
@@ -890,10 +881,10 @@ org.postgresql.util.PSQLException: FATAL: password authentication failed for use
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
-	at bsep.hospital.HospitalApplication.main(HospitalApplication.java:15) [classes/:?]
-2021-06-13 23:28:23,557 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2021-06-13 23:28:23,722 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
-2021-06-13 23:28:24,782 ERROR c.z.h.p.HikariPool HikariPool-1 - Exception during pool initialization.
+	at bsep.admin.AdminApplication.main(AdminApplication.java:12) [classes/:?]
+2021-06-12 15:45:31,733 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-12 15:45:31,820 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-12 15:45:32,862 ERROR c.z.h.p.HikariPool HikariPool-1 - Exception during pool initialization.
 org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
 	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:613) ~[postgresql-42.2.18.jar:42.2.18]
 	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:161) ~[postgresql-42.2.18.jar:42.2.18]
@@ -1069,17 +1060,17 @@ org.postgresql.util.PSQLException: FATAL: password authentication failed for use
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
-	at bsep.hospital.HospitalApplication.main(HospitalApplication.java:15) [classes/:?]
-2021-06-13 23:28:24,788 WARN o.h.e.j.s.SqlExceptionHelper SQL Error: 0, SQLState: 28P01
-2021-06-13 23:28:24,789 ERROR o.h.e.j.s.SqlExceptionHelper FATAL: password authentication failed for user "postgres"
-2021-06-13 23:28:24,790 ERROR o.s.o.j.AbstractEntityManagerFactoryBean Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
-2021-06-13 23:28:24,792 ERROR o.k.a.t.AbstractKeycloakAuthenticatorValve The specified resolver org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolverWrapper could NOT be loaded. Keycloak is unconfigured and will deny all requests. Reason: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through method 'setContentNegotationStrategy' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration': Unsatisfied dependency expressed through method 'setConfigurers' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'openEntityManagerInViewInterceptorConfigurer' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration$JpaWebConfiguration.class]: Unsatisfied dependency expressed through method 'openEntityManagerInViewInterceptorConfigurer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'openEntityManagerInViewInterceptor' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration$JpaWebConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
-2021-06-13 23:28:24,802 INFO o.a.j.l.DirectJDKLog Stopping service [Tomcat]
-2021-06-13 23:28:24,811 WARN o.s.c.s.AbstractApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
-2021-06-13 23:28:24,821 INFO o.s.b.a.l.ConditionEvaluationReportLoggingListener 
+	at bsep.admin.AdminApplication.main(AdminApplication.java:12) [classes/:?]
+2021-06-12 15:45:32,869 WARN o.h.e.j.s.SqlExceptionHelper SQL Error: 0, SQLState: 28P01
+2021-06-12 15:45:32,870 ERROR o.h.e.j.s.SqlExceptionHelper FATAL: password authentication failed for user "postgres"
+2021-06-12 15:45:32,872 ERROR o.s.o.j.AbstractEntityManagerFactoryBean Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+2021-06-12 15:45:32,876 ERROR o.k.a.t.AbstractKeycloakAuthenticatorValve The specified resolver org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolverWrapper could NOT be loaded. Keycloak is unconfigured and will deny all requests. Reason: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through method 'setContentNegotationStrategy' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration': Unsatisfied dependency expressed through method 'setConfigurers' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'openEntityManagerInViewInterceptorConfigurer' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration$JpaWebConfiguration.class]: Unsatisfied dependency expressed through method 'openEntityManagerInViewInterceptorConfigurer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'openEntityManagerInViewInterceptor' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration$JpaWebConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+2021-06-12 15:45:32,898 INFO o.a.j.l.DirectJDKLog Stopping service [Tomcat]
+2021-06-12 15:45:32,905 WARN o.s.c.s.AbstractApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2021-06-12 15:45:32,914 INFO o.s.b.a.l.ConditionEvaluationReportLoggingListener 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-06-13 23:28:24,823 ERROR o.s.b.SpringApplication Application run failed
+2021-06-12 15:45:32,916 ERROR o.s.b.SpringApplication Application run failed
 org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:161) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
@@ -1090,7 +1081,7 @@ org.springframework.context.ApplicationContextException: Unable to start web ser
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
-	at bsep.hospital.HospitalApplication.main(HospitalApplication.java:15) [classes/:?]
+	at bsep.admin.AdminApplication.main(AdminApplication.java:12) [classes/:?]
 Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
 	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:142) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
 	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
