@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2021-06-13 21:38:35,518 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
 2021-06-13 21:38:35,550 INFO o.s.b.StartupInfoLogger Starting HospitalApplication on Rocika-w10 with PID 8796 (D:\FAX\VIII semestar\Bezbednost u sistemima elektronskog poslovanja\Projekat\BSEP_T17\hospital\target\classes started by Rocika in D:\FAX\VIII semestar\Bezbednost u sistemima elektronskog poslovanja\Projekat\BSEP_T17\hospital)
 2021-06-13 21:38:35,554 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
@@ -118,3 +119,247 @@
 2021-06-13 21:38:56,194 INFO b.h.s.LogService Successfully parsed logs from files.
 2021-06-13 21:38:56,194 INFO b.h.s.LogService Saving logs.
 2021-06-13 21:38:56,199 INFO b.h.s.LogService Finished saving logs.
+=======
+2021-06-13 18:39:59,537 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-06-13 18:39:59,570 INFO o.s.b.StartupInfoLogger Starting HospitalApplication on DESKTOP-MK6223H with PID 5440 (D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital\target\classes started by Milorad in D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital)
+2021-06-13 18:39:59,574 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
+2021-06-13 18:40:00,244 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-13 18:40:00,245 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-13 18:40:00,296 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data JPA - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.LogRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-06-13 18:40:00,324 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 70ms. Found 4 JPA repository interfaces.
+2021-06-13 18:40:00,342 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-13 18:40:00,343 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-06-13 18:40:00,351 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.AuthorityRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-13 18:40:00,353 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PatientRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-13 18:40:00,354 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PatientStatusRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-13 18:40:00,354 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PersonRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-13 18:40:00,358 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 14ms. Found 1 MongoDB repository interfaces.
+2021-06-13 18:40:00,652 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1f95881a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-13 18:40:00,661 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-13 18:40:00,902 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8085 (https)
+2021-06-13 18:40:00,910 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-13 18:40:00,911 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
+2021-06-13 18:40:00,911 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-13 18:40:01,060 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
+2021-06-13 18:40:01,060 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1450 ms
+2021-06-13 18:40:01,108 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-13 18:40:01,231 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-13 18:40:01,273 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-13 18:40:01,353 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-13 18:40:01,422 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-13 18:40:01,562 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2021-06-13 18:40:01,573 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-13 18:40:02,243 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-13 18:40:02,243 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler relation "patient_status" does not exist, skipping
+2021-06-13 18:40:02,244 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-13 18:40:02,244 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler relation "user_authority" does not exist, skipping
+2021-06-13 18:40:02,245 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-13 18:40:02,245 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler relation "user_authority" does not exist, skipping
+2021-06-13 18:40:02,246 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-13 18:40:02,247 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "authorities" does not exist, skipping
+2021-06-13 18:40:02,248 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-13 18:40:02,248 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "patient_status" does not exist, skipping
+2021-06-13 18:40:02,249 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-13 18:40:02,249 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "patients" does not exist, skipping
+2021-06-13 18:40:02,251 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-13 18:40:02,251 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "staff" does not exist, skipping
+2021-06-13 18:40:02,252 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-13 18:40:02,252 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "user_authority" does not exist, skipping
+2021-06-13 18:40:02,327 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-13 18:40:02,335 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-13 18:40:02,752 INFO b.h.k.KeyStoreWriter Attempting to initialize keystore using bouncy castle provider.
+2021-06-13 18:40:02,758 INFO b.h.k.KeyStoreReader Attempting to initialize keystore using bouncy castle provider.
+2021-06-13 18:40:02,841 INFO c.m.d.l.SLF4JLogger Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-06-13 18:40:02,877 INFO c.m.d.l.SLF4JLogger Opened connection [connectionId{localValue:1, serverValue:24}] to localhost:27017
+2021-06-13 18:40:02,883 INFO c.m.d.l.SLF4JLogger Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2473800}
+2021-06-13 18:40:03,314 INFO b.h.c.DroolsConfig Creating kie session
+2021-06-13 18:40:03,318 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Milorad/.m2/repository/org/kie/kie-ci/7.17.0.Final/kie-ci-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-13 18:40:03,319 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.scanner.KieScannerFactoryServiceImpl
+
+2021-06-13 18:40:03,320 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.scanner.MavenClassLoaderResolver
+
+2021-06-13 18:40:03,320 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Milorad/.m2/repository/org/drools/drools-core/7.17.0.Final/drools-core-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-13 18:40:03,321 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.io.impl.ResourceFactoryServiceImpl
+
+2021-06-13 18:40:03,322 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.marshalling.impl.MarshallerProviderImpl
+
+2021-06-13 18:40:03,323 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.concurrent.ExecutorProviderImpl
+
+2021-06-13 18:40:03,323 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Milorad/.m2/repository/org/drools/drools-compiler/7.17.0.Final/drools-compiler-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-13 18:40:03,325 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.compiler.kie.builder.impl.KieServicesImpl
+
+2021-06-13 18:40:03,326 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.compiler.builder.impl.KnowledgeBuilderFactoryServiceImpl
+
+2021-06-13 18:40:03,326 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Milorad/.m2/repository/org/kie/kie-internal/7.17.0.Final/kie-internal-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-13 18:40:03,327 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieAssemblersImpl
+
+2021-06-13 18:40:03,328 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieRuntimesImpl
+
+2021-06-13 18:40:03,329 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieWeaversImpl
+
+2021-06-13 18:40:03,330 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieBeliefsImpl
+
+2021-06-13 18:40:03,339 INFO o.d.c.k.b.i.ClasspathKieProject Found kmodule: file:/D:/Fakultet/8.%20semestar/PROJEKTI/bsep/BSEP_T17/hospital/target/classes/META-INF/kmodule.xml
+2021-06-13 18:40:03,507 WARN o.d.c.k.b.i.ClasspathKieProject Unable to find pom.properties in /D:/Fakultet/8. semestar/PROJEKTI/bsep/BSEP_T17/hospital/target/classes
+2021-06-13 18:40:03,514 WARN o.a.m.i.e.MavenSettings Environment variable M2_HOME is not set
+2021-06-13 18:40:06,702 INFO o.d.c.k.b.i.ClasspathKieProject Recursed up folders, found and used pom.xml D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital\pom.xml
+2021-06-13 18:40:06,710 INFO o.d.c.k.b.i.KieRepositoryImpl KieModule was added: FileKieModule[releaseId=bsep:hospital:0.0.1-SNAPSHOT,file=D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital\target\classes]
+2021-06-13 18:40:07,671 INFO b.h.i.Initialize Executing operation Initialize
+2021-06-13 18:40:07,672 INFO b.h.i.Initialize Attempting to create keystore.
+2021-06-13 18:40:07,672 INFO b.h.i.Initialize Checking if keystore already exists.
+2021-06-13 18:40:07,672 INFO b.h.k.KeyStoreWriter Attempting to load keystore.
+2021-06-13 18:40:07,674 INFO b.h.k.KeyStoreWriter Successfully loaded keystore.
+2021-06-13 18:40:07,674 INFO b.h.i.Initialize Keystore already exists.
+2021-06-13 18:40:07,901 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5191288e, org.springframework.security.web.context.SecurityContextPersistenceFilter@5bae7a7b, org.springframework.security.web.header.HeaderWriterFilter@2db6d66d, org.springframework.web.filter.CorsFilter@2c969f, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@5bcfdaf3, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@1c22642d, org.springframework.security.web.authentication.logout.LogoutFilter@ef59a55, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f9b33f1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1b4695a, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@5ff29e8b, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@7acfcfc4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2438702, org.springframework.security.web.session.SessionManagementFilter@23f31375, org.springframework.security.web.access.ExceptionTranslationFilter@7b3fd68e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1ecdfe1e]
+2021-06-13 18:40:08,170 INFO o.s.s.c.ExecutorConfigurationSupport Initializing ExecutorService 'taskScheduler'
+2021-06-13 18:40:08,211 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-13 18:40:08,317 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8085 (https) with context path ''
+2021-06-13 18:40:08,328 INFO o.s.b.StartupInfoLogger Started HospitalApplication in 9.032 seconds (JVM running for 10.622)
+2021-06-13 18:40:08,332 INFO o.s.s.c.ExecutorConfigurationSupport Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-13 18:40:08,340 INFO b.h.s.LogService Parsing simulate logs
+2021-06-13 18:40:08,340 INFO b.h.s.LogService Parsing logs from files.
+2021-06-13 18:40:08,340 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-13 18:40:08,342 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:08,348 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-13 18:40:08,348 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:08,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-13 18:40:08,355 INFO b.h.s.LogService Saving logs.
+2021-06-13 18:40:08,410 INFO c.m.d.l.SLF4JLogger Opened connection [connectionId{localValue:2, serverValue:25}] to localhost:27017
+2021-06-13 18:40:08,604 INFO b.h.s.LogService Finished saving logs.
+2021-06-13 18:40:13,338 INFO b.h.s.LogService Parsing simulate logs
+2021-06-13 18:40:13,339 INFO b.h.s.LogService Parsing logs from files.
+2021-06-13 18:40:13,339 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-13 18:40:13,341 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:13,342 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-13 18:40:13,344 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:13,345 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-13 18:40:13,345 INFO b.h.s.LogService Saving logs.
+2021-06-13 18:40:13,355 INFO b.h.s.LogService Finished saving logs.
+2021-06-13 18:40:17,111 INFO o.a.j.l.DirectJDKLog Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-13 18:40:17,111 INFO o.s.w.s.FrameworkServlet Initializing Servlet 'dispatcherServlet'
+2021-06-13 18:40:17,118 INFO o.s.w.s.FrameworkServlet Completed initialization in 6 ms
+2021-06-13 18:40:22,476 INFO b.h.s.LogService Parsing simulate logs
+2021-06-13 18:40:22,479 INFO b.h.s.LogService Parsing logs from files.
+2021-06-13 18:40:22,484 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-13 18:40:22,485 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:22,485 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-13 18:40:22,486 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:22,486 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-13 18:40:22,486 INFO b.h.s.LogService Saving logs.
+2021-06-13 18:40:22,491 INFO b.h.s.LogService Finished saving logs.
+2021-06-13 18:40:27,768 INFO b.h.s.LogService Parsing simulate logs
+2021-06-13 18:40:27,768 INFO b.h.s.LogService Parsing logs from files.
+2021-06-13 18:40:27,770 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-13 18:40:27,771 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:27,771 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-13 18:40:27,772 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:27,773 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-13 18:40:27,773 INFO b.h.s.LogService Saving logs.
+2021-06-13 18:40:27,784 INFO b.h.s.LogService Finished saving logs.
+2021-06-13 18:40:28,331 INFO b.h.s.LogService Parsing logs from files.
+2021-06-13 18:40:28,331 INFO b.h.s.LogService Parsing simulate logs
+2021-06-13 18:40:28,332 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-13 18:40:28,332 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:28,333 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-13 18:40:28,334 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:28,334 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-13 18:40:28,334 INFO b.h.s.LogService Saving logs.
+2021-06-13 18:40:28,342 INFO b.h.s.LogService Finished saving logs.
+2021-06-13 18:40:33,333 INFO b.h.s.LogService Parsing simulate logs
+2021-06-13 18:40:33,333 INFO b.h.s.LogService Parsing logs from files.
+2021-06-13 18:40:33,333 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-13 18:40:33,335 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:33,336 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-13 18:40:33,337 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:33,338 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-13 18:40:33,339 INFO b.h.s.LogService Saving logs.
+2021-06-13 18:40:33,350 INFO b.h.s.LogService Finished saving logs.
+2021-06-13 18:40:38,333 INFO b.h.s.LogService Parsing logs from files.
+2021-06-13 18:40:38,333 INFO b.h.s.LogService Parsing simulate logs
+2021-06-13 18:40:38,334 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-13 18:40:38,336 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:38,337 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-13 18:40:38,339 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:38,340 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-13 18:40:38,340 INFO b.h.s.LogService Saving logs.
+2021-06-13 18:40:38,351 INFO b.h.s.LogService Finished saving logs.
+2021-06-13 18:40:43,339 INFO b.h.s.LogService Parsing logs from files.
+2021-06-13 18:40:43,339 INFO b.h.s.LogService Parsing simulate logs
+2021-06-13 18:40:43,340 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-13 18:40:43,340 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:43,341 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-13 18:40:43,342 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:43,343 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-13 18:40:43,343 INFO b.h.s.LogService Saving logs.
+2021-06-13 18:40:43,349 INFO b.h.s.LogService Finished saving logs.
+2021-06-13 18:40:48,334 INFO b.h.s.LogService Parsing logs from files.
+2021-06-13 18:40:48,334 INFO b.h.s.LogService Parsing simulate logs
+2021-06-13 18:40:48,334 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-13 18:40:48,335 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:48,336 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-13 18:40:48,337 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:48,338 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-13 18:40:48,338 INFO b.h.s.LogService Saving logs.
+2021-06-13 18:40:48,345 INFO b.h.s.LogService Finished saving logs.
+2021-06-13 18:40:53,339 INFO b.h.s.LogService Parsing simulate logs
+2021-06-13 18:40:53,339 INFO b.h.s.LogService Parsing logs from files.
+2021-06-13 18:40:53,339 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-13 18:40:53,342 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:53,344 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-13 18:40:53,346 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:53,347 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-13 18:40:53,347 INFO b.h.s.LogService Saving logs.
+2021-06-13 18:40:53,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-13 18:40:58,336 INFO b.h.s.LogService Parsing simulate logs
+2021-06-13 18:40:58,336 INFO b.h.s.LogService Parsing logs from files.
+2021-06-13 18:40:58,336 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-13 18:40:58,337 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:58,339 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-13 18:40:58,341 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:40:58,342 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-13 18:40:58,342 INFO b.h.s.LogService Saving logs.
+2021-06-13 18:40:58,352 INFO b.h.s.LogService Finished saving logs.
+2021-06-13 18:41:03,331 INFO b.h.s.LogService Parsing logs from files.
+2021-06-13 18:41:03,331 INFO b.h.s.LogService Parsing simulate logs
+2021-06-13 18:41:03,331 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-13 18:41:03,332 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:41:03,333 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-13 18:41:03,334 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:41:03,335 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-13 18:41:03,338 INFO b.h.s.LogService Saving logs.
+2021-06-13 18:41:03,350 INFO b.h.s.LogService Finished saving logs.
+2021-06-13 18:41:08,325 INFO b.h.s.LogService Parsing simulate logs
+2021-06-13 18:41:08,325 INFO b.h.s.LogService Parsing logs from files.
+2021-06-13 18:41:08,326 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-13 18:41:08,328 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:41:08,329 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-13 18:41:08,331 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:41:08,332 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-13 18:41:08,332 INFO b.h.s.LogService Saving logs.
+2021-06-13 18:41:08,344 INFO b.h.s.LogService Finished saving logs.
+2021-06-13 18:41:13,331 INFO b.h.s.LogService Parsing logs from files.
+2021-06-13 18:41:13,331 INFO b.h.s.LogService Parsing simulate logs
+2021-06-13 18:41:13,331 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-13 18:41:13,332 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:41:13,333 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-13 18:41:13,335 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:41:13,335 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-13 18:41:13,335 INFO b.h.s.LogService Saving logs.
+2021-06-13 18:41:13,346 INFO b.h.s.LogService Finished saving logs.
+2021-06-13 18:41:18,338 INFO b.h.s.LogService Parsing simulate logs
+2021-06-13 18:41:18,338 INFO b.h.s.LogService Parsing logs from files.
+2021-06-13 18:41:18,339 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-13 18:41:18,341 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:41:18,343 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-13 18:41:18,344 INFO b.h.l.LogParser Reading log file.
+2021-06-13 18:41:18,345 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-13 18:41:18,345 INFO b.h.s.LogService Saving logs.
+2021-06-13 18:41:18,353 INFO b.h.s.LogService Finished saving logs.
+2021-06-13 18:41:21,454 INFO o.s.s.c.ExecutorConfigurationSupport Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-13 18:41:21,455 INFO o.s.s.c.ExecutorConfigurationSupport Shutting down ExecutorService 'taskScheduler'
+2021-06-13 18:41:21,459 INFO c.m.d.l.SLF4JLogger Closed connection [connectionId{localValue:2, serverValue:25}] to localhost:27017 because the pool has been closed.
+2021-06-13 18:41:21,461 INFO o.s.o.j.AbstractEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-13 18:41:21,461 INFO o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-06-13 18:41:21,503 INFO c.z.h.HikariDataSource HikariPool-1 - Shutdown initiated...
+2021-06-13 18:41:21,511 INFO c.z.h.HikariDataSource HikariPool-1 - Shutdown completed.
+>>>>>>> eed2d589fd3b2695bc55464b2c794855a687408a
