@@ -2,6 +2,8 @@ package bsep.hospital.api;
 
 import bsep.hospital.dto.PersonDTO;
 import bsep.hospital.service.UserService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.keycloak.KeycloakPrincipal;
 import org.keycloak.KeycloakSecurityContext;
 import org.keycloak.representations.AccessToken;
@@ -24,6 +26,7 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    private static Logger logger = LogManager.getLogger(UserController.class);
 
     //@PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(method = RequestMethod.GET)
@@ -35,10 +38,14 @@ public class UserController {
 
         KeycloakSecurityContext session = kcp.getKeycloakSecurityContext();
         AccessToken accessToken = session.getToken();
+
         if (accessToken != null) {
+            logger.info("User with the email " + accessToken.getEmail() + " is trying to retrieve user data.");
             PersonDTO dto = new PersonDTO(accessToken.getEmail(), accessToken.getName(), accessToken.getFamilyName());
-            return new ResponseEntity<>(dto, HttpStatus.OK);
+            logger.info("User with the email " + accessToken.getEmail() + " successfully retrieved user data.");
+            return new ResponseEntity<>(dto,HttpStatus.OK);
         } else {
+            logger.warn("Currently logged user couldn't retrieve user data because access token is null.");
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
