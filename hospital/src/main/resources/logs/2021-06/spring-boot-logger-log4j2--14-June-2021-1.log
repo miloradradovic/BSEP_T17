@@ -1,0 +1,223 @@
+2021-06-14 00:14:06,940 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-06-14 00:14:07,000 INFO o.s.b.StartupInfoLogger Starting HospitalApplication on DESKTOP-L1TVSFT with PID 22924 (C:\Faks\BSEP\Projekat\BSEP_T17\hospital\target\classes started by Vukasin in C:\Faks\BSEP\Projekat\BSEP_T17\hospital)
+2021-06-14 00:14:07,014 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
+2021-06-14 00:14:07,886 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-14 00:14:07,888 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-14 00:14:07,952 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data JPA - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.LogRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-06-14 00:14:07,979 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 82ms. Found 4 JPA repository interfaces.
+2021-06-14 00:14:08,004 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-14 00:14:08,005 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-06-14 00:14:08,019 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.AuthorityRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-14 00:14:08,020 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PatientRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-14 00:14:08,021 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PatientStatusRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-14 00:14:08,022 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PersonRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-14 00:14:08,031 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 24ms. Found 1 MongoDB repository interfaces.
+2021-06-14 00:14:08,463 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2f7efd0b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-14 00:14:08,500 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-14 00:14:08,943 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8085 (https)
+2021-06-14 00:14:08,953 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-14 00:14:08,954 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
+2021-06-14 00:14:08,955 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-14 00:14:09,124 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
+2021-06-14 00:14:09,125 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2068 ms
+2021-06-14 00:14:09,209 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-14 00:14:09,397 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-14 00:14:09,482 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-14 00:14:09,634 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-14 00:14:09,780 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-14 00:14:10,041 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2021-06-14 00:14:10,060 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-14 00:14:11,367 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-14 00:14:11,377 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-14 00:14:12,012 INFO c.m.d.l.SLF4JLogger Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-06-14 00:14:12,069 INFO c.m.d.l.SLF4JLogger Opened connection [connectionId{localValue:1, serverValue:41}] to localhost:27017
+2021-06-14 00:14:12,077 INFO c.m.d.l.SLF4JLogger Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=6528000}
+2021-06-14 00:14:12,562 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Vukasin/.m2/repository/org/kie/kie-ci/7.17.0.Final/kie-ci-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa
+2021-06-14 00:14:12,563 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.scanner.KieScannerFactoryServiceImpl
+
+2021-06-14 00:14:12,565 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.scanner.MavenClassLoaderResolver
+
+2021-06-14 00:14:12,565 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Vukasin/.m2/repository/org/drools/drools-core/7.17.0.Final/drools-core-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa
+2021-06-14 00:14:12,567 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.io.impl.ResourceFactoryServiceImpl
+
+2021-06-14 00:14:12,568 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.marshalling.impl.MarshallerProviderImpl
+
+2021-06-14 00:14:12,569 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.concurrent.ExecutorProviderImpl
+
+2021-06-14 00:14:12,569 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Vukasin/.m2/repository/org/drools/drools-compiler/7.17.0.Final/drools-compiler-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa
+2021-06-14 00:14:12,574 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.compiler.kie.builder.impl.KieServicesImpl
+
+2021-06-14 00:14:12,576 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.compiler.builder.impl.KnowledgeBuilderFactoryServiceImpl
+
+2021-06-14 00:14:12,576 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Vukasin/.m2/repository/org/kie/kie-internal/7.17.0.Final/kie-internal-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa
+2021-06-14 00:14:12,578 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieAssemblersImpl
+
+2021-06-14 00:14:12,579 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieRuntimesImpl
+
+2021-06-14 00:14:12,580 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieWeaversImpl
+
+2021-06-14 00:14:12,581 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieBeliefsImpl
+
+2021-06-14 00:14:12,593 INFO o.d.c.k.b.i.ClasspathKieProject Found kmodule: file:/C:/Faks/BSEP/Projekat/BSEP_T17/hospital/target/classes/META-INF/kmodule.xml
+2021-06-14 00:14:12,697 WARN o.s.c.s.AbstractApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'deviceController': Unsatisfied dependency expressed through field 'kieSession'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kieContainer' defined in class path resource [bsep/hospital/config/DroolsConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.kie.api.runtime.KieSession]: Factory method 'kieContainer' threw exception; nested exception is java.lang.ExceptionInInitializerError
+2021-06-14 00:14:12,701 INFO o.s.o.j.AbstractEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-14 00:14:12,701 INFO o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-06-14 00:14:12,763 INFO c.z.h.HikariDataSource HikariPool-1 - Shutdown initiated...
+2021-06-14 00:14:12,768 INFO c.z.h.HikariDataSource HikariPool-1 - Shutdown completed.
+2021-06-14 00:14:12,772 INFO o.a.j.l.DirectJDKLog Stopping service [Tomcat]
+2021-06-14 00:14:12,809 INFO o.s.b.a.l.ConditionEvaluationReportLoggingListener 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-06-14 00:14:12,825 ERROR o.s.b.SpringApplication Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'deviceController': Unsatisfied dependency expressed through field 'kieSession'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kieContainer' defined in class path resource [bsep/hospital/config/DroolsConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.kie.api.runtime.KieSession]: Factory method 'kieContainer' threw exception; nested exception is java.lang.ExceptionInInitializerError
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1425) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.3.9.RELEASE.jar:2.3.9.RELEASE]
+	at bsep.hospital.HospitalApplication.main(HospitalApplication.java:15) [classes/:?]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kieContainer' defined in class path resource [bsep/hospital/config/DroolsConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.kie.api.runtime.KieSession]: Factory method 'kieContainer' threw exception; nested exception is java.lang.ExceptionInInitializerError
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:485) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1341) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1181) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	... 21 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.kie.api.runtime.KieSession]: Factory method 'kieContainer' threw exception; nested exception is java.lang.ExceptionInInitializerError
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:652) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:485) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1341) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1181) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	... 21 more
+Caused by: java.lang.ExceptionInInitializerError
+	at com.thoughtworks.xstream.XStream.setupConverters(XStream.java:989) ~[xstream-1.4.10.jar:1.4.10]
+	at com.thoughtworks.xstream.XStream.<init>(XStream.java:592) ~[xstream-1.4.10.jar:1.4.10]
+	at com.thoughtworks.xstream.XStream.<init>(XStream.java:514) ~[xstream-1.4.10.jar:1.4.10]
+	at com.thoughtworks.xstream.XStream.<init>(XStream.java:483) ~[xstream-1.4.10.jar:1.4.10]
+	at com.thoughtworks.xstream.XStream.<init>(XStream.java:429) ~[xstream-1.4.10.jar:1.4.10]
+	at com.thoughtworks.xstream.XStream.<init>(XStream.java:396) ~[xstream-1.4.10.jar:1.4.10]
+	at org.kie.soup.commons.xstream.XStreamUtils.createTrustingXStream(XStreamUtils.java:119) ~[kie-soup-commons-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kproject.models.KieModuleModelImpl$kModuleMarshaller.<init>(KieModuleModelImpl.java:170) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kproject.models.KieModuleModelImpl$kModuleMarshaller.<init>(KieModuleModelImpl.java:169) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kproject.models.KieModuleModelImpl.<clinit>(KieModuleModelImpl.java:167) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kie.builder.impl.ClasspathKieProject.fetchKModule(ClasspathKieProject.java:181) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kie.builder.impl.ClasspathKieProject.fetchKModule(ClasspathKieProject.java:143) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kie.builder.impl.ClasspathKieProject.discoverKieModules(ClasspathKieProject.java:114) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kie.builder.impl.ClasspathKieProject.init(ClasspathKieProject.java:86) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kie.builder.impl.KieContainerImpl.<init>(KieContainerImpl.java:138) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kie.builder.impl.KieServicesImpl.newKieClasspathContainer(KieServicesImpl.java:135) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kie.builder.impl.KieServicesImpl.getKieClasspathContainer(KieServicesImpl.java:101) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kie.builder.impl.KieServicesImpl.getKieClasspathContainer(KieServicesImpl.java:79) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at bsep.hospital.config.DroolsConfig.kieContainer(DroolsConfig.java:14) ~[classes/:?]
+	at bsep.hospital.config.DroolsConfig$$EnhancerBySpringCGLIB$$2e2ee009.CGLIB$kieContainer$0(<generated>) ~[classes/:?]
+	at bsep.hospital.config.DroolsConfig$$EnhancerBySpringCGLIB$$2e2ee009$$FastClassBySpringCGLIB$$f801cf12.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at bsep.hospital.config.DroolsConfig$$EnhancerBySpringCGLIB$$2e2ee009.kieContainer(<generated>) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:652) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:485) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1341) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1181) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	... 21 more
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private final java.util.Comparator java.util.TreeMap.comparator accessible: module java.base does not "opens java.util" to unnamed module @fa4c865
+	at java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:357) ~[?:?]
+	at java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297) ~[?:?]
+	at java.lang.reflect.Field.checkCanSetAccessible(Field.java:177) ~[?:?]
+	at java.lang.reflect.Field.setAccessible(Field.java:171) ~[?:?]
+	at com.thoughtworks.xstream.core.util.Fields.locate(Fields.java:40) ~[xstream-1.4.10.jar:1.4.10]
+	at com.thoughtworks.xstream.converters.collections.TreeMapConverter.<clinit>(TreeMapConverter.java:50) ~[xstream-1.4.10.jar:1.4.10]
+	at com.thoughtworks.xstream.XStream.setupConverters(XStream.java:989) ~[xstream-1.4.10.jar:1.4.10]
+	at com.thoughtworks.xstream.XStream.<init>(XStream.java:592) ~[xstream-1.4.10.jar:1.4.10]
+	at com.thoughtworks.xstream.XStream.<init>(XStream.java:514) ~[xstream-1.4.10.jar:1.4.10]
+	at com.thoughtworks.xstream.XStream.<init>(XStream.java:483) ~[xstream-1.4.10.jar:1.4.10]
+	at com.thoughtworks.xstream.XStream.<init>(XStream.java:429) ~[xstream-1.4.10.jar:1.4.10]
+	at com.thoughtworks.xstream.XStream.<init>(XStream.java:396) ~[xstream-1.4.10.jar:1.4.10]
+	at org.kie.soup.commons.xstream.XStreamUtils.createTrustingXStream(XStreamUtils.java:119) ~[kie-soup-commons-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kproject.models.KieModuleModelImpl$kModuleMarshaller.<init>(KieModuleModelImpl.java:170) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kproject.models.KieModuleModelImpl$kModuleMarshaller.<init>(KieModuleModelImpl.java:169) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kproject.models.KieModuleModelImpl.<clinit>(KieModuleModelImpl.java:167) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kie.builder.impl.ClasspathKieProject.fetchKModule(ClasspathKieProject.java:181) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kie.builder.impl.ClasspathKieProject.fetchKModule(ClasspathKieProject.java:143) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kie.builder.impl.ClasspathKieProject.discoverKieModules(ClasspathKieProject.java:114) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kie.builder.impl.ClasspathKieProject.init(ClasspathKieProject.java:86) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kie.builder.impl.KieContainerImpl.<init>(KieContainerImpl.java:138) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kie.builder.impl.KieServicesImpl.newKieClasspathContainer(KieServicesImpl.java:135) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kie.builder.impl.KieServicesImpl.getKieClasspathContainer(KieServicesImpl.java:101) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at org.drools.compiler.kie.builder.impl.KieServicesImpl.getKieClasspathContainer(KieServicesImpl.java:79) ~[drools-compiler-7.17.0.Final.jar:7.17.0.Final]
+	at bsep.hospital.config.DroolsConfig.kieContainer(DroolsConfig.java:14) ~[classes/:?]
+	at bsep.hospital.config.DroolsConfig$$EnhancerBySpringCGLIB$$2e2ee009.CGLIB$kieContainer$0(<generated>) ~[classes/:?]
+	at bsep.hospital.config.DroolsConfig$$EnhancerBySpringCGLIB$$2e2ee009$$FastClassBySpringCGLIB$$f801cf12.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331) ~[spring-context-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at bsep.hospital.config.DroolsConfig$$EnhancerBySpringCGLIB$$2e2ee009.kieContainer(<generated>) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:652) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:485) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1341) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1181) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	... 21 more

@@ -1,31 +1,73 @@
-2021-06-13 23:52:24,253 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
-2021-06-13 23:52:24,329 INFO o.s.b.StartupInfoLogger Starting AdminApplication on DESKTOP-L1TVSFT with PID 17488 (C:\Faks\BSEP\Projekat\BSEP_T17\admin\target\classes started by Vukasin in C:\Faks\BSEP\Projekat\BSEP_T17\admin)
-2021-06-13 23:52:24,334 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
-2021-06-13 23:52:25,386 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-13 23:52:25,517 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 121ms. Found 3 JPA repository interfaces.
-2021-06-13 23:52:25,951 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4ceff87d' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-06-13 23:52:25,961 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-06-13 23:52:26,544 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8084 (https)
-2021-06-13 23:52:26,557 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8084"]
-2021-06-13 23:52:26,558 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
-2021-06-13 23:52:26,559 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-06-13 23:52:26,788 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
-2021-06-13 23:52:26,788 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2390 ms
-2021-06-13 23:52:26,889 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-13 23:52:27,107 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-13 23:52:27,206 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-06-13 23:52:27,420 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-06-13 23:52:27,561 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
-2021-06-13 23:52:27,939 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
-2021-06-13 23:52:27,964 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2021-06-13 23:52:29,187 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-13 23:52:29,195 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-13 23:52:30,315 INFO b.a.i.Initialize Executing operation Initialize
-2021-06-13 23:52:30,686 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b55f0a6, org.springframework.security.web.context.SecurityContextPersistenceFilter@3f0b5619, org.springframework.security.web.header.HeaderWriterFilter@729d1428, org.springframework.web.filter.CorsFilter@3fc7abf6, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@7c8f803d, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@ebff59d, org.springframework.security.web.authentication.logout.LogoutFilter@623ed5ed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36ce9eaf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5039c2cf, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@7c6ab057, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@7ce4498f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1016b44e, org.springframework.security.web.session.SessionManagementFilter@1728d307, org.springframework.security.web.access.ExceptionTranslationFilter@231c521e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@748fa354]
-2021-06-13 23:52:31,117 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8084"]
-2021-06-13 23:52:31,347 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8084 (https) with context path ''
-2021-06-13 23:52:31,356 INFO o.s.b.StartupInfoLogger Started AdminApplication in 7.427 seconds (JVM running for 8.709)
-2021-06-13 23:52:44,580 ERROR o.a.j.l.DirectJDKLog Exception Processing /certificate-request
+2021-06-13 23:39:41,444 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-06-13 23:39:41,520 INFO o.s.b.StartupInfoLogger Starting HospitalApplication on DESKTOP-L1TVSFT with PID 19616 (C:\Faks\BSEP\Projekat\BSEP_T17\hospital\target\classes started by Vukasin in C:\Faks\BSEP\Projekat\BSEP_T17\hospital)
+2021-06-13 23:39:41,526 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
+2021-06-13 23:39:42,704 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-13 23:39:42,713 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-13 23:39:42,829 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data JPA - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.LogRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-06-13 23:39:42,877 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 153ms. Found 4 JPA repository interfaces.
+2021-06-13 23:39:43,045 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-13 23:39:43,048 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-06-13 23:39:43,068 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.AuthorityRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-13 23:39:43,074 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PatientRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-13 23:39:43,077 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PatientStatusRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-13 23:39:43,079 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PersonRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-13 23:39:43,087 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 37ms. Found 1 MongoDB repository interfaces.
+2021-06-13 23:39:43,628 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@35b17c06' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-13 23:39:43,643 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-13 23:39:44,143 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8085 (https)
+2021-06-13 23:39:44,156 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-13 23:39:44,156 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
+2021-06-13 23:39:44,157 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-13 23:39:44,381 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
+2021-06-13 23:39:44,382 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2793 ms
+2021-06-13 23:39:44,465 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-13 23:39:44,664 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-13 23:39:44,729 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-13 23:39:44,894 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-13 23:39:45,047 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-13 23:39:45,535 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2021-06-13 23:39:45,558 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-13 23:39:46,878 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-13 23:39:46,886 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-13 23:39:47,564 INFO c.m.d.l.SLF4JLogger Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-06-13 23:39:47,632 INFO c.m.d.l.SLF4JLogger Opened connection [connectionId{localValue:1, serverValue:39}] to localhost:27017
+2021-06-13 23:39:47,641 INFO c.m.d.l.SLF4JLogger Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4751500}
+2021-06-13 23:39:48,267 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Vukasin/.m2/repository/org/kie/kie-ci/7.17.0.Final/kie-ci-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@4b85612c
+2021-06-13 23:39:48,269 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.scanner.KieScannerFactoryServiceImpl
+
+2021-06-13 23:39:48,275 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.scanner.MavenClassLoaderResolver
+
+2021-06-13 23:39:48,275 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Vukasin/.m2/repository/org/drools/drools-core/7.17.0.Final/drools-core-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@4b85612c
+2021-06-13 23:39:48,277 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.io.impl.ResourceFactoryServiceImpl
+
+2021-06-13 23:39:48,279 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.marshalling.impl.MarshallerProviderImpl
+
+2021-06-13 23:39:48,281 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.concurrent.ExecutorProviderImpl
+
+2021-06-13 23:39:48,281 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Vukasin/.m2/repository/org/drools/drools-compiler/7.17.0.Final/drools-compiler-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@4b85612c
+2021-06-13 23:39:48,286 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.compiler.kie.builder.impl.KieServicesImpl
+
+2021-06-13 23:39:48,289 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.compiler.builder.impl.KnowledgeBuilderFactoryServiceImpl
+
+2021-06-13 23:39:48,289 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Vukasin/.m2/repository/org/kie/kie-internal/7.17.0.Final/kie-internal-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@4b85612c
+2021-06-13 23:39:48,290 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieAssemblersImpl
+
+2021-06-13 23:39:48,292 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieRuntimesImpl
+
+2021-06-13 23:39:48,293 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieWeaversImpl
+
+2021-06-13 23:39:48,295 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieBeliefsImpl
+
+2021-06-13 23:39:48,313 INFO o.d.c.k.b.i.ClasspathKieProject Found kmodule: file:/C:/Faks/BSEP/Projekat/BSEP_T17/hospital/target/classes/META-INF/kmodule.xml
+2021-06-13 23:39:48,683 INFO o.d.c.k.b.i.KieRepositoryImpl KieModule was added: FileKieModule[releaseId=bsep:hospital:0.0.1-SNAPSHOT,file=C:\Faks\BSEP\Projekat\BSEP_T17\hospital\target\classes]
+2021-06-13 23:39:49,949 INFO b.h.i.Initialize Executing operation Initialize
+2021-06-13 23:39:50,240 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8e0b048, org.springframework.security.web.context.SecurityContextPersistenceFilter@3cc7cf58, org.springframework.security.web.header.HeaderWriterFilter@72f4232, org.springframework.web.filter.CorsFilter@71b38b11, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@5667dd90, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@6839d03b, org.springframework.security.web.authentication.logout.LogoutFilter@5713e261, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a564a61, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44bbf5e3, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@6d41200c, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@522fb69, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a2d8488, org.springframework.security.web.session.SessionManagementFilter@beac39c, org.springframework.security.web.access.ExceptionTranslationFilter@3a35a792, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@116f823c]
+2021-06-13 23:39:50,604 INFO o.s.s.c.ExecutorConfigurationSupport Initializing ExecutorService 'taskScheduler'
+2021-06-13 23:39:50,660 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-13 23:39:50,928 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8085 (https) with context path ''
+2021-06-13 23:39:50,945 INFO o.s.b.StartupInfoLogger Started HospitalApplication in 9.826 seconds (JVM running for 11.151)
+2021-06-13 23:39:51,078 INFO c.m.d.l.SLF4JLogger Opened connection [connectionId{localValue:2, serverValue:40}] to localhost:27017
+2021-06-13 23:40:01,549 ERROR o.a.j.l.DirectJDKLog Exception Processing /user/getUser/miloradradovicmico98@gmail.com
 java.lang.NoClassDefFoundError: java/security/acl/Group
 	at org.keycloak.adapters.tomcat.KeycloakAuthenticatorValve.createPrincipalFactory(KeycloakAuthenticatorValve.java:96) ~[spring-boot-container-bundle-11.0.2.jar:11.0.2]
 	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.createSessionTokenStore(AbstractKeycloakAuthenticatorValve.java:262) ~[spring-boot-container-bundle-11.0.2.jar:11.0.2]
@@ -51,10 +93,10 @@ Caused by: java.lang.ClassNotFoundException: java.security.acl.Group
 	at jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168) ~[?:?]
 	at java.lang.ClassLoader.loadClass(ClassLoader.java:522) ~[?:?]
 	... 19 more
-2021-06-13 23:52:44,593 INFO o.a.j.l.DirectJDKLog Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-06-13 23:52:44,593 INFO o.s.w.s.FrameworkServlet Initializing Servlet 'dispatcherServlet'
-2021-06-13 23:52:44,603 INFO o.s.w.s.FrameworkServlet Completed initialization in 9 ms
-2021-06-13 23:52:44,811 WARN o.k.a.KeycloakDeployment Failed to load URLs from https://localhost:8443/auth/realms/admin-portal/.well-known/openid-configuration
+2021-06-13 23:40:01,567 INFO o.a.j.l.DirectJDKLog Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-13 23:40:01,567 INFO o.s.w.s.FrameworkServlet Initializing Servlet 'dispatcherServlet'
+2021-06-13 23:40:01,584 INFO o.s.w.s.FrameworkServlet Completed initialization in 17 ms
+2021-06-13 23:40:01,776 WARN o.k.a.KeycloakDeployment Failed to load URLs from https://localhost:8443/auth/realms/hospital-portal/.well-known/openid-configuration
 javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 	at sun.security.ssl.Alert.createSSLException(Alert.java:131) ~[?:?]
 	at sun.security.ssl.TransportContext.fatal(TransportContext.java:369) ~[?:?]
@@ -155,7 +197,7 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:132) ~[?:?]
 	at sun.security.ssl.CertificateMessage$T12CertificateConsumer.checkServerCerts(CertificateMessage.java:638) ~[?:?]
 	... 75 more
-2021-06-13 23:52:44,961 WARN o.k.a.KeycloakDeployment Failed to load URLs from https://localhost:8443/auth/realms/admin-portal/.well-known/openid-configuration
+2021-06-13 23:40:01,909 WARN o.k.a.KeycloakDeployment Failed to load URLs from https://localhost:8443/auth/realms/hospital-portal/.well-known/openid-configuration
 javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 	at sun.security.ssl.Alert.createSSLException(Alert.java:131) ~[?:?]
 	at sun.security.ssl.TransportContext.fatal(TransportContext.java:369) ~[?:?]
@@ -259,7 +301,7 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:132) ~[?:?]
 	at sun.security.ssl.CertificateMessage$T12CertificateConsumer.checkServerCerts(CertificateMessage.java:638) ~[?:?]
 	... 78 more
-2021-06-13 23:52:44,964 ERROR o.a.j.l.DirectJDKLog Servlet.service() for servlet [dispatcherServlet] threw exception
+2021-06-13 23:40:01,911 ERROR o.a.j.l.DirectJDKLog Servlet.service() for servlet [dispatcherServlet] threw exception
 java.lang.NullPointerException: Cannot invoke "String.length()" because "this.input" is null
 	at java.net.URI$Parser.parse(URI.java:3154) ~[?:?]
 	at java.net.URI.<init>(URI.java:623) ~[?:?]
@@ -315,7 +357,7 @@ java.lang.NullPointerException: Cannot invoke "String.length()" because "this.in
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) [?:?]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
 	at java.lang.Thread.run(Thread.java:832) [?:?]
-2021-06-13 23:52:44,965 ERROR o.a.j.l.DirectJDKLog Exception Processing ErrorPage[errorCode=0, location=/error]
+2021-06-13 23:40:01,913 ERROR o.a.j.l.DirectJDKLog Exception Processing ErrorPage[errorCode=0, location=/error]
 java.lang.NullPointerException: Cannot invoke "String.length()" because "this.input" is null
 	at java.net.URI$Parser.parse(URI.java:3154) ~[?:?]
 	at java.net.URI.<init>(URI.java:623) ~[?:?]
@@ -371,7 +413,7 @@ java.lang.NullPointerException: Cannot invoke "String.length()" because "this.in
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) [?:?]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
 	at java.lang.Thread.run(Thread.java:832) [?:?]
-2021-06-13 23:52:44,986 WARN o.k.a.KeycloakDeployment Failed to load URLs from https://localhost:8443/auth/realms/admin-portal/.well-known/openid-configuration
+2021-06-13 23:40:01,930 WARN o.k.a.KeycloakDeployment Failed to load URLs from https://localhost:8443/auth/realms/hospital-portal/.well-known/openid-configuration
 javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 	at sun.security.ssl.Alert.createSSLException(Alert.java:131) ~[?:?]
 	at sun.security.ssl.TransportContext.fatal(TransportContext.java:369) ~[?:?]
@@ -472,7 +514,7 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:132) ~[?:?]
 	at sun.security.ssl.CertificateMessage$T12CertificateConsumer.checkServerCerts(CertificateMessage.java:638) ~[?:?]
 	... 75 more
-2021-06-13 23:52:45,012 WARN o.k.a.KeycloakDeployment Failed to load URLs from https://localhost:8443/auth/realms/admin-portal/.well-known/openid-configuration
+2021-06-13 23:40:01,951 WARN o.k.a.KeycloakDeployment Failed to load URLs from https://localhost:8443/auth/realms/hospital-portal/.well-known/openid-configuration
 javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 	at sun.security.ssl.Alert.createSSLException(Alert.java:131) ~[?:?]
 	at sun.security.ssl.TransportContext.fatal(TransportContext.java:369) ~[?:?]
@@ -576,7 +618,7 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:132) ~[?:?]
 	at sun.security.ssl.CertificateMessage$T12CertificateConsumer.checkServerCerts(CertificateMessage.java:638) ~[?:?]
 	... 78 more
-2021-06-13 23:52:45,014 ERROR o.a.j.l.DirectJDKLog Servlet.service() for servlet [dispatcherServlet] threw exception
+2021-06-13 23:40:01,953 ERROR o.a.j.l.DirectJDKLog Servlet.service() for servlet [dispatcherServlet] threw exception
 java.lang.NullPointerException: Cannot invoke "String.length()" because "this.input" is null
 	at java.net.URI$Parser.parse(URI.java:3154) ~[?:?]
 	at java.net.URI.<init>(URI.java:623) ~[?:?]
@@ -632,7 +674,7 @@ java.lang.NullPointerException: Cannot invoke "String.length()" because "this.in
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) [?:?]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
 	at java.lang.Thread.run(Thread.java:832) [?:?]
-2021-06-13 23:52:45,015 ERROR o.a.j.l.DirectJDKLog Exception Processing ErrorPage[errorCode=0, location=/error]
+2021-06-13 23:40:01,955 ERROR o.a.j.l.DirectJDKLog Exception Processing ErrorPage[errorCode=0, location=/error]
 java.lang.NullPointerException: Cannot invoke "String.length()" because "this.input" is null
 	at java.net.URI$Parser.parse(URI.java:3154) ~[?:?]
 	at java.net.URI.<init>(URI.java:623) ~[?:?]

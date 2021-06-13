@@ -27,7 +27,7 @@ public class UserController {
 
     //@PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<?> getUserByEmail(@RequestParam @Email() @Pattern(regexp = "[^;]+") String email) {
+    public ResponseEntity<?> getUserByEmail(@RequestParam  @Email() @Pattern(regexp = "[^;]+") String email) {
         // Person person = userService.loadUserByEmail(email);
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

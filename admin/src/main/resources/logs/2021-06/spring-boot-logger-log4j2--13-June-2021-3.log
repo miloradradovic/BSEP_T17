@@ -1,31 +1,31 @@
-2021-06-13 23:52:24,253 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
-2021-06-13 23:52:24,329 INFO o.s.b.StartupInfoLogger Starting AdminApplication on DESKTOP-L1TVSFT with PID 17488 (C:\Faks\BSEP\Projekat\BSEP_T17\admin\target\classes started by Vukasin in C:\Faks\BSEP\Projekat\BSEP_T17\admin)
-2021-06-13 23:52:24,334 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
-2021-06-13 23:52:25,386 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-13 23:52:25,517 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 121ms. Found 3 JPA repository interfaces.
-2021-06-13 23:52:25,951 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4ceff87d' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-06-13 23:52:25,961 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-06-13 23:52:26,544 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8084 (https)
-2021-06-13 23:52:26,557 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8084"]
-2021-06-13 23:52:26,558 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
-2021-06-13 23:52:26,559 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-06-13 23:52:26,788 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
-2021-06-13 23:52:26,788 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2390 ms
-2021-06-13 23:52:26,889 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-13 23:52:27,107 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-13 23:52:27,206 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-06-13 23:52:27,420 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-06-13 23:52:27,561 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
-2021-06-13 23:52:27,939 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
-2021-06-13 23:52:27,964 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2021-06-13 23:52:29,187 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-13 23:52:29,195 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-13 23:52:30,315 INFO b.a.i.Initialize Executing operation Initialize
-2021-06-13 23:52:30,686 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b55f0a6, org.springframework.security.web.context.SecurityContextPersistenceFilter@3f0b5619, org.springframework.security.web.header.HeaderWriterFilter@729d1428, org.springframework.web.filter.CorsFilter@3fc7abf6, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@7c8f803d, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@ebff59d, org.springframework.security.web.authentication.logout.LogoutFilter@623ed5ed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36ce9eaf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5039c2cf, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@7c6ab057, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@7ce4498f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1016b44e, org.springframework.security.web.session.SessionManagementFilter@1728d307, org.springframework.security.web.access.ExceptionTranslationFilter@231c521e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@748fa354]
-2021-06-13 23:52:31,117 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8084"]
-2021-06-13 23:52:31,347 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8084 (https) with context path ''
-2021-06-13 23:52:31,356 INFO o.s.b.StartupInfoLogger Started AdminApplication in 7.427 seconds (JVM running for 8.709)
-2021-06-13 23:52:44,580 ERROR o.a.j.l.DirectJDKLog Exception Processing /certificate-request
+2021-06-13 23:54:43,053 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-06-13 23:54:43,163 INFO o.s.b.StartupInfoLogger Starting AdminApplication on DESKTOP-L1TVSFT with PID 22404 (C:\Faks\BSEP\Projekat\BSEP_T17\admin\target\classes started by Vukasin in C:\Faks\BSEP\Projekat\BSEP_T17\admin)
+2021-06-13 23:54:43,168 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
+2021-06-13 23:54:44,091 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-13 23:54:44,225 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 125ms. Found 3 JPA repository interfaces.
+2021-06-13 23:54:44,661 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3238e2aa' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-13 23:54:44,673 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-13 23:54:45,185 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8084 (https)
+2021-06-13 23:54:45,199 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8084"]
+2021-06-13 23:54:45,200 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
+2021-06-13 23:54:45,200 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-13 23:54:45,393 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
+2021-06-13 23:54:45,394 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 2169 ms
+2021-06-13 23:54:45,466 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-13 23:54:45,651 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-13 23:54:45,737 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-13 23:54:45,968 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-13 23:54:46,122 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-13 23:54:46,405 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2021-06-13 23:54:46,472 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-13 23:54:47,820 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-13 23:54:47,833 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-13 23:54:49,091 INFO b.a.i.Initialize Executing operation Initialize
+2021-06-13 23:54:49,281 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e5c8c80, org.springframework.security.web.context.SecurityContextPersistenceFilter@5ca006ac, org.springframework.security.web.header.HeaderWriterFilter@4425b6ed, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@416c1b0, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@240291d9, org.springframework.security.web.authentication.logout.LogoutFilter@6413eeb7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1372696b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21539796, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@4e26c308, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@7c8f803d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@46df794e, org.springframework.security.web.session.SessionManagementFilter@5039c2cf, org.springframework.security.web.access.ExceptionTranslationFilter@1f27f354, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@765eb801]
+2021-06-13 23:54:49,725 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8084"]
+2021-06-13 23:54:49,932 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8084 (https) with context path ''
+2021-06-13 23:54:49,942 INFO o.s.b.StartupInfoLogger Started AdminApplication in 7.257 seconds (JVM running for 8.841)
+2021-06-13 23:54:56,958 ERROR o.a.j.l.DirectJDKLog Exception Processing /certificate-request
 java.lang.NoClassDefFoundError: java/security/acl/Group
 	at org.keycloak.adapters.tomcat.KeycloakAuthenticatorValve.createPrincipalFactory(KeycloakAuthenticatorValve.java:96) ~[spring-boot-container-bundle-11.0.2.jar:11.0.2]
 	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.createSessionTokenStore(AbstractKeycloakAuthenticatorValve.java:262) ~[spring-boot-container-bundle-11.0.2.jar:11.0.2]
@@ -51,10 +51,10 @@ Caused by: java.lang.ClassNotFoundException: java.security.acl.Group
 	at jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168) ~[?:?]
 	at java.lang.ClassLoader.loadClass(ClassLoader.java:522) ~[?:?]
 	... 19 more
-2021-06-13 23:52:44,593 INFO o.a.j.l.DirectJDKLog Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-06-13 23:52:44,593 INFO o.s.w.s.FrameworkServlet Initializing Servlet 'dispatcherServlet'
-2021-06-13 23:52:44,603 INFO o.s.w.s.FrameworkServlet Completed initialization in 9 ms
-2021-06-13 23:52:44,811 WARN o.k.a.KeycloakDeployment Failed to load URLs from https://localhost:8443/auth/realms/admin-portal/.well-known/openid-configuration
+2021-06-13 23:54:56,980 INFO o.a.j.l.DirectJDKLog Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-13 23:54:56,980 INFO o.s.w.s.FrameworkServlet Initializing Servlet 'dispatcherServlet'
+2021-06-13 23:54:56,994 INFO o.s.w.s.FrameworkServlet Completed initialization in 14 ms
+2021-06-13 23:54:57,185 WARN o.k.a.KeycloakDeployment Failed to load URLs from https://localhost:8443/auth/realms/admin-portal/.well-known/openid-configuration
 javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 	at sun.security.ssl.Alert.createSSLException(Alert.java:131) ~[?:?]
 	at sun.security.ssl.TransportContext.fatal(TransportContext.java:369) ~[?:?]
@@ -101,8 +101,6 @@ javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.pro
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
@@ -143,7 +141,7 @@ Caused by: sun.security.validator.ValidatorException: PKIX path building failed:
 	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:231) ~[?:?]
 	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:132) ~[?:?]
 	at sun.security.ssl.CertificateMessage$T12CertificateConsumer.checkServerCerts(CertificateMessage.java:638) ~[?:?]
-	... 75 more
+	... 73 more
 Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141) ~[?:?]
 	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126) ~[?:?]
@@ -154,8 +152,8 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:231) ~[?:?]
 	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:132) ~[?:?]
 	at sun.security.ssl.CertificateMessage$T12CertificateConsumer.checkServerCerts(CertificateMessage.java:638) ~[?:?]
-	... 75 more
-2021-06-13 23:52:44,961 WARN o.k.a.KeycloakDeployment Failed to load URLs from https://localhost:8443/auth/realms/admin-portal/.well-known/openid-configuration
+	... 73 more
+2021-06-13 23:54:57,314 WARN o.k.a.KeycloakDeployment Failed to load URLs from https://localhost:8443/auth/realms/admin-portal/.well-known/openid-configuration
 javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 	at sun.security.ssl.Alert.createSSLException(Alert.java:131) ~[?:?]
 	at sun.security.ssl.TransportContext.fatal(TransportContext.java:369) ~[?:?]
@@ -205,8 +203,6 @@ javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.pro
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
@@ -247,7 +243,7 @@ Caused by: sun.security.validator.ValidatorException: PKIX path building failed:
 	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:231) ~[?:?]
 	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:132) ~[?:?]
 	at sun.security.ssl.CertificateMessage$T12CertificateConsumer.checkServerCerts(CertificateMessage.java:638) ~[?:?]
-	... 78 more
+	... 76 more
 Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141) ~[?:?]
 	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126) ~[?:?]
@@ -258,8 +254,8 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:231) ~[?:?]
 	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:132) ~[?:?]
 	at sun.security.ssl.CertificateMessage$T12CertificateConsumer.checkServerCerts(CertificateMessage.java:638) ~[?:?]
-	... 78 more
-2021-06-13 23:52:44,964 ERROR o.a.j.l.DirectJDKLog Servlet.service() for servlet [dispatcherServlet] threw exception
+	... 76 more
+2021-06-13 23:54:57,316 ERROR o.a.j.l.DirectJDKLog Servlet.service() for servlet [dispatcherServlet] threw exception
 java.lang.NullPointerException: Cannot invoke "String.length()" because "this.input" is null
 	at java.net.URI$Parser.parse(URI.java:3154) ~[?:?]
 	at java.net.URI.<init>(URI.java:623) ~[?:?]
@@ -277,8 +273,6 @@ java.lang.NullPointerException: Cannot invoke "String.length()" because "this.in
 	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:96) ~[keycloak-spring-security-adapter-11.0.2.jar:11.0.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
@@ -315,7 +309,7 @@ java.lang.NullPointerException: Cannot invoke "String.length()" because "this.in
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) [?:?]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
 	at java.lang.Thread.run(Thread.java:832) [?:?]
-2021-06-13 23:52:44,965 ERROR o.a.j.l.DirectJDKLog Exception Processing ErrorPage[errorCode=0, location=/error]
+2021-06-13 23:54:57,318 ERROR o.a.j.l.DirectJDKLog Exception Processing ErrorPage[errorCode=0, location=/error]
 java.lang.NullPointerException: Cannot invoke "String.length()" because "this.input" is null
 	at java.net.URI$Parser.parse(URI.java:3154) ~[?:?]
 	at java.net.URI.<init>(URI.java:623) ~[?:?]
@@ -333,8 +327,6 @@ java.lang.NullPointerException: Cannot invoke "String.length()" because "this.in
 	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:96) ~[keycloak-spring-security-adapter-11.0.2.jar:11.0.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
@@ -371,7 +363,7 @@ java.lang.NullPointerException: Cannot invoke "String.length()" because "this.in
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) [?:?]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
 	at java.lang.Thread.run(Thread.java:832) [?:?]
-2021-06-13 23:52:44,986 WARN o.k.a.KeycloakDeployment Failed to load URLs from https://localhost:8443/auth/realms/admin-portal/.well-known/openid-configuration
+2021-06-13 23:54:57,354 WARN o.k.a.KeycloakDeployment Failed to load URLs from https://localhost:8443/auth/realms/admin-portal/.well-known/openid-configuration
 javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 	at sun.security.ssl.Alert.createSSLException(Alert.java:131) ~[?:?]
 	at sun.security.ssl.TransportContext.fatal(TransportContext.java:369) ~[?:?]
@@ -418,8 +410,6 @@ javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.pro
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
@@ -460,7 +450,7 @@ Caused by: sun.security.validator.ValidatorException: PKIX path building failed:
 	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:231) ~[?:?]
 	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:132) ~[?:?]
 	at sun.security.ssl.CertificateMessage$T12CertificateConsumer.checkServerCerts(CertificateMessage.java:638) ~[?:?]
-	... 75 more
+	... 73 more
 Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141) ~[?:?]
 	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126) ~[?:?]
@@ -471,8 +461,8 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:231) ~[?:?]
 	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:132) ~[?:?]
 	at sun.security.ssl.CertificateMessage$T12CertificateConsumer.checkServerCerts(CertificateMessage.java:638) ~[?:?]
-	... 75 more
-2021-06-13 23:52:45,012 WARN o.k.a.KeycloakDeployment Failed to load URLs from https://localhost:8443/auth/realms/admin-portal/.well-known/openid-configuration
+	... 73 more
+2021-06-13 23:54:57,368 WARN o.k.a.KeycloakDeployment Failed to load URLs from https://localhost:8443/auth/realms/admin-portal/.well-known/openid-configuration
 javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 	at sun.security.ssl.Alert.createSSLException(Alert.java:131) ~[?:?]
 	at sun.security.ssl.TransportContext.fatal(TransportContext.java:369) ~[?:?]
@@ -522,8 +512,6 @@ javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.pro
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
@@ -564,7 +552,7 @@ Caused by: sun.security.validator.ValidatorException: PKIX path building failed:
 	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:231) ~[?:?]
 	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:132) ~[?:?]
 	at sun.security.ssl.CertificateMessage$T12CertificateConsumer.checkServerCerts(CertificateMessage.java:638) ~[?:?]
-	... 78 more
+	... 76 more
 Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141) ~[?:?]
 	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126) ~[?:?]
@@ -575,8 +563,8 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:231) ~[?:?]
 	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:132) ~[?:?]
 	at sun.security.ssl.CertificateMessage$T12CertificateConsumer.checkServerCerts(CertificateMessage.java:638) ~[?:?]
-	... 78 more
-2021-06-13 23:52:45,014 ERROR o.a.j.l.DirectJDKLog Servlet.service() for servlet [dispatcherServlet] threw exception
+	... 76 more
+2021-06-13 23:54:57,370 ERROR o.a.j.l.DirectJDKLog Servlet.service() for servlet [dispatcherServlet] threw exception
 java.lang.NullPointerException: Cannot invoke "String.length()" because "this.input" is null
 	at java.net.URI$Parser.parse(URI.java:3154) ~[?:?]
 	at java.net.URI.<init>(URI.java:623) ~[?:?]
@@ -594,8 +582,6 @@ java.lang.NullPointerException: Cannot invoke "String.length()" because "this.in
 	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:96) ~[keycloak-spring-security-adapter-11.0.2.jar:11.0.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
@@ -632,7 +618,7 @@ java.lang.NullPointerException: Cannot invoke "String.length()" because "this.in
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) [?:?]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
 	at java.lang.Thread.run(Thread.java:832) [?:?]
-2021-06-13 23:52:45,015 ERROR o.a.j.l.DirectJDKLog Exception Processing ErrorPage[errorCode=0, location=/error]
+2021-06-13 23:54:57,373 ERROR o.a.j.l.DirectJDKLog Exception Processing ErrorPage[errorCode=0, location=/error]
 java.lang.NullPointerException: Cannot invoke "String.length()" because "this.input" is null
 	at java.net.URI$Parser.parse(URI.java:3154) ~[?:?]
 	at java.net.URI.<init>(URI.java:623) ~[?:?]
@@ -650,8 +636,6 @@ java.lang.NullPointerException: Cannot invoke "String.length()" because "this.in
 	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:96) ~[keycloak-spring-security-adapter-11.0.2.jar:11.0.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]

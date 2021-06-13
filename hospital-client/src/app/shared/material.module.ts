@@ -15,6 +15,7 @@ import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatCardModule,
     FlexLayoutModule,
     NgxSpinnerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatPaginatorModule
   ],
   exports: [
     CommonModule,
@@ -54,7 +56,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     FlexLayoutModule,
     MatCardModule,
     NgxSpinnerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatPaginatorModule
   ],
   providers: []
 })

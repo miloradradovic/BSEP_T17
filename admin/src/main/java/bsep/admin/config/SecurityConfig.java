@@ -59,8 +59,8 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
                 //.antMatchers(HttpMethod.OPTIONS, "/*").permitAll()
-                .antMatchers("/auth/**", "/certificate-request/**").permitAll()
-                .antMatchers( "/certificate/**").hasAnyRole("SUPER_ADMIN")
+                .antMatchers("/auth/**", "/certificate-request/**", "/certificate/**").permitAll()
+                //.antMatchers( "/certificate/**").hasAnyRole("SUPER_ADMIN")
                 .anyRequest().authenticated()
                 .and().cors()
 
