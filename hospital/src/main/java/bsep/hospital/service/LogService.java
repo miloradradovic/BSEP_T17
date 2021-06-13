@@ -2,7 +2,9 @@ package bsep.hospital.service;
 
 import bsep.hospital.logging.LogModel;
 import bsep.hospital.logging.LogParser;
+import bsep.hospital.logging.LogType;
 import bsep.hospital.model.LogConfig;
+import bsep.hospital.model.Report;
 import bsep.hospital.repository.LogRepository;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -18,6 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
 import java.io.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -167,5 +170,17 @@ public class LogService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public Report getReport(LocalDateTime dateFrom, LocalDateTime dateTo) {
+
+        Report report = new Report();
+        report.setCountAll((int) logRepository.countByLogTimeBetween(dateFrom, dateTo));
+        report.setCountDebug(logRepository.countByLevelAndLogTimeBetween(LogType.DEBUG, dateFrom, dateTo));
+        report.setCountError(logRepository.countByLevelAndLogTimeBetween(LogType.ERROR, dateFrom, dateTo));
+        report.setCountInfo(logRepository.countByLevelAndLogTimeBetween(LogType.INFO, dateFrom, dateTo));
+        report.setCountTrace(logRepository.countByLevelAndLogTimeBetween(LogType.TRACE, dateFrom, dateTo));
+        report.setCountWarn(logRepository.countByLevelAndLogTimeBetween(LogType.WARN, dateFrom, dateTo));
+        return report;
     }
 }
