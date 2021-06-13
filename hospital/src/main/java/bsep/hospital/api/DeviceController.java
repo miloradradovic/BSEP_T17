@@ -46,12 +46,7 @@ public class DeviceController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> receivePatientStatus(@RequestBody byte[] encodedMessage) {
         try {
-            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-            KeycloakPrincipal kcp = (KeycloakPrincipal) authentication.getPrincipal();
-
-            KeycloakSecurityContext session = kcp.getKeycloakSecurityContext();
-            AccessToken accessToken = session.getToken();
-            logger.info("User with the email " + accessToken.getEmail() + " is attempting to save patient status.");
+            logger.info("Device is attempting to save patient status.");
             PatientMessage msg = (PatientMessage) SerializationUtils.deserialize(encodedMessage);
 
             Patient patient = patientService.findOne(msg.getPatientId());
@@ -74,7 +69,7 @@ public class DeviceController {
             }
             patientStatusService.saveOne(patientStatus);
             logger.info("Successfully saved patient status.");
-            return new ResponseEntity<>(HttpStatus.OK);
+              return new ResponseEntity<>(HttpStatus.OK);
 
         } catch (Exception e) {
             logger.error("Failed to save patient status because patient is not found.");

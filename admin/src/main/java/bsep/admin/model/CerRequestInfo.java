@@ -1,5 +1,7 @@
 package bsep.admin.model;
 
+import org.hibernate.annotations.ColumnTransformer;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,31 +12,59 @@ public class CerRequestInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "commonName", unique = false, nullable = false)
+    @Column(nullable = false)
+    @ColumnTransformer(forColumn = "common_name",
+            read = "pgp_sym_decrypt(common_name::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private String commonName;
 
-    @Column(name = "surname", unique = false, nullable = false)
+    @Column(nullable = false)
+    @ColumnTransformer(forColumn = "surname",
+            read = "pgp_sym_decrypt(surname::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private String surname;
 
-    @Column(name = "givenName", unique = false, nullable = false)
+    @Column(nullable = false)
+    @ColumnTransformer(forColumn = "given_name",
+            read = "pgp_sym_decrypt(given_name::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private String givenName;
 
-    @Column(name = "organization", unique = false, nullable = false)
+    @Column(nullable = false)
+    @ColumnTransformer(forColumn = "organization",
+            read = "pgp_sym_decrypt(organization::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private String organization;
 
-    @Column(name = "organizationUnit", unique = false, nullable = false)
+    @Column(nullable = false)
+    @ColumnTransformer(forColumn = "organization_unit",
+            read = "pgp_sym_decrypt(organization_unit::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private String organizationUnit;
 
-    @Column(name = "country", unique = false, nullable = false)
+
+    @Column(nullable = false)
+    @ColumnTransformer(forColumn = "country",
+            read = "pgp_sym_decrypt(country::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private String country;
 
-    @Column(name = "userId", unique = false, nullable = false)
+    @Column(nullable = false)
+    @ColumnTransformer(forColumn = "user_id",
+            read = "pgp_sym_decrypt(user_id::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private int userId;
 
-    @Column(name = "email", unique = false, nullable = false)
+    @Column(nullable = false)
+    @ColumnTransformer(forColumn = "email",
+            read = "pgp_sym_decrypt(email::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private String email;
 
-    @Column(name = "verified", unique = false, nullable = false)
+    @Column(nullable = false)
+    @ColumnTransformer(forColumn = "verified",
+            read = "pgp_sym_decrypt(verified::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private boolean verified;
 
     public CerRequestInfo() {

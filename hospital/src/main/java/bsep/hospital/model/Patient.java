@@ -14,19 +14,29 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name", columnDefinition = "bytea", unique = false, nullable = false)
-    /*@ColumnTransformer(
-            read = "pgp_sym_decrypt(name::bytea, 'AES_KEY'::text)",
-            write = "pgp_sym_encrypt(?, 'AES_KEY'::text)")*/
+    @Column(columnDefinition = "bytea", nullable = false)
+    @ColumnTransformer(forColumn = "name",
+            read = "pgp_sym_decrypt(name::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private String name;
 
-    @Column(name = "surname", unique = false, nullable = false)
+
+    @Column(columnDefinition = "bytea", nullable = false)
+    @ColumnTransformer(forColumn = "surname",
+            read = "pgp_sym_decrypt(surname::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private String surname;
 
-    @Column(name = "dateOfBirth", unique = false, nullable = false)
+    @Column(nullable = false)
+    @ColumnTransformer(forColumn = "date_of_birth",
+            read = "pgp_sym_decrypt(date_of_birth::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private Date dateOfBirth;
 
     @Enumerated(EnumType.STRING)
+    @ColumnTransformer(forColumn = "blood_type",
+            read = "pgp_sym_decrypt(blood_type::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private BloodType bloodType;
 
     public Patient() {

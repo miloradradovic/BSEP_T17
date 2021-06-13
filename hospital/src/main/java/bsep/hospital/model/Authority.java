@@ -1,5 +1,6 @@
 package bsep.hospital.model;
 
+import org.hibernate.annotations.ColumnTransformer;
 import org.springframework.security.core.GrantedAuthority;
 import javax.persistence.*;
 
@@ -12,7 +13,10 @@ public class Authority implements GrantedAuthority {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(name="name")
+    @Column(columnDefinition = "bytea", nullable = false)
+    @ColumnTransformer(forColumn = "name",
+            read = "pgp_sym_decrypt(name::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     String name;
 
     @Override

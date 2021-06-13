@@ -2,6 +2,7 @@ package bsep.hospital.api;
 
 import bsep.hospital.dto.CertificateRequestDTO;
 import bsep.hospital.service.CertificateRequestService;
+import bsep.hospital.service.CertificateService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.keycloak.KeycloakPrincipal;
@@ -28,6 +29,10 @@ public class CertificateRequestController {
 
     @Autowired
     CertificateRequestService certificateRequestService;
+
+    @Autowired
+    CertificateService certificateService;
+
     private static Logger logger = LogManager.getLogger(CertificateRequestController.class);
 
     //@PreAuthorize("hasRole('ROLE_ADMIN')")
@@ -47,6 +52,46 @@ public class CertificateRequestController {
             return new ResponseEntity<>(true,HttpStatus.OK);
         } else {
             logger.warn("User with the email " + accessToken.getEmail() + " failed to send a certificate request.");
+            return new ResponseEntity<>(false,HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @RequestMapping(value = "/revoke", method = RequestMethod.POST)
+    public ResponseEntity<?> createAndSendCertificateRevocationRequest() {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        KeycloakPrincipal kcp = (KeycloakPrincipal) authentication.getPrincipal();
+
+        KeycloakSecurityContext session = kcp.getKeycloakSecurityContext();
+        AccessToken accessToken = session.getToken();
+        logger.info("User with the email " + accessToken.getEmail() + " is trying to send a certificate revocation request.");
+
+        boolean success = certificateService.revokeCertificate(accessToken);
+        if (success) {
+            logger.info("User with the email " + accessToken.getEmail() + " successfully sent a certificate revocation request.");
+            return new ResponseEntity<>(true,HttpStatus.OK);
+        } else {
+            logger.warn("User with the email " + accessToken.getEmail() + " failed to send a certificate revocation request.");
+            return new ResponseEntity<>(false,HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @RequestMapping(value = "/verify", method = RequestMethod.POST)
+    public ResponseEntity<?> createAndSendCertificateRequest() {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        KeycloakPrincipal kcp = (KeycloakPrincipal) authentication.getPrincipal();
+
+        KeycloakSecurityContext session = kcp.getKeycloakSecurityContext();
+        AccessToken accessToken = session.getToken();
+        logger.info("User with the email " + accessToken.getEmail() + " is trying to verify certificate.");
+
+        boolean success = certificateService.checkCertificateValidation(accessToken);
+        if (success) {
+            logger.info("User with the email " + accessToken.getEmail() + " successfully to verify certificate.");
+            return new ResponseEntity<>(true,HttpStatus.OK);
+        } else {
+            logger.warn("User with the email " + accessToken.getEmail() + " failed tto verify certificate.");
             return new ResponseEntity<>(false,HttpStatus.BAD_REQUEST);
         }
     }

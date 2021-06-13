@@ -8,6 +8,7 @@ import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x500.style.BCStyle;
 import org.bouncycastle.asn1.x500.style.IETFUtils;
 import org.bouncycastle.cert.jcajce.JcaX509CertificateHolder;
+import org.keycloak.representations.AccessToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -72,14 +73,28 @@ public class CertificateService {
         keyStoreWriter.saveKeyStore();
     }
 
-    public boolean checkCertificate(String email) {
+    public boolean revokeCertificate(AccessToken accessToken) {
 
-        logger.info("Checking if certificate is valid.");
-        String alias = getLastAlias(email);
+        logger.info("Sending request to super admin to revoke certificate.");
+
+        String email = accessToken.getEmail();
 
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<String> request = new HttpEntity<>("");
-        ResponseEntity<?> responseEntity = restTemplate.exchange("http://localhost:8080/certificate/isValid/" + alias, HttpMethod.POST, request, ResponseEntity.class);
+        ResponseEntity<?> responseEntity = restTemplate.exchange("https://localhost:8084/certificate-request/send-certificate-revocation-request/" + email , HttpMethod.POST, request, ResponseEntity.class);
+        return responseEntity.getStatusCode() == HttpStatus.OK;
+
+    }
+
+    public boolean checkCertificateValidation(AccessToken accessToken) {
+
+        logger.info("Sending request to super admin to verify certificate.");
+
+        String email = accessToken.getEmail();
+
+        RestTemplate restTemplate = new RestTemplate();
+        HttpEntity<String> request = new HttpEntity<>("");
+        ResponseEntity<?> responseEntity = restTemplate.exchange("https://localhost:8084/certificate-request/check-certificate-valid/" + email , HttpMethod.GET, request, ResponseEntity.class);
         return responseEntity.getStatusCode() == HttpStatus.OK;
 
     }

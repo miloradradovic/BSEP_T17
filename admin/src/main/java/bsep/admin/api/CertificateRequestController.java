@@ -3,7 +3,9 @@ package bsep.admin.api;
 import bsep.admin.dto.CerRequestInfoDTO;
 import bsep.admin.exceptions.CertificateNotFoundException;
 import bsep.admin.mappers.CerRequestInfoMapper;
+import bsep.admin.model.CerRevocationRequest;
 import bsep.admin.service.CerRequestInfoService;
+import bsep.admin.service.CerRevocationRequestService;
 import bsep.admin.service.CertificateService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -29,6 +31,9 @@ public class CertificateRequestController {
 
     @Autowired
     CerRequestInfoService cerRequestInfoService;
+
+    @Autowired
+    CerRevocationRequestService cerRevocationRequestService;
 
     @Autowired
     CertificateService certificateService;
@@ -93,5 +98,45 @@ public class CertificateRequestController {
         }
         logger.error("Failed to remove certificate request with id " + id.toString());
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    }
+
+    @RequestMapping(value = "/send-certificate-revocation-request/{email}", method = RequestMethod.POST)
+    public ResponseEntity<?> saveCertificateRevocationRequest(@PathVariable String email) {
+        try {
+            logger.info("Attempting to verify certificate by email.");
+            boolean success = certificateService.checkCertificateByEmail(email);
+
+            if (success) {
+                logger.info("Successfully verify certificate by email.");
+                return new ResponseEntity<>(HttpStatus.OK);
+            } else {
+                logger.error("Failed to verify certificate by email.");
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+
+        } catch (Exception e) {
+            logger.error("Failed to verify certificate by email.");
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @RequestMapping(value = "/check-certificate-valid/{email}", method = RequestMethod.GET)
+    public ResponseEntity<?> checkCertificateValid(@PathVariable String email) {
+        try {
+            logger.info("Attempting to create certificate revocation request.");
+            CerRevocationRequest success = cerRevocationRequestService.saveOne(new CerRevocationRequest("Admin with email: " + email + " want's to revoke certificate."));
+
+            if (success != null) {
+                logger.info("Successfully created certificate revocation request.");
+                return new ResponseEntity<>(HttpStatus.OK);
+            } else {
+                logger.error("Failed to create certificate revocation request.");
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+
+        } catch (Exception e) {
+            logger.error("Failed to create certificate revocation request.");
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
     }
 }
