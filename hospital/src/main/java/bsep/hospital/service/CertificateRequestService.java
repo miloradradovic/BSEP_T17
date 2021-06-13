@@ -16,6 +16,7 @@ import org.bouncycastle.pkcs.PKCS10CertificationRequestBuilder;
 import org.keycloak.KeycloakPrincipal;
 import org.keycloak.KeycloakSecurityContext;
 import org.keycloak.representations.AccessToken;
+import org.mvel2.Operator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -53,14 +54,17 @@ public class CertificateRequestService {
         KeycloakPrincipal kcp = (KeycloakPrincipal) authentication.getPrincipal();
         KeycloakSecurityContext session = kcp.getKeycloakSecurityContext();
         AccessToken accessToken = session.getToken();
+        logger.info("Attempting to send certificate request.");
 
         if (!accessToken.getEmail().equals(certificateRequestDTO.getEmail())) { // lose poslat email sa fronta
+            logger.warn("Email sent from the client side is invalid.");
             return false;
         }
         certificateRequestDTO.setEmail(accessToken.getEmail());
 
         byte[] csr = generateCSR(certificateRequestDTO);
         if (csr != null) {
+            logger.info("CSR is generated. Sending request to the other backend.");
             try{
                 RestTemplate restTemplate = new RestTemplate();
                 HttpEntity<byte[]> request = new HttpEntity<>(csr);
@@ -76,8 +80,10 @@ public class CertificateRequestService {
 
     private byte[] generateCSR(CertificateRequestDTO certificateRequestDTO) {
         try {
+            logger.info("Attempting to generate CSR.");
             KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
             keyPairGenerator.initialize(2048, new SecureRandom());
+            logger.info("Attempting to generate keypair.");
             KeyPair keypair = keyPairGenerator.generateKeyPair();
 
             PublicKey publicKey = keypair.getPublic();
@@ -108,10 +114,15 @@ public class CertificateRequestService {
 
             ContentSigner contentSigner = jcaContentSignerBuilder.build(privateKey);
             PKCS10CertificationRequest certificationRequest = pkcs10Builder.build(contentSigner);
-
             return certificationRequest.getEncoded();
-        } catch (NoSuchAlgorithmException | OperatorCreationException | IOException e) {
-            e.printStackTrace();
+        } catch (NoSuchAlgorithmException noSuchAlgorithmException) {
+            logger.error("Couldn't generate csr because algorithm is invalid.");
+            return null;
+        } catch (OperatorCreationException operatorCreationException) {
+            logger.error("Couldn't generate csr because something is wrong with operator creation.");
+            return null;
+        } catch (IOException ioException) {
+            logger.error("Couldn't generate csr because keystore path is invalid.");
             return null;
         }
     }

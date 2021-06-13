@@ -2,6 +2,8 @@ package bsep.hospital.service;
 
 import bsep.hospital.model.PatientStatus;
 import bsep.hospital.repository.PatientStatusRepository;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,27 +17,35 @@ public class PatientStatusService {
     @Autowired
     PatientStatusRepository patientStatusRepository;
 
+    private static Logger logger = LogManager.getLogger(PatientStatusService.class);
+
     public List<PatientStatus> findAll() {
+        logger.info("Getting all patient statuses.");
         return (List<PatientStatus>) patientStatusRepository.findAll();
     }
 
     public List<PatientStatus> findAllAlarms() {
+        logger.info("Getting all patient alarms.");
         return patientStatusRepository.findAllByAlarm(true);
     }
 
     public List<PatientStatus> findAllByPatientId(Integer patientId) {
+        logger.info("Getting all statuses by patient id " + patientId.toString());
         return patientStatusRepository.findAllByPatient_Id(patientId);
     }
 
     public Page<PatientStatus> findAll(Pageable pageable) {
+        logger.info("Getting all patient statuses paged.");
         return patientStatusRepository.findAll(pageable);
     }
 
     public PatientStatus findOne(Integer id) {
+        logger.info("Getting patient status by id " + id.toString());
         return patientStatusRepository.findById(id).orElse(null);
     }
 
     public PatientStatus saveOne(PatientStatus patientStatus) {
+        logger.info("Saving patient status " + patientStatus);
         return patientStatusRepository.save(patientStatus);
     }
 

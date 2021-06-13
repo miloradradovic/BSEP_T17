@@ -4,6 +4,8 @@ import bsep.admin.exceptions.CertificateNotFoundException;
 import bsep.admin.service.AuthorityService;
 import bsep.admin.service.CerRequestInfoService;
 import org.apache.commons.codec.DecoderException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -26,6 +28,8 @@ public class AuthenticationController {
 
     @Autowired
     CerRequestInfoService cerRequestInfoService;
+
+    private static Logger logger = LogManager.getLogger(AuthenticationController.class);
 
 
     public AuthenticationController() {
@@ -55,10 +59,13 @@ public class AuthenticationController {
     @RequestMapping(value = "/verify-certificate-request/{encrypted}", method = RequestMethod.GET)
     public ResponseEntity<?> verifyCertificateRequest(@PathVariable @Pattern(regexp="[a-zA-Z0-9 ]+") String encrypted) throws DecoderException, CertificateNotFoundException {
 
+        logger.info("Attempting to verify certificate request.");
         boolean success = cerRequestInfoService.verifyCertificateRequest(encrypted);
         if (success) {
+            logger.info("Successfully verified certificate request.");
             return new ResponseEntity<>("Successfully verified!", HttpStatus.OK);
         } else {
+            logger.error("Failed to verify certificate request");
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }

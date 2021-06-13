@@ -16,23 +16,26 @@ public class LogModel {
     private String message;
     private LocalDateTime logTime;
     private LogSource logSource;
+    private String ip;
 
     public LogModel() {
     }
 
-    public LogModel(LogType level, String message, LocalDateTime logTime, LogSource logSource) {
+    public LogModel(LogType level, String message, LocalDateTime logTime, LogSource logSource, String ip) {
         this.level = level;
         this.message = message;
         this.logTime = logTime;
         this.logSource = logSource;
+        this.ip = ip;
     }
 
-    public LogModel(ObjectId id, LogType level, String message, LocalDateTime logTime, LogSource logSource) {
+    public LogModel(ObjectId id, LogType level, String message, LocalDateTime logTime, LogSource logSource, String ip) {
         this.id = id;
         this.level = level;
         this.message = message;
         this.logTime = logTime;
         this.logSource = logSource;
+        this.ip = ip;
     }
 
     public ObjectId getId() {
@@ -73,5 +76,13 @@ public class LogModel {
 
     public void setLogSource(LogSource logSource) {
         this.logSource = logSource;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 }

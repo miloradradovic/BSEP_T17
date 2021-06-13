@@ -3,10 +3,10 @@ package bsep.hospital.dto;
 public class DoctorRuleDTO {
 
     private String ruleName;
-    private int patientId;
-    private String type;
+    private int patientId; // name surname -> id
+    private String type; // enum
     private double value;
-    private String operation;
+    private String operation; // == != <= >= < >
 
     public DoctorRuleDTO() {
     }

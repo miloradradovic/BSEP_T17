@@ -1,5 +1,6 @@
 package bsep.admin.model;
 
+import org.hibernate.annotations.ColumnTransformer;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
@@ -16,19 +17,34 @@ public class Admin implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "email", unique = true, nullable = false)
+    @Column(columnDefinition = "bytea", unique = true, nullable = false)
+    @ColumnTransformer(forColumn = "email",
+            read = "pgp_sym_decrypt(email::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private String email;
 
-    @Column(name = "name", unique = false, nullable = false)
+    @Column(columnDefinition = "bytea", nullable = false)
+    @ColumnTransformer(forColumn = "name",
+            read = "pgp_sym_decrypt(name::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private String name;
 
-    @Column(name = "surname", unique = false, nullable = false)
+    @Column(columnDefinition = "bytea", nullable = false)
+    @ColumnTransformer(forColumn = "surname",
+            read = "pgp_sym_decrypt(surname::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private String surname;
 
-    @Column(name = "password", unique = false, nullable = false)
+    @Column(columnDefinition = "bytea", nullable = false)
+    @ColumnTransformer(forColumn = "password",
+            read = "pgp_sym_decrypt(password::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private String password;
 
-    @Column(name = "verified", unique = false, nullable = true)
+    @Column(nullable = false)
+    @ColumnTransformer(forColumn = "verified",
+            read = "pgp_sym_decrypt(verified::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private boolean verified;
 
     @Column(name = "last_password_reset_date")

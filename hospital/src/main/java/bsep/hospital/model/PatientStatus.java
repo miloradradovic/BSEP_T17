@@ -1,6 +1,7 @@
 package bsep.hospital.model;
 
 import bsep.device.enums.MessageType;
+import org.hibernate.annotations.ColumnTransformer;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -14,18 +15,33 @@ public class PatientStatus {
     private int id;
 
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    @ColumnTransformer(forColumn = "patient_id",
+            read = "pgp_sym_decrypt(patient_id::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private Patient patient;
 
-    @Column(name = "dateTime", unique = false, nullable = false)
+    @Column( nullable = false)
+    @ColumnTransformer(forColumn = "date_time",
+            read = "pgp_sym_decrypt(date_time::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private LocalDateTime dateTime;
 
     @Enumerated(EnumType.STRING)
+    @ColumnTransformer(forColumn = "type",
+            read = "pgp_sym_decrypt(type::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private MessageType type;
 
-    @Column(name = "message", unique = false, nullable = false)
+    @Column(nullable = false)
+    @ColumnTransformer(forColumn = "message",
+            read = "pgp_sym_decrypt(message::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private String message;
 
-    @Column(name = "alarm", unique = false, nullable = false)
+    @Column(nullable = false)
+    @ColumnTransformer(forColumn = "alarm",
+            read = "pgp_sym_decrypt(alarm::bytea, 'tri-musketara-123')",
+            write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private boolean alarm = false;
 
 

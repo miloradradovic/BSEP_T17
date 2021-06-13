@@ -7,10 +7,17 @@ import bsep.hospital.model.Patient;
 import bsep.hospital.model.PatientStatus;
 import bsep.hospital.service.PatientService;
 import bsep.hospital.service.PatientStatusService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.keycloak.KeycloakPrincipal;
+import org.keycloak.KeycloakSecurityContext;
+import org.keycloak.representations.AccessToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,14 +38,23 @@ public class PatientController {
     @Autowired
     PatientStatusService patientStatusService;
 
+    private static Logger logger = LogManager.getLogger(PatientController.class);
+
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<PatientDTO>> getAllPatients() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        KeycloakPrincipal kcp = (KeycloakPrincipal) authentication.getPrincipal();
+
+        KeycloakSecurityContext session = kcp.getKeycloakSecurityContext();
+        AccessToken accessToken = session.getToken();
+        logger.info("User with the email " + accessToken.getEmail() + " is attempting to get all patients.");
         List<PatientDTO> patientDTOs = new ArrayList<>();
         List<Patient> patients = patientService.findAll();
         for (Patient patient : patients) {
             List<PatientStatus> patientStatuses = patientStatusService.findAllByPatientId(patient.getId());
             patientDTOs.add(new PatientDTO(patient.getId(), patient.getName(), patient.getSurname(), patient.getDateOfBirth(), patient.getBloodType().toString(), getAverageHearthBeat(patientStatuses), getAveragePressure(patientStatuses), getAverageTemperature(patientStatuses)));
         }
+        logger.info("Successfully retrieved all patients.");
         return new ResponseEntity<>(patientDTOs, HttpStatus.OK);
     }
 

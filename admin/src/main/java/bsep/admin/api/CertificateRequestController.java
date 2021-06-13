@@ -3,7 +3,15 @@ package bsep.admin.api;
 import bsep.admin.dto.CerRequestInfoDTO;
 import bsep.admin.exceptions.CertificateNotFoundException;
 import bsep.admin.mappers.CerRequestInfoMapper;
+import bsep.admin.model.CerRevocationRequest;
 import bsep.admin.service.CerRequestInfoService;
+import bsep.admin.service.CerRevocationRequestService;
+import bsep.admin.service.CertificateService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.bouncycastle.asn1.x500.X500Name;
+import org.bouncycastle.asn1.x500.style.BCStyle;
+import org.bouncycastle.pkcs.jcajce.JcaPKCS10CertificationRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -12,6 +20,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.Positive;
 import java.io.IOException;
+import java.security.cert.CRLException;
+import java.security.cert.CertificateException;
 import java.util.List;
 
 @CrossOrigin(origins = "https://localhost:4200")
@@ -22,7 +32,15 @@ public class CertificateRequestController {
     @Autowired
     CerRequestInfoService cerRequestInfoService;
 
+    @Autowired
+    CerRevocationRequestService cerRevocationRequestService;
+
+    @Autowired
+    CertificateService certificateService;
+
     private final CerRequestInfoMapper cerRequestInfoMapper;
+
+    private static Logger logger = LogManager.getLogger(CertificateController.class);
 
     public CertificateRequestController() {
         cerRequestInfoMapper = new CerRequestInfoMapper();
@@ -31,21 +49,41 @@ public class CertificateRequestController {
     @RequestMapping(value = "/send-certificate-request", method = RequestMethod.POST)
     public ResponseEntity<?> sendCertificateRequest(@RequestBody byte[] encryptedCSR) {
         try {
+            logger.info("Attempting to create certificate request.");
+            JcaPKCS10CertificationRequest p10Object = new JcaPKCS10CertificationRequest(encryptedCSR);
+            X500Name x500Name = p10Object.getSubject();
+            String email = x500Name.getRDNs(BCStyle.E)[0].getFirst().getValue().toString();
+            if (certificateService.checkCertificateByEmail(email)) {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
             boolean success = cerRequestInfoService.createCertificateRequest(encryptedCSR);
 
-            if (success)
+            if (success) {
+                logger.info("Successfully created certificate request.");
                 return new ResponseEntity<>(HttpStatus.OK);
+            } else {
+                logger.error("Failed to create certificate request.");
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
 
         } catch (IOException | CertificateNotFoundException e) {
+            logger.error("Failed to create certificate request.");
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        } catch (CertificateException certificateException) {
+            logger.error("Failed to create certificate request.");
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        } catch (CRLException crlException) {
+            logger.error("Failed to create certificate request.");
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<CerRequestInfoDTO>> getCertificateRequests() {
 
+        logger.info("Attempting to get certificate requests.");
         List<CerRequestInfoDTO> reqs = cerRequestInfoMapper.toDTOList(cerRequestInfoService.findAllVerified());
+        logger.info("Successfully retrieved all certificate requests.");
         return new ResponseEntity<>(reqs, HttpStatus.OK);
 
     }
@@ -53,9 +91,52 @@ public class CertificateRequestController {
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> removeCertificateRequest(@PathVariable @Positive Integer id) {
 
+        logger.info("Attempting to remove certificate request with id " + id.toString());
         if (cerRequestInfoService.delete(id)) {
+            logger.info("Successfully removed certificate request with id " + id.toString());
             return new ResponseEntity<>(HttpStatus.OK);
         }
+        logger.error("Failed to remove certificate request with id " + id.toString());
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    }
+
+    @RequestMapping(value = "/send-certificate-revocation-request/{email}", method = RequestMethod.POST)
+    public ResponseEntity<?> saveCertificateRevocationRequest(@PathVariable String email) {
+        try {
+            logger.info("Attempting to verify certificate by email.");
+            boolean success = certificateService.checkCertificateByEmail(email);
+
+            if (success) {
+                logger.info("Successfully verify certificate by email.");
+                return new ResponseEntity<>(HttpStatus.OK);
+            } else {
+                logger.error("Failed to verify certificate by email.");
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+
+        } catch (Exception e) {
+            logger.error("Failed to verify certificate by email.");
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @RequestMapping(value = "/check-certificate-valid/{email}", method = RequestMethod.GET)
+    public ResponseEntity<?> checkCertificateValid(@PathVariable String email) {
+        try {
+            logger.info("Attempting to create certificate revocation request.");
+            CerRevocationRequest success = cerRevocationRequestService.saveOne(new CerRevocationRequest("Admin with email: " + email + " want's to revoke certificate."));
+
+            if (success != null) {
+                logger.info("Successfully created certificate revocation request.");
+                return new ResponseEntity<>(HttpStatus.OK);
+            } else {
+                logger.error("Failed to create certificate revocation request.");
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+
+        } catch (Exception e) {
+            logger.error("Failed to create certificate revocation request.");
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
     }
 }
