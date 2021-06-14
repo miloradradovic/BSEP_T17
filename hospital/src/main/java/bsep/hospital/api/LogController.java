@@ -28,6 +28,12 @@ public class LogController {
         return new ResponseEntity<>(logs, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/get-logs/alarm", method = RequestMethod.GET)
+    public ResponseEntity<?> getAlarmedLogs() {
+        List<LogModel> logs = logService.findAllByAlarm();
+        return new ResponseEntity<>(logs, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/filter-logs", method = RequestMethod.POST)
     public ResponseEntity<?> filterLogs(@RequestBody FilterParams filterParams) {
         List<LogModel> logs = logService.filterLogs(filterParams);

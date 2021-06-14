@@ -1,14 +1,11 @@
-/*template header
+template header
 ruleName
-level
-message
-logTime
-operation
+levelInput
+messageInput
 
 package rules;
 
-import bsep.hospital.model.Patient;
-import bsep.hospital.model.PatientStatus;
+import bsep.hospital.logging.LogModel;
 import java.util.List;
 
 template "admin-template"
@@ -16,14 +13,13 @@ template "admin-template"
 
 rule "@{ruleName}"
         no-loop true
+        agenda-group "admin-rules"
     when
-        $p: Patient($patId: id, id == @{patientId});
-        $ps: PatientStatus($pat: patient, $pat.id == $patId, $t:type, $t.toString() == "@{type}", $val: getValue(), $val @{operation} @{value} );
-
+        $lm: LogModel($l: level.toString() == "@{levelInput}", $m: message contains "@{messageInput}");
     then
-       modify( $ps ){
+       modify( $lm ){
            setAlarm(true)
        }
 end
 
-end template*/
+end template

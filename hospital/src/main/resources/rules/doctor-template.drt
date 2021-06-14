@@ -15,6 +15,7 @@ template "doctor-template"
 
 
 rule "@{ruleName}"
+        agenda-group "doctor-rules"
         no-loop true
     when
         $p: Patient($patId: id, id == @{patientId});
