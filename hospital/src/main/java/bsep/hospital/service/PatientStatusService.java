@@ -34,9 +34,14 @@ public class PatientStatusService {
         return patientStatusRepository.findAllByPatient_Id(patientId);
     }
 
-    public List<PatientStatus> findAllByAlarmAndPatientId(Integer patientId) {
-        logger.info("Getting all alarmed statuses by patient id " + patientId.toString());
-        return patientStatusRepository.findAllByAlarmAndPatient_Id(true, patientId);
+    public List<PatientStatus> findAllByPatientNameAndSurname(String patientName, String patientSurname) {
+        logger.info("Getting all statuses by patient for patient: " + patientName + " " + patientSurname);
+        return patientStatusRepository.findAllByPatient_NameOrPatient_Surname(patientName, patientSurname);
+    }
+
+    public List<PatientStatus> findAllByAlarmAndPatientNameOrSurname(String patientName, String patientSurname) {
+        logger.info("Getting all alarmed statuses for patient: " + patientName + " " + patientSurname);
+        return patientStatusRepository.findAllByAlarmAndPatient_NameOrAlarmAndPatient_Surname(true, patientName, true, patientSurname);
     }
 
     public Page<PatientStatus> findAll(Pageable pageable) {
