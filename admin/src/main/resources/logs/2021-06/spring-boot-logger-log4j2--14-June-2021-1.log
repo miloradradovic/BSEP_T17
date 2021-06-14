@@ -1,0 +1,149 @@
+2021-06-14 16:19:34,987 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-06-14 16:19:35,033 INFO o.s.b.StartupInfoLogger Starting AdminApplication on DESKTOP-MK6223H with PID 16556 (D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\admin\target\classes started by Milorad in D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\admin)
+2021-06-14 16:19:35,039 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
+2021-06-14 16:19:35,764 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-14 16:19:35,822 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 53ms. Found 4 JPA repository interfaces.
+2021-06-14 16:19:36,153 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4ceff87d' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-14 16:19:36,161 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-14 16:19:36,405 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8084 (https)
+2021-06-14 16:19:36,413 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8084"]
+2021-06-14 16:19:36,413 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
+2021-06-14 16:19:36,414 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-14 16:19:36,546 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
+2021-06-14 16:19:36,546 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1401 ms
+2021-06-14 16:19:36,619 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-14 16:19:36,735 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-14 16:19:36,777 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-14 16:19:36,867 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-14 16:19:36,946 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-14 16:19:37,094 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2021-06-14 16:19:37,105 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-14 16:19:37,929 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-14 16:19:37,936 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-14 16:19:38,733 INFO b.a.k.KeyStoreReader Attempting to initialize keystore using bouncy castle provider.
+2021-06-14 16:19:38,778 INFO b.a.k.KeyStoreWriter Attempting to initialize keystore using bouncy castle provider.
+2021-06-14 16:19:38,807 INFO b.a.i.Initialize Executing operation Initialize
+2021-06-14 16:19:38,807 INFO b.a.i.Initialize Attempting to create certificate and crl for root ca.
+2021-06-14 16:19:38,808 INFO b.a.k.KeyStoreWriter Attempting to load keystore.
+2021-06-14 16:19:38,810 INFO b.a.k.KeyStoreWriter Successfully loaded keystore.
+2021-06-14 16:19:38,810 INFO b.a.i.Initialize Successfully created certificate and crl for root ca.
+2021-06-14 16:19:39,015 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@200e6029, org.springframework.security.web.context.SecurityContextPersistenceFilter@6e7cb01a, org.springframework.security.web.header.HeaderWriterFilter@b272860, org.springframework.web.filter.CorsFilter@41120e48, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@4a9ff419, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@7cf66cf9, org.springframework.security.web.authentication.logout.LogoutFilter@4b518645, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c04ec8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c19bb2a, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@782dc5, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@35f22eef, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@165a5979, org.springframework.security.web.session.SessionManagementFilter@25c06894, org.springframework.security.web.access.ExceptionTranslationFilter@27c827ec, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5b0d480c]
+2021-06-14 16:19:39,268 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8084"]
+2021-06-14 16:19:39,378 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8084 (https) with context path ''
+2021-06-14 16:19:39,387 INFO o.s.b.StartupInfoLogger Started AdminApplication in 4.682 seconds (JVM running for 5.941)
+2021-06-14 16:27:38,624 INFO o.a.j.l.DirectJDKLog Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-14 16:27:38,624 INFO o.s.w.s.FrameworkServlet Initializing Servlet 'dispatcherServlet'
+2021-06-14 16:27:38,633 INFO o.s.w.s.FrameworkServlet Completed initialization in 9 ms
+2021-06-14 16:27:38,688 INFO b.a.a.CertificateRequestController Attempting to create certificate request.
+2021-06-14 16:27:38,705 INFO b.a.s.CertificateService Getting the last alias for email miloradradovicmico98@gmail.com
+2021-06-14 16:27:38,706 INFO b.a.k.KeyStoreReader Attempting to get all aliases.
+2021-06-14 16:27:38,707 INFO b.a.k.KeyStoreReader Successfully retrieved all aliases.
+2021-06-14 16:27:38,709 INFO b.a.s.CertificateService Successfully retrieved the last alias for email.
+2021-06-14 16:27:38,709 INFO b.a.s.CertificateService Attempting to check certificate for alias miloradradovicmico98@gmail.com|1
+2021-06-14 16:27:38,710 INFO b.a.k.KeyStoreReader Attempting to read certificate chain by alias miloradradovicmico98@gmail.com|1
+2021-06-14 16:27:38,710 INFO b.a.k.KeyStoreReader Successfully retrieved certificate chain by alias miloradradovicmico98@gmail.com|1
+2021-06-14 16:27:38,710 INFO b.a.s.CertificateService Successfully checked certificate for alias miloradradovicmico98@gmail.com|1
+2021-06-14 16:27:38,711 INFO b.a.s.CertificateService Attempting to check if certificate is valid.
+2021-06-14 16:27:38,711 INFO b.a.s.CertificateService Attempting to check if certificate is revoked.
+2021-06-14 16:27:38,721 INFO b.a.s.CertificateService Successfully checked if certificate is revoked.
+2021-06-14 16:27:38,723 INFO b.a.s.CertificateService Attempting to check if certificate is revoked.
+2021-06-14 16:27:38,723 INFO b.a.s.CertificateService Successfully checked if certificate is revoked.
+2021-06-14 16:27:38,725 INFO b.a.s.CertificateService Successfully checked certificate validity.
+2021-06-14 16:27:38,725 INFO b.a.s.CertificateService Checking if certificate is self signed.
+2021-06-14 16:27:38,726 INFO b.a.s.CertificateService Successfully checked if certificate is self signed.
+2021-06-14 16:28:20,846 INFO o.k.a.KeycloakDeployment Loaded URLs from https://localhost:8443/auth/realms/admin-portal/.well-known/openid-configuration
+2021-06-14 16:28:21,049 WARN o.a.j.l.DirectJDKLog Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [116] milliseconds.
+2021-06-14 16:28:21,058 INFO b.a.a.CertificateRequestController Attempting to get certificate requests.
+2021-06-14 16:28:21,058 INFO b.a.s.CerRequestInfoService Getting all verified certificate requests.
+2021-06-14 16:28:21,177 INFO b.a.a.CertificateRequestController Successfully retrieved all certificate requests.
+2021-06-14 16:28:58,695 INFO b.a.a.CertificateController Attempting to get all certificates.
+2021-06-14 16:28:58,695 INFO b.a.s.CertificateService Attempting to get all certificates from keystore.
+2021-06-14 16:28:58,696 INFO b.a.k.KeyStoreReader Attempting to get all aliases.
+2021-06-14 16:28:58,696 INFO b.a.k.KeyStoreReader Successfully retrieved all aliases.
+2021-06-14 16:28:58,697 INFO b.a.k.KeyStoreReader Attempting to get certificate by alias super.admin@localhost.com
+2021-06-14 16:28:58,698 INFO b.a.k.KeyStoreReader Successfully retrieved certificate by alias super.admin@localhost.com
+2021-06-14 16:28:58,700 INFO b.a.k.KeyStoreReader Attempting to get certificate by alias miloradradovicmico98@gmail.com|1
+2021-06-14 16:28:58,701 INFO b.a.k.KeyStoreReader Successfully retrieved certificate by alias miloradradovicmico98@gmail.com|1
+2021-06-14 16:28:58,702 INFO b.a.k.KeyStoreReader Attempting to get certificate by alias miloradradovicmico98@gmail.com|0
+2021-06-14 16:28:58,703 INFO b.a.k.KeyStoreReader Successfully retrieved certificate by alias miloradradovicmico98@gmail.com|0
+2021-06-14 16:28:58,704 INFO b.a.s.CertificateService Attempting to generate tree-like structure of certificates.
+2021-06-14 16:28:58,704 INFO b.a.s.CertificateService Attempting to find the root certificate.
+2021-06-14 16:28:58,719 INFO b.a.s.CertificateService Attempting to check if certificate is revoked.
+2021-06-14 16:28:58,720 INFO b.a.s.CertificateService Successfully checked if certificate is revoked.
+2021-06-14 16:28:58,721 INFO b.a.s.CertificateService Successfully retrieved root certificate.
+2021-06-14 16:28:58,722 INFO b.a.s.CertificateService Attempting to find intermediate certificates.
+2021-06-14 16:28:58,722 INFO b.a.s.CertificateService Attempting to check if certificate is revoked.
+2021-06-14 16:28:58,723 INFO b.a.s.CertificateService Successfully checked if certificate is revoked.
+2021-06-14 16:28:58,724 INFO b.a.s.CertificateService Attempting to check if certificate is revoked.
+2021-06-14 16:28:58,724 INFO b.a.s.CertificateService Successfully checked if certificate is revoked.
+2021-06-14 16:28:58,725 INFO b.a.s.CertificateService Attempting to get revocation reason for certificate.
+2021-06-14 16:28:58,726 INFO b.a.s.CertificateService Successfully retrieved revocation reason for certificate.
+2021-06-14 16:28:58,726 INFO b.a.s.CertificateService Successfully retrieved intermediate certificates.
+2021-06-14 16:28:58,726 INFO b.a.s.CertificateService Attempting to retrieve the end certificate.
+2021-06-14 16:28:58,728 INFO b.a.s.CertificateService Successfully retrieved end certificate.
+2021-06-14 16:28:58,728 INFO b.a.s.CertificateService Successfully generated tree-like structure of certificates
+2021-06-14 16:28:58,728 INFO b.a.a.CertificateController Successfully retrieved all certificates.
+2021-06-14 16:29:12,498 INFO b.a.a.CertificateController User with the email super.admin@localhost.com is attempting to revoke certificate.
+2021-06-14 16:29:12,499 INFO b.a.s.CertificateService Attempting to revoke certificate.
+2021-06-14 16:29:12,513 INFO b.a.k.KeyStoreReader Attempting to get certificate by alias miloradradovicmico98@gmail.com|1
+2021-06-14 16:29:12,514 INFO b.a.k.KeyStoreReader Successfully retrieved certificate by alias miloradradovicmico98@gmail.com|1
+2021-06-14 16:29:12,520 INFO b.a.k.KeyStoreReader Attempting to read issuer from store. Alias: super.admin@localhost.com
+2021-06-14 16:29:12,520 INFO b.a.k.KeyStoreReader Attempting to get certificate by alias.
+2021-06-14 16:29:12,521 INFO b.a.k.KeyStoreReader Successfully got certificate by alias.
+2021-06-14 16:29:12,522 INFO b.a.k.KeyStoreReader Successfully returned issuer.
+2021-06-14 16:29:12,568 INFO b.a.s.CertificateService Successfully revoked certificate.
+2021-06-14 16:29:12,568 INFO b.a.a.CertificateController Successfully revoked certificate.
+2021-06-14 16:29:12,587 INFO b.a.a.CertificateController Attempting to get all certificates.
+2021-06-14 16:29:12,587 INFO b.a.s.CertificateService Attempting to get all certificates from keystore.
+2021-06-14 16:29:12,587 INFO b.a.k.KeyStoreReader Attempting to get all aliases.
+2021-06-14 16:29:12,588 INFO b.a.k.KeyStoreReader Successfully retrieved all aliases.
+2021-06-14 16:29:12,589 INFO b.a.k.KeyStoreReader Attempting to get certificate by alias super.admin@localhost.com
+2021-06-14 16:29:12,590 INFO b.a.k.KeyStoreReader Successfully retrieved certificate by alias super.admin@localhost.com
+2021-06-14 16:29:12,591 INFO b.a.k.KeyStoreReader Attempting to get certificate by alias miloradradovicmico98@gmail.com|1
+2021-06-14 16:29:12,592 INFO b.a.k.KeyStoreReader Successfully retrieved certificate by alias miloradradovicmico98@gmail.com|1
+2021-06-14 16:29:12,592 INFO b.a.k.KeyStoreReader Attempting to get certificate by alias miloradradovicmico98@gmail.com|0
+2021-06-14 16:29:12,593 INFO b.a.k.KeyStoreReader Successfully retrieved certificate by alias miloradradovicmico98@gmail.com|0
+2021-06-14 16:29:12,593 INFO b.a.s.CertificateService Attempting to generate tree-like structure of certificates.
+2021-06-14 16:29:12,593 INFO b.a.s.CertificateService Attempting to find the root certificate.
+2021-06-14 16:29:12,594 INFO b.a.s.CertificateService Attempting to check if certificate is revoked.
+2021-06-14 16:29:12,601 INFO b.a.s.CertificateService Successfully checked if certificate is revoked.
+2021-06-14 16:29:12,602 INFO b.a.s.CertificateService Successfully retrieved root certificate.
+2021-06-14 16:29:12,602 INFO b.a.s.CertificateService Attempting to find intermediate certificates.
+2021-06-14 16:29:12,603 INFO b.a.s.CertificateService Attempting to check if certificate is revoked.
+2021-06-14 16:29:12,603 INFO b.a.s.CertificateService Successfully checked if certificate is revoked.
+2021-06-14 16:29:12,603 INFO b.a.s.CertificateService Attempting to get revocation reason for certificate.
+2021-06-14 16:29:12,604 INFO b.a.s.CertificateService Successfully retrieved revocation reason for certificate.
+2021-06-14 16:29:12,605 INFO b.a.s.CertificateService Attempting to check if certificate is revoked.
+2021-06-14 16:29:12,606 INFO b.a.s.CertificateService Successfully checked if certificate is revoked.
+2021-06-14 16:29:12,606 INFO b.a.s.CertificateService Attempting to get revocation reason for certificate.
+2021-06-14 16:29:12,607 INFO b.a.s.CertificateService Successfully retrieved revocation reason for certificate.
+2021-06-14 16:29:12,607 INFO b.a.s.CertificateService Successfully retrieved intermediate certificates.
+2021-06-14 16:29:12,607 INFO b.a.s.CertificateService Attempting to retrieve the end certificate.
+2021-06-14 16:29:12,608 INFO b.a.s.CertificateService Successfully retrieved end certificate.
+2021-06-14 16:29:12,608 INFO b.a.s.CertificateService Successfully generated tree-like structure of certificates
+2021-06-14 16:29:12,609 INFO b.a.a.CertificateController Successfully retrieved all certificates.
+2021-06-14 16:29:18,364 INFO b.a.a.CertificateRequestController Attempting to create certificate request.
+2021-06-14 16:29:18,364 INFO b.a.s.CertificateService Getting the last alias for email miloradradovicmico98@gmail.com
+2021-06-14 16:29:18,365 INFO b.a.k.KeyStoreReader Attempting to get all aliases.
+2021-06-14 16:29:18,365 INFO b.a.k.KeyStoreReader Successfully retrieved all aliases.
+2021-06-14 16:29:18,365 INFO b.a.s.CertificateService Successfully retrieved the last alias for email.
+2021-06-14 16:29:18,366 INFO b.a.s.CertificateService Attempting to check certificate for alias miloradradovicmico98@gmail.com|1
+2021-06-14 16:29:18,366 INFO b.a.k.KeyStoreReader Attempting to read certificate chain by alias miloradradovicmico98@gmail.com|1
+2021-06-14 16:29:18,366 INFO b.a.k.KeyStoreReader Successfully retrieved certificate chain by alias miloradradovicmico98@gmail.com|1
+2021-06-14 16:29:18,366 INFO b.a.s.CertificateService Successfully checked certificate for alias miloradradovicmico98@gmail.com|1
+2021-06-14 16:29:18,368 INFO b.a.s.CertificateService Attempting to check if certificate is valid.
+2021-06-14 16:29:18,368 INFO b.a.s.CertificateService Attempting to check if certificate is revoked.
+2021-06-14 16:29:18,368 INFO b.a.s.CertificateService Successfully checked if certificate is revoked.
+2021-06-14 16:29:18,368 ERROR b.a.s.CertificateService Certificate is revoked.
+2021-06-14 16:29:18,369 INFO b.a.s.CerRequestInfoService Generating certificate request.
+2021-06-14 16:29:18,369 INFO b.a.s.CerRequestInfoService Generating and saving certificate request.
+2021-06-14 16:29:18,369 INFO b.a.s.CerRequestInfoService Successfully generated and saved certificate request.
+2021-06-14 16:29:18,369 INFO b.a.s.CerRequestInfoService Saving certificate request.
+2021-06-14 16:29:18,430 INFO b.a.s.CerRequestInfoService Sending verification email for certificate request.
+2021-06-14 16:29:18,430 INFO b.a.s.CerRequestInfoService Encrypting data for email.
+2021-06-14 16:29:18,430 INFO b.a.k.KeyStoreReader Attempting to get certificate by alias super.admin@localhost.com
+2021-06-14 16:29:18,431 INFO b.a.k.KeyStoreReader Successfully retrieved certificate by alias super.admin@localhost.com
+2021-06-14 16:29:18,952 INFO o.s.s.c.ExecutorConfigurationSupport Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-14 16:29:18,957 INFO b.a.a.CertificateRequestController Successfully created certificate request.
+2021-06-14 16:29:18,961 INFO b.a.s.EmailService Attempting to send verification message via email.
+2021-06-14 16:29:22,232 INFO b.a.s.EmailService Successfully sent verification message via email.
