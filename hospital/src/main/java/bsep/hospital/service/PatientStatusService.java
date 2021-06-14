@@ -34,6 +34,11 @@ public class PatientStatusService {
         return patientStatusRepository.findAllByPatient_Id(patientId);
     }
 
+    public List<PatientStatus> findAllByAlarmAndPatientId(Integer patientId) {
+        logger.info("Getting all alarmed statuses by patient id " + patientId.toString());
+        return patientStatusRepository.findAllByAlarmAndPatient_Id(true, patientId);
+    }
+
     public Page<PatientStatus> findAll(Pageable pageable) {
         logger.info("Getting all patient statuses paged.");
         return patientStatusRepository.findAll(pageable);
