@@ -46,7 +46,7 @@ public class Scheduling {
 
             int randomId = getRandomID(1, 11);
             double randomValue = getRandomValue(30, 230);
-            String message = "For patient with ID: " + randomId + ", hearth beat is: " + randomValue + ".";
+            String message = "For patient with ID: " + randomId + ", hearth beat is: " + String.format("%.2f", randomValue) + ".";
             PatientMessage msg = new PatientMessage(randomId, LocalDateTime.now(), MessageType.HEARTH_BEAT, message);
             byte[] msgByte = SerializationUtils.serialize(msg);
 
@@ -73,7 +73,7 @@ public class Scheduling {
 
             int randomId = getRandomID(1, 11);
             double randomValue = getRandomValue(50, 200);
-            String message = "For patient with ID: " + randomId + ", pressure is: " + randomValue + ".";
+            String message = "For patient with ID: " + randomId + ", pressure is: " + String.format("%.2f", randomValue) + ".";
             PatientMessage msg = new PatientMessage(randomId, LocalDateTime.now(), MessageType.PRESSURE, message);
             byte[] msgByte = SerializationUtils.serialize(msg);
 
@@ -98,7 +98,7 @@ public class Scheduling {
 
             int randomId = getRandomID(1, 11);
             double randomValue = getRandomValue(33, 43);
-            String message = "For patient with ID: " + randomId + ", temperature is: " + randomValue + ".";
+            String message = "For patient with ID: " + randomId + ", temperature is: " + String.format("%.2f", randomValue) + ".";
             PatientMessage msg = new PatientMessage(randomId, LocalDateTime.now(), MessageType.TEMPERATURE, message);
             byte[] msgByte = SerializationUtils.serialize(msg);
 

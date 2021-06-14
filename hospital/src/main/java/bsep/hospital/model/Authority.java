@@ -13,7 +13,7 @@ public class Authority implements GrantedAuthority {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(columnDefinition = "bytea", nullable = false)
+    @Column(nullable = false)
     @ColumnTransformer(forColumn = "name",
             read = "pgp_sym_decrypt(name::bytea, 'tri-musketara-123')",
             write = "pgp_sym_encrypt(?, 'tri-musketara-123')")

@@ -14,14 +14,14 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(columnDefinition = "bytea", nullable = false)
+    @Column(nullable = false)
     @ColumnTransformer(forColumn = "name",
             read = "pgp_sym_decrypt(name::bytea, 'tri-musketara-123')",
             write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
     private String name;
 
 
-    @Column(columnDefinition = "bytea", nullable = false)
+    @Column(nullable = false)
     @ColumnTransformer(forColumn = "surname",
             read = "pgp_sym_decrypt(surname::bytea, 'tri-musketara-123')",
             write = "pgp_sym_encrypt(?, 'tri-musketara-123')")
