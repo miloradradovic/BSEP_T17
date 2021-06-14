@@ -22,7 +22,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -52,12 +55,18 @@ public class RulesController {
             AccessToken accessToken = session.getToken();
             logger.info("User with the email " + accessToken.getEmail() + " is attempting to create doctor rule.");
             //DoctorRuleDTO ruleDTO = new DoctorRuleDTO("testRule", 1, "TEMPERATURE", 20.0, "==");
-            InputStream template = new FileInputStream("../hospital/src/main/resources/rules/doctor-template.drt");
 
-            Patient patient = patientService.findByNameAndSurname(ruleDTO.getPatient().split(" ")[0], ruleDTO.getPatient().split(" ")[1]);
+            InputStream template = new FileInputStream(doctorChooseTemplate(ruleDTO));
+
+
+            Patient patient = new Patient();
+            patient.setId(-1);
+            if (ruleDTO.getPatient().equals("")) {
+                patient = patientService.findByNameAndSurname(ruleDTO.getPatient().split(" ")[0], ruleDTO.getPatient().split(" ")[1]);
+            }
 
             List<DoctorDroolsDTO> arguments = new ArrayList<>();
-            arguments.add(new DoctorDroolsDTO(ruleDTO.getRuleName(), patient.getId(), ruleDTO.getType(), ruleDTO.getValue(), ruleDTO.getOperation()));
+            arguments.add(new DoctorDroolsDTO(ruleDTO.getRuleName(), patient.getId(), ruleDTO.getMessageType(), ruleDTO.getBloodType(), ruleDTO.getValue(), ruleDTO.getOperation()));
             ObjectDataCompiler compiler = new ObjectDataCompiler();
             String drl = compiler.compile(arguments, template);
 
@@ -92,7 +101,7 @@ public class RulesController {
             KeycloakSecurityContext session = kcp.getKeycloakSecurityContext();
             AccessToken accessToken = session.getToken();
             logger.info("User with the email " + accessToken.getEmail() + " is attempting to create admin rule.");
-            InputStream template = new FileInputStream("../hospital/src/main/resources/rules/admin-template.drt");
+            InputStream template = new FileInputStream(adminChooseTemplate(ruleDTO));
 
             List<AdminRuleDTO> arguments = new ArrayList<>();
             arguments.add(ruleDTO);
@@ -118,6 +127,38 @@ public class RulesController {
         }
 
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    private String doctorChooseTemplate(DoctorRuleDTO ruleDTO) {
+        String path = "../hospital/src/main/resources/rules/doctor-template-all.drt";
+        if (ruleDTO.getPatient().equals("") && ruleDTO.getBloodType().equals("")) {
+            path = "../hospital/src/main/resources/rules/doctor-template-without-patient.drt";
+        } else if (ruleDTO.getPatient().equals("") && !ruleDTO.getBloodType().equals("")) {
+            path = "../hospital/src/main/resources/rules/doctor-template-without-patientId.drt";
+        } else if (!ruleDTO.getPatient().equals("") && ruleDTO.getBloodType().equals("")) {
+            path = "../hospital/src/main/resources/rules/doctor-template-without-bloodType.drt";
+        } else if ((ruleDTO.getMessageType().equals("") || ruleDTO.getValue() != -1) && !ruleDTO.getPatient().equals("") && !ruleDTO.getBloodType().equals("")) {
+            path = "../hospital/src/main/resources/rules/doctor-template-without-status.drt";
+        } else if ((ruleDTO.getMessageType().equals("") || ruleDTO.getValue() != -1) && !ruleDTO.getPatient().equals("") && ruleDTO.getBloodType().equals("")) {
+            path = "../hospital/src/main/resources/rules/doctor-template-without-status-bloodType.drt";
+        } else if ((ruleDTO.getMessageType().equals("") || ruleDTO.getValue() != -1) && ruleDTO.getPatient().equals("") && !ruleDTO.getBloodType().equals("")) {
+            path = "../hospital/src/main/resources/rules/doctor-template-without-status-id.drt";
+        } else if ((ruleDTO.getMessageType().equals("") || ruleDTO.getValue() != -1) && ruleDTO.getPatient().equals("") && ruleDTO.getBloodType().equals("")) {
+            path = "../hospital/src/main/resources/rules/doctor-template-without-all.drt";
+        }
+        return path;
+    }
+
+    private String adminChooseTemplate(AdminRuleDTO ruleDTO) {
+        String path = "../hospital/src/main/resources/rules/admin-template-all.drt";
+        if (ruleDTO.getLevelInput().equals("") && !ruleDTO.getMessageInput().equals("")) {
+            path = "../hospital/src/main/resources/rules/admin-template-without-message.drt";
+        } else if (!ruleDTO.getLevelInput().equals("") && ruleDTO.getMessageInput().equals("")) {
+            path = "../hospital/src/main/resources/rules/admin-template-without-level.drt";
+        } else if (ruleDTO.getLevelInput().equals("") && ruleDTO.getMessageInput().equals("")) {
+            path = "../hospital/src/main/resources/rules/admin-template-without-all.drt";
+        }
+        return path;
     }
 
 
