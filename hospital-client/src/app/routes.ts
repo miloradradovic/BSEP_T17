@@ -1,6 +1,7 @@
 import {Routes} from '@angular/router';
 // import {LogInComponent} from './auth/log-in/view/log-in/log-in.component';
 import { ManageCertificateComponent } from './features/manage-certificates/manage-certificate.component';
+import { MessagesComponent } from './features/messages/messages/messages.component';
 import { PatientsComponent } from './features/patients/patients/patients.component';
 import { AdminGuard } from './guards/admin.guard';
 // import { LoginGuard } from './guards/login.guard';
@@ -12,6 +13,9 @@ export const routes: Routes = [
   },
   { 
     path: 'patients', component: PatientsComponent 
+  },
+  { 
+    path: 'messages', component: MessagesComponent 
   },
   {
     path: 'manage-certificates',

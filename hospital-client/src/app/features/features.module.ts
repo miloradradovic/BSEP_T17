@@ -4,10 +4,11 @@ import { ManageCertificateComponent } from './manage-certificates/manage-certifi
 import { ManageCertificatesModule } from './manage-certificates/manage-certificates.module';
 import { RequestCertificateComponent } from './manage-certificates/request-certificate/request-certificate.component';
 import { PatientsComponent } from './patients/patients/patients.component';
+import { MessagesComponent } from './messages/messages/messages.component';
 
 
 @NgModule({
-  declarations: [PatientsComponent],
+  declarations: [PatientsComponent, MessagesComponent],
   imports: [
     MaterialModule
   ]
