@@ -17,6 +17,7 @@ public class LogModel {
     private LocalDateTime logTime;
     private LogSource logSource;
     private String ip;
+    private boolean alarm = false;
 
     public LogModel() {
     }
@@ -84,5 +85,13 @@ public class LogModel {
 
     public void setIp(String ip) {
         this.ip = ip;
+    }
+
+    public boolean isAlarm() {
+        return alarm;
+    }
+
+    public void setAlarm(boolean alarm) {
+        this.alarm = alarm;
     }
 }

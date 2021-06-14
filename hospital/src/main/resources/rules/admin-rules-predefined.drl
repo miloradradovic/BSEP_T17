@@ -1,17 +1,8 @@
-template header
-ruleName
-level
-message
-logTime
-operation
-
 package rules;
 
-import bsep.hospital.model.Patient;
-import bsep.hospital.model.PatientStatus;
+import bsep.hospital.logging.LogModel;
 import java.util.List;
 
-template "admin-template"
 
 
 rule "@{ruleName}"
