@@ -5,14 +5,14 @@
     <h2>Search messages</h2>
 
     <div style="margin-top:2%">
-        <form [formGroup]="formData">
+        <form [formGroup]="formData" (ngSubmit)="search()">
             <mat-form-field class="example-full-width" appearance="outline">
                 <input style="width: 40%;" matInput id="name" name="name" placeholder="Name..." formControlName="name">
             </mat-form-field>
             <mat-form-field class="example-full-width" style="margin-left:2%" appearance="outline">
                 <input style="width: 40%;" matInput id="surname" name="surname" placeholder="Surname..." formControlName="surname">
             </mat-form-field>
-            <button style="margin-left:2%" color="primary" mat-raised-button>Search</button>
+            <button style="margin-left:2%" color="primary" mat-raised-button >Search</button>
         </form>
     </div>
 

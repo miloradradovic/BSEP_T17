@@ -102,7 +102,7 @@ public class PatientStatusController {
         logger.info("Successfully retrieved all patient statuses for patient: " + name + " " + surname + ".");
         return new ResponseEntity<>(patientStatusDTOS, HttpStatus.OK);
     }
-
+    
     @RequestMapping(value = "/alarm/{name}/{surname}", method = RequestMethod.GET)
     public ResponseEntity<List<PatientStatusDTO>> getAllPatientStatusAlarmedByPatient(@PathVariable String name, @PathVariable String surname) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

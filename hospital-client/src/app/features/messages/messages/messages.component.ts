@@ -22,8 +22,8 @@ export class MessagesComponent implements OnInit {
 
   constructor(private messageService: MessagesService, private fb: FormBuilder) {
     this.formData = fb.group({
-      'name': null,
-      'surname': null
+      'name': [""],
+      'surname': [""]
     })
     this.getAllMessages();
     
@@ -34,7 +34,7 @@ export class MessagesComponent implements OnInit {
 
   onCheckboxChange(){
     this.alarms = !this.alarms;
-    this.alarms ? this.getAllAlarms() : this.getAllMessages();
+    this.search();
   }
 
   getAllMessages(){
@@ -56,4 +56,23 @@ export class MessagesComponent implements OnInit {
     confirm(row.message);
   }
 
+  search(){
+    if(this.formData.controls['name']?.value === "" && this.formData.controls['surname']?.value === "") {
+      this.alarms ? this.getAllAlarms() : this.getAllMessages();
+      return;
+    }
+   
+    if(this.alarms){
+      this.messageService.getAlarmsByPatient(this.formData.controls['name']?.value || "null", this.formData.controls['surname']?.value || "null").toPromise().then( res => {
+        this.dataSource = new MatTableDataSource<Message>(res);
+        this.dataSource.paginator = this.paginator;
+      })
+    }
+    else{
+      this.messageService.getMessagesByPatient(this.formData.controls['name']?.value  || "null", this.formData.controls['surname']?.value || "null").toPromise().then( res => {
+        this.dataSource = new MatTableDataSource<Message>(res);
+        this.dataSource.paginator = this.paginator;
+      })
+    }
+  }
 }
