@@ -3971,3 +3971,102 @@ org.springframework.security.web.firewall.RequestRejectedException: The request 
 2021-06-14 14:20:03,966 INFO b.h.s.LogService Parsing simulate logs
 2021-06-14 14:20:03,966 INFO b.h.l.LogParser Attempting to parse application logs
 2021-06-14 14:20:03,966 INFO b.h.l.LogParser Reading log file.
+2021-06-14 14:20:03,973 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 14:20:03,974 INFO b.h.l.LogParser Reading log file.
+2021-06-14 14:20:03,975 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 14:20:03,975 INFO b.h.s.LogService Saving logs.
+2021-06-14 14:20:03,983 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 14:20:08,056 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 14:20:08,056 INFO b.h.s.PatientService Getting patient by id 3
+2021-06-14 14:20:08,058 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 14:20:08,058 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@34909a0f
+2021-06-14 14:20:08,060 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 14:20:08,064 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 14:20:08,064 INFO b.h.s.PatientService Getting patient by id 5
+2021-06-14 14:20:08,065 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 14:20:08,065 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@63e6780b
+2021-06-14 14:20:08,065 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 14:20:08,072 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 14:20:08,072 INFO b.h.s.PatientService Getting patient by id 3
+2021-06-14 14:20:08,073 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 14:20:08,073 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@4e51d639
+2021-06-14 14:20:08,075 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 14:20:08,967 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 14:20:08,967 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 14:20:08,967 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 14:20:08,968 INFO b.h.l.LogParser Reading log file.
+2021-06-14 14:20:08,974 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 14:20:08,974 INFO b.h.l.LogParser Reading log file.
+2021-06-14 14:20:08,975 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 14:20:08,975 INFO b.h.s.LogService Saving logs.
+2021-06-14 14:20:08,995 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 14:20:13,966 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 14:20:13,966 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 14:20:13,967 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 14:20:13,967 INFO b.h.l.LogParser Reading log file.
+2021-06-14 14:20:13,974 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 14:20:13,975 INFO b.h.l.LogParser Reading log file.
+2021-06-14 14:20:13,976 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 14:20:13,976 INFO b.h.s.LogService Saving logs.
+2021-06-14 14:20:13,988 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 14:20:18,059 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 14:20:18,060 INFO b.h.s.PatientService Getting patient by id 7
+2021-06-14 14:20:18,062 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 14:20:18,063 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@5a329aea
+2021-06-14 14:20:18,065 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 14:20:18,074 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 14:20:18,075 INFO b.h.s.PatientService Getting patient by id 6
+2021-06-14 14:20:18,077 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 14:20:18,078 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@70b2fd15
+2021-06-14 14:20:18,080 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 14:20:18,088 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 14:20:18,089 INFO b.h.s.PatientService Getting patient by id 3
+2021-06-14 14:20:18,091 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 14:20:18,092 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@37f5fd4f
+2021-06-14 14:20:18,094 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 14:20:18,966 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 14:20:18,966 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 14:20:18,966 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 14:20:18,966 INFO b.h.l.LogParser Reading log file.
+2021-06-14 14:20:18,969 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 14:20:18,970 INFO b.h.l.LogParser Reading log file.
+2021-06-14 14:20:18,970 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 14:20:18,970 INFO b.h.s.LogService Saving logs.
+2021-06-14 14:20:18,981 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 14:20:23,966 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 14:20:23,966 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 14:20:23,966 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 14:20:23,967 INFO b.h.l.LogParser Reading log file.
+2021-06-14 14:20:23,974 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 14:20:23,974 INFO b.h.l.LogParser Reading log file.
+2021-06-14 14:20:23,976 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 14:20:23,976 INFO b.h.s.LogService Saving logs.
+2021-06-14 14:20:23,988 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 14:20:28,061 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 14:20:28,062 INFO b.h.s.PatientService Getting patient by id 1
+2021-06-14 14:20:28,065 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 14:20:28,066 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@f8274d
+2021-06-14 14:20:28,071 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 14:20:28,085 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 14:20:28,086 INFO b.h.s.PatientService Getting patient by id 2
+2021-06-14 14:20:28,089 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 14:20:28,090 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@662d39fd
+2021-06-14 14:20:28,093 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 14:20:28,107 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 14:20:28,108 INFO b.h.s.PatientService Getting patient by id 6
+2021-06-14 14:20:28,110 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 14:20:28,110 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@e5eb602
+2021-06-14 14:20:28,113 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 14:20:28,967 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 14:20:28,967 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 14:20:28,968 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 14:20:28,968 INFO b.h.l.LogParser Reading log file.
+2021-06-14 14:20:28,976 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 14:20:28,977 INFO b.h.l.LogParser Reading log file.
+2021-06-14 14:20:28,978 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 14:20:28,978 INFO b.h.s.LogService Saving logs.
+2021-06-14 14:20:29,006 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 14:20:33,966 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 14:20:33,966 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 14:20:33,966 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 14:20:33,967 INFO b.h.l.LogParser Reading log file.
