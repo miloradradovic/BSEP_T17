@@ -3,6 +3,7 @@ package bsep.hospital.service;
 import bsep.hospital.logging.LogModel;
 import bsep.hospital.logging.LogParser;
 import bsep.hospital.logging.LogType;
+import bsep.hospital.model.FilterParams;
 import bsep.hospital.model.LogConfig;
 import bsep.hospital.model.Report;
 import bsep.hospital.repository.LogRepository;
@@ -183,5 +184,33 @@ public class LogService {
         report.setCountTrace(logRepository.countByLevelAndLogTimeBetween(LogType.TRACE, dateFrom, dateTo));
         report.setCountWarn(logRepository.countByLevelAndLogTimeBetween(LogType.WARN, dateFrom, dateTo));
         return report;
+    }
+
+    public List<LogModel> filterLogs(FilterParams filterParams) {
+
+        List<LogModel> filtered = new ArrayList<>();
+        List<LogModel> byDate = logRepository.findByLogTimeBetween(filterParams.getDateFrom(), filterParams.getDateTo());
+        if (filterParams.getLogType().equals("") && filterParams.getLogSource().equals("")) {
+            return byDate;
+        } else if (filterParams.getLogType().equals("") && !filterParams.getLogSource().equals("")) {
+            for (LogModel logModel: byDate) {
+                if (logModel.getLogSource().toString().matches(filterParams.getLogSource())) {
+                    filtered.add(logModel);
+                }
+            }
+        } else if (!filterParams.getLogType().equals("") && filterParams.getLogSource().equals("")) {
+            for (LogModel logModel: byDate) {
+                if (logModel.getLevel().toString().matches(filterParams.getLogType())) {
+                    filtered.add(logModel);
+                }
+            }
+        } else {
+            for (LogModel logModel: byDate) {
+                if (logModel.getLevel().toString().matches(filterParams.getLogType()) && logModel.getLogSource().toString().matches(filterParams.getLogSource())) {
+                    filtered.add(logModel);
+                }
+            }
+        }
+        return filtered;
     }
 }
