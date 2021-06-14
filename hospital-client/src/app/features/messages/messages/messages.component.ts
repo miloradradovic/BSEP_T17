@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Message } from 'src/app/model/message.model';
@@ -12,12 +13,18 @@ import { MessagesService } from 'src/app/services/messages/messages.service';
 })
 export class MessagesComponent implements OnInit {
 
-  displayedColumns: string[] = ['patient', 'dateTime', 'type', 'message', 'alarm'];
+  displayedColumns: string[] = ['patient', 'dateTime', 'type', 'alarm'];
   dataSource: MatTableDataSource<Message>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   alarms: boolean = false;
+  formData: FormGroup;
 
-  constructor(private messageService: MessagesService) {
+
+  constructor(private messageService: MessagesService, private fb: FormBuilder) {
+    this.formData = fb.group({
+      'name': null,
+      'surname': null
+    })
     this.getAllMessages();
     
   }
@@ -43,6 +50,10 @@ export class MessagesComponent implements OnInit {
       this.dataSource = new MatTableDataSource<Message>(res);
       this.dataSource.paginator = this.paginator;
     })
+  }
+
+  showMessage(row){
+    confirm(row.message);
   }
 
 }
