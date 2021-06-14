@@ -57,6 +57,7 @@ public class DeviceController {
             }
             logger.info("Putting patient status through drools.");
             kieSession.insert(new PatientStatus(patient, msg.getDateTime(), msg.getType(), msg.getMessage()));
+            kieSession.getAgenda().getAgendaGroup("doctor-rules").setFocus();
             kieSession.fireAllRules();
 
             Collection<PatientStatus> newEvents = (Collection<PatientStatus>) kieSession.getObjects(new ClassObjectFilter(PatientStatus.class));

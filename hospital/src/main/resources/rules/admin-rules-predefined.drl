@@ -1,17 +1,18 @@
 package rules;
 
 import bsep.hospital.logging.LogModel;
+import bsep.hospital.logging.LogType;
 import java.util.List;
 
 
-
+/*
 rule "RuleTest"
+        agenda-group "admin-rules"
         no-loop true
     when
-        $lm: LogModel();
-
+        $lm: LogModel($l: level.toString() == LogType.INFO.toString(), $m: message contains "message");
     then
        modify( $lm ){
            setAlarm(true)
        }
-end
+end*/
