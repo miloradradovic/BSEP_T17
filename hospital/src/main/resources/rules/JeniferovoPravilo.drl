@@ -1,0 +1,17 @@
+package rules;
+import bsep.hospital.model.Patient;
+import bsep.hospital.model.PatientStatus;
+import java.util.List;
+
+rule "JeniferovoPravilo"
+        no-loop true
+    when
+        $p: Patient($patId: id, id == 6);
+        $ps: PatientStatus($pat: patient, $pat.id == $patId, $t:type, $t.toString() == "A_NEGATIVE", $val: getValue(), $val <= 2.0 );
+    then
+       modify( $ps ){
+           setAlarm(true)
+       }
+end
+
+

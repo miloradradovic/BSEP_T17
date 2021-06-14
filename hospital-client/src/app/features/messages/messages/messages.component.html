@@ -6,7 +6,7 @@
         <h2>Search messages</h2>
     
         <div style="margin-top:2%">
-            <form [formGroup]="formData" (ngSubmit)="search()">
+            <form [formGroup]="searchForm" (ngSubmit)="search()">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <input style="width: 40%;" matInput id="name" name="name" placeholder="Name..." formControlName="name">
                 </mat-form-field>
@@ -62,17 +62,43 @@
     
     <div style="width: 45%; margin-left:2%;float: right">
     
-        <h2>Add monitor</h2>
+        <h2>Add alarm</h2>
     
         <div style="margin-top:2%">
-            <form [formGroup]="formData" (ngSubmit)="search()">
+            <form [formGroup]="alarmForm" (ngSubmit)="addRule()">
+                <div>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <input  matInput id="ruleName" name="ruleName" placeholder="Rule name..." formControlName="ruleName">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width" style="margin-left:2%" appearance="outline">
+                        <input  matInput id="patient" name="patient" placeholder="Patient name..." formControlName="patient">
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Type...</mat-label>
+                            <mat-select #typeSelect (selectionChange)="typeChanged(typeSelect.value)">
+                                <mat-option *ngFor="let element of types" [value]="element">
+                                {{ element }}
+                                </mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width" style="margin-left:2%" appearance="outline">
+                        <input type="number" style="width: 40%;" matInput id="value" name="value" placeholder="Value..." formControlName="value">
+                    </mat-form-field>
+                </div>
+
                 <mat-form-field class="example-full-width" appearance="outline">
-                    <input style="width: 40%;" matInput id="name" name="name" placeholder="Name..." formControlName="name">
+                    <mat-label>Operations...</mat-label>
+                        <mat-select #operationSelect (selectionChange)="operationChanged(operationSelect.value)">
+                            <mat-option *ngFor="let element of operations" [value]="element">
+                            {{ element }}
+                            </mat-option>
+                    </mat-select> 
                 </mat-form-field>
-                <mat-form-field class="example-full-width" style="margin-left:2%" appearance="outline">
-                    <input style="width: 40%;" matInput id="surname" name="surname" placeholder="Surname..." formControlName="surname">
-                </mat-form-field>
-                <button style="margin-left:2%" color="primary" mat-raised-button >Search</button>
+                <button style="margin-left:2%" color="primary" mat-raised-button >Add alarm</button>
             </form>
         </div>
     

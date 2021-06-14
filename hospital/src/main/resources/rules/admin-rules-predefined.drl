@@ -1,0 +1,17 @@
+package rules;
+
+import bsep.hospital.logging.LogModel;
+import java.util.List;
+
+
+
+rule "RuleTest"
+        no-loop true
+    when
+        $lm: LogModel();
+
+    then
+       modify( $lm ){
+           setAlarm(true)
+       }
+end

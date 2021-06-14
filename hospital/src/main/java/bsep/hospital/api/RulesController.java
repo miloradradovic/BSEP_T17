@@ -1,7 +1,10 @@
 package bsep.hospital.api;
 
 import bsep.hospital.dto.AdminRuleDTO;
+import bsep.hospital.dto.DoctorDroolsDTO;
 import bsep.hospital.dto.DoctorRuleDTO;
+import bsep.hospital.model.Patient;
+import bsep.hospital.service.PatientService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.maven.shared.invoker.DefaultInvocationRequest;
@@ -12,6 +15,7 @@ import org.drools.template.ObjectDataCompiler;
 import org.keycloak.KeycloakPrincipal;
 import org.keycloak.KeycloakSecurityContext;
 import org.keycloak.representations.AccessToken;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +35,9 @@ import java.util.List;
 @RequestMapping(value = "/rules", produces = MediaType.APPLICATION_JSON_VALUE)
 public class RulesController {
 
+    @Autowired
+    PatientService patientService;
+
     private static Logger logger = LogManager.getLogger(RulesController.class);
 
     @RequestMapping(value = "doctor-rule", method = RequestMethod.POST)
@@ -45,8 +52,10 @@ public class RulesController {
             //DoctorRuleDTO ruleDTO = new DoctorRuleDTO("testRule", 1, "TEMPERATURE", 20.0, "==");
             InputStream template = new FileInputStream("../hospital/src/main/resources/rules/doctor-template.drt");
 
-            List<DoctorRuleDTO> arguments = new ArrayList<>();
-            arguments.add(ruleDTO);
+            Patient patient = patientService.findByNameAndSurname(ruleDTO.getPatient().split(" ")[0], ruleDTO.getPatient().split(" ")[1]);
+
+            List<DoctorDroolsDTO> arguments = new ArrayList<>();
+            arguments.add(new DoctorDroolsDTO(ruleDTO.getRuleName(), patient.getId(), ruleDTO.getType(), ruleDTO.getValue(), ruleDTO.getOperation()));
             ObjectDataCompiler compiler = new ObjectDataCompiler();
             String drl = compiler.compile(arguments, template);
 

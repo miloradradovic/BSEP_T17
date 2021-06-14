@@ -9,7 +9,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.sql.ResultSet;
 import java.util.List;
 
 @Service
@@ -33,6 +32,11 @@ public class PatientService {
     public Patient findOne(Integer id) {
         logger.info("Getting patient by id " + id.toString());
         return patientRepository.findById(id).orElse(null);
+    }
+
+    public Patient findByNameAndSurname(String name, String surname) {
+        logger.info("Getting patient by name and surname: " + name + " " + surname);
+        return patientRepository.findByNameAndSurname(name, surname);
     }
 
 }
