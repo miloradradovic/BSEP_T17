@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "https://localhost:4205")
@@ -18,6 +19,7 @@ public class ReportController {
     @Autowired
     private LogService logService;
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<Report> getLogReport(@RequestBody ReportParams reportParams) {
         Report report = logService.getReport(reportParams.getFrom(), reportParams.getTo());

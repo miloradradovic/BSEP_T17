@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -40,6 +41,7 @@ public class RulesController {
 
     private static Logger logger = LogManager.getLogger(RulesController.class);
 
+    @PreAuthorize("hasAuthority('DOCTOR')")
     @RequestMapping(value = "doctor-rule", method = RequestMethod.POST)
     public ResponseEntity<?> createDoctorRule(@RequestBody DoctorRuleDTO ruleDTO) {
         try {
@@ -80,6 +82,7 @@ public class RulesController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "admin-rule", method = RequestMethod.POST)
     public ResponseEntity<?> createAdminRule(@RequestBody AdminRuleDTO ruleDTO) {
         try {

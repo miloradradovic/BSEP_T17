@@ -35,7 +35,7 @@ public class CertificateRequestController {
 
     private static Logger logger = LogManager.getLogger(CertificateRequestController.class);
 
-    //@PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN') || hasAuthority('DOCTOR')")
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> createAndSendCertificateRequest(@RequestBody @Valid CertificateRequestDTO certificateRequestDTO) {
 
@@ -56,6 +56,7 @@ public class CertificateRequestController {
         }
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "/revoke", method = RequestMethod.POST)
     public ResponseEntity<?> createAndSendCertificateRevocationRequest() {
 
@@ -76,6 +77,7 @@ public class CertificateRequestController {
         }
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "/verify", method = RequestMethod.POST)
     public ResponseEntity<?> createAndSendCertificateRequest() {
 

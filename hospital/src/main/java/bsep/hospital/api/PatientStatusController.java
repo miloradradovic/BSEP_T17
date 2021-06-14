@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +35,7 @@ public class PatientStatusController {
 
     private static Logger logger = LogManager.getLogger(PatientStatusController.class);
 
+    @PreAuthorize("hasAuthority('DOCTOR')")
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<PatientStatusDTO>> getAllPatientStatus() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -57,6 +59,7 @@ public class PatientStatusController {
         return new ResponseEntity<>(patientStatusDTOS, HttpStatus.OK);
     }
 
+    @PreAuthorize("hasAuthority('DOCTOR')")
     @RequestMapping(value = "/alarm", method = RequestMethod.GET)
     public ResponseEntity<List<PatientStatusDTO>> getAllPatientStatusAlarmed() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -80,6 +83,7 @@ public class PatientStatusController {
         return new ResponseEntity<>(patientStatusDTOS, HttpStatus.OK);
     }
 
+    @PreAuthorize("hasAuthority('DOCTOR')")
     @RequestMapping(value = "/{name}/{surname}", method = RequestMethod.GET)
     public ResponseEntity<List<PatientStatusDTO>> getAllPatientStatusByPatient(@PathVariable String name, @PathVariable String surname) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -103,6 +107,7 @@ public class PatientStatusController {
         return new ResponseEntity<>(patientStatusDTOS, HttpStatus.OK);
     }
 
+    @PreAuthorize("hasAuthority('DOCTOR')")
     @RequestMapping(value = "/alarm/{name}/{surname}", method = RequestMethod.GET)
     public ResponseEntity<List<PatientStatusDTO>> getAllPatientStatusAlarmedByPatient(@PathVariable String name, @PathVariable String surname) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
