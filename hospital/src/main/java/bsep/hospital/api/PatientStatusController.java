@@ -1,5 +1,6 @@
 package bsep.hospital.api;
 
+import java.time.format.DateTimeFormatter;
 
 import bsep.hospital.dto.PatientStatusDTO;
 import bsep.hospital.model.PatientStatus;
@@ -31,6 +32,9 @@ public class PatientStatusController {
     @Autowired
     PatientStatusService patientStatusService;
 
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+
     private static Logger logger = LogManager.getLogger(PatientStatusController.class);
 
     @RequestMapping(method = RequestMethod.GET)
@@ -47,7 +51,7 @@ public class PatientStatusController {
             patientStatusDTOS.add(new PatientStatusDTO(
                     patientStatus.getId(),
                     patientStatus.getPatient().getName() + " " + patientStatus.getPatient().getSurname(),
-                    patientStatus.getDateTime(),
+                    patientStatus.getDateTime().format(formatter),
                     patientStatus.getType().toString(),
                     patientStatus.getMessage(),
                     patientStatus.isAlarm()));
@@ -70,7 +74,7 @@ public class PatientStatusController {
             patientStatusDTOS.add(new PatientStatusDTO(
                     patientStatus.getId(),
                     patientStatus.getPatient().getName() + " " + patientStatus.getPatient().getSurname(),
-                    patientStatus.getDateTime(),
+                    patientStatus.getDateTime().format(formatter),
                     patientStatus.getType().toString(),
                     patientStatus.getMessage(),
                     patientStatus.isAlarm()));
