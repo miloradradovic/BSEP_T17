@@ -4,17 +4,19 @@ public class DoctorRuleDTO {
 
     private String ruleName;
     private String patient; // name surname -> id
-    private String type; // enum
+    private String messageType; // enum
+    private String bloodType; // enum
     private double value;
     private String operation; // == != <= >= < >
 
     public DoctorRuleDTO() {
     }
 
-    public DoctorRuleDTO(String ruleName, String patient, String type, double value, String operation) {
+    public DoctorRuleDTO(String ruleName, String patient, String messageType, String bloodType, double value, String operation) {
         this.ruleName = ruleName;
         this.patient = patient;
-        this.type = type;
+        this.messageType = messageType;
+        this.bloodType = bloodType;
         this.value = value;
         this.operation = operation;
     }
@@ -35,12 +37,20 @@ public class DoctorRuleDTO {
         this.patient = patient;
     }
 
-    public String getType() {
-        return type;
+    public String getMessageType() {
+        return messageType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setMessageType(String messageType) {
+        this.messageType = messageType;
+    }
+
+    public String getBloodType() {
+        return bloodType;
+    }
+
+    public void setBloodType(String bloodType) {
+        this.bloodType = bloodType;
     }
 
     public double getValue() {

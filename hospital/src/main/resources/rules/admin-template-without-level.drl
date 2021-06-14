@@ -1,0 +1,25 @@
+template header
+ruleName
+levelInput
+messageInput
+
+package rules;
+
+import bsep.hospital.logging.LogModel;
+import java.util.List;
+
+template "admin-template-without-level"
+
+
+rule "@{ruleName}"
+        no-loop true
+        agenda-group "admin-rules"
+    when
+        $lm: LogModel($m: message contains "@{messageInput}");
+    then
+       modify( $lm ){
+           setAlarm(true)
+       }
+end
+
+end template
