@@ -1,0 +1,2327 @@
+2021-06-14 11:25:07,966 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-06-14 11:25:08,091 INFO o.s.b.StartupInfoLogger Starting HospitalApplication on DESKTOP-L1TVSFT with PID 23292 (C:\Faks\BSEP\Projekat\BSEP_T17\hospital\target\classes started by Vukasin in C:\Faks\BSEP\Projekat\BSEP_T17\hospital)
+2021-06-14 11:25:08,101 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
+2021-06-14 11:25:10,044 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-14 11:25:10,049 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-14 11:25:10,218 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data JPA - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.LogRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-06-14 11:25:10,297 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 228ms. Found 4 JPA repository interfaces.
+2021-06-14 11:25:10,362 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-14 11:25:10,363 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-06-14 11:25:10,395 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.AuthorityRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-14 11:25:10,399 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PatientRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-14 11:25:10,401 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PatientStatusRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-14 11:25:10,403 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PersonRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-14 11:25:10,420 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 55ms. Found 1 MongoDB repository interfaces.
+2021-06-14 11:25:11,301 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7237f3c1' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-14 11:25:11,325 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-14 11:25:12,056 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8085 (https)
+2021-06-14 11:25:12,079 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-14 11:25:12,080 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
+2021-06-14 11:25:12,081 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-14 11:25:12,472 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
+2021-06-14 11:25:12,472 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 4266 ms
+2021-06-14 11:25:12,594 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-14 11:25:12,915 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-14 11:25:13,041 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-14 11:25:13,357 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-14 11:25:13,619 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-14 11:25:14,049 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2021-06-14 11:25:14,090 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-14 11:25:16,717 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-14 11:25:16,740 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-14 11:25:18,024 INFO b.h.k.KeyStoreWriter Attempting to initialize keystore using bouncy castle provider.
+2021-06-14 11:25:18,039 INFO b.h.k.KeyStoreReader Attempting to initialize keystore using bouncy castle provider.
+2021-06-14 11:25:18,296 INFO c.m.d.l.SLF4JLogger Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-06-14 11:25:18,416 INFO c.m.d.l.SLF4JLogger Opened connection [connectionId{localValue:1, serverValue:50}] to localhost:27017
+2021-06-14 11:25:18,428 INFO c.m.d.l.SLF4JLogger Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8431100}
+2021-06-14 11:25:19,762 INFO b.h.c.DroolsConfig Creating kie session
+2021-06-14 11:25:19,769 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Vukasin/.m2/repository/org/kie/kie-ci/7.17.0.Final/kie-ci-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-14 11:25:19,771 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.scanner.KieScannerFactoryServiceImpl
+
+2021-06-14 11:25:19,775 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.scanner.MavenClassLoaderResolver
+
+2021-06-14 11:25:19,776 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Vukasin/.m2/repository/org/drools/drools-core/7.17.0.Final/drools-core-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-14 11:25:19,780 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.io.impl.ResourceFactoryServiceImpl
+
+2021-06-14 11:25:19,783 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.marshalling.impl.MarshallerProviderImpl
+
+2021-06-14 11:25:19,785 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.concurrent.ExecutorProviderImpl
+
+2021-06-14 11:25:19,786 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Vukasin/.m2/repository/org/drools/drools-compiler/7.17.0.Final/drools-compiler-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-14 11:25:19,792 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.compiler.kie.builder.impl.KieServicesImpl
+
+2021-06-14 11:25:19,794 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.compiler.builder.impl.KnowledgeBuilderFactoryServiceImpl
+
+2021-06-14 11:25:19,795 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Vukasin/.m2/repository/org/kie/kie-internal/7.17.0.Final/kie-internal-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-14 11:25:19,799 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieAssemblersImpl
+
+2021-06-14 11:25:19,802 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieRuntimesImpl
+
+2021-06-14 11:25:19,804 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieWeaversImpl
+
+2021-06-14 11:25:19,807 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieBeliefsImpl
+
+2021-06-14 11:25:19,836 INFO o.d.c.k.b.i.ClasspathKieProject Found kmodule: file:/C:/Faks/BSEP/Projekat/BSEP_T17/hospital/target/classes/META-INF/kmodule.xml
+2021-06-14 11:25:20,481 INFO o.d.c.k.b.i.KieRepositoryImpl KieModule was added: FileKieModule[releaseId=bsep:hospital:0.0.1-SNAPSHOT,file=C:\Faks\BSEP\Projekat\BSEP_T17\hospital\target\classes]
+2021-06-14 11:25:22,543 INFO b.h.i.Initialize Executing operation Initialize
+2021-06-14 11:25:22,544 INFO b.h.i.Initialize Attempting to create keystore.
+2021-06-14 11:25:22,544 INFO b.h.i.Initialize Checking if keystore already exists.
+2021-06-14 11:25:22,545 INFO b.h.k.KeyStoreWriter Attempting to load keystore.
+2021-06-14 11:25:22,548 INFO b.h.k.KeyStoreWriter Successfully loaded keystore.
+2021-06-14 11:25:22,548 INFO b.h.i.Initialize Keystore already exists.
+2021-06-14 11:25:23,025 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@776d50d6, org.springframework.security.web.context.SecurityContextPersistenceFilter@6a434cdd, org.springframework.security.web.header.HeaderWriterFilter@310db5c4, org.springframework.web.filter.CorsFilter@43815bc, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@7f02b2d4, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@6148827c, org.springframework.security.web.authentication.logout.LogoutFilter@13056efe, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@27df4dcb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39b50027, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@5718e77c, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@3d667b59, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@122bfaac, org.springframework.security.web.session.SessionManagementFilter@5ccc07ae, org.springframework.security.web.access.ExceptionTranslationFilter@3503e68e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3208e15]
+2021-06-14 11:25:23,811 INFO o.s.s.c.ExecutorConfigurationSupport Initializing ExecutorService 'taskScheduler'
+2021-06-14 11:25:23,949 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-14 11:25:24,323 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8085 (https) with context path ''
+2021-06-14 11:25:24,358 INFO o.s.b.StartupInfoLogger Started HospitalApplication in 17.032 seconds (JVM running for 20.502)
+2021-06-14 11:25:24,365 INFO o.s.s.c.ExecutorConfigurationSupport Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-14 11:25:24,389 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:25:24,389 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:25:24,390 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:25:24,391 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:25:24,406 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:25:24,408 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:25:24,437 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:25:24,437 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:25:24,559 INFO c.m.d.l.SLF4JLogger Opened connection [connectionId{localValue:2, serverValue:51}] to localhost:27017
+2021-06-14 11:25:25,181 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:25:29,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:25:29,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:25:29,352 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:25:29,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:25:29,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:25:29,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:25:29,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:25:29,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:25:29,371 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:25:34,355 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:25:34,355 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:25:34,356 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:25:34,357 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:25:34,360 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:25:34,362 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:25:34,364 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:25:34,365 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:25:34,383 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:25:39,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:25:39,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:25:39,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:25:39,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:25:39,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:25:39,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:25:39,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:25:39,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:25:39,364 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:25:44,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:25:44,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:25:44,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:25:44,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:25:44,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:25:44,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:25:44,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:25:44,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:25:44,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:25:49,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:25:49,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:25:49,352 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:25:49,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:25:49,355 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:25:49,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:25:49,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:25:49,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:25:49,374 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:25:54,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:25:54,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:25:54,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:25:54,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:25:54,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:25:54,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:25:54,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:25:54,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:25:54,360 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:25:59,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:25:59,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:25:59,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:25:59,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:25:59,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:25:59,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:25:59,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:25:59,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:25:59,364 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:26:04,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:26:04,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:26:04,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:26:04,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:04,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:26:04,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:04,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:26:04,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:26:04,370 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:26:09,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:26:09,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:26:09,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:26:09,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:09,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:26:09,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:09,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:26:09,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:26:09,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:26:14,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:26:14,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:26:14,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:26:14,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:14,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:26:14,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:14,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:26:14,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:26:14,366 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:26:19,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:26:19,349 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:26:19,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:26:19,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:19,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:26:19,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:19,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:26:19,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:26:19,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:26:24,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:26:24,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:26:24,352 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:26:24,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:24,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:26:24,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:24,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:26:24,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:26:24,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:26:29,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:26:29,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:26:29,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:26:29,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:29,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:26:29,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:29,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:26:29,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:26:29,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:26:34,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:26:34,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:26:34,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:26:34,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:34,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:26:34,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:34,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:26:34,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:26:34,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:26:39,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:26:39,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:26:39,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:26:39,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:39,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:26:39,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:39,351 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:26:39,351 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:26:39,357 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:26:44,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:26:44,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:26:44,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:26:44,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:44,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:26:44,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:44,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:26:44,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:26:44,364 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:26:49,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:26:49,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:26:49,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:26:49,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:49,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:26:49,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:49,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:26:49,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:26:49,367 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:26:54,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:26:54,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:26:54,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:26:54,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:54,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:26:54,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:54,351 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:26:54,351 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:26:54,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:26:59,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:26:59,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:26:59,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:26:59,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:59,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:26:59,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:26:59,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:26:59,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:26:59,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:27:04,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:27:04,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:27:04,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:27:04,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:04,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:27:04,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:04,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:27:04,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:27:04,367 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:27:09,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:27:09,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:27:09,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:27:09,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:09,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:27:09,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:09,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:27:09,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:27:09,368 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:27:14,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:27:14,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:27:14,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:27:14,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:14,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:27:14,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:14,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:27:14,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:27:14,366 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:27:19,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:27:19,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:27:19,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:27:19,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:19,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:27:19,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:19,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:27:19,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:27:19,430 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:27:24,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:27:24,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:27:24,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:27:24,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:24,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:27:24,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:24,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:27:24,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:27:24,379 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:27:29,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:27:29,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:27:29,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:27:29,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:29,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:27:29,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:29,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:27:29,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:27:29,367 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:27:34,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:27:34,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:27:34,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:27:34,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:34,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:27:34,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:34,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:27:34,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:27:34,375 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:27:39,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:27:39,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:27:39,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:27:39,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:39,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:27:39,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:39,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:27:39,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:27:39,360 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:27:44,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:27:44,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:27:44,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:27:44,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:44,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:27:44,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:44,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:27:44,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:27:44,368 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:27:49,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:27:49,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:27:49,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:27:49,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:49,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:27:49,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:49,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:27:49,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:27:49,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:27:54,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:27:54,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:27:54,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:27:54,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:54,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:27:54,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:54,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:27:54,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:27:54,368 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:27:59,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:27:59,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:27:59,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:27:59,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:59,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:27:59,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:27:59,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:27:59,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:27:59,364 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:28:04,352 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:28:04,352 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:28:04,353 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:28:04,356 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:04,358 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:28:04,359 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:04,360 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:28:04,361 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:28:04,384 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:28:09,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:28:09,353 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:28:09,353 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:28:09,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:09,355 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:28:09,358 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:09,359 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:28:09,359 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:28:09,382 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:28:13,433 INFO o.a.j.l.DirectJDKLog Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-14 11:28:13,434 INFO o.s.w.s.FrameworkServlet Initializing Servlet 'dispatcherServlet'
+2021-06-14 11:28:13,440 INFO o.s.w.s.FrameworkServlet Completed initialization in 6 ms
+2021-06-14 11:28:13,814 INFO o.k.a.KeycloakDeployment Loaded URLs from https://localhost:8443/auth/realms/hospital-portal/.well-known/openid-configuration
+2021-06-14 11:28:14,098 WARN o.a.j.l.DirectJDKLog Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [201] milliseconds.
+2021-06-14 11:28:14,128 INFO b.h.a.PatientController User with the email doctor@hospital.com is attempting to get all patients.
+2021-06-14 11:28:14,128 INFO b.h.s.PatientService Getting all patients.
+2021-06-14 11:28:14,295 INFO b.h.s.PatientStatusService Getting all statuses by patient id 1
+2021-06-14 11:28:14,325 INFO b.h.s.PatientStatusService Getting all statuses by patient id 2
+2021-06-14 11:28:14,326 INFO b.h.s.PatientStatusService Getting all statuses by patient id 3
+2021-06-14 11:28:14,328 INFO b.h.s.PatientStatusService Getting all statuses by patient id 4
+2021-06-14 11:28:14,329 INFO b.h.s.PatientStatusService Getting all statuses by patient id 5
+2021-06-14 11:28:14,330 INFO b.h.s.PatientStatusService Getting all statuses by patient id 6
+2021-06-14 11:28:14,331 INFO b.h.s.PatientStatusService Getting all statuses by patient id 7
+2021-06-14 11:28:14,333 INFO b.h.s.PatientStatusService Getting all statuses by patient id 8
+2021-06-14 11:28:14,334 INFO b.h.s.PatientStatusService Getting all statuses by patient id 9
+2021-06-14 11:28:14,334 INFO b.h.s.PatientStatusService Getting all statuses by patient id 10
+2021-06-14 11:28:14,335 INFO b.h.a.PatientController Successfully retrieved all patients.
+2021-06-14 11:28:14,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:28:14,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:28:14,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:28:14,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:14,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:28:14,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:14,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:28:14,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:28:14,376 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:28:19,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:28:19,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:28:19,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:28:19,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:19,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:28:19,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:19,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:28:19,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:28:19,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:28:22,916 INFO b.h.a.PatientStatusController User with the email doctor@hospital.com is attempting to get all patient statuses.
+2021-06-14 11:28:22,917 INFO b.h.s.PatientStatusService Getting all patient statuses.
+2021-06-14 11:28:22,926 INFO b.h.a.PatientStatusController Successfully retrieved all patient statuses
+2021-06-14 11:28:24,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:28:24,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:28:24,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:28:24,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:24,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:28:24,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:24,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:28:24,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:28:24,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:28:29,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:28:29,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:28:29,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:28:29,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:29,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:28:29,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:29,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:28:29,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:28:29,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:28:34,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:28:34,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:28:34,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:28:34,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:34,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:28:34,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:34,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:28:34,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:28:34,364 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:28:39,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:28:39,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:28:39,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:28:39,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:39,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:28:39,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:39,357 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:28:39,357 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:28:39,368 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:28:44,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:28:44,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:28:44,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:28:44,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:44,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:28:44,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:44,357 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:28:44,357 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:28:44,372 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:28:49,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:28:49,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:28:49,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:28:49,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:49,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:28:49,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:49,370 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:28:49,370 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:28:49,376 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:28:54,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:28:54,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:28:54,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:28:54,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:54,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:28:54,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:54,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:28:54,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:28:54,363 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:28:59,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:28:59,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:28:59,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:28:59,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:59,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:28:59,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:28:59,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:28:59,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:28:59,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:29:04,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:29:04,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:29:04,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:29:04,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:04,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:29:04,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:04,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:29:04,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:29:04,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:29:09,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:29:09,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:29:09,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:29:09,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:09,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:29:09,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:09,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:29:09,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:29:09,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:29:14,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:29:14,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:29:14,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:29:14,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:14,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:29:14,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:14,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:29:14,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:29:14,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:29:19,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:29:19,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:29:19,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:29:19,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:19,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:29:19,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:19,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:29:19,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:29:19,366 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:29:24,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:29:24,349 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:29:24,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:29:24,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:24,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:29:24,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:24,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:29:24,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:29:24,366 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:29:29,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:29:29,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:29:29,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:29:29,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:29,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:29:29,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:29,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:29:29,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:29:29,364 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:29:34,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:29:34,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:29:34,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:29:34,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:34,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:29:34,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:34,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:29:34,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:29:34,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:29:39,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:29:39,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:29:39,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:29:39,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:39,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:29:39,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:39,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:29:39,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:29:39,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:29:44,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:29:44,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:29:44,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:29:44,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:44,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:29:44,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:44,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:29:44,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:29:44,363 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:29:49,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:29:49,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:29:49,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:29:49,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:49,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:29:49,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:49,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:29:49,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:29:49,366 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:29:54,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:29:54,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:29:54,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:29:54,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:54,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:29:54,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:54,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:29:54,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:29:54,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:29:59,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:29:59,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:29:59,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:29:59,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:59,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:29:59,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:29:59,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:29:59,357 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:29:59,366 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:30:04,349 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:30:04,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:30:04,349 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:30:04,349 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:04,350 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:30:04,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:04,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:30:04,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:30:04,363 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:30:09,360 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:30:09,361 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:30:09,361 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:30:09,362 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:09,363 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:30:09,363 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:09,364 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:30:09,364 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:30:09,383 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:30:14,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:30:14,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:30:14,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:30:14,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:14,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:30:14,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:14,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:30:14,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:30:14,369 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:30:19,353 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:30:19,353 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:30:19,353 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:30:19,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:19,356 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:30:19,356 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:19,370 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:30:19,375 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:30:19,405 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:30:24,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:30:24,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:30:24,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:30:24,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:24,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:30:24,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:24,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:30:24,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:30:24,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:30:29,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:30:29,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:30:29,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:30:29,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:29,350 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:30:29,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:29,351 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:30:29,351 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:30:29,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:30:34,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:30:34,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:30:34,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:30:34,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:34,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:30:34,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:34,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:30:34,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:30:34,364 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:30:39,362 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:30:39,362 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:30:39,363 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:39,363 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:30:39,373 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:30:39,374 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:39,376 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:30:39,376 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:30:39,396 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:30:44,376 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:30:44,377 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:30:44,377 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:30:44,378 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:44,382 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:30:44,383 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:44,384 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:30:44,384 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:30:44,400 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:30:49,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:30:49,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:30:49,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:30:49,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:49,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:30:49,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:49,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:30:49,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:30:49,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:30:54,367 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:30:54,376 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:30:54,376 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:30:54,376 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:54,396 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:30:54,397 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:54,399 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:30:54,400 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:30:54,411 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:30:59,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:30:59,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:30:59,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:30:59,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:59,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:30:59,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:30:59,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:30:59,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:30:59,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:31:04,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:31:04,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:31:04,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:31:04,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:04,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:31:04,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:04,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:31:04,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:31:04,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:31:09,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:31:09,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:31:09,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:31:09,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:09,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:31:09,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:09,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:31:09,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:31:09,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:31:10,797 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:31:10,800 INFO b.h.s.PatientService Getting patient by id 4
+2021-06-14 11:31:10,814 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:31:10,843 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@4214bc34
+2021-06-14 11:31:10,895 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:31:10,913 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:31:10,913 INFO b.h.s.PatientService Getting patient by id 9
+2021-06-14 11:31:10,915 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:31:10,918 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@4966a12f
+2021-06-14 11:31:10,922 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:31:10,933 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:31:10,933 INFO b.h.s.PatientService Getting patient by id 7
+2021-06-14 11:31:10,935 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:31:10,936 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@3a45241d
+2021-06-14 11:31:10,939 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:31:14,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:31:14,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:31:14,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:31:14,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:14,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:31:14,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:14,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:31:14,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:31:14,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:31:19,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:31:19,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:31:19,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:31:19,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:19,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:31:19,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:19,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:31:19,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:31:19,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:31:20,528 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:31:20,528 INFO b.h.s.PatientService Getting patient by id 4
+2021-06-14 11:31:20,530 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:31:20,531 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@530f6d62
+2021-06-14 11:31:20,533 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:31:20,544 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:31:20,544 INFO b.h.s.PatientService Getting patient by id 1
+2021-06-14 11:31:20,546 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:31:20,546 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@398f63e6
+2021-06-14 11:31:20,549 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:31:20,561 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:31:20,562 INFO b.h.s.PatientService Getting patient by id 9
+2021-06-14 11:31:20,566 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:31:20,566 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@321d11c6
+2021-06-14 11:31:20,569 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:31:24,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:31:24,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:31:24,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:31:24,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:24,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:31:24,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:24,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:31:24,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:31:24,368 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:31:29,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:31:29,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:31:29,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:31:29,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:29,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:31:29,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:29,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:31:29,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:31:29,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:31:30,526 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:31:30,526 INFO b.h.s.PatientService Getting patient by id 10
+2021-06-14 11:31:30,528 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:31:30,529 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@22b649ed
+2021-06-14 11:31:30,530 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:31:30,539 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:31:30,539 INFO b.h.s.PatientService Getting patient by id 4
+2021-06-14 11:31:30,541 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:31:30,542 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@654665ce
+2021-06-14 11:31:30,544 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:31:30,556 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:31:30,556 INFO b.h.s.PatientService Getting patient by id 7
+2021-06-14 11:31:30,558 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:31:30,559 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@6610c6a0
+2021-06-14 11:31:30,562 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:31:34,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:31:34,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:31:34,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:31:34,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:34,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:31:34,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:34,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:31:34,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:31:34,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:31:39,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:31:39,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:31:39,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:31:39,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:39,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:31:39,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:39,351 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:31:39,351 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:31:39,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:31:40,526 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:31:40,526 INFO b.h.s.PatientService Getting patient by id 9
+2021-06-14 11:31:40,528 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:31:40,529 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@7add87
+2021-06-14 11:31:40,531 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:31:40,542 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:31:40,543 INFO b.h.s.PatientService Getting patient by id 2
+2021-06-14 11:31:40,544 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:31:40,545 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@57ee748c
+2021-06-14 11:31:40,548 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:31:40,558 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:31:40,558 INFO b.h.s.PatientService Getting patient by id 10
+2021-06-14 11:31:40,559 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:31:40,560 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@4f8c2e65
+2021-06-14 11:31:40,562 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:31:44,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:31:44,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:31:44,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:31:44,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:44,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:31:44,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:44,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:31:44,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:31:44,370 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:31:46,040 INFO b.h.a.PatientStatusController User with the email doctor@hospital.com is attempting to get all patient statuses.
+2021-06-14 11:31:46,040 INFO b.h.s.PatientStatusService Getting all patient statuses.
+2021-06-14 11:31:46,057 INFO b.h.a.PatientStatusController Successfully retrieved all patient statuses
+2021-06-14 11:31:49,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:31:49,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:31:49,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:31:49,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:49,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:31:49,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:49,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:31:49,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:31:49,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:31:50,529 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:31:50,530 INFO b.h.s.PatientService Getting patient by id 3
+2021-06-14 11:31:50,534 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:31:50,535 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@b45e49
+2021-06-14 11:31:50,538 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:31:50,551 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:31:50,552 INFO b.h.s.PatientService Getting patient by id 2
+2021-06-14 11:31:50,557 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:31:50,558 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@3414c3d3
+2021-06-14 11:31:50,562 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:31:50,571 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:31:50,571 INFO b.h.s.PatientService Getting patient by id 1
+2021-06-14 11:31:50,573 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:31:50,638 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@5a1b67e1
+2021-06-14 11:31:50,642 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:31:54,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:31:54,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:31:54,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:31:54,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:54,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:31:54,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:54,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:31:54,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:31:54,369 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:31:59,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:31:59,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:31:59,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:31:59,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:59,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:31:59,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:31:59,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:31:59,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:31:59,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:32:00,525 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:00,526 INFO b.h.s.PatientService Getting patient by id 10
+2021-06-14 11:32:00,528 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:00,530 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@1a14e6f6
+2021-06-14 11:32:00,533 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:00,542 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:00,542 INFO b.h.s.PatientService Getting patient by id 9
+2021-06-14 11:32:00,544 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:00,545 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@311aa634
+2021-06-14 11:32:00,548 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:00,559 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:00,560 INFO b.h.s.PatientService Getting patient by id 1
+2021-06-14 11:32:00,562 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:00,562 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@f72edae
+2021-06-14 11:32:00,565 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:04,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:32:04,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:32:04,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:32:04,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:04,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:32:04,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:04,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:32:04,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:32:04,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:32:09,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:32:09,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:32:09,352 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:32:09,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:09,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:32:09,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:09,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:32:09,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:32:09,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:32:10,525 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:10,525 INFO b.h.s.PatientService Getting patient by id 9
+2021-06-14 11:32:10,527 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:10,528 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@3da41396
+2021-06-14 11:32:10,530 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:10,538 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:10,538 INFO b.h.s.PatientService Getting patient by id 5
+2021-06-14 11:32:10,539 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:10,546 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@2bc0e8f4
+2021-06-14 11:32:10,550 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:10,562 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:10,563 INFO b.h.s.PatientService Getting patient by id 6
+2021-06-14 11:32:10,566 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:10,566 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@6e2c6761
+2021-06-14 11:32:10,569 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:14,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:32:14,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:32:14,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:32:14,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:14,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:32:14,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:14,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:32:14,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:32:14,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:32:19,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:32:19,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:32:19,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:32:19,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:19,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:32:19,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:19,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:32:19,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:32:19,358 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:32:20,523 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:20,523 INFO b.h.s.PatientService Getting patient by id 4
+2021-06-14 11:32:20,525 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:20,526 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@3f2fe9ce
+2021-06-14 11:32:20,528 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:20,537 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:20,537 INFO b.h.s.PatientService Getting patient by id 7
+2021-06-14 11:32:20,539 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:20,539 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@6241a8d8
+2021-06-14 11:32:20,541 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:20,550 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:20,550 INFO b.h.s.PatientService Getting patient by id 9
+2021-06-14 11:32:20,552 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:20,553 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@33a84c0d
+2021-06-14 11:32:20,558 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:24,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:32:24,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:32:24,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:32:24,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:24,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:32:24,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:24,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:32:24,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:32:24,381 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:32:29,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:32:29,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:32:29,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:32:29,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:29,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:32:29,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:29,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:32:29,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:32:29,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:32:30,525 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:30,526 INFO b.h.s.PatientService Getting patient by id 10
+2021-06-14 11:32:30,529 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:30,532 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@651c752
+2021-06-14 11:32:30,535 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:30,545 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:30,546 INFO b.h.s.PatientService Getting patient by id 6
+2021-06-14 11:32:30,550 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:30,552 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@22163259
+2021-06-14 11:32:30,558 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:30,573 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:30,574 INFO b.h.s.PatientService Getting patient by id 7
+2021-06-14 11:32:30,576 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:30,577 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@213e4fd0
+2021-06-14 11:32:30,580 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:31,379 INFO b.h.a.PatientController User with the email doctor@hospital.com is attempting to get all patients.
+2021-06-14 11:32:31,380 INFO b.h.s.PatientService Getting all patients.
+2021-06-14 11:32:31,387 INFO b.h.s.PatientStatusService Getting all statuses by patient id 1
+2021-06-14 11:32:31,396 INFO b.h.s.PatientStatusService Getting all statuses by patient id 2
+2021-06-14 11:32:31,398 INFO b.h.s.PatientStatusService Getting all statuses by patient id 3
+2021-06-14 11:32:31,404 INFO b.h.s.PatientStatusService Getting all statuses by patient id 4
+2021-06-14 11:32:31,408 INFO b.h.s.PatientStatusService Getting all statuses by patient id 5
+2021-06-14 11:32:31,410 INFO b.h.s.PatientStatusService Getting all statuses by patient id 6
+2021-06-14 11:32:31,412 INFO b.h.s.PatientStatusService Getting all statuses by patient id 7
+2021-06-14 11:32:31,415 INFO b.h.s.PatientStatusService Getting all statuses by patient id 8
+2021-06-14 11:32:31,416 INFO b.h.s.PatientStatusService Getting all statuses by patient id 9
+2021-06-14 11:32:31,424 INFO b.h.s.PatientStatusService Getting all statuses by patient id 10
+2021-06-14 11:32:31,429 INFO b.h.a.PatientController Successfully retrieved all patients.
+2021-06-14 11:32:31,803 INFO b.h.a.PatientStatusController User with the email doctor@hospital.com is attempting to get all patient statuses.
+2021-06-14 11:32:31,804 INFO b.h.s.PatientStatusService Getting all patient statuses.
+2021-06-14 11:32:31,820 INFO b.h.a.PatientStatusController Successfully retrieved all patient statuses
+2021-06-14 11:32:34,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:32:34,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:32:34,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:32:34,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:34,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:32:34,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:34,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:32:34,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:32:34,374 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:32:39,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:32:39,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:32:39,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:32:39,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:39,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:32:39,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:39,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:32:39,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:32:39,360 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:32:40,525 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:40,525 INFO b.h.s.PatientService Getting patient by id 8
+2021-06-14 11:32:40,528 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:40,529 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@76b03a22
+2021-06-14 11:32:40,531 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:40,539 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:40,539 INFO b.h.s.PatientService Getting patient by id 7
+2021-06-14 11:32:40,541 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:40,542 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@571eefc7
+2021-06-14 11:32:40,544 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:40,551 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:40,551 INFO b.h.s.PatientService Getting patient by id 10
+2021-06-14 11:32:40,554 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:40,557 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@331b86c3
+2021-06-14 11:32:40,559 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:44,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:32:44,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:32:44,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:32:44,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:44,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:32:44,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:44,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:32:44,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:32:44,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:32:49,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:32:49,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:32:49,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:32:49,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:49,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:32:49,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:49,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:32:49,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:32:49,364 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:32:50,523 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:50,523 INFO b.h.s.PatientService Getting patient by id 8
+2021-06-14 11:32:50,525 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:50,525 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@5c7749ce
+2021-06-14 11:32:50,527 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:50,534 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:50,535 INFO b.h.s.PatientService Getting patient by id 4
+2021-06-14 11:32:50,536 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:50,536 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@4f76f02c
+2021-06-14 11:32:50,538 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:50,545 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:32:50,545 INFO b.h.s.PatientService Getting patient by id 10
+2021-06-14 11:32:50,546 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:32:50,547 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@f4876c4
+2021-06-14 11:32:50,549 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:32:54,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:32:54,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:32:54,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:32:54,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:54,350 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:32:54,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:54,351 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:32:54,351 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:32:54,363 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:32:59,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:32:59,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:32:59,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:32:59,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:59,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:32:59,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:32:59,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:32:59,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:32:59,363 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:33:00,526 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:00,526 INFO b.h.s.PatientService Getting patient by id 9
+2021-06-14 11:33:00,528 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:00,529 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@42e8f960
+2021-06-14 11:33:00,532 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:00,541 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:00,541 INFO b.h.s.PatientService Getting patient by id 9
+2021-06-14 11:33:00,543 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:00,543 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@234ab5dd
+2021-06-14 11:33:00,545 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:00,557 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:00,558 INFO b.h.s.PatientService Getting patient by id 10
+2021-06-14 11:33:00,560 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:00,560 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@417b5c7d
+2021-06-14 11:33:00,563 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:04,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:33:04,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:33:04,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:33:04,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:04,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:33:04,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:04,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:33:04,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:33:04,377 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:33:09,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:33:09,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:33:09,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:33:09,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:09,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:33:09,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:09,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:33:09,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:33:09,363 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:33:10,523 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:10,523 INFO b.h.s.PatientService Getting patient by id 5
+2021-06-14 11:33:10,525 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:10,525 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@6152964b
+2021-06-14 11:33:10,528 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:10,536 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:10,537 INFO b.h.s.PatientService Getting patient by id 2
+2021-06-14 11:33:10,538 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:10,539 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@12408280
+2021-06-14 11:33:10,541 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:10,550 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:10,551 INFO b.h.s.PatientService Getting patient by id 6
+2021-06-14 11:33:10,556 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:10,558 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@3b4e5086
+2021-06-14 11:33:10,561 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:14,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:33:14,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:33:14,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:33:14,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:14,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:33:14,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:14,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:33:14,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:33:14,374 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:33:19,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:33:19,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:33:19,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:33:19,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:19,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:33:19,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:19,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:33:19,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:33:19,358 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:33:20,525 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:20,525 INFO b.h.s.PatientService Getting patient by id 9
+2021-06-14 11:33:20,527 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:20,529 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@1b53e00d
+2021-06-14 11:33:20,531 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:20,540 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:20,540 INFO b.h.s.PatientService Getting patient by id 5
+2021-06-14 11:33:20,542 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:20,542 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@7ca3b768
+2021-06-14 11:33:20,544 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:20,555 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:20,556 INFO b.h.s.PatientService Getting patient by id 1
+2021-06-14 11:33:20,559 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:20,560 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@122be1a7
+2021-06-14 11:33:20,562 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:24,352 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:33:24,354 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:33:24,354 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:33:24,356 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:24,361 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:33:24,363 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:24,367 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:33:24,367 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:33:24,394 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:33:29,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:33:29,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:33:29,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:33:29,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:29,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:33:29,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:29,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:33:29,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:33:29,364 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:33:30,626 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:30,629 INFO b.h.s.PatientService Getting patient by id 4
+2021-06-14 11:33:30,634 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:30,635 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@6270d5a0
+2021-06-14 11:33:30,647 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:30,702 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:30,704 INFO b.h.s.PatientService Getting patient by id 4
+2021-06-14 11:33:30,709 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:30,711 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@3c07fb56
+2021-06-14 11:33:30,737 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:30,803 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:30,804 INFO b.h.s.PatientService Getting patient by id 7
+2021-06-14 11:33:30,815 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:30,816 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@5269cb67
+2021-06-14 11:33:30,829 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:34,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:33:34,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:33:34,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:33:34,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:34,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:33:34,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:34,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:33:34,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:33:34,373 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:33:39,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:33:39,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:33:39,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:33:39,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:39,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:33:39,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:39,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:33:39,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:33:39,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:33:40,532 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:40,532 INFO b.h.s.PatientService Getting patient by id 6
+2021-06-14 11:33:40,534 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:40,534 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@250e2797
+2021-06-14 11:33:40,536 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:40,543 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:40,544 INFO b.h.s.PatientService Getting patient by id 2
+2021-06-14 11:33:40,545 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:40,545 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@71f38df9
+2021-06-14 11:33:40,547 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:40,556 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:40,556 INFO b.h.s.PatientService Getting patient by id 1
+2021-06-14 11:33:40,557 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:40,558 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@3b7537b9
+2021-06-14 11:33:40,560 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:44,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:33:44,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:33:44,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:33:44,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:44,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:33:44,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:44,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:33:44,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:33:44,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:33:49,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:33:49,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:33:49,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:33:49,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:49,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:33:49,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:49,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:33:49,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:33:49,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:33:50,533 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:50,533 INFO b.h.s.PatientService Getting patient by id 2
+2021-06-14 11:33:50,535 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:50,535 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@6e984b5c
+2021-06-14 11:33:50,537 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:50,549 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:50,550 INFO b.h.s.PatientService Getting patient by id 8
+2021-06-14 11:33:50,557 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:50,559 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@1ada2dab
+2021-06-14 11:33:50,563 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:50,576 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:33:50,577 INFO b.h.s.PatientService Getting patient by id 3
+2021-06-14 11:33:50,579 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:33:50,581 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@7b0e12bb
+2021-06-14 11:33:50,589 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:33:54,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:33:54,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:33:54,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:33:54,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:54,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:33:54,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:54,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:33:54,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:33:54,366 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:33:59,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:33:59,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:33:59,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:33:59,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:59,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:33:59,356 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:33:59,357 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:33:59,358 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:33:59,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:34:00,528 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:00,529 INFO b.h.s.PatientService Getting patient by id 7
+2021-06-14 11:34:00,531 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:00,532 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@6aa09234
+2021-06-14 11:34:00,534 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:00,550 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:00,550 INFO b.h.s.PatientService Getting patient by id 2
+2021-06-14 11:34:00,555 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:00,557 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@7df20292
+2021-06-14 11:34:00,563 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:00,578 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:00,580 INFO b.h.s.PatientService Getting patient by id 5
+2021-06-14 11:34:00,582 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:00,582 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@3d0a566b
+2021-06-14 11:34:00,585 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:04,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:34:04,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:34:04,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:34:04,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:04,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:34:04,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:04,351 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:34:04,351 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:34:04,364 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:34:09,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:34:09,352 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:34:09,352 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:34:09,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:09,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:34:09,356 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:09,358 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:34:09,358 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:34:09,369 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:34:10,525 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:10,526 INFO b.h.s.PatientService Getting patient by id 6
+2021-06-14 11:34:10,528 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:10,528 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@6cb97bdc
+2021-06-14 11:34:10,530 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:10,537 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:10,537 INFO b.h.s.PatientService Getting patient by id 2
+2021-06-14 11:34:10,538 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:10,539 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@afc5ba8
+2021-06-14 11:34:10,540 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:10,546 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:10,547 INFO b.h.s.PatientService Getting patient by id 7
+2021-06-14 11:34:10,548 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:10,548 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@c6b8999
+2021-06-14 11:34:10,550 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:14,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:34:14,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:34:14,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:34:14,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:14,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:34:14,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:14,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:34:14,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:34:14,367 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:34:19,354 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:34:19,354 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:34:19,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:19,355 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:34:19,359 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:34:19,360 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:19,362 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:34:19,362 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:34:19,374 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:34:20,529 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:20,529 INFO b.h.s.PatientService Getting patient by id 7
+2021-06-14 11:34:20,533 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:20,535 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@7fb19d22
+2021-06-14 11:34:20,539 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:20,586 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:20,587 INFO b.h.s.PatientService Getting patient by id 2
+2021-06-14 11:34:20,592 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:20,593 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@268f6e26
+2021-06-14 11:34:20,596 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:20,611 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:20,612 INFO b.h.s.PatientService Getting patient by id 4
+2021-06-14 11:34:20,613 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:20,614 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@2983caf8
+2021-06-14 11:34:20,616 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:24,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:34:24,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:34:24,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:34:24,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:24,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:34:24,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:24,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:34:24,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:34:24,366 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:34:29,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:34:29,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:34:29,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:34:29,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:29,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:34:29,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:29,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:34:29,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:34:29,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:34:30,528 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:30,528 INFO b.h.s.PatientService Getting patient by id 10
+2021-06-14 11:34:30,532 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:30,533 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@6a4e9672
+2021-06-14 11:34:30,538 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:30,573 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:30,574 INFO b.h.s.PatientService Getting patient by id 8
+2021-06-14 11:34:30,577 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:30,578 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@5180891f
+2021-06-14 11:34:30,588 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:30,610 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:30,611 INFO b.h.s.PatientService Getting patient by id 7
+2021-06-14 11:34:30,614 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:30,615 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@597977c3
+2021-06-14 11:34:30,629 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:34,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:34:34,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:34:34,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:34:34,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:34,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:34:34,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:34,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:34:34,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:34:34,368 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:34:39,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:34:39,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:34:39,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:34:39,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:39,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:34:39,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:39,351 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:34:39,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:34:39,360 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:34:40,524 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:40,524 INFO b.h.s.PatientService Getting patient by id 10
+2021-06-14 11:34:40,526 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:40,527 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@4a6bbcaa
+2021-06-14 11:34:40,529 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:40,536 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:40,536 INFO b.h.s.PatientService Getting patient by id 4
+2021-06-14 11:34:40,536 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:40,538 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@6af0d54c
+2021-06-14 11:34:40,538 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:40,547 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:40,547 INFO b.h.s.PatientService Getting patient by id 9
+2021-06-14 11:34:40,548 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:40,548 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@22cc8e39
+2021-06-14 11:34:40,550 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:44,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:34:44,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:34:44,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:34:44,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:44,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:34:44,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:44,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:34:44,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:34:44,369 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:34:49,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:34:49,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:34:49,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:34:49,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:49,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:34:49,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:49,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:34:49,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:34:49,363 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:34:50,523 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:50,523 INFO b.h.s.PatientService Getting patient by id 3
+2021-06-14 11:34:50,525 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:50,525 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@24e502eb
+2021-06-14 11:34:50,527 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:50,534 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:50,535 INFO b.h.s.PatientService Getting patient by id 7
+2021-06-14 11:34:50,536 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:50,537 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@5e12bc44
+2021-06-14 11:34:50,541 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:50,548 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:34:50,548 INFO b.h.s.PatientService Getting patient by id 10
+2021-06-14 11:34:50,549 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:34:50,550 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@550ee9cf
+2021-06-14 11:34:50,552 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:34:54,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:34:54,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:34:54,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:34:54,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:54,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:34:54,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:54,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:34:54,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:34:54,373 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:34:59,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:34:59,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:34:59,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:34:59,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:59,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:34:59,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:34:59,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:34:59,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:34:59,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:35:00,522 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:35:00,522 INFO b.h.s.PatientService Getting patient by id 4
+2021-06-14 11:35:00,524 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:35:00,524 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@2afc4e96
+2021-06-14 11:35:00,526 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:35:00,532 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:35:00,533 INFO b.h.s.PatientService Getting patient by id 2
+2021-06-14 11:35:00,534 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:35:00,535 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@7ca0d0af
+2021-06-14 11:35:00,536 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:35:00,543 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:35:00,543 INFO b.h.s.PatientService Getting patient by id 8
+2021-06-14 11:35:00,544 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:35:00,544 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@627d3280
+2021-06-14 11:35:00,546 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:35:04,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:35:04,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:35:04,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:35:04,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:04,356 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:35:04,358 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:04,359 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:35:04,359 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:35:04,377 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:35:09,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:35:09,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:35:09,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:35:09,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:09,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:35:09,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:09,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:35:09,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:35:09,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:35:10,528 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:35:10,528 INFO b.h.s.PatientService Getting patient by id 1
+2021-06-14 11:35:10,531 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:35:10,531 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@8b01130
+2021-06-14 11:35:10,534 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:35:10,546 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:35:10,547 INFO b.h.s.PatientService Getting patient by id 6
+2021-06-14 11:35:10,549 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:35:10,550 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@2cbce7d3
+2021-06-14 11:35:10,554 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:35:10,570 INFO b.h.a.DeviceController Device is attempting to save patient status.
+2021-06-14 11:35:10,570 INFO b.h.s.PatientService Getting patient by id 4
+2021-06-14 11:35:10,574 INFO b.h.a.DeviceController Putting patient status through drools.
+2021-06-14 11:35:10,575 INFO b.h.s.PatientStatusService Saving patient status bsep.hospital.model.PatientStatus@557415a9
+2021-06-14 11:35:10,578 INFO b.h.a.DeviceController Successfully saved patient status.
+2021-06-14 11:35:14,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:35:14,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:35:14,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:35:14,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:14,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:35:14,356 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:14,358 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:35:14,358 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:35:14,374 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:35:19,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:35:19,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:35:19,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:35:19,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:19,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:35:19,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:19,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:35:19,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:35:19,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:35:24,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:35:24,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:35:24,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:35:24,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:24,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:35:24,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:24,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:35:24,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:35:24,360 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:35:29,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:35:29,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:35:29,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:35:29,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:29,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:35:29,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:29,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:35:29,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:35:29,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:35:34,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:35:34,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:35:34,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:35:34,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:34,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:35:34,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:34,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:35:34,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:35:34,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:35:39,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:35:39,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:35:39,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:35:39,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:39,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:35:39,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:39,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:35:39,357 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:35:39,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:35:44,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:35:44,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:35:44,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:35:44,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:44,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:35:44,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:44,351 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:35:44,351 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:35:44,357 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:35:49,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:35:49,353 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:35:49,353 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:35:49,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:49,358 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:35:49,359 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:49,359 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:35:49,359 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:35:49,364 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:35:54,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:35:54,349 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:35:54,349 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:35:54,349 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:54,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:35:54,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:54,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:35:54,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:35:54,364 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:35:59,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:35:59,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:35:59,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:35:59,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:59,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:35:59,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:35:59,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:35:59,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:35:59,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:36:04,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:36:04,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:36:04,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:36:04,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:04,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:36:04,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:04,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:36:04,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:36:04,358 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:36:09,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:36:09,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:36:09,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:36:09,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:09,355 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:36:09,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:09,357 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:36:09,358 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:36:09,368 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:36:14,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:36:14,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:36:14,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:36:14,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:14,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:36:14,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:14,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:36:14,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:36:14,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:36:19,390 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:36:19,390 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:36:19,390 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:36:19,393 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:19,396 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:36:19,397 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:19,399 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:36:19,399 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:36:19,415 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:36:24,355 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:36:24,355 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:36:24,356 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:36:24,356 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:24,357 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:36:24,357 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:24,358 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:36:24,358 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:36:24,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:36:29,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:36:29,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:36:29,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:36:29,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:29,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:36:29,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:29,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:36:29,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:36:29,360 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:36:34,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:36:34,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:36:34,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:36:34,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:34,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:36:34,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:34,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:36:34,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:36:34,358 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:36:39,362 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:36:39,362 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:36:39,363 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:36:39,369 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:39,371 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:36:39,371 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:39,372 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:36:39,373 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:36:39,382 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:36:44,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:36:44,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:36:44,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:36:44,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:44,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:36:44,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:44,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:36:44,357 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:36:44,364 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:36:49,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:36:49,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:36:49,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:36:49,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:49,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:36:49,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:49,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:36:49,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:36:49,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:36:54,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:36:54,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:36:54,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:36:54,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:54,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:36:54,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:54,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:36:54,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:36:54,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:36:59,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:36:59,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:36:59,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:36:59,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:59,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:36:59,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:36:59,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:36:59,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:36:59,363 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:37:04,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:37:04,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:37:04,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:37:04,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:04,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:37:04,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:04,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:37:04,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:37:04,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:37:09,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:37:09,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:37:09,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:37:09,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:09,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:37:09,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:09,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:37:09,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:37:09,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:37:14,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:37:14,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:37:14,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:37:14,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:14,356 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:37:14,357 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:14,358 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:37:14,358 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:37:14,364 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:37:18,560 INFO b.h.a.PatientController User with the email doctor@hospital.com is attempting to get all patients.
+2021-06-14 11:37:18,562 INFO b.h.s.PatientService Getting all patients.
+2021-06-14 11:37:18,568 INFO b.h.s.PatientStatusService Getting all statuses by patient id 1
+2021-06-14 11:37:18,574 INFO b.h.s.PatientStatusService Getting all statuses by patient id 2
+2021-06-14 11:37:18,580 INFO b.h.s.PatientStatusService Getting all statuses by patient id 3
+2021-06-14 11:37:18,583 INFO b.h.s.PatientStatusService Getting all statuses by patient id 4
+2021-06-14 11:37:18,597 INFO b.h.s.PatientStatusService Getting all statuses by patient id 5
+2021-06-14 11:37:18,601 INFO b.h.s.PatientStatusService Getting all statuses by patient id 6
+2021-06-14 11:37:18,606 INFO b.h.s.PatientStatusService Getting all statuses by patient id 7
+2021-06-14 11:37:18,610 INFO b.h.s.PatientStatusService Getting all statuses by patient id 8
+2021-06-14 11:37:18,613 INFO b.h.s.PatientStatusService Getting all statuses by patient id 9
+2021-06-14 11:37:18,616 INFO b.h.s.PatientStatusService Getting all statuses by patient id 10
+2021-06-14 11:37:18,618 INFO b.h.a.PatientController Successfully retrieved all patients.
+2021-06-14 11:37:19,110 INFO b.h.a.PatientStatusController User with the email doctor@hospital.com is attempting to get all patient statuses.
+2021-06-14 11:37:19,110 INFO b.h.s.PatientStatusService Getting all patient statuses.
+2021-06-14 11:37:19,134 INFO b.h.a.PatientStatusController Successfully retrieved all patient statuses
+2021-06-14 11:37:19,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:37:19,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:37:19,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:37:19,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:19,355 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:37:19,356 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:19,357 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:37:19,357 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:37:19,368 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:37:24,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:37:24,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:37:24,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:37:24,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:24,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:37:24,356 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:24,357 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:37:24,357 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:37:24,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:37:29,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:37:29,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:37:29,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:37:29,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:29,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:37:29,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:29,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:37:29,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:37:29,360 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:37:34,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:37:34,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:37:34,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:37:34,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:34,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:37:34,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:34,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:37:34,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:37:34,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:37:39,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:37:39,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:37:39,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:37:39,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:39,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:37:39,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:39,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:37:39,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:37:39,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:37:44,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:37:44,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:37:44,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:37:44,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:44,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:37:44,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:44,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:37:44,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:37:44,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:37:49,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:37:49,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:37:49,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:37:49,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:49,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:37:49,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:49,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:37:49,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:37:49,360 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:37:54,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:37:54,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:37:54,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:37:54,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:54,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:37:54,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:54,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:37:54,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:37:54,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:37:59,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:37:59,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:37:59,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:37:59,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:59,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:37:59,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:37:59,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:37:59,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:37:59,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:38:04,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:38:04,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:38:04,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:38:04,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:04,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:38:04,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:04,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:38:04,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:38:04,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:38:09,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:38:09,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:38:09,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:38:09,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:09,355 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:38:09,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:09,357 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:38:09,357 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:38:09,366 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:38:14,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:38:14,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:38:14,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:38:14,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:14,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:38:14,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:14,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:38:14,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:38:14,360 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:38:19,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:38:19,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:38:19,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:38:19,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:19,356 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:38:19,357 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:19,358 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:38:19,358 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:38:19,366 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:38:24,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:38:24,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:38:24,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:38:24,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:24,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:38:24,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:24,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:38:24,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:38:24,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:38:29,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:38:29,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:38:29,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:38:29,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:29,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:38:29,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:29,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:38:29,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:38:29,366 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:38:34,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:38:34,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:38:34,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:38:34,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:34,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:38:34,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:34,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:38:34,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:38:34,363 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:38:39,352 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:38:39,352 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:38:39,352 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:38:39,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:39,359 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:38:39,362 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:39,363 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:38:39,363 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:38:39,373 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:38:44,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:38:44,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:38:44,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:38:44,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:44,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:38:44,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:44,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:38:44,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:38:44,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:38:49,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:38:49,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:38:49,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:38:49,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:49,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:38:49,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:49,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:38:49,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:38:49,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:38:54,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:38:54,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:38:54,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:38:54,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:54,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:38:54,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:54,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:38:54,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:38:54,363 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:38:59,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:38:59,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:38:59,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:38:59,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:59,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:38:59,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:38:59,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:38:59,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:38:59,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:39:04,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:39:04,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:39:04,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:39:04,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:04,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:39:04,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:04,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:39:04,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:39:04,360 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:39:09,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:39:09,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:39:09,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:39:09,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:09,355 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:39:09,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:09,357 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:39:09,357 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:39:09,366 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:39:14,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:39:14,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:39:14,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:39:14,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:14,356 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:39:14,357 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:14,358 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:39:14,358 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:39:14,363 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:39:19,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:39:19,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:39:19,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:39:19,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:19,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:39:19,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:19,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:39:19,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:39:19,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:39:24,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:39:24,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:39:24,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:39:24,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:24,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:39:24,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:24,351 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:39:24,351 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:39:24,357 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:39:29,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:39:29,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:39:29,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:39:29,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:29,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:39:29,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:29,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:39:29,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:39:29,363 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:39:34,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:39:34,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:39:34,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:39:34,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:34,356 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:39:34,357 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:34,360 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:39:34,360 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:39:34,372 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:39:39,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:39:39,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:39:39,359 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:39:39,362 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:39,368 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:39:39,370 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:39,373 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:39:39,375 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:39:39,406 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:39:44,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:39:44,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:39:44,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:39:44,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:44,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:39:44,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:44,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:39:44,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:39:44,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:39:49,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:39:49,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:39:49,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:39:49,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:49,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:39:49,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:49,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:39:49,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:39:49,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:39:54,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:39:54,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:39:54,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:39:54,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:54,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:39:54,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:54,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:39:54,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:39:54,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:39:59,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:39:59,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:39:59,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:39:59,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:59,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:39:59,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:39:59,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:39:59,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:39:59,360 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:40:04,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:40:04,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:40:04,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:40:04,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:04,355 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:40:04,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:04,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:40:04,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:40:04,363 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:40:09,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:40:09,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:40:09,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:40:09,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:09,355 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:40:09,356 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:09,357 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:40:09,357 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:40:09,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:40:14,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:40:14,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:40:14,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:40:14,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:14,355 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:40:14,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:14,357 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:40:14,357 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:40:14,368 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:40:19,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:40:19,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:40:19,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:40:19,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:19,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:40:19,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:19,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:40:19,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:40:19,360 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:40:24,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:40:24,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:40:24,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:40:24,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:24,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:40:24,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:24,357 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:40:24,357 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:40:24,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:40:29,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:40:29,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:40:29,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:40:29,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:29,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:40:29,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:29,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:40:29,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:40:29,360 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:40:34,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:40:34,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:40:34,352 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:40:34,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:34,356 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:40:34,357 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:34,358 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:40:34,358 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:40:34,367 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:40:39,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:40:39,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:40:39,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:40:39,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:39,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:40:39,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:39,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:40:39,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:40:39,360 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:40:44,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:40:44,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:40:44,352 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:40:44,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:44,356 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:40:44,356 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:44,357 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:40:44,357 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:40:44,360 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:40:49,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:40:49,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:40:49,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:40:49,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:49,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:40:49,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:49,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:40:49,352 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:40:49,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:40:54,353 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:40:54,354 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:40:54,354 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:40:54,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:54,358 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:40:54,359 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:54,359 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:40:54,360 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:40:54,367 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:40:59,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:40:59,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:40:59,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:40:59,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:59,351 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:40:59,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:40:59,352 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:40:59,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:40:59,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:41:04,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:41:04,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:41:04,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:41:04,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:04,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:41:04,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:04,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:41:04,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:41:04,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:41:09,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:41:09,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:41:09,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:41:09,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:09,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:41:09,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:09,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:41:09,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:41:09,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:41:14,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:41:14,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:41:14,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:41:14,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:14,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:41:14,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:14,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:41:14,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:41:14,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:41:19,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:41:19,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:41:19,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:41:19,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:19,357 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:41:19,359 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:19,363 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:41:19,364 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:41:19,397 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:41:24,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:41:24,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:41:24,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:41:24,350 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:24,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:41:24,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:24,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:41:24,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:41:24,362 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:41:29,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:41:29,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:41:29,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:41:29,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:29,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:41:29,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:29,356 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:41:29,356 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:41:29,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:41:34,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:41:34,350 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:41:34,350 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:41:34,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:34,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:41:34,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:34,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:41:34,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:41:34,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:41:39,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:41:39,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:41:39,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:41:39,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:39,353 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:41:39,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:39,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:41:39,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:41:39,358 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:41:44,350 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:41:44,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:41:44,352 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:41:44,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:44,354 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:41:44,354 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:44,355 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:41:44,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:41:44,369 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:41:49,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:41:49,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:41:49,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:41:49,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:49,355 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:41:49,355 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:49,357 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:41:49,357 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:41:49,365 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:41:54,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:41:54,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:41:54,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:41:54,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:54,368 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:41:54,368 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:54,369 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:41:54,369 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:41:54,397 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:41:59,351 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:41:59,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:41:59,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:41:59,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:59,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:41:59,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:41:59,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:41:59,355 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:41:59,361 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:42:04,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:42:04,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:42:04,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:42:04,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:42:04,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:42:04,353 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:42:04,354 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:42:04,354 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:42:04,359 INFO b.h.s.LogService Finished saving logs.
+2021-06-14 11:42:09,349 INFO b.h.s.LogService Parsing simulate logs
+2021-06-14 11:42:09,351 INFO b.h.s.LogService Parsing logs from files.
+2021-06-14 11:42:09,351 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-14 11:42:09,351 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:42:09,352 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-14 11:42:09,352 INFO b.h.l.LogParser Reading log file.
+2021-06-14 11:42:09,353 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-14 11:42:09,353 INFO b.h.s.LogService Saving logs.
+2021-06-14 11:42:09,360 INFO b.h.s.LogService Finished saving logs.

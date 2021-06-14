@@ -19,6 +19,7 @@ export class MessagesComponent implements OnInit {
 
   constructor(private messageService: MessagesService) {
     this.getAllMessages();
+    
   }
 
   ngOnInit(): void {
@@ -33,6 +34,7 @@ export class MessagesComponent implements OnInit {
     this.messageService.getMessages().toPromise().then( res => {
       this.dataSource = new MatTableDataSource<Message>(res);
       this.dataSource.paginator = this.paginator;
+      console.log(this.dataSource.data)
     })
   }
 

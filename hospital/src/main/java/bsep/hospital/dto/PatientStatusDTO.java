@@ -8,7 +8,7 @@ public class PatientStatusDTO {
 
     private String patient;
 
-    private LocalDateTime dateTime;
+    private String dateTime;
 
     private String type;
 
@@ -19,7 +19,7 @@ public class PatientStatusDTO {
     public PatientStatusDTO() {
     }
 
-    public PatientStatusDTO(String patient, LocalDateTime dateTime, String type, String message, boolean alarm) {
+    public PatientStatusDTO(String patient, String dateTime, String type, String message, boolean alarm) {
         this.patient = patient;
         this.dateTime = dateTime;
         this.type = type;
@@ -27,7 +27,7 @@ public class PatientStatusDTO {
         this.alarm = alarm;
     }
 
-    public PatientStatusDTO(int id, String patient, LocalDateTime dateTime, String type, String message, boolean alarm) {
+    public PatientStatusDTO(int id, String patient, String dateTime, String type, String message, boolean alarm) {
         this.id = id;
         this.patient = patient;
         this.dateTime = dateTime;
@@ -52,11 +52,11 @@ public class PatientStatusDTO {
         this.patient = patient;
     }
 
-    public LocalDateTime getDateTime() {
+    public String getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
+    public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
     }
 
