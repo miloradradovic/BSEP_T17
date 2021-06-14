@@ -80,16 +80,16 @@ public class PatientStatusController {
         return new ResponseEntity<>(patientStatusDTOS, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<List<PatientStatusDTO>> getAllPatientStatusByPatient(@PathVariable @Positive Integer id) {
+    @RequestMapping(value = "/{name}/{surname}", method = RequestMethod.GET)
+    public ResponseEntity<List<PatientStatusDTO>> getAllPatientStatusByPatient(@PathVariable String name, @PathVariable String surname) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         KeycloakPrincipal kcp = (KeycloakPrincipal) authentication.getPrincipal();
 
         KeycloakSecurityContext session = kcp.getKeycloakSecurityContext();
         AccessToken accessToken = session.getToken();
-        logger.info("User with the email " + accessToken.getEmail() + " is attempting to get all patient statuses for patient: " + id + ".");
+        logger.info("User with the email " + accessToken.getEmail() + " is attempting to get all patient statuses for patient: " + name + " " + surname + ".");
         List<PatientStatusDTO> patientStatusDTOS = new ArrayList<>();
-        List<PatientStatus> patientStatuses = patientStatusService.findAllByPatientId(id);
+        List<PatientStatus> patientStatuses = patientStatusService.findAllByPatientNameAndSurname(name, surname);
         for (PatientStatus patientStatus : patientStatuses) {
             patientStatusDTOS.add(new PatientStatusDTO(
                     patientStatus.getId(),
@@ -99,20 +99,20 @@ public class PatientStatusController {
                     patientStatus.getMessage(),
                     patientStatus.isAlarm()));
         }
-        logger.info("Successfully retrieved all patient statuses for patient: " + id + ".");
+        logger.info("Successfully retrieved all patient statuses for patient: " + name + " " + surname + ".");
         return new ResponseEntity<>(patientStatusDTOS, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/alarm/{id}", method = RequestMethod.GET)
-    public ResponseEntity<List<PatientStatusDTO>> getAllPatientStatusAlarmedByPatient(@PathVariable @Positive Integer id) {
+    @RequestMapping(value = "/alarm/{name}/{surname}", method = RequestMethod.GET)
+    public ResponseEntity<List<PatientStatusDTO>> getAllPatientStatusAlarmedByPatient(@PathVariable String name, @PathVariable String surname) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         KeycloakPrincipal kcp = (KeycloakPrincipal) authentication.getPrincipal();
 
         KeycloakSecurityContext session = kcp.getKeycloakSecurityContext();
         AccessToken accessToken = session.getToken();
-        logger.info("User with the email " + accessToken.getEmail() + " is attempting to get all patient alarms for patient: " + id + ".");
+        logger.info("User with the email " + accessToken.getEmail() + " is attempting to get all patient alarms for patient: " + name + " " + surname + ".");
         List<PatientStatusDTO> patientStatusDTOS = new ArrayList<>();
-        List<PatientStatus> patientStatuses = patientStatusService.findAllByAlarmAndPatientId(id);
+        List<PatientStatus> patientStatuses = patientStatusService.findAllByAlarmAndPatientNameOrSurname(name, surname);
         for (PatientStatus patientStatus : patientStatuses) {
             patientStatusDTOS.add(new PatientStatusDTO(
                     patientStatus.getId(),
@@ -122,7 +122,7 @@ public class PatientStatusController {
                     patientStatus.getMessage(),
                     patientStatus.isAlarm()));
         }
-        logger.info("Successfully retrieved all patient alarms: " + id + ".");
+        logger.info("Successfully retrieved all patient alarms: " + name + " " + surname + ".");
         return new ResponseEntity<>(patientStatusDTOS, HttpStatus.OK);
     }
 }
