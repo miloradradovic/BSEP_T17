@@ -13,16 +13,22 @@ import com.google.gson.reflect.TypeToken;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.javatuples.Pair;
+import org.kie.api.runtime.ClassObjectFilter;
+import org.kie.api.runtime.KieSession;
+import org.kie.api.runtime.rule.FactHandle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ResourceUtils;
 
-import java.io.*;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -33,6 +39,9 @@ public class LogService {
 
     @Autowired
     private LogParser logParser;
+
+    @Autowired
+    KieSession kieSession;
 
     private static Logger logger = LogManager.getLogger(LogService.class);
 
@@ -49,7 +58,7 @@ public class LogService {
 
     public void save(List<LogModel> logModels) {
         logger.info("Saving logs.");
-        for (LogModel logModel: logModels) {
+        for (LogModel logModel : logModels) {
             logRepository.save(logModel);
         }
         logger.info("Finished saving logs.");
@@ -58,6 +67,11 @@ public class LogService {
     public List<LogModel> findAll() {
         logger.info("Getting all logs from database.");
         return logRepository.findAll();
+    }
+
+    public List<LogModel> findAllByAlarm() {
+        logger.info("Getting all alarmed logs from database.");
+        return logRepository.findAllByAlarm(true);
     }
 
     @Scheduled(fixedRate = 5000)
@@ -74,7 +88,23 @@ public class LogService {
 
         parsedAppLogs.addAll(parsedKeyCloakLogs);
         logger.info("Successfully parsed logs from files.");
-        save(parsedAppLogs);
+
+
+        for (LogModel log : parsedAppLogs) {
+            kieSession.insert(log);
+        }
+
+        kieSession.getAgenda().getAgendaGroup("admin-rules").setFocus();
+        kieSession.fireAllRules();
+
+        Collection<LogModel> newEvents = (Collection<LogModel>) kieSession.getObjects(new ClassObjectFilter(LogModel.class));
+
+        ArrayList<LogModel> newParsedAppLogs = new ArrayList<>(newEvents);
+        Collection<FactHandle> handlers = kieSession.getFactHandles();
+        for (FactHandle handle : handlers) {
+            kieSession.delete(handle);
+        }
+        save(newParsedAppLogs);
     }
 
     @Scheduled(fixedRate = 5000)
@@ -83,7 +113,7 @@ public class LogService {
         try {
             logger.info("Parsing simulate logs");
             List<LogConfig> configs = getLogModelsFromConfig();
-            for (LogConfig logConfig: configs) {
+            for (LogConfig logConfig : configs) {
                 readSimulatorLogs(logConfig);
                 Thread.sleep(logConfig.getDuration() * 1000);
             }
@@ -98,10 +128,26 @@ public class LogService {
         try {
             Pair<List<LogModel>, Integer> parsed = logParser.parseSimulatorLogs(logConfig);
             parsedLogs = parsed.getValue0();
-            // TODO romana ovdje su ti logovi :)
+
+
+            for (LogModel log : parsedLogs) {
+                kieSession.insert(log);
+            }
+
+            kieSession.getAgenda().getAgendaGroup("admin-rules").setFocus();
+            kieSession.fireAllRules();
+
+            Collection<LogModel> newEvents = (Collection<LogModel>) kieSession.getObjects(new ClassObjectFilter(LogModel.class));
+
+            ArrayList<LogModel> newParsedLogs = new ArrayList<>(newEvents);
+            Collection<FactHandle> handlers = kieSession.getFactHandles();
+            for (FactHandle handle : handlers) {
+                kieSession.delete(handle);
+            }
+
             logConfig.setCurrentRow(parsed.getValue1());
             saveConfig(logConfig);
-            save(parsedLogs);
+            save(newParsedLogs);
             logger.info("Finished parsing simulator logs.");
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -112,7 +158,7 @@ public class LogService {
         try {
             List<LogConfig> configs = getLogModelsFromConfig();
             boolean found = false;
-            for (LogConfig logConfig1: configs) {
+            for (LogConfig logConfig1 : configs) {
                 if (logConfig1.getPath().equals(logConfig.getPath())) {
                     found = true;
                     logConfig1.setRegexp(logConfig.getRegexp());
@@ -134,7 +180,8 @@ public class LogService {
     private List<LogConfig> getLogModelsFromConfig() {
         try {
             Gson gson = new Gson();
-            return gson.fromJson(new FileReader(pathToConfigJson), new TypeToken<ArrayList<LogConfig>>(){}.getType());
+            return gson.fromJson(new FileReader(pathToConfigJson), new TypeToken<ArrayList<LogConfig>>() {
+            }.getType());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -145,7 +192,7 @@ public class LogService {
         try {
             List<LogConfig> configs = getLogModelsFromConfig();
             boolean found = false;
-            for (LogConfig logConfig1: configs) {
+            for (LogConfig logConfig1 : configs) {
                 if (logConfig1.getPath().equals(logConfig.getPath())) {
                     found = true;
                     logConfig1.setRegexp(logConfig.getRegexp());
@@ -164,7 +211,7 @@ public class LogService {
     }
 
     private void writeToConfigFile(List<LogConfig> configs) {
-        try{
+        try {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             Writer configWriter = new FileWriter(pathToConfigJson);
             gson.toJson(configs, configWriter);
@@ -193,19 +240,19 @@ public class LogService {
         if (filterParams.getLogType().equals("") && filterParams.getLogSource().equals("")) {
             return byDate;
         } else if (filterParams.getLogType().equals("") && !filterParams.getLogSource().equals("")) {
-            for (LogModel logModel: byDate) {
+            for (LogModel logModel : byDate) {
                 if (logModel.getLogSource().toString().matches(filterParams.getLogSource())) {
                     filtered.add(logModel);
                 }
             }
         } else if (!filterParams.getLogType().equals("") && filterParams.getLogSource().equals("")) {
-            for (LogModel logModel: byDate) {
+            for (LogModel logModel : byDate) {
                 if (logModel.getLevel().toString().matches(filterParams.getLogType())) {
                     filtered.add(logModel);
                 }
             }
         } else {
-            for (LogModel logModel: byDate) {
+            for (LogModel logModel : byDate) {
                 if (logModel.getLevel().toString().matches(filterParams.getLogType()) && logModel.getLogSource().toString().matches(filterParams.getLogSource())) {
                     filtered.add(logModel);
                 }

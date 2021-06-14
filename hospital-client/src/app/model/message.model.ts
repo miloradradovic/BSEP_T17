@@ -6,3 +6,4 @@ export interface Message {
     message: String,
     alarm: boolean
 }
+

@@ -14,4 +14,6 @@ public interface LogRepository extends MongoRepository<LogModel, ObjectId> {
     long countByLogTimeBetween(LocalDateTime date1, LocalDateTime date2);
     int countByLevelAndLogTimeBetween(LogType logType, LocalDateTime date1, LocalDateTime date2);
     List<LogModel> findByLogTimeBetween(LocalDateTime date1, LocalDateTime date2);
+
+    List<LogModel> findAllByAlarm(boolean alarm);
 }

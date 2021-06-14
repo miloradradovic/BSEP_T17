@@ -1,9 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Message } from 'src/app/model/message.model';
 import { PatientModel } from 'src/app/model/patient.model';
 import { MessagesService } from 'src/app/services/messages/messages.service';
+import { RulesService } from 'src/app/services/rules/rules.service';
+
+
 
 @Component({
   selector: 'app-messages',
@@ -12,12 +17,43 @@ import { MessagesService } from 'src/app/services/messages/messages.service';
 })
 export class MessagesComponent implements OnInit {
 
-  displayedColumns: string[] = ['patient', 'dateTime', 'type', 'message', 'alarm'];
+  types: String[] = ['A_POSITIVE',
+  'A_NEGATIVE',
+  'B_POSITIVE',
+  'B_NEGATIVE',
+  'AB_POSITIVE',
+  'AB_NEGATIVE',
+  'O_POSITIVE',
+  'O_NEGATIVE']
+
+  operations: String[] = ['==',
+  '!=',
+  '<=',
+  '>=',
+  '<',
+  '>']
+
+  displayedColumns: string[] = ['patient', 'dateTime', 'type', 'alarm'];
   dataSource: MatTableDataSource<Message>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   alarms: boolean = false;
+  searchForm: FormGroup;
+  alarmForm: FormGroup;
 
-  constructor(private messageService: MessagesService) {
+  constructor(private messageService: MessagesService, private fb: FormBuilder, private ruleService: RulesService, private _snackBar: MatSnackBar) {
+    this.searchForm = fb.group({
+      'name': [""],
+      'surname': [""]
+    });
+
+    this.alarmForm = fb.group({
+      'ruleName': [""],
+      'patient': [""],
+      'type': [null],
+      'value': [""],
+      'operation': [""]
+
+    })
     this.getAllMessages();
     
   }
@@ -27,7 +63,7 @@ export class MessagesComponent implements OnInit {
 
   onCheckboxChange(){
     this.alarms = !this.alarms;
-    this.alarms ? this.getAllAlarms() : this.getAllMessages();
+    this.search();
   }
 
   getAllMessages(){
@@ -42,6 +78,49 @@ export class MessagesComponent implements OnInit {
     this.messageService.getAlarms().toPromise().then( res => {
       this.dataSource = new MatTableDataSource<Message>(res);
       this.dataSource.paginator = this.paginator;
+    })
+  }
+
+  showMessage(row){
+    confirm(row.message);
+  }
+
+  search(){
+    if(this.searchForm.controls['name']?.value === "" && this.searchForm.controls['surname']?.value === "") {
+      this.alarms ? this.getAllAlarms() : this.getAllMessages();
+      return;
+    }
+   
+    if(this.alarms){
+      this.messageService.getAlarmsByPatient(this.searchForm.controls['name']?.value || "null", this.searchForm.controls['surname']?.value || "null").toPromise().then( res => {
+        this.dataSource = new MatTableDataSource<Message>(res);
+        this.dataSource.paginator = this.paginator;
+      })
+    }
+    else{
+      this.messageService.getMessagesByPatient(this.searchForm.controls['name']?.value  || "null", this.searchForm.controls['surname']?.value || "null").toPromise().then( res => {
+        this.dataSource = new MatTableDataSource<Message>(res);
+        this.dataSource.paginator = this.paginator;
+      })
+    }
+  }
+
+  typeChanged(value){
+    this.alarmForm.controls['type'].patchValue(value);
+    console.log(this.alarmForm.controls['type'].value)
+  }
+
+  operationChanged(value){
+    this.alarmForm.controls['operation'].patchValue(value);
+    console.log(this.alarmForm.controls['operation'].value)
+  }
+
+  addRule(){
+    this.ruleService.addDoctorRule(this.alarmForm.value).toPromise().then( res => {
+      this._snackBar.open("Rule successfully added.", "Close");
+      this.alarmForm.reset();
+    }, err => {
+      this._snackBar.open("Something went wrong: " + err.message, "Close");
     })
   }
 

@@ -18,5 +18,8 @@ export class MessagesService {
 
   getAlarms= () => this.http.get<Message[]>(this.baseUrl + "/alarm");
 
+  getMessagesByPatient = (name: String, surname: String) => this.http.get<Message[]>(this.baseUrl + "/" + name + "/" + surname);
+
+  getAlarmsByPatient = (name: String, surname: String) => this.http.get<Message[]>(this.baseUrl + "/alarm" + "/" + name + "/" + surname);
 
 }
