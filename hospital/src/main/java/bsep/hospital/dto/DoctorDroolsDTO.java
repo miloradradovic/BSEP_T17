@@ -1,19 +1,19 @@
 package bsep.hospital.dto;
 
-public class DoctorRuleDTO {
+public class DoctorDroolsDTO {
 
     private String ruleName;
-    private String patient; // name surname -> id
-    private String type; // enum
+    private Integer patientId;
+    private String type;
     private double value;
-    private String operation; // == != <= >= < >
+    private String operation;
 
-    public DoctorRuleDTO() {
+    public DoctorDroolsDTO() {
     }
 
-    public DoctorRuleDTO(String ruleName, String patient, String type, double value, String operation) {
+    public DoctorDroolsDTO(String ruleName, Integer patientId, String type, double value, String operation) {
         this.ruleName = ruleName;
-        this.patient = patient;
+        this.patientId = patientId;
         this.type = type;
         this.value = value;
         this.operation = operation;
@@ -27,12 +27,12 @@ public class DoctorRuleDTO {
         this.ruleName = ruleName;
     }
 
-    public String getPatient() {
-        return patient;
+    public Integer getPatientId() {
+        return patientId;
     }
 
-    public void setPatient(String patient) {
-        this.patient = patient;
+    public void setPatientId(Integer patientId) {
+        this.patientId = patientId;
     }
 
     public String getType() {

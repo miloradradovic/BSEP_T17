@@ -1,4 +1,4 @@
-template header
+/*template header
 ruleName
 level
 message
@@ -26,4 +26,4 @@ rule "@{ruleName}"
        }
 end
 
-end template
+end template*/

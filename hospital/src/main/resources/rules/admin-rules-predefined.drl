@@ -5,16 +5,13 @@ import java.util.List;
 
 
 
-rule "@{ruleName}"
+rule "RuleTest"
         no-loop true
     when
-        $p: Patient($patId: id, id == @{patientId});
-        $ps: PatientStatus($pat: patient, $pat.id == $patId, $t:type, $t.toString() == "@{type}", $val: getValue(), $val @{operation} @{value} );
+        $lm: LogModel();
 
     then
-       modify( $ps ){
+       modify( $lm ){
            setAlarm(true)
        }
 end
-
-end template
