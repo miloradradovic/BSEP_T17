@@ -12,4 +12,5 @@ public interface PatientStatusRepository extends JpaRepository<PatientStatus, In
 
     List<PatientStatus> findAllByAlarm(boolean alarm);
     List<PatientStatus> findAllByPatient_Id(int patientId);
+    List<PatientStatus> findAllByAlarmAndPatient_Id(boolean alarm, int patientId);
 }

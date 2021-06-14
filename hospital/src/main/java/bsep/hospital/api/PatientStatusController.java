@@ -1,7 +1,5 @@
 package bsep.hospital.api;
 
-import java.time.format.DateTimeFormatter;
-
 import bsep.hospital.dto.PatientStatusDTO;
 import bsep.hospital.model.PatientStatus;
 import bsep.hospital.service.PatientStatusService;
@@ -16,11 +14,10 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.Positive;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,6 +77,52 @@ public class PatientStatusController {
                     patientStatus.isAlarm()));
         }
         logger.info("Successfully retrieved all patient alarms.");
+        return new ResponseEntity<>(patientStatusDTOS, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public ResponseEntity<List<PatientStatusDTO>> getAllPatientStatusByPatient(@PathVariable @Positive Integer id) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        KeycloakPrincipal kcp = (KeycloakPrincipal) authentication.getPrincipal();
+
+        KeycloakSecurityContext session = kcp.getKeycloakSecurityContext();
+        AccessToken accessToken = session.getToken();
+        logger.info("User with the email " + accessToken.getEmail() + " is attempting to get all patient statuses for patient: " + id + ".");
+        List<PatientStatusDTO> patientStatusDTOS = new ArrayList<>();
+        List<PatientStatus> patientStatuses = patientStatusService.findAllByPatientId(id);
+        for (PatientStatus patientStatus : patientStatuses) {
+            patientStatusDTOS.add(new PatientStatusDTO(
+                    patientStatus.getId(),
+                    patientStatus.getPatient().getName() + " " + patientStatus.getPatient().getSurname(),
+                    patientStatus.getDateTime().format(formatter),
+                    patientStatus.getType().toString(),
+                    patientStatus.getMessage(),
+                    patientStatus.isAlarm()));
+        }
+        logger.info("Successfully retrieved all patient statuses for patient: " + id + ".");
+        return new ResponseEntity<>(patientStatusDTOS, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/alarm/{id}", method = RequestMethod.GET)
+    public ResponseEntity<List<PatientStatusDTO>> getAllPatientStatusAlarmedByPatient(@PathVariable @Positive Integer id) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        KeycloakPrincipal kcp = (KeycloakPrincipal) authentication.getPrincipal();
+
+        KeycloakSecurityContext session = kcp.getKeycloakSecurityContext();
+        AccessToken accessToken = session.getToken();
+        logger.info("User with the email " + accessToken.getEmail() + " is attempting to get all patient alarms for patient: " + id + ".");
+        List<PatientStatusDTO> patientStatusDTOS = new ArrayList<>();
+        List<PatientStatus> patientStatuses = patientStatusService.findAllByAlarmAndPatientId(id);
+        for (PatientStatus patientStatus : patientStatuses) {
+            patientStatusDTOS.add(new PatientStatusDTO(
+                    patientStatus.getId(),
+                    patientStatus.getPatient().getName() + " " + patientStatus.getPatient().getSurname(),
+                    patientStatus.getDateTime().format(formatter),
+                    patientStatus.getType().toString(),
+                    patientStatus.getMessage(),
+                    patientStatus.isAlarm()));
+        }
+        logger.info("Successfully retrieved all patient alarms: " + id + ".");
         return new ResponseEntity<>(patientStatusDTOS, HttpStatus.OK);
     }
 }
