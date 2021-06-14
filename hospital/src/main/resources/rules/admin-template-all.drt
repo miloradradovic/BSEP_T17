@@ -8,7 +8,7 @@ package rules;
 import bsep.hospital.logging.LogModel;
 import java.util.List;
 
-template "admin-template"
+template "admin-template-all"
 
 
 rule "@{ruleName}"
