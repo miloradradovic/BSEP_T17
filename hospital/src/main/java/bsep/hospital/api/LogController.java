@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -30,8 +31,7 @@ public class LogController {
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-    // pretrage od do tip regex
-
+    // @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "/get-logs", method = RequestMethod.GET)
     public ResponseEntity<?> getLogs() {
         List<LogModel> logs = logService.findAll();
@@ -42,6 +42,7 @@ public class LogController {
         return new ResponseEntity<>(logDTOS, HttpStatus.OK);
     }
 
+    // @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "/get-logs/alarm", method = RequestMethod.GET)
     public ResponseEntity<?> getAlarmedLogs() {
         List<LogModel> logs = logService.findAllByAlarm();
@@ -52,6 +53,7 @@ public class LogController {
         return new ResponseEntity<>(logDTOS, HttpStatus.OK);
     }
 
+    // @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "/filter-logs", method = RequestMethod.POST)
     public ResponseEntity<?> filterLogs(@RequestBody FilterParamsDTO filterParamsDTO) {
         LocalDateTime ldcFrom = null;

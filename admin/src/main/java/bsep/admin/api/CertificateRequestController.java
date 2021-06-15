@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.Positive;
@@ -79,6 +80,7 @@ public class CertificateRequestController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
+    // @PreAuthorize("hasAuthority('SUPER_ADMIN')")
     public ResponseEntity<List<CerRequestInfoDTO>> getCertificateRequests() {
 
         logger.info("Attempting to get certificate requests.");
@@ -89,6 +91,7 @@ public class CertificateRequestController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    // @PreAuthorize("hasAuthority('SUPER_ADMIN')")
     public ResponseEntity<?> removeCertificateRequest(@PathVariable @Positive Integer id) {
 
         logger.info("Attempting to remove certificate request with id " + id.toString());

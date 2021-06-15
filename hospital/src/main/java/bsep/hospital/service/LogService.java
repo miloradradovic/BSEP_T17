@@ -236,7 +236,18 @@ public class LogService {
     public List<LogModel> filterLogs(FilterParams filterParams) {
 
         List<LogModel> filtered = new ArrayList<>();
-        List<LogModel> byDate = logRepository.findByLogTimeBetween(filterParams.getDateFrom(), filterParams.getDateTo());
+        List<LogModel> byDate = new ArrayList<>();
+        boolean emptyByDate = false;
+        if (filterParams.getDateFrom() == null && filterParams.getDateTo() != null) {
+            byDate = logRepository.findByLogTimeBefore(filterParams.getDateTo());
+        } else if (filterParams.getDateFrom() != null && filterParams.getDateTo() == null) {
+            byDate = logRepository.findByLogTimeAfter(filterParams.getDateFrom());
+        } else if (filterParams.getDateFrom() == null && filterParams.getDateTo() == null) {
+            byDate = findAll();
+        } else { // both != null
+            byDate = logRepository.findByLogTimeBetween(filterParams.getDateFrom(), filterParams.getDateTo());
+        }
+
         if (filterParams.getLogType().equals("") && filterParams.getLogSource().equals("")) {
             return byDate;
         } else if (filterParams.getLogType().equals("") && !filterParams.getLogSource().equals("")) {
