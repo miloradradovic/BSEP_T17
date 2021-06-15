@@ -2,6 +2,7 @@ package bsep.hospital.api;
 
 
 import bsep.device.model.PatientMessage;
+import bsep.hospital.logging.IPAddress;
 import bsep.hospital.model.Patient;
 import bsep.hospital.model.PatientStatus;
 import bsep.hospital.service.PatientService;
@@ -65,8 +66,11 @@ public class DeviceController {
 
 
             Collection<FactHandle> handlers = kieSession.getFactHandles();
-            for (FactHandle handle: handlers) {
-                kieSession.delete(handle);
+            for (FactHandle handle : handlers) {
+                Object obj = kieSession.getObject(handle);
+
+                if(obj.getClass() != IPAddress.class)
+                    kieSession.delete(handle);
             }
             patientStatusService.saveOne(patientStatus);
             logger.info("Successfully saved patient status.");

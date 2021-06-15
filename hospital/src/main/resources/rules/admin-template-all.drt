@@ -15,7 +15,7 @@ rule "@{ruleName}"
         no-loop true
         agenda-group "admin-rules"
     when
-        $lm: LogModel($l: level.toString() == "@{levelInput}", $m: message contains "@{messageInput}");
+        $lm: LogModel($l: level, $l.toString() == "@{levelInput}", $m: message contains "@{messageInput}");
     then
        modify( $lm ){
            setAlarm(true)

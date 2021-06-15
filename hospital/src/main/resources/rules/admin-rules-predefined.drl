@@ -2,17 +2,31 @@ package rules;
 
 import bsep.hospital.logging.LogModel;
 import bsep.hospital.logging.LogType;
+import bsep.hospital.logging.IPAddress;
 import java.util.List;
 
 
-/*
-rule "RuleTest"
+rule "Level type is Error"
         agenda-group "admin-rules"
         no-loop true
     when
-        $lm: LogModel($l: level.toString() == LogType.INFO.toString(), $m: message contains "message");
+        $lm: LogModel($l: level, $l.toString() == LogType.ERROR.toString());
     then
        modify( $lm ){
            setAlarm(true)
        }
-end*/
+end
+
+
+rule "Malicious IP address"
+        agenda-group "admin-rules"
+        no-loop true
+    when
+        $ips: List() from collect (IPAddress());
+        $lm: LogModel($ip: ip, $ips contains $ip);
+
+    then
+       modify( $lm ){
+           setAlarm(true)
+       }
+end

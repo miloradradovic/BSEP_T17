@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -43,6 +44,7 @@ public class RulesController {
 
     private static Logger logger = LogManager.getLogger(RulesController.class);
 
+    // @PreAuthorize("hasAuthority('DOCTOR')")
     @RequestMapping(value = "doctor-rule", method = RequestMethod.POST)
     public ResponseEntity<?> createDoctorRule(@RequestBody DoctorRuleDTO ruleDTO) {
         try {
@@ -89,6 +91,7 @@ public class RulesController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    // @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "admin-rule", method = RequestMethod.POST)
     public ResponseEntity<?> createAdminRule(@RequestBody AdminRuleDTO ruleDTO) {
         try {
@@ -128,21 +131,29 @@ public class RulesController {
 
     private String doctorChooseTemplate(DoctorRuleDTO ruleDTO) {
         String path = "../hospital/src/main/resources/rules/doctor-template-all.drt";
-        if (ruleDTO.getPatient().equals("") && ruleDTO.getBloodType().equals("")) {
-            path = "../hospital/src/main/resources/rules/doctor-template-without-patient.drt";
-        } else if (ruleDTO.getPatient().equals("") && !ruleDTO.getBloodType().equals("")) {
-            path = "../hospital/src/main/resources/rules/doctor-template-without-patientId.drt";
-        } else if (!ruleDTO.getPatient().equals("") && ruleDTO.getBloodType().equals("")) {
-            path = "../hospital/src/main/resources/rules/doctor-template-without-bloodType.drt";
-        } else if ((ruleDTO.getMessageType().equals("") || ruleDTO.getValue() != -1) && !ruleDTO.getPatient().equals("") && !ruleDTO.getBloodType().equals("")) {
+
+        if ((ruleDTO.getMessageType().equals("") || ruleDTO.getValue() == -1) && !ruleDTO.getPatient().equals("") && !ruleDTO.getBloodType().equals("")) {
             path = "../hospital/src/main/resources/rules/doctor-template-without-status.drt";
-        } else if ((ruleDTO.getMessageType().equals("") || ruleDTO.getValue() != -1) && !ruleDTO.getPatient().equals("") && ruleDTO.getBloodType().equals("")) {
+        }
+        else if ((ruleDTO.getMessageType().equals("") || ruleDTO.getValue() == -1) && !ruleDTO.getPatient().equals("") && ruleDTO.getBloodType().equals("")) {
             path = "../hospital/src/main/resources/rules/doctor-template-without-status-bloodType.drt";
-        } else if ((ruleDTO.getMessageType().equals("") || ruleDTO.getValue() != -1) && ruleDTO.getPatient().equals("") && !ruleDTO.getBloodType().equals("")) {
+        }
+        else if ((ruleDTO.getMessageType().equals("") || ruleDTO.getValue() == -1) && ruleDTO.getPatient().equals("") && !ruleDTO.getBloodType().equals("")) {
             path = "../hospital/src/main/resources/rules/doctor-template-without-status-id.drt";
-        } else if ((ruleDTO.getMessageType().equals("") || ruleDTO.getValue() != -1) && ruleDTO.getPatient().equals("") && ruleDTO.getBloodType().equals("")) {
+        }
+        else if ((ruleDTO.getMessageType().equals("") || ruleDTO.getValue() == -1) && ruleDTO.getPatient().equals("") && ruleDTO.getBloodType().equals("")) {
             path = "../hospital/src/main/resources/rules/doctor-template-without-all.drt";
         }
+        else if (ruleDTO.getPatient().equals("") && ruleDTO.getBloodType().equals("")) {
+            path = "../hospital/src/main/resources/rules/doctor-template-without-patient.drt";
+        }
+        else if (ruleDTO.getPatient().equals("") && !ruleDTO.getBloodType().equals("")) {
+            path = "../hospital/src/main/resources/rules/doctor-template-without-patientId.drt";
+        }
+        else if (!ruleDTO.getPatient().equals("") && ruleDTO.getBloodType().equals("")) {
+            path = "../hospital/src/main/resources/rules/doctor-template-without-bloodType.drt";
+        }
+
         return path;
     }
 
@@ -150,9 +161,11 @@ public class RulesController {
         String path = "../hospital/src/main/resources/rules/admin-template-all.drt";
         if (ruleDTO.getLevelInput().equals("") && !ruleDTO.getMessageInput().equals("")) {
             path = "../hospital/src/main/resources/rules/admin-template-without-message.drt";
-        } else if (!ruleDTO.getLevelInput().equals("") && ruleDTO.getMessageInput().equals("")) {
+        }
+        else if (!ruleDTO.getLevelInput().equals("") && ruleDTO.getMessageInput().equals("")) {
             path = "../hospital/src/main/resources/rules/admin-template-without-level.drt";
-        } else if (ruleDTO.getLevelInput().equals("") && ruleDTO.getMessageInput().equals("")) {
+        }
+        else if (ruleDTO.getLevelInput().equals("") && ruleDTO.getMessageInput().equals("")) {
             path = "../hospital/src/main/resources/rules/admin-template-without-all.drt";
         }
         return path;

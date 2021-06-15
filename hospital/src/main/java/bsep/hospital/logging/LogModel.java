@@ -1,13 +1,17 @@
 package bsep.hospital.logging;
 
 import org.bson.types.ObjectId;
+import org.kie.api.definition.type.Role;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Document
-public class LogModel {
+@Role(Role.Type.EVENT)
+public class LogModel  implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     private ObjectId id;
