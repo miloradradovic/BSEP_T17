@@ -46,7 +46,7 @@ public class UserController {
             logger.info("User with the email " + accessToken.getEmail() + " successfully retrieved user data.");
             return new ResponseEntity<>(dto,HttpStatus.OK);
         } else {
-            logger.warn("Currently logged user couldn't retrieve user data because access token is null.");
+            logger.error("Currently logged user couldn't retrieve user data because access token is null.");
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }

@@ -10,6 +10,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.time.ZoneId;
 
@@ -21,11 +23,20 @@ public class ReportController {
     @Autowired
     private LogService logService;
 
+    private static Logger logger = LogManager.getLogger(ReportController.class);
+
     // @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Report> getLogReport(@RequestBody ReportParams reportParams) {
-        Report report = logService.getReport(reportParams.getFrom().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime(),
-                                             reportParams.getTo().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime());
-        return new ResponseEntity<>(report, HttpStatus.OK);
+        logger.info("Attempting to get report.");
+        try {
+            Report report = logService.getReport(reportParams.getFrom().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime(),
+                    reportParams.getTo().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime());
+            logger.info("Successfully generated and retrieved the report.");
+            return new ResponseEntity<>(report, HttpStatus.OK);
+        } catch (Exception e) {
+            logger.error("Failed to generate and retrieve the report.");
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
     }
 }
