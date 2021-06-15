@@ -3,15 +3,16 @@ from datetime import datetime
 import time
 
 log_types = ["INFO", "ERROR", "WARN", "TRACE"]
-files = ["simulator_logs1.log", "simulator_logs2.log", "simulator_logs3.log", "simulator_logs4.log", "simulator_logs5.log"]
-states = ["no_attack", "error", "brute_force", "dangerous_ip", "dos"]
+files = ["../hospital/src/main/resources/simulatedlogs/simulator_logs1.log", "../hospital/src/main/resources/simulatedlogs/simulator_logs2.log", "../hospital/src/main/resources/simulatedlogs/simulator_logs3.log", "../hospital/src/main/resources/simulatedlogs/simulator_logs4.log", "../hospital/src/main/resources/simulatedlogs/simulator_logs5.log"]
+states = ["no_attack", "error", "brute_force", "dangerous_ip", "dos", "no_login_same_ip"]
 dangerous_ips = []
 
 def read_from_file():
-    f = open("dangerous_ips.txt", "r")
+    f = open("../hospital/src/main/resources/dangerous_ips.txt", "r")
     for line in f:
         if line.rstrip() != "":
             dangerous_ips.append(line.rstrip())
+    f.close()
 
 class LogGenerator:
     def __init__(self, type):
@@ -20,6 +21,7 @@ class LogGenerator:
     def generate_logs(self):
 
         while True:
+            read_from_file()
             print("Starting generating for type " + self.type)
             if self.type == "no_attack":
                 self.generate_no_attack()
@@ -29,6 +31,8 @@ class LogGenerator:
                 self.generate_brute_force()
             elif self.type == "dangerous_ip":
                 self.generate_dangerous_ip()
+            elif self.type == "no_login_same_ip":
+                self.generate_no_login_same_ip()
             else:  # dos
                 self.generate_dos()
             print("Finished generating for type " + self.type)
@@ -75,11 +79,19 @@ class LogGenerator:
             f.write(dos_log + "\n")
         f.close()
 
+    def generate_no_login_same_ip(self):
+        f = open(random.choice(files), "a")
+        date_now = datetime.now()
+        for i in range(31):
+            dos_log = date_now.strftime(
+                "%Y-%m-%d %H:%M:%S") + " WARN 11.11.11.11 logged@admin.com Login unsuccessful."
+            f.write(dos_log + "\n")
+        f.close()
+
 def generate_next_random_type():
     random_state = random.choice(states)
     return random_state
 
 if __name__ == '__main__':
-    read_from_file()
     log_generator = LogGenerator("no_attack")
     log_generator.generate_logs()

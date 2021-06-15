@@ -20,7 +20,7 @@ public class LogConfigController {
     @Autowired
     private LogConfigService logConfigService;
 
-    @PreAuthorize("hasAuthority('SUPER_ADMIN')")
+    // @PreAuthorize("hasAuthority('SUPER_ADMIN')")
     @RequestMapping(value = "/send-log-config", method = RequestMethod.POST)
     public ResponseEntity<?> sendLogConfig(@RequestBody LogConfig logConfig) {
         if (logConfigService.sendLogConfig(logConfig)) {

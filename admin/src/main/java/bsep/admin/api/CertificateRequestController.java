@@ -80,7 +80,7 @@ public class CertificateRequestController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    @PreAuthorize("hasAuthority('SUPER_ADMIN')")
+    // @PreAuthorize("hasAuthority('SUPER_ADMIN')")
     public ResponseEntity<List<CerRequestInfoDTO>> getCertificateRequests() {
 
         logger.info("Attempting to get certificate requests.");
@@ -91,7 +91,7 @@ public class CertificateRequestController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    @PreAuthorize("hasAuthority('SUPER_ADMIN')")
+    // @PreAuthorize("hasAuthority('SUPER_ADMIN')")
     public ResponseEntity<?> removeCertificateRequest(@PathVariable @Positive Integer id) {
 
         logger.info("Attempting to remove certificate request with id " + id.toString());
@@ -104,7 +104,6 @@ public class CertificateRequestController {
     }
 
     @RequestMapping(value = "/send-certificate-revocation-request/{email}", method = RequestMethod.POST)
-    // @PreAuthorize("hasAuthority('SUPER_ADMIN')")
     public ResponseEntity<?> saveCertificateRevocationRequest(@PathVariable String email) {
         try {
             logger.info("Attempting to verify certificate by email.");
@@ -125,7 +124,6 @@ public class CertificateRequestController {
     }
 
     @RequestMapping(value = "/check-certificate-valid/{email}", method = RequestMethod.GET)
-    // @PreAuthorize("hasAuthority('SUPER_ADMIN')")
     public ResponseEntity<?> checkCertificateValid(@PathVariable String email) {
         try {
             logger.info("Attempting to create certificate revocation request.");

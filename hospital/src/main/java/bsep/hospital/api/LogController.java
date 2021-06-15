@@ -31,7 +31,7 @@ public class LogController {
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-    @PreAuthorize("hasAuthority('ADMIN')")
+    // @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "/get-logs", method = RequestMethod.GET)
     public ResponseEntity<?> getLogs() {
         List<LogModel> logs = logService.findAll();
@@ -42,7 +42,7 @@ public class LogController {
         return new ResponseEntity<>(logDTOS, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAuthority('ADMIN')")
+    // @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "/get-logs/alarm", method = RequestMethod.GET)
     public ResponseEntity<?> getAlarmedLogs() {
         List<LogModel> logs = logService.findAllByAlarm();
@@ -53,7 +53,7 @@ public class LogController {
         return new ResponseEntity<>(logDTOS, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAuthority('ADMIN')")
+    // @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "/filter-logs", method = RequestMethod.POST)
     public ResponseEntity<?> filterLogs(@RequestBody FilterParamsDTO filterParamsDTO) {
         LocalDateTime ldcFrom = null;

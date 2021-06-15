@@ -41,7 +41,7 @@ public class PatientController {
 
     private static Logger logger = LogManager.getLogger(PatientController.class);
 
-    @PreAuthorize("hasAuthority('DOCTOR')")
+    // @PreAuthorize("hasAuthority('DOCTOR')")
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<PatientDTO>> getAllPatients() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

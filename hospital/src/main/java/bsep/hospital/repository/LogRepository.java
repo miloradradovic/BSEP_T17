@@ -16,4 +16,7 @@ public interface LogRepository extends MongoRepository<LogModel, ObjectId> {
     List<LogModel> findByLogTimeBetween(LocalDateTime date1, LocalDateTime date2);
 
     List<LogModel> findAllByAlarm(boolean alarm);
+
+    List<LogModel> findByLogTimeBefore(LocalDateTime to);
+    List<LogModel> findByLogTimeAfter(LocalDateTime from);
 }

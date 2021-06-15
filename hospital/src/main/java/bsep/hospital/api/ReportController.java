@@ -21,7 +21,7 @@ public class ReportController {
     @Autowired
     private LogService logService;
 
-    @PreAuthorize("hasAuthority('ADMIN')")
+    // @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Report> getLogReport(@RequestBody ReportParams reportParams) {
         Report report = logService.getReport(reportParams.getFrom().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime(),

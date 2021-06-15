@@ -44,7 +44,7 @@ public class RulesController {
 
     private static Logger logger = LogManager.getLogger(RulesController.class);
 
-    @PreAuthorize("hasAuthority('DOCTOR')")
+    // @PreAuthorize("hasAuthority('DOCTOR')")
     @RequestMapping(value = "doctor-rule", method = RequestMethod.POST)
     public ResponseEntity<?> createDoctorRule(@RequestBody DoctorRuleDTO ruleDTO) {
         try {
@@ -91,7 +91,7 @@ public class RulesController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAuthority('ADMIN')")
+    // @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "admin-rule", method = RequestMethod.POST)
     public ResponseEntity<?> createAdminRule(@RequestBody AdminRuleDTO ruleDTO) {
         try {

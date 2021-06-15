@@ -29,7 +29,7 @@ public class UserController {
 
     private static Logger logger = LogManager.getLogger(UserController.class);
 
-    @PreAuthorize("hasAuthority('ADMIN') || hasAuthority('DOCTOR')")
+    // @PreAuthorize("hasAuthority('ADMIN') || hasAuthority('DOCTOR')")
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<?> getUserByEmail(@RequestParam  @Email() @Pattern(regexp = "[^;]+") String email) {
         // Person person = userService.loadUserByEmail(email);

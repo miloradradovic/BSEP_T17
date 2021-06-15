@@ -35,7 +35,7 @@ public class PatientStatusController {
 
     private static Logger logger = LogManager.getLogger(PatientStatusController.class);
 
-    @PreAuthorize("hasAuthority('DOCTOR')")
+    // @PreAuthorize("hasAuthority('DOCTOR')")
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<PatientStatusDTO>> getAllPatientStatus() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -59,7 +59,7 @@ public class PatientStatusController {
         return new ResponseEntity<>(patientStatusDTOS, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAuthority('DOCTOR')")
+    // @PreAuthorize("hasAuthority('DOCTOR')")
     @RequestMapping(value = "/alarm", method = RequestMethod.GET)
     public ResponseEntity<List<PatientStatusDTO>> getAllPatientStatusAlarmed() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -83,7 +83,7 @@ public class PatientStatusController {
         return new ResponseEntity<>(patientStatusDTOS, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAuthority('DOCTOR')")
+    // @PreAuthorize("hasAuthority('DOCTOR')")
     @RequestMapping(value = "/{name}/{surname}", method = RequestMethod.GET)
     public ResponseEntity<List<PatientStatusDTO>> getAllPatientStatusByPatient(@PathVariable String name, @PathVariable String surname) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -107,7 +107,7 @@ public class PatientStatusController {
         return new ResponseEntity<>(patientStatusDTOS, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAuthority('DOCTOR')")
+    // @PreAuthorize("hasAuthority('DOCTOR')")
     @RequestMapping(value = "/alarm/{name}/{surname}", method = RequestMethod.GET)
     public ResponseEntity<List<PatientStatusDTO>> getAllPatientStatusAlarmedByPatient(@PathVariable String name, @PathVariable String surname) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

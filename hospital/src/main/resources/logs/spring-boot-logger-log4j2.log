@@ -1,0 +1,407 @@
+2021-06-15 09:44:38,107 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-06-15 09:44:38,164 INFO o.s.b.StartupInfoLogger Starting HospitalApplication on DESKTOP-MK6223H with PID 10984 (D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital\target\classes started by Milorad in D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital)
+2021-06-15 09:44:38,170 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
+2021-06-15 09:44:38,746 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-15 09:44:38,748 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-15 09:44:38,794 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data JPA - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.LogRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-06-15 09:44:38,815 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 53ms. Found 4 JPA repository interfaces.
+2021-06-15 09:44:38,832 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-15 09:44:38,832 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-06-15 09:44:38,838 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.AuthorityRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-15 09:44:38,840 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PatientRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-15 09:44:38,841 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PatientStatusRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-15 09:44:38,841 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PersonRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-15 09:44:38,845 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 11ms. Found 1 MongoDB repository interfaces.
+2021-06-15 09:44:39,092 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@72b6832e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-15 09:44:39,098 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-15 09:44:39,301 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8085 (https)
+2021-06-15 09:44:39,308 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-15 09:44:39,308 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
+2021-06-15 09:44:39,308 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-15 09:44:39,460 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
+2021-06-15 09:44:39,460 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1247 ms
+2021-06-15 09:44:39,498 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-15 09:44:39,588 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-15 09:44:39,617 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-15 09:44:39,681 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-15 09:44:39,738 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-15 09:44:39,856 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2021-06-15 09:44:39,867 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-15 09:44:40,553 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-15 09:44:40,559 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-15 09:44:40,918 INFO b.h.k.KeyStoreWriter Attempting to initialize keystore using bouncy castle provider.
+2021-06-15 09:44:40,923 INFO b.h.k.KeyStoreReader Attempting to initialize keystore using bouncy castle provider.
+2021-06-15 09:44:40,994 INFO c.m.d.l.SLF4JLogger Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-06-15 09:44:41,031 INFO c.m.d.l.SLF4JLogger Opened connection [connectionId{localValue:1, serverValue:117}] to localhost:27017
+2021-06-15 09:44:41,034 INFO c.m.d.l.SLF4JLogger Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2210900}
+2021-06-15 09:44:41,229 INFO b.h.c.DroolsConfig Creating kie session
+2021-06-15 09:44:41,233 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Milorad/.m2/repository/org/kie/kie-ci/7.17.0.Final/kie-ci-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-15 09:44:41,234 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.scanner.KieScannerFactoryServiceImpl
+
+2021-06-15 09:44:41,235 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.scanner.MavenClassLoaderResolver
+
+2021-06-15 09:44:41,235 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Milorad/.m2/repository/org/drools/drools-core/7.17.0.Final/drools-core-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-15 09:44:41,236 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.io.impl.ResourceFactoryServiceImpl
+
+2021-06-15 09:44:41,237 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.marshalling.impl.MarshallerProviderImpl
+
+2021-06-15 09:44:41,237 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.concurrent.ExecutorProviderImpl
+
+2021-06-15 09:44:41,238 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Milorad/.m2/repository/org/drools/drools-compiler/7.17.0.Final/drools-compiler-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-15 09:44:41,239 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.compiler.kie.builder.impl.KieServicesImpl
+
+2021-06-15 09:44:41,240 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.compiler.builder.impl.KnowledgeBuilderFactoryServiceImpl
+
+2021-06-15 09:44:41,240 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Milorad/.m2/repository/org/kie/kie-internal/7.17.0.Final/kie-internal-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-15 09:44:41,241 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieAssemblersImpl
+
+2021-06-15 09:44:41,241 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieRuntimesImpl
+
+2021-06-15 09:44:41,242 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieWeaversImpl
+
+2021-06-15 09:44:41,242 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieBeliefsImpl
+
+2021-06-15 09:44:41,251 INFO o.d.c.k.b.i.ClasspathKieProject Found kmodule: file:/D:/Fakultet/8.%20semestar/PROJEKTI/bsep/BSEP_T17/hospital/target/classes/META-INF/kmodule.xml
+2021-06-15 09:44:41,401 WARN o.d.c.k.b.i.ClasspathKieProject Unable to find pom.properties in /D:/Fakultet/8. semestar/PROJEKTI/bsep/BSEP_T17/hospital/target/classes
+2021-06-15 09:44:41,408 WARN o.a.m.i.e.MavenSettings Environment variable M2_HOME is not set
+2021-06-15 09:44:44,318 INFO o.d.c.k.b.i.ClasspathKieProject Recursed up folders, found and used pom.xml D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital\pom.xml
+2021-06-15 09:44:44,325 INFO o.d.c.k.b.i.KieRepositoryImpl KieModule was added: FileKieModule[releaseId=bsep:hospital:0.0.1-SNAPSHOT,file=D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital\target\classes]
+2021-06-15 09:44:45,326 INFO b.h.i.Initialize Executing operation Initialize
+2021-06-15 09:44:45,326 INFO b.h.i.Initialize Attempting to create keystore.
+2021-06-15 09:44:45,326 INFO b.h.i.Initialize Checking if keystore already exists.
+2021-06-15 09:44:45,327 INFO b.h.k.KeyStoreWriter Attempting to load keystore.
+2021-06-15 09:44:45,328 INFO b.h.k.KeyStoreWriter Successfully loaded keystore.
+2021-06-15 09:44:45,329 INFO b.h.i.Initialize Keystore already exists.
+2021-06-15 09:44:45,486 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8d44ee6, org.springframework.security.web.context.SecurityContextPersistenceFilter@108d88b, org.springframework.security.web.header.HeaderWriterFilter@374bbe80, org.springframework.web.filter.CorsFilter@e7283dd, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@19e5e110, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@332fa1c, org.springframework.security.web.authentication.logout.LogoutFilter@1fc4292a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b59285c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@204ce262, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@24f2608b, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@12a9e864, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@8b62702, org.springframework.security.web.session.SessionManagementFilter@613b9bd9, org.springframework.security.web.access.ExceptionTranslationFilter@27ad03, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@17debee7]
+2021-06-15 09:44:45,709 INFO o.s.s.c.ExecutorConfigurationSupport Initializing ExecutorService 'taskScheduler'
+2021-06-15 09:44:45,742 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-15 09:44:45,831 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8085 (https) with context path ''
+2021-06-15 09:44:45,842 INFO o.s.b.StartupInfoLogger Started HospitalApplication in 8.017 seconds (JVM running for 9.179)
+2021-06-15 09:44:45,848 INFO o.s.s.c.ExecutorConfigurationSupport Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-15 09:44:45,857 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:44:45,857 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:44:45,857 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:44:45,859 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:44:45,863 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:44:45,864 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:44:45,872 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:44:45,899 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:44:45,954 INFO c.m.d.l.SLF4JLogger Opened connection [connectionId{localValue:2, serverValue:118}] to localhost:27017
+2021-06-15 09:44:46,194 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:44:50,842 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:44:50,843 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:44:50,843 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:44:50,845 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:44:50,846 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:44:50,847 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:44:50,848 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:44:50,852 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:44:50,860 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:44:55,845 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:44:55,845 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:44:55,846 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:44:55,847 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:44:55,849 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:44:55,850 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:44:55,852 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:44:55,852 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:44:55,860 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:45:00,842 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:45:00,842 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:45:00,843 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:45:00,844 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:00,846 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:45:00,848 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:00,849 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:45:00,850 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:45:00,858 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:45:04,748 INFO o.a.j.l.DirectJDKLog Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-15 09:45:04,748 INFO o.s.w.s.FrameworkServlet Initializing Servlet 'dispatcherServlet'
+2021-06-15 09:45:04,755 INFO o.s.w.s.FrameworkServlet Completed initialization in 7 ms
+2021-06-15 09:45:05,016 ERROR o.a.j.l.DirectJDKLog Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at bsep.hospital.service.LogService.filterLogs(LogService.java:251) ~[classes/:?]
+	at bsep.hospital.service.LogService$$FastClassBySpringCGLIB$$d00775cc.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:687) ~[spring-aop-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at bsep.hospital.service.LogService$$EnhancerBySpringCGLIB$$e926b1.filterLogs(<generated>) ~[classes/:?]
+	at bsep.hospital.api.LogController.filterLogs(LogController.java:71) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter.doFilter(KeycloakAuthenticatedActionsFilter.java:57) ~[keycloak-spring-security-adapter-11.0.2.jar:11.0.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:61) ~[keycloak-spring-security-adapter-11.0.2.jar:11.0.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:96) ~[keycloak-spring-security-adapter-11.0.2.jar:11.0.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter.doFilter(KeycloakAuthenticatedActionsFilter.java:74) ~[keycloak-spring-security-adapter-11.0.2.jar:11.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:92) ~[keycloak-spring-security-adapter-11.0.2.jar:11.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:96) ~[keycloak-spring-security-adapter-11.0.2.jar:11.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.8.RELEASE.jar:5.3.8.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.13.RELEASE.jar:5.2.13.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve.invoke(AbstractAuthenticatedActionsValve.java:67) [spring-boot-container-bundle-11.0.2.jar:11.0.2]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.invoke(AbstractKeycloakAuthenticatorValve.java:181) [spring-boot-container-bundle-11.0.2.jar:11.0.2]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:887) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1684) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+2021-06-15 09:45:05,846 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:45:05,846 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:45:05,847 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:45:05,849 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:05,854 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:45:05,856 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:05,857 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:45:05,858 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:45:05,870 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:45:10,839 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:45:10,839 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:45:10,839 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:45:10,840 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:10,841 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:45:10,842 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:10,843 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:45:10,843 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:45:10,851 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:45:15,846 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:45:15,846 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:45:15,847 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:45:15,849 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:15,851 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:45:15,852 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:15,853 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:45:15,854 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:45:15,861 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:45:20,842 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:45:20,842 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:45:20,843 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:45:20,845 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:20,846 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:45:20,849 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:20,850 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:45:20,851 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:45:20,860 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:45:25,840 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:45:25,840 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:45:25,840 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:45:25,841 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:25,841 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:45:25,842 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:25,843 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:45:25,843 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:45:25,851 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:45:30,839 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:45:30,839 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:45:30,840 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:45:30,841 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:30,841 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:45:30,842 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:30,842 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:45:30,842 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:45:30,848 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:45:35,851 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:45:35,851 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:45:35,852 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:45:35,853 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:35,855 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:45:35,856 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:35,858 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:45:35,858 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:45:35,868 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:45:40,839 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:45:40,839 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:45:40,840 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:45:40,841 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:40,842 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:45:40,842 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:40,843 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:45:40,844 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:45:40,849 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:45:45,850 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:45:45,850 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:45:45,851 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:45:45,853 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:45,855 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:45:45,856 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:45,857 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:45:45,858 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:45:45,868 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:45:50,849 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:45:50,849 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:45:50,850 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:45:50,852 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:50,854 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:45:50,855 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:50,857 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:45:50,857 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:45:50,870 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:45:55,843 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:45:55,843 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:45:55,844 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:45:55,846 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:55,848 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:45:55,849 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:45:55,850 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:45:55,851 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:45:55,862 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:46:00,849 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:46:00,850 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:46:00,850 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:46:00,852 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:00,853 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:46:00,854 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:00,856 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:46:00,856 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:46:00,868 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:46:05,840 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:46:05,840 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:46:05,840 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:46:05,841 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:05,843 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:46:05,845 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:05,846 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:46:05,847 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:46:05,863 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:46:10,840 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:46:10,840 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:46:10,841 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:46:10,842 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:10,844 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:46:10,845 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:10,846 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:46:10,847 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:46:10,856 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:46:15,842 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:46:15,842 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:46:15,843 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:46:15,844 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:15,846 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:46:15,847 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:15,849 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:46:15,849 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:46:15,858 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:46:20,843 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:46:20,843 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:46:20,843 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:46:20,844 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:20,844 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:46:20,845 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:20,845 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:46:20,845 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:46:20,853 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:46:25,852 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:46:25,852 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:46:25,853 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:46:25,855 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:25,856 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:46:25,857 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:25,858 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:46:25,859 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:46:25,866 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:46:30,852 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:46:30,852 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:46:30,853 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:46:30,854 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:30,855 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:46:30,856 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:30,856 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:46:30,856 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:46:30,863 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:46:34,731 INFO b.h.s.LogService Getting all logs from database.
+2021-06-15 09:46:35,847 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:46:35,847 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:46:35,848 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:46:35,850 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:35,851 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:46:35,852 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:35,853 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:46:35,854 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:46:35,861 INFO b.h.s.LogService Finished saving logs.
+2021-06-15 09:46:40,853 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 09:46:40,853 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 09:46:40,854 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 09:46:40,855 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:40,857 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 09:46:40,858 INFO b.h.l.LogParser Reading log file.
+2021-06-15 09:46:40,859 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 09:46:40,860 INFO b.h.s.LogService Saving logs.
+2021-06-15 09:46:40,868 INFO b.h.s.LogService Finished saving logs.
