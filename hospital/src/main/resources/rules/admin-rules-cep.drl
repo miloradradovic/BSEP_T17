@@ -4,7 +4,7 @@ import bsep.hospital.logging.LogModel;
 import bsep.hospital.logging.LogType;
 import bsep.hospital.logging.IPAddress;
 import java.util.List;
-/*
+
 rule "Detect IP address"
         agenda-group "admin-rules"
         no-loop true
@@ -38,4 +38,3 @@ rule "Detect DoS or Brute-force"
                        setAlarm(true)
                    }
 end;
-*/
