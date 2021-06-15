@@ -33,7 +33,7 @@ export class LogsComponent implements OnInit {
 
   addLogConfiguration(){
     this.logService.addLogConfiguration(this.formData.value).toPromise().then( res => {
-      this._snackBar.open("Rule successfully added.", "Close");
+      this._snackBar.open("Log added succesfully.", "Close");
     }, err => {
       this._snackBar.open("Server error: " + err, "Close");
     })

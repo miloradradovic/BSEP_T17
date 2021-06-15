@@ -3,13 +3,19 @@ package bsep.hospital.dto;
 import bsep.hospital.logging.LogSource;
 import bsep.hospital.logging.LogType;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import java.time.LocalDateTime;
 import java.util.Date;
 
 public class FilterParamsDTO {
 
+    @Pattern(regexp="|([^;])+")
     private String logType;
+
+    @Pattern(regexp="|([^;])+")
     private String logSource;
+
     private Date dateFrom;
     private Date dateTo;
 

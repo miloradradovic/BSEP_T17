@@ -11,6 +11,7 @@ import { RequestCertificateService } from 'src/app/service/certificate-requests/
 })
 export class AddCertificateComponent implements OnInit {
 
+  templates: String[] = ["Verify digital signature", "Key Transport", "Key Agreement"]
   formData: FormGroup;
 
   constructor(private fb: FormBuilder, private requestCertificateService: RequestCertificateService,
@@ -69,6 +70,29 @@ export class AddCertificateComponent implements OnInit {
     }, error =>{
         this.dialogRef.close(false);
     });
+  }
+
+  typeChanged(template: String){
+    switch(template){
+      case "Verify digital signature": {
+          this.formData.reset();
+          this.formData.controls['digitalSignature'].patchValue(true);
+          this.formData.controls['nonRepudiation'].patchValue(true);
+          this.formData.controls['keyCertSign'].patchValue(true);
+          this.formData.controls['cRLSign'].patchValue(true);
+          break;
+      }
+      case "Key Transport": {
+        this.formData.reset();
+        this.formData.controls['keyEncipherment'].patchValue(true);
+        break;
+      }
+      case "Key Agreement": {
+        this.formData.reset();
+        this.formData.controls['keyAgreement'].patchValue(true);
+        break;
+      }
+    }
   }
 
 }

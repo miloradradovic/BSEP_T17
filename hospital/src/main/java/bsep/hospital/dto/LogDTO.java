@@ -10,6 +10,7 @@ public class LogDTO {
     private LogType level;
     private String message;
     private String logTime;
+    private String alarmDescription;
     private LogSource logSource;
     private String ip;
     private boolean alarm;
@@ -17,13 +18,22 @@ public class LogDTO {
     public LogDTO() {
     }
 
-    public LogDTO(LogType level, String message, String logTime, LogSource logSource, String ip, boolean alarm) {
+    public LogDTO(LogType level, String message, String logTime, LogSource logSource, String ip, boolean alarm, String alarmDescription) {
         this.level = level;
         this.message = message;
         this.logTime = logTime;
         this.logSource = logSource;
         this.ip = ip;
         this.alarm = alarm;
+        this.alarmDescription = alarmDescription;
+    }
+
+    public String getAlarmDescription() {
+        return alarmDescription;
+    }
+
+    public void setAlarmDescription(String alarmDescription) {
+        this.alarmDescription = alarmDescription;
     }
 
     public LogType getLevel() {

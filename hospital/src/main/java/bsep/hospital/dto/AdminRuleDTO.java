@@ -1,9 +1,20 @@
 package bsep.hospital.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+
 public class AdminRuleDTO {
 
+    @NotBlank
+    @Pattern(regexp="[a-zA-Z0-9 ]+")
     private String ruleName;
+
+    @NotBlank
+    @Pattern(regexp="[a-zA-Z0-9 ]+")
     private String levelInput;
+
+    @NotBlank
+    @Pattern(regexp="[a-zA-Z0-9 ]+")
     private String messageInput;
 
     public AdminRuleDTO() {

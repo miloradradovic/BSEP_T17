@@ -1,12 +1,33 @@
 package bsep.hospital.dto;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+
 public class DoctorDroolsDTO {
 
+    @NotBlank
+    @Pattern(regexp="[a-zA-Z0-9 ]+")
     private String ruleName;
+
+    @NotBlank
+    @Min(0)
     private Integer patientId;
+
+    @NotBlank
+    @Pattern(regexp="[a-zA-Z0-9 ]+")
     private String messageType;
+
+    @NotBlank
+    @Pattern(regexp="[a-zA-Z0-9_ ]+")
     private String bloodType;
+
+    @NotBlank
+    @Min(0)
     private double value;
+
+    @NotBlank
+    @Pattern(regexp="[<=>!]+")
     private String operation;
 
     public DoctorDroolsDTO() {

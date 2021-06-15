@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -42,7 +43,7 @@ public class LogController {
         List<LogModel> logs = logService.findAll();
         List<LogDTO> logDTOS = new ArrayList<LogDTO>();
         for(LogModel log: logs){
-            logDTOS.add(new LogDTO(log.getLevel(), log.getMessage(), log.getLogTime().format(formatter), log.getLogSource(), log.getIp(), log.isAlarm()));
+            logDTOS.add(new LogDTO(log.getLevel(), log.getMessage(), log.getLogTime().format(formatter), log.getLogSource(), log.getIp(), log.isAlarm(), log.getAlarmDescription()));
         }
         logger.info("Successfully retrieved all logs.");
         return new ResponseEntity<>(logDTOS, HttpStatus.OK);
@@ -55,7 +56,7 @@ public class LogController {
         List<LogModel> logs = logService.findAllByAlarm();
         List<LogDTO> logDTOS = new ArrayList<LogDTO>();
         for(LogModel log: logs){
-            logDTOS.add(new LogDTO(log.getLevel(), log.getMessage(), log.getLogTime().format(formatter), log.getLogSource(), log.getIp(), log.isAlarm()));
+            logDTOS.add(new LogDTO(log.getLevel(), log.getMessage(), log.getLogTime().format(formatter), log.getLogSource(), log.getIp(), log.isAlarm(), log.getAlarmDescription()));
         }
         logger.info("Successfully retrieved all alarm logs.");
         return new ResponseEntity<>(logDTOS, HttpStatus.OK);
@@ -63,7 +64,7 @@ public class LogController {
 
     // @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "/filter-logs", method = RequestMethod.POST)
-    public ResponseEntity<?> filterLogs(@RequestBody FilterParamsDTO filterParamsDTO) {
+    public ResponseEntity<?> filterLogs(@RequestBody @Valid FilterParamsDTO filterParamsDTO) {
         LocalDateTime ldcFrom = null;
         LocalDateTime ldcTo = null;
 
@@ -79,7 +80,7 @@ public class LogController {
         List<LogModel> logs = logService.filterLogs(filterParams);
         List<LogDTO> logDTOS = new ArrayList<LogDTO>();
         for(LogModel log: logs){
-            logDTOS.add(new LogDTO(log.getLevel(), log.getMessage(), log.getLogTime().format(formatter), log.getLogSource(), log.getIp(), log.isAlarm()));
+            logDTOS.add(new LogDTO(log.getLevel(), log.getMessage(), log.getLogTime().format(formatter), log.getLogSource(), log.getIp(), log.isAlarm(), log.getAlarmDescription()));
         }
         logger.info("Successfully filtered logs.");
         return new ResponseEntity<>(logDTOS, HttpStatus.OK);

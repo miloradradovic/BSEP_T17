@@ -1,10 +1,20 @@
 package bsep.admin.model;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+
 public class LogConfig {
 
+    @NotBlank
+    @Pattern(regexp="|([^;])+")
     private String path;
+
     private int duration;
+
+    @NotBlank
+    @Pattern(regexp="|([^;])+")
     private String regexp;
+
     private int currentRow;
 
     public LogConfig() {

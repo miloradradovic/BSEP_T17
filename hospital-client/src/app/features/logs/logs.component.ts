@@ -18,7 +18,7 @@ export class LogsComponent implements OnInit {
   levels: String[] = [ 'INFO',
   'WARN', 'ERROR', 'TRACE', 'DEBUG']
 
-  displayedColumns: string[] = ['level', 'logTime', 'logSource', 'ip', 'alarm'];
+  displayedColumns: string[] = ['level', 'logTime', 'logSource', 'ip', 'alarmDescription', 'alarm'];
   dataSource: MatTableDataSource<LogModel>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   alarms: boolean = false;
@@ -96,6 +96,8 @@ export class LogsComponent implements OnInit {
       this.spinnerService.hide();
     }, err => {
       this.spinnerService.hide();
+      this._snackBar.open("Something went wrong: " + err.message, "Close");
+
     })
   }
 

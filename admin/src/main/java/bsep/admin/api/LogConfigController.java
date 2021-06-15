@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.io.IOException;
 
 @CrossOrigin(origins = "https://localhost:4200")
@@ -26,7 +27,7 @@ public class LogConfigController {
 
     // @PreAuthorize("hasAuthority('SUPER_ADMIN')")
     @RequestMapping(value = "/send-log-config", method = RequestMethod.POST)
-    public ResponseEntity<?> sendLogConfig(@RequestBody LogConfig logConfig) {
+    public ResponseEntity<?> sendLogConfig(@RequestBody @Valid LogConfig logConfig) {
         logger.info("Received log config, attempting to save it.");
         if (logConfigService.sendLogConfig(logConfig)) {
             logger.info("Successfully saved log config.");

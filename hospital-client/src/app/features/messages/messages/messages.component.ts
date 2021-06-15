@@ -76,13 +76,18 @@ export class MessagesComponent implements OnInit {
       this.dataSource = new MatTableDataSource<Message>(res);
       this.dataSource.paginator = this.paginator;
       console.log(this.dataSource.data)
-    })
+    }, err => {
+      this._snackBar.open("Something went wrong: " + err.message, "Close");
+    } 
+    )
   }
 
   getAllAlarms(){
     this.messageService.getAlarms().toPromise().then( res => {
       this.dataSource = new MatTableDataSource<Message>(res);
       this.dataSource.paginator = this.paginator;
+    }, err => {
+      this._snackBar.open("Something went wrong: " + err.message, "Close");
     })
   }
 
@@ -100,12 +105,18 @@ export class MessagesComponent implements OnInit {
       this.messageService.getAlarmsByPatient(this.searchForm.controls['name']?.value || "null", this.searchForm.controls['surname']?.value || "null").toPromise().then( res => {
         this.dataSource = new MatTableDataSource<Message>(res);
         this.dataSource.paginator = this.paginator;
+      }, err => {
+        this._snackBar.open("Something went wrong: " + err.message, "Close");
+
       })
     }
     else{
       this.messageService.getMessagesByPatient(this.searchForm.controls['name']?.value  || "null", this.searchForm.controls['surname']?.value || "null").toPromise().then( res => {
         this.dataSource = new MatTableDataSource<Message>(res);
         this.dataSource.paginator = this.paginator;
+      }, err => {
+        this._snackBar.open("Something went wrong: " + err.message, "Close");
+
       })
     }
   }

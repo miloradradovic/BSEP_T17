@@ -3,6 +3,7 @@ export interface LogModel{
     message: String,
     logTime: String,
     logSource: String,
+    alarmDescription: String,
     ip: String,
     alarm: boolean
 }

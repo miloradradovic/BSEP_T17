@@ -11,16 +11,27 @@
   </div>
   <form [formGroup]="this.formData">
     <mat-card style="margin-bottom: 2%;">
+      <mat-card-title style="margin-bottom: 2%;">Pick template!</mat-card-title>
+      <div style="margin-bottom: 2%;">
+        <mat-form-field class="example-full-width" style="margin-left: 2%;" appearance="outline">
+          <mat-label>Templates...</mat-label>
+              <mat-select #templateSelect (selectionChange)="typeChanged(templateSelect.value)">
+                  <mat-option *ngFor="let element of templates" [value]="element">
+                  {{ element }}
+                  </mat-option>
+          </mat-select> 
+      </mat-form-field>
+      </div>
       <mat-card-title style="margin-bottom: 2%;">Key usages</mat-card-title>
       <div fxLayout="row" style="margin-bottom: 2%; margin-left: 2%">
         <mat-checkbox class="mr-1" color="warn" formControlName="cRLSign" fxFlex="25">Certificate revocation list Sign
         </mat-checkbox>
         <mat-checkbox class="mr-1" color="warn" formControlName="dataEncipherment" fxFlex="25">Data Encipherment
         </mat-checkbox>
-        <mat-checkbox class="mr-1" color="warn" formControlName="decipherOnly" fxFlex="25">Decipher Only</mat-checkbox>
+        <mat-checkbox class="mr-1" color="warn" formControlName="decipherOnly" fxFlex="25" [disabled]="!this.formData.controls['keyAgreement'].value">Decipher Only</mat-checkbox>
       </div>
       <div fxLayout="row" style="margin-bottom: 2%; margin-left: 2%">
-        <mat-checkbox class="mr-1" color="warn" formControlName="encipherOnly" fxFlex="25">Encipher Only</mat-checkbox>
+        <mat-checkbox class="mr-1" color="warn" formControlName="encipherOnly" fxFlex="25" [disabled]="!this.formData.controls['keyAgreement'].value">Encipher Only</mat-checkbox>
         <mat-checkbox class="mr-1" color="warn" formControlName="keyCertSign" fxFlex="25">Certificate verifying Sign
         </mat-checkbox>
         <mat-checkbox class="mr-1" color="warn" formControlName="keyAgreement" fxFlex="25">Key Agreement</mat-checkbox>
