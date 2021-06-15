@@ -12,7 +12,7 @@ import bsep.hospital.model.Patient;
 import bsep.hospital.model.PatientStatus;
 import java.util.List;
 
-template "doctor-template-without-status"
+template "doctor-template-without-status-bloodType"
 
 
 rule "@{ruleName}"

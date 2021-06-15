@@ -19,7 +19,7 @@ rule "@{ruleName}"
         agenda-group "doctor-rules"
         no-loop true
     when
-        $p: Patient($patId: id, id == @{patientId}, $bt: bloodType, $bt.toString() == "@{bloodType}");
+        $p: Patient($patId: id, $patId == @{patientId}, $bt: bloodType, $bt.toString() == "@{bloodType}");
         $ps: PatientStatus($pat: patient, $pat.id == $patId);
 
     then
