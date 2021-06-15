@@ -1,5 +1,6 @@
 package bsep.hospital.service;
 
+import bsep.hospital.logging.IPAddress;
 import bsep.hospital.logging.LogModel;
 import bsep.hospital.logging.LogParser;
 import bsep.hospital.logging.LogType;
@@ -102,7 +103,10 @@ public class LogService {
         ArrayList<LogModel> newParsedAppLogs = new ArrayList<>(newEvents);
         Collection<FactHandle> handlers = kieSession.getFactHandles();
         for (FactHandle handle : handlers) {
-            kieSession.delete(handle);
+            Object obj = kieSession.getObject(handle);
+
+            if(obj.getClass() != IPAddress.class)
+                kieSession.delete(handle);
         }
         save(newParsedAppLogs);
     }
@@ -142,7 +146,10 @@ public class LogService {
             ArrayList<LogModel> newParsedLogs = new ArrayList<>(newEvents);
             Collection<FactHandle> handlers = kieSession.getFactHandles();
             for (FactHandle handle : handlers) {
-                kieSession.delete(handle);
+                Object obj = kieSession.getObject(handle);
+
+                if(obj.getClass() != IPAddress.class)
+                    kieSession.delete(handle);
             }
 
             logConfig.setCurrentRow(parsed.getValue1());
@@ -270,5 +277,9 @@ public class LogService {
             }
         }
         return filtered;
+    }
+
+    private void rewriteIPs(){
+
     }
 }
