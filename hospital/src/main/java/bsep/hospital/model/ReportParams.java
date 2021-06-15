@@ -1,33 +1,33 @@
 package bsep.hospital.model;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class ReportParams {
 
-    LocalDateTime from;
-    LocalDateTime to;
+    Date from;
+    Date to;
 
     public ReportParams() {
     }
 
-    public ReportParams(LocalDateTime from, LocalDateTime to) {
+    public ReportParams(Date from, Date Date) {
         this.from = from;
         this.to = to;
     }
 
-    public LocalDateTime getFrom() {
+    public Date getFrom() {
         return from;
     }
 
-    public void setFrom(LocalDateTime from) {
+    public void setFrom(Date from) {
         this.from = from;
     }
 
-    public LocalDateTime getTo() {
+    public Date getTo() {
         return to;
     }
 
-    public void setTo(LocalDateTime to) {
+    public void setTo(Date to) {
         this.to = to;
     }
 }

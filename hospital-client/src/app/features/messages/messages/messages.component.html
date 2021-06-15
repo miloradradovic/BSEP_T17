@@ -77,22 +77,32 @@
 
                 <div>
                     <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>Type...</mat-label>
-                            <mat-select #typeSelect (selectionChange)="typeChanged(typeSelect.value)">
-                                <mat-option *ngFor="let element of types" [value]="element">
+                        <mat-label>Blood type...</mat-label>
+                            <mat-select #typeSelect (selectionChange)="typeChanged(typeSelect.value, 'bloodType')">
+                                <mat-option *ngFor="let element of bloodTypes" [value]="element">
                                 {{ element }}
                                 </mat-option>
                         </mat-select> 
                     </mat-form-field>
 
-                    <mat-form-field class="example-full-width" style="margin-left:2%" appearance="outline">
-                        <input type="number" style="width: 40%;" matInput id="value" name="value" placeholder="Value..." formControlName="value">
+                    <mat-form-field style="margin-left:2%" class="example-full-width" appearance="outline">
+                        <mat-label>Message type...</mat-label>
+                            <mat-select #typeSelect (selectionChange)="typeChanged(typeSelect.value, 'messageType')">
+                                <mat-option *ngFor="let element of messageTypes" [value]="element">
+                                {{ element }}
+                                </mat-option>
+                        </mat-select> 
                     </mat-form-field>
+
                 </div>
 
-                <mat-form-field class="example-full-width" appearance="outline">
+                <mat-form-field class="example-full-width"  appearance="outline">
+                    <input type="number" style="width: 40%;" matInput id="value" name="value" placeholder="Value..." formControlName="value">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" style="margin-left:2%" appearance="outline">
                     <mat-label>Operations...</mat-label>
-                        <mat-select #operationSelect (selectionChange)="operationChanged(operationSelect.value)">
+                        <mat-select #operationSelect (selectionChange)="typeChanged(operationSelect.value, 'operation')">
                             <mat-option *ngFor="let element of operations" [value]="element">
                             {{ element }}
                             </mat-option>

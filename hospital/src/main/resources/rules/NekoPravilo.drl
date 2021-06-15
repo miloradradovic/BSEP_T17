@@ -1,0 +1,16 @@
+package rules;
+import bsep.hospital.logging.LogModel;
+import java.util.List;
+
+rule "NekoPravilo"
+        no-loop true
+        agenda-group "admin-rules"
+    when
+        $lm: LogModel($l: level.toString() == "WARN", $m: message contains "Device");
+    then
+       modify( $lm ){
+           setAlarm(true)
+       }
+end
+
+

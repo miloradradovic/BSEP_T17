@@ -1,6 +1,10 @@
 package bsep.hospital.api;
 
+import bsep.hospital.dto.FilterParamsDTO;
+import bsep.hospital.dto.LogDTO;
 import bsep.hospital.logging.LogModel;
+import bsep.hospital.logging.LogSource;
+import bsep.hospital.logging.LogType;
 import bsep.hospital.model.FilterParams;
 import bsep.hospital.model.LogConfig;
 import bsep.hospital.service.LogService;
@@ -11,6 +15,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin(origins = "https://localhost:4205")
@@ -21,24 +29,50 @@ public class LogController {
     @Autowired
     LogService logService;
 
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
     @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "/get-logs", method = RequestMethod.GET)
     public ResponseEntity<?> getLogs() {
         List<LogModel> logs = logService.findAll();
-        return new ResponseEntity<>(logs, HttpStatus.OK);
+        List<LogDTO> logDTOS = new ArrayList<LogDTO>();
+        for(LogModel log: logs){
+            logDTOS.add(new LogDTO(log.getLevel(), log.getMessage(), log.getLogTime().format(formatter), log.getLogSource(), log.getIp(), log.isAlarm()));
+        }
+        return new ResponseEntity<>(logDTOS, HttpStatus.OK);
     }
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "/get-logs/alarm", method = RequestMethod.GET)
     public ResponseEntity<?> getAlarmedLogs() {
         List<LogModel> logs = logService.findAllByAlarm();
-        return new ResponseEntity<>(logs, HttpStatus.OK);
+        List<LogDTO> logDTOS = new ArrayList<LogDTO>();
+        for(LogModel log: logs){
+            logDTOS.add(new LogDTO(log.getLevel(), log.getMessage(), log.getLogTime().format(formatter), log.getLogSource(), log.getIp(), log.isAlarm()));
+        }
+        return new ResponseEntity<>(logDTOS, HttpStatus.OK);
     }
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "/filter-logs", method = RequestMethod.POST)
-    public ResponseEntity<?> filterLogs(@RequestBody FilterParams filterParams) {
+    public ResponseEntity<?> filterLogs(@RequestBody FilterParamsDTO filterParamsDTO) {
+        LocalDateTime ldcFrom = null;
+        LocalDateTime ldcTo = null;
+
+        if(filterParamsDTO.getDateFrom() != null) {
+            ldcFrom = filterParamsDTO.getDateFrom().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+        }
+        if(filterParamsDTO.getDateTo() != null) {
+            ldcTo = filterParamsDTO.getDateTo().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+        }
+
+        FilterParams filterParams = new FilterParams(filterParamsDTO.getLogType(), filterParamsDTO.getLogSource(), ldcFrom, ldcTo, "");
+
         List<LogModel> logs = logService.filterLogs(filterParams);
-        return new ResponseEntity<>(logs, HttpStatus.OK);
+        List<LogDTO> logDTOS = new ArrayList<LogDTO>();
+        for(LogModel log: logs){
+            logDTOS.add(new LogDTO(log.getLevel(), log.getMessage(), log.getLogTime().format(formatter), log.getLogSource(), log.getIp(), log.isAlarm()));
+        }
+        return new ResponseEntity<>(logDTOS, HttpStatus.OK);
     }
 }

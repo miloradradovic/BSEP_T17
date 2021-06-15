@@ -6,5 +6,5 @@ export interface PatientModel {
     bloodType: String,
     averageHearthBeat: number,
     averagePressure: number,
-    averageTemperature: number,
+    averageTemperature: number
 }

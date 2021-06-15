@@ -1,25 +1,27 @@
-package bsep.hospital.model;
+package bsep.hospital.dto;
+
+import bsep.hospital.logging.LogSource;
+import bsep.hospital.logging.LogType;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
-public class FilterParams {
+public class FilterParamsDTO {
 
     private String logType;
     private String logSource;
-    private LocalDateTime dateFrom;
-    private LocalDateTime dateTo;
+    private Date dateFrom;
+    private Date dateTo;
 
-    public FilterParams() {
+    public FilterParamsDTO() {
     }
 
-    public FilterParams(String logType, String logSource, LocalDateTime dateFrom, LocalDateTime dateTo, String regexp) {
+    public FilterParamsDTO(String logType, String logSource, Date dateFrom, Date dateTo) {
         this.logType = logType;
         this.logSource = logSource;
         this.dateFrom = dateFrom;
         this.dateTo = dateTo;
     }
-
-
 
     public String getLogType() {
         return logType;
@@ -37,19 +39,19 @@ public class FilterParams {
         this.logSource = logSource;
     }
 
-    public LocalDateTime getDateFrom() {
+    public Date getDateFrom() {
         return dateFrom;
     }
 
-    public void setDateFrom(LocalDateTime dateFrom) {
+    public void setDateFrom(Date dateFrom) {
         this.dateFrom = dateFrom;
     }
 
-    public LocalDateTime getDateTo() {
+    public Date getDateTo() {
         return dateTo;
     }
 
-    public void setDateTo(LocalDateTime dateTo) {
+    public void setDateTo(Date dateTo) {
         this.dateTo = dateTo;
     }
 }
