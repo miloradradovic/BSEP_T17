@@ -1,0 +1,100 @@
+<div style="width: 50%; margin-left:35%; margin-top:2%">
+    <h1 style="margin-left: 22%;">Report </h1>
+
+    <div style="width: 100%;">
+        <form [formGroup]="this.formData" (ngSubmit)="getReport()">
+            <mat-form-field style="width: 25%;" appearance="outline">
+                <mat-label>Date from</mat-label>
+                <input matInput [matDatepicker]="picker1" formControlName="from">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+            <mat-form-field style="width: 25%; margin-left: 2%;" appearance="outline">
+                <mat-label>Date to</mat-label>
+                <input matInput [matDatepicker]="picker2" formControlName="to">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+            <button style="margin-left:2%" color="primary" mat-raised-button >Search</button>
+        </form>
+    </div>
+    <div style="width: 40%;">
+        <div style="width: 25%; float: left;">
+            <div>
+                <label style="margin-right:2% ;">Info number:</label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input style="width: 30%;" readonly matInput id="name" name="name" placeholder="Info..." [value]="this.reportData?.countInfo || 0">
+                </mat-form-field>
+            <div>
+                <label style="margin-right:2%; margin-left: 2%;">Errors number:</label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input style="width: 30%;" readonly matInput id="name" name="name" placeholder="Info..." [value]="this.reportData?.countError || 0">
+                </mat-form-field>
+            </div>
+            <div>
+
+            </div>  
+                <label style="margin-right:1% ;">Trace number:</label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input style="width: 30%;" readonly matInput id="name" name="name" placeholder="Info..." [value]="this.reportData?.countTrace || 0">
+                </mat-form-field>
+            </div>
+        </div>
+        <div style="width: 25%; float:right">
+            <div>
+                <label style="margin-right:2% ; margin-left: 2%;">Warn number:</label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input style="width: 30%;" readonly matInput id="name" name="name" placeholder="Info..." [value]="this.reportData?.countWarn || 0">
+                </mat-form-field>
+            </div>
+            <div>
+                <label style="margin-right:1% ;">Debug number:</label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input style="width: 30%;" readonly matInput id="name" name="name" placeholder="Info..." [value]="this.reportData?.countDebug || 0">
+                </mat-form-field>
+            </div>
+            <div>
+                <label style="margin-right:2% ;">Sum:</label>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <input style="width: 30%;" readonly matInput id="name" name="name" placeholder="Info..." [value]="this.reportData?.countAll || 0">
+            </mat-form-field>
+            </div>
+            
+        </div>
+        <!--<div>
+            <label style="margin-right:2% ;">Info number:</label>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <input style="width: 30%;" readonly matInput id="name" name="name" placeholder="Info..." [value]="this.reportData?.countInfo">
+            </mat-form-field>
+            <label style="margin-right:2%; margin-left: 2%;">Errors number:</label>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <input style="width: 30%;" readonly matInput id="name" name="name" placeholder="Info..." [value]="this.reportData?.countError">
+            </mat-form-field>
+        </div>
+        <div>
+            <label style="margin-right:1% ;">Trace number:</label>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <input style="width: 30%;" readonly matInput id="name" name="name" placeholder="Info..." [value]="this.reportData?.countTrace">
+            </mat-form-field>
+            <label style="margin-right:2% ; margin-left: 2%;">Warn number:</label>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <input style="width: 30%;" readonly matInput id="name" name="name" placeholder="Info..." [value]="this.reportData?.countWarn">
+            </mat-form-field>
+        </div>
+        <div>
+            <label style="margin-right:1% ;">Debug number:</label>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <input style="width: 30%;" readonly matInput id="name" name="name" placeholder="Info..." [value]="this.reportData?.countDebug">
+            </mat-form-field>
+        </div>
+        <div>
+            <label style="margin-right:2% ;">Sum:</label>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <input style="width: 30%;" readonly matInput id="name" name="name" placeholder="Info..." [value]="this.reportData?.countAll">
+            </mat-form-field>
+        </div>-->
+        
+    
+    </div>
+    
+</div>

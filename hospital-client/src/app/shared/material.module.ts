@@ -17,6 +17,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 
 @NgModule({
@@ -41,7 +44,9 @@ import { MatSelectModule } from '@angular/material/select';
     MatCheckboxModule,
     MatPaginatorModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDatepickerModule,
+    MatNativeDateModule 
   ],
   exports: [
     CommonModule,
@@ -62,8 +67,11 @@ import { MatSelectModule } from '@angular/material/select';
     MatCheckboxModule,
     MatPaginatorModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDatepickerModule,
+    MatNativeDateModule 
   ],
-  providers: []
+  providers: [MatDatepickerModule,
+    MatNativeDateModule ]
 })
 export class MaterialModule { }

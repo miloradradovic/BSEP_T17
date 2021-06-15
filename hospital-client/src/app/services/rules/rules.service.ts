@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {StorageService} from '../storage/storage.service';
-import { DoctorRule } from 'src/app/model/rules.model';
+import { AdminRule, DoctorRule } from 'src/app/model/rules.model';
 
 @Injectable({ providedIn: 'root' })
 export class RulesService {
@@ -15,5 +15,6 @@ export class RulesService {
 
   addDoctorRule = (doctorRule: DoctorRule) => this.http.post<any>(this.baseUrl + "/doctor-rule", doctorRule);
 
+  addAdminRule = (adminRule: AdminRule) => this.http.post<any>(this.baseUrl + "/admin-rule", adminRule);
 
 }

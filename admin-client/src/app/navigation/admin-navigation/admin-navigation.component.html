@@ -9,6 +9,10 @@
   <span style="padding-left: 3%;">
     <button (click)="router.navigate(['/manage-certificates/view-certificates']);" mat-button>View certificates</button>
   </span>
+  <span style="padding-left: 3%;">
+    <button (click)="router.navigate(['/logs']);" mat-button>Logs</button>
+  </span>
+
 
   <span style="width: 80%"></span>
   <a routerLink="/" style="margin-left: 0.5%;" ><mat-icon (click)="logOutUser()" [ngStyle]="{'color':'white'}">exit_to_app</mat-icon></a>

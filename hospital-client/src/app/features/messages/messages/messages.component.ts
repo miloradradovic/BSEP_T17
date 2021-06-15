@@ -17,7 +17,7 @@ import { RulesService } from 'src/app/services/rules/rules.service';
 })
 export class MessagesComponent implements OnInit {
 
-  types: String[] = ['A_POSITIVE',
+  bloodTypes: String[] = ['A_POSITIVE',
   'A_NEGATIVE',
   'B_POSITIVE',
   'B_NEGATIVE',
@@ -25,6 +25,10 @@ export class MessagesComponent implements OnInit {
   'AB_NEGATIVE',
   'O_POSITIVE',
   'O_NEGATIVE']
+
+  messageTypes: String[] = [ 'HEARTH_BEAT',
+    'PRESSURE',
+    'TEMPERATURE']
 
   operations: String[] = ['==',
   '!=',
@@ -49,7 +53,8 @@ export class MessagesComponent implements OnInit {
     this.alarmForm = fb.group({
       'ruleName': [""],
       'patient': [""],
-      'type': [null],
+      'bloodType': [null],
+      'messageType': [null],
       'value': [""],
       'operation': [""]
 
@@ -105,14 +110,9 @@ export class MessagesComponent implements OnInit {
     }
   }
 
-  typeChanged(value){
-    this.alarmForm.controls['type'].patchValue(value);
-    console.log(this.alarmForm.controls['type'].value)
-  }
-
-  operationChanged(value){
-    this.alarmForm.controls['operation'].patchValue(value);
-    console.log(this.alarmForm.controls['operation'].value)
+  typeChanged(value, controlName){
+    this.alarmForm.controls[controlName].patchValue(value);
+    console.log(this.alarmForm.controls[controlName].value)
   }
 
   addRule(){

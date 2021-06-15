@@ -10,7 +10,7 @@ export class AdminNavigationComponent implements OnInit {
 
   @Output() logOut = new EventEmitter<void>();
 
-  constructor(private router: Router) { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }
