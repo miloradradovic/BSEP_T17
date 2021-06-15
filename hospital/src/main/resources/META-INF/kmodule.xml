@@ -4,7 +4,4 @@
     <kbase name="rules" eventProcessingMode="stream" packages="rules">
         <ksession name="rulesSession"/>
     </kbase>
-    <kbase name="cepRules" eventProcessingMode="stream" packages="rules.cep">
-        <ksession name="eventsSession"/>
-    </kbase>
 </kmodule>

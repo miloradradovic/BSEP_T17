@@ -1,6 +1,7 @@
 package bsep.hospital.logging;
 
 import org.bson.types.ObjectId;
+import org.kie.api.definition.type.Expires;
 import org.kie.api.definition.type.Role;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -10,7 +11,7 @@ import java.time.LocalDateTime;
 
 @Document
 @Role(Role.Type.EVENT)
-public class LogModel  implements Serializable {
+public class LogModel implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -21,6 +22,7 @@ public class LogModel  implements Serializable {
     private LocalDateTime logTime;
     private LogSource logSource;
     private String ip;
+    private String alarmDescription = "";
     private boolean alarm = false;
 
     public LogModel() {
@@ -97,5 +99,13 @@ public class LogModel  implements Serializable {
 
     public void setAlarm(boolean alarm) {
         this.alarm = alarm;
+    }
+
+    public String getAlarmDescription() {
+        return alarmDescription;
+    }
+
+    public void setAlarmDescription(String alarmDescription) {
+        this.alarmDescription = alarmDescription;
     }
 }

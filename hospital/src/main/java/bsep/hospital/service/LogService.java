@@ -23,10 +23,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -106,10 +103,11 @@ public class LogService {
         for (FactHandle handle : handlers) {
             Object obj = kieSession.getObject(handle);
 
-            if(obj.getClass() != IPAddress.class)
+            if (obj.getClass() != IPAddress.class)
                 kieSession.delete(handle);
         }
         save(newParsedAppLogs);
+        rewriteIPs();
     }
 
     @Scheduled(fixedRate = 5000)
@@ -149,13 +147,14 @@ public class LogService {
         for (FactHandle handle : handlers) {
             Object obj = kieSession.getObject(handle);
 
-            if(obj.getClass() != IPAddress.class)
+            if (obj.getClass() != IPAddress.class)
                 kieSession.delete(handle);
         }
 
         logConfig.setCurrentRow(parsed.getValue1());
         saveConfig(logConfig);
         save(newParsedLogs);
+        rewriteIPs();
         logger.info("Finished parsing simulator logs.");
     }
 
@@ -290,7 +289,20 @@ public class LogService {
         return filtered;
     }
 
-    private void rewriteIPs(){
+    private void rewriteIPs() {
 
+        Collection<IPAddress> newEvents = (Collection<IPAddress>) kieSession.getObjects(new ClassObjectFilter(IPAddress.class));
+        ArrayList<IPAddress> ipAddresses = new ArrayList<>(newEvents);
+
+        File file = new File("src/main/resources/dangerous_ips.txt");
+
+        try (BufferedWriter br = new BufferedWriter(new FileWriter(file))) {
+            for (IPAddress ip : ipAddresses) {
+                br.write(ip.getIp());
+                br.newLine();
+            }
+        } catch (IOException e) {
+            logger.error("Error writing dangerous ip-s to file.");
+        }
     }
 }

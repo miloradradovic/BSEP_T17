@@ -18,7 +18,8 @@ rule "@{ruleName}"
         $lm: LogModel($l: level, $l.toString() == "@{levelInput}");
     then
        modify( $lm ){
-           setAlarm(true)
+           setAlarm(true);
+
        }
 end
 
