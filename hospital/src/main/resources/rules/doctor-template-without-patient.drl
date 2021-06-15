@@ -1,0 +1,30 @@
+template header
+ruleName
+patientId
+messageType
+bloodType
+value
+operation
+
+package rules;
+
+import bsep.hospital.model.Patient;
+import bsep.hospital.model.PatientStatus;
+import java.util.List;
+
+template "doctor-template-without-patient"
+
+
+rule "@{ruleName}"
+        agenda-group "doctor-rules"
+        no-loop true
+    when
+        $ps: PatientStatus($t:type, $t.toString() == "@{messageType}", $val: getValue(), $val @{operation} @{value} );
+
+    then
+       modify( $ps ){
+           setAlarm(true)
+       }
+end
+
+end template

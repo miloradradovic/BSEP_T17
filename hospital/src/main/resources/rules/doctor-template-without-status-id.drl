@@ -1,7 +1,8 @@
 template header
 ruleName
 patientId
-type
+messageType
+bloodType
 value
 operation
 
@@ -11,15 +12,15 @@ import bsep.hospital.model.Patient;
 import bsep.hospital.model.PatientStatus;
 import java.util.List;
 
-template "doctor-template"
+template "doctor-template-without-status-id"
 
 
 rule "@{ruleName}"
         agenda-group "doctor-rules"
         no-loop true
     when
-        $p: Patient($patId: id, id == @{patientId});
-        $ps: PatientStatus($pat: patient, $pat.id == $patId, $t:type, $t.toString() == "@{type}", $val: getValue(), $val @{operation} @{value} );
+        $p: Patient($bt: bloodType, $bt.toString() == "@{bloodType}");
+        $ps: PatientStatus();
 
     then
        modify( $ps ){

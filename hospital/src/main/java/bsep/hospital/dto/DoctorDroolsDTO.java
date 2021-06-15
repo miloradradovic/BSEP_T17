@@ -4,17 +4,19 @@ public class DoctorDroolsDTO {
 
     private String ruleName;
     private Integer patientId;
-    private String type;
+    private String messageType;
+    private String bloodType;
     private double value;
     private String operation;
 
     public DoctorDroolsDTO() {
     }
 
-    public DoctorDroolsDTO(String ruleName, Integer patientId, String type, double value, String operation) {
+    public DoctorDroolsDTO(String ruleName, Integer patientId, String messageType, String bloodType, double value, String operation) {
         this.ruleName = ruleName;
         this.patientId = patientId;
-        this.type = type;
+        this.messageType = messageType;
+        this.bloodType = bloodType;
         this.value = value;
         this.operation = operation;
     }
@@ -35,12 +37,20 @@ public class DoctorDroolsDTO {
         this.patientId = patientId;
     }
 
-    public String getType() {
-        return type;
+    public String getMessageType() {
+        return messageType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setMessageType(String messageType) {
+        this.messageType = messageType;
+    }
+
+    public String getBloodType() {
+        return bloodType;
+    }
+
+    public void setBloodType(String bloodType) {
+        this.bloodType = bloodType;
     }
 
     public double getValue() {

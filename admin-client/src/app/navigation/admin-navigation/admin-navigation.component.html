@@ -1,13 +1,13 @@
 <mat-toolbar color="primary">
 
-  <a routerLink="/pocetna-stranica-gradjanin" id="home-nav" style="margin-left: 0.1%;" ><mat-icon
+  <a routerLink="/" id="home-nav" style="margin-left: 0.1%;" ><mat-icon
     [ngStyle]="{'color':'white'}">admin_panel_settings</mat-icon></a>
   <span style="padding-left: 1%">Admin application</span>
   <span style="padding-left: 5%;">
     <button (click)="router.navigate(['/manage-certificates/manage-requests']);" mat-button>Manage requests</button>
   </span>
   <span style="padding-left: 3%;">
-    <button (click)="router.navigate(['/manage-certificates/request-certificate']);" mat-button>View certificates</button>
+    <button (click)="router.navigate(['/manage-certificates/view-certificates']);" mat-button>View certificates</button>
   </span>
 
   <span style="width: 80%"></span>
