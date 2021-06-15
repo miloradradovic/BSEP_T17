@@ -1,0 +1,18 @@
+package rules;
+import bsep.hospital.model.Patient;
+import bsep.hospital.model.PatientStatus;
+import java.util.List;
+
+rule "MickovoPravilo"
+        agenda-group "doctor-rules"
+        no-loop true
+    when
+        $p: Patient($patId: id, $patId == -1, $bt: bloodType, $bt.toString() == "A_NEGATIVE");
+        $ps: PatientStatus($pat: patient, $pat.id == $patId);
+    then
+       modify( $ps ){
+           setAlarm(true)
+       }
+end
+
+

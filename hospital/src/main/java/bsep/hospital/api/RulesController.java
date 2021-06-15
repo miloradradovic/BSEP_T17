@@ -59,7 +59,7 @@ public class RulesController {
 
             Patient patient = new Patient();
             patient.setId(-1);
-            if (ruleDTO.getPatient().equals("")) {
+            if (!ruleDTO.getPatient().equals("")) {
                 patient = patientService.findByNameAndSurname(ruleDTO.getPatient().split(" ")[0], ruleDTO.getPatient().split(" ")[1]);
             }
 

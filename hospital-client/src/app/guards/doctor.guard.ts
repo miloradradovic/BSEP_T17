@@ -15,10 +15,11 @@ export class DoctorGuard implements CanActivate {
   }
 
   canActivate(): boolean {
-    if (this.auth.getRole() === UserRole.DOCTOR) {
+    console.log(this.auth.getRole());
+    if (this.auth.getRole() !== UserRole.DOCTOR) {
       this.router.navigate(['/']);
-      return true;
+      return false;
     }
-    return false;
+    return true;
   }
 }
