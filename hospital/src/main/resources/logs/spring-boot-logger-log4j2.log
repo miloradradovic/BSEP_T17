@@ -1,0 +1,106 @@
+2021-06-15 00:24:33,737 INFO o.h.v.i.u.Version HV000001: Hibernate Validator 6.1.7.Final
+2021-06-15 00:24:33,773 INFO o.s.b.StartupInfoLogger Starting HospitalApplication on DESKTOP-MK6223H with PID 5376 (D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital\target\classes started by Milorad in D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital)
+2021-06-15 00:24:33,777 INFO o.s.b.SpringApplication No active profile set, falling back to default profiles: default
+2021-06-15 00:24:34,406 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-15 00:24:34,407 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-15 00:24:34,460 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data JPA - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.LogRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2021-06-15 00:24:34,486 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 64ms. Found 4 JPA repository interfaces.
+2021-06-15 00:24:34,509 INFO o.s.d.r.c.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-15 00:24:34,509 INFO o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-06-15 00:24:34,516 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.AuthorityRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-15 00:24:34,518 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PatientRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-15 00:24:34,519 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PatientStatusRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-15 00:24:34,520 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface bsep.hospital.repository.PersonRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2021-06-15 00:24:34,524 INFO o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 13ms. Found 1 MongoDB repository interfaces.
+2021-06-15 00:24:34,856 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@10b687f2' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-15 00:24:34,865 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-15 00:24:35,148 INFO o.s.b.w.e.t.TomcatWebServer Tomcat initialized with port(s): 8085 (https)
+2021-06-15 00:24:35,156 INFO o.a.j.l.DirectJDKLog Initializing ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-15 00:24:35,156 INFO o.a.j.l.DirectJDKLog Starting service [Tomcat]
+2021-06-15 00:24:35,157 INFO o.a.j.l.DirectJDKLog Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-15 00:24:35,307 INFO o.a.j.l.DirectJDKLog Initializing Spring embedded WebApplicationContext
+2021-06-15 00:24:35,307 INFO o.s.b.w.s.c.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 1495 ms
+2021-06-15 00:24:35,376 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-15 00:24:35,487 INFO o.h.j.i.u.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-15 00:24:35,608 INFO o.h.Version HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-06-15 00:24:35,765 INFO o.h.a.c.r.j.JavaReflectionManager HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-15 00:24:35,857 INFO c.z.h.HikariDataSource HikariPool-1 - Starting...
+2021-06-15 00:24:36,031 INFO c.z.h.HikariDataSource HikariPool-1 - Start completed.
+2021-06-15 00:24:36,045 INFO o.h.d.Dialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-06-15 00:24:36,820 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-15 00:24:36,821 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler relation "patient_status" does not exist, skipping
+2021-06-15 00:24:36,822 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-15 00:24:36,822 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler relation "user_authority" does not exist, skipping
+2021-06-15 00:24:36,823 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-15 00:24:36,824 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler relation "user_authority" does not exist, skipping
+2021-06-15 00:24:36,825 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-15 00:24:36,825 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "authorities" does not exist, skipping
+2021-06-15 00:24:36,826 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-15 00:24:36,826 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "patient_status" does not exist, skipping
+2021-06-15 00:24:36,827 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-15 00:24:36,827 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "patients" does not exist, skipping
+2021-06-15 00:24:36,828 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-15 00:24:36,829 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "staff" does not exist, skipping
+2021-06-15 00:24:36,830 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler SQL Warning Code: 0, SQLState: 00000
+2021-06-15 00:24:36,830 WARN o.h.e.j.s.SqlExceptionHelper$StandardWarningHandler table "user_authority" does not exist, skipping
+2021-06-15 00:24:36,893 INFO o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-15 00:24:36,903 INFO o.s.o.j.AbstractEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-15 00:24:37,465 INFO b.h.k.KeyStoreWriter Attempting to initialize keystore using bouncy castle provider.
+2021-06-15 00:24:37,474 INFO b.h.k.KeyStoreReader Attempting to initialize keystore using bouncy castle provider.
+2021-06-15 00:24:37,590 INFO c.m.d.l.SLF4JLogger Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-06-15 00:24:37,635 INFO c.m.d.l.SLF4JLogger Opened connection [connectionId{localValue:1, serverValue:113}] to localhost:27017
+2021-06-15 00:24:37,640 INFO c.m.d.l.SLF4JLogger Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3270800}
+2021-06-15 00:24:37,869 INFO b.h.c.DroolsConfig Creating kie session
+2021-06-15 00:24:37,872 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Milorad/.m2/repository/org/kie/kie-ci/7.17.0.Final/kie-ci-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-15 00:24:37,873 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.scanner.KieScannerFactoryServiceImpl
+
+2021-06-15 00:24:37,874 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.scanner.MavenClassLoaderResolver
+
+2021-06-15 00:24:37,874 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Milorad/.m2/repository/org/drools/drools-core/7.17.0.Final/drools-core-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-15 00:24:37,875 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.io.impl.ResourceFactoryServiceImpl
+
+2021-06-15 00:24:37,876 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.marshalling.impl.MarshallerProviderImpl
+
+2021-06-15 00:24:37,877 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.core.concurrent.ExecutorProviderImpl
+
+2021-06-15 00:24:37,877 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Milorad/.m2/repository/org/drools/drools-compiler/7.17.0.Final/drools-compiler-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-15 00:24:37,878 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.compiler.kie.builder.impl.KieServicesImpl
+
+2021-06-15 00:24:37,879 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.drools.compiler.builder.impl.KnowledgeBuilderFactoryServiceImpl
+
+2021-06-15 00:24:37,880 INFO o.k.a.i.u.ServiceDiscoveryImpl Loading kie.conf from  jar:file:/C:/Users/Milorad/.m2/repository/org/kie/kie-internal/7.17.0.Final/kie-internal-7.17.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3b192d32
+2021-06-15 00:24:37,881 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieAssemblersImpl
+
+2021-06-15 00:24:37,882 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieRuntimesImpl
+
+2021-06-15 00:24:37,883 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieWeaversImpl
+
+2021-06-15 00:24:37,885 INFO o.k.a.i.u.ServiceDiscoveryImpl Adding Service org.kie.internal.services.KieBeliefsImpl
+
+2021-06-15 00:24:37,894 INFO o.d.c.k.b.i.ClasspathKieProject Found kmodule: file:/D:/Fakultet/8.%20semestar/PROJEKTI/bsep/BSEP_T17/hospital/target/classes/META-INF/kmodule.xml
+2021-06-15 00:24:38,070 WARN o.d.c.k.b.i.ClasspathKieProject Unable to find pom.properties in /D:/Fakultet/8. semestar/PROJEKTI/bsep/BSEP_T17/hospital/target/classes
+2021-06-15 00:24:38,079 WARN o.a.m.i.e.MavenSettings Environment variable M2_HOME is not set
+2021-06-15 00:24:41,481 INFO o.d.c.k.b.i.ClasspathKieProject Recursed up folders, found and used pom.xml D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital\pom.xml
+2021-06-15 00:24:41,488 INFO o.d.c.k.b.i.KieRepositoryImpl KieModule was added: FileKieModule[releaseId=bsep:hospital:0.0.1-SNAPSHOT,file=D:\Fakultet\8. semestar\PROJEKTI\bsep\BSEP_T17\hospital\target\classes]
+2021-06-15 00:24:42,679 INFO b.h.i.Initialize Executing operation Initialize
+2021-06-15 00:24:42,679 INFO b.h.i.Initialize Attempting to create keystore.
+2021-06-15 00:24:42,679 INFO b.h.i.Initialize Checking if keystore already exists.
+2021-06-15 00:24:42,679 INFO b.h.k.KeyStoreWriter Attempting to load keystore.
+2021-06-15 00:24:42,681 INFO b.h.k.KeyStoreWriter Successfully loaded keystore.
+2021-06-15 00:24:42,681 INFO b.h.i.Initialize Keystore already exists.
+2021-06-15 00:24:42,896 INFO o.s.s.w.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f25b34d, org.springframework.security.web.context.SecurityContextPersistenceFilter@13cdee45, org.springframework.security.web.header.HeaderWriterFilter@122e63ae, org.springframework.web.filter.CorsFilter@283fe454, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@44a485bc, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@73e25780, org.springframework.security.web.authentication.logout.LogoutFilter@68406796, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f57fde7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@15bb3db9, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@35cf91df, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@55a66bbf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@42000b02, org.springframework.security.web.session.SessionManagementFilter@53de80b9, org.springframework.security.web.access.ExceptionTranslationFilter@1908483f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@129e564f]
+2021-06-15 00:24:43,198 INFO o.s.s.c.ExecutorConfigurationSupport Initializing ExecutorService 'taskScheduler'
+2021-06-15 00:24:43,245 INFO o.a.j.l.DirectJDKLog Starting ProtocolHandler ["https-jsse-nio-8085"]
+2021-06-15 00:24:43,365 INFO o.s.b.w.e.t.TomcatWebServer Tomcat started on port(s): 8085 (https) with context path ''
+2021-06-15 00:24:43,378 INFO o.s.b.StartupInfoLogger Started HospitalApplication in 9.914 seconds (JVM running for 11.492)
+2021-06-15 00:24:43,382 INFO o.s.s.c.ExecutorConfigurationSupport Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-15 00:24:43,390 INFO b.h.s.LogService Parsing logs from files.
+2021-06-15 00:24:43,390 INFO b.h.s.LogService Parsing simulate logs
+2021-06-15 00:24:43,390 INFO b.h.l.LogParser Attempting to parse application logs
+2021-06-15 00:24:43,391 INFO b.h.l.LogParser Reading log file.
+2021-06-15 00:24:43,397 INFO b.h.l.LogParser Attempting to parse keycloak logs
+2021-06-15 00:24:43,397 ERROR b.h.l.LogParser Couldn't parse logs because file path is invalid.
+2021-06-15 00:24:43,397 INFO b.h.s.LogService Successfully parsed logs from files.
+2021-06-15 00:24:43,415 INFO b.h.s.LogService Saving logs.
+2021-06-15 00:24:43,492 INFO c.m.d.l.SLF4JLogger Opened connection [connectionId{localValue:2, serverValue:114}] to localhost:27017
+2021-06-15 00:24:43,612 INFO b.h.s.LogService Finished saving logs.
