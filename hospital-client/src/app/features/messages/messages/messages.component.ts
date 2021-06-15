@@ -53,8 +53,8 @@ export class MessagesComponent implements OnInit {
     this.alarmForm = fb.group({
       'ruleName': [""],
       'patient': [""],
-      'bloodType': [null],
-      'messageType': [null],
+      'bloodType': [""],
+      'messageType': [""],
       'value': [""],
       'operation': [""]
 

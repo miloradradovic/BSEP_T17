@@ -8,12 +8,10 @@ export class LogsService {
   baseUrl = 'https://localhost:8084/';
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
 
-  constructor(private http: HttpClient
-  ) {
+  constructor(private http: HttpClient) {
   }
 
-  getCertificateRequests = () => this.http.get<LogModel[]>(this.baseUrl + 'logs/get-logs');
+  addLogConfiguration = (logConfig: {path: String, duration: number, regexp: String, currentRow: number}) => this.http.post<LogModel[]>(this.baseUrl + 'log-config/send-log-config', logConfig);
 
-  //acceptRequest = (createViewModel: CertificateCreation) => this.http.post<void>(this.baseUrl + 'certificate', createViewModel);
 
 }

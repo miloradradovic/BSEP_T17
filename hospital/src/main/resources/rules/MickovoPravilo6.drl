@@ -1,0 +1,16 @@
+package rules;
+import bsep.hospital.logging.LogModel;
+import java.util.List;
+
+rule "MickovoPravilo6"
+        no-loop true
+        agenda-group "admin-rules"
+    when
+        $lm: LogModel($l: level, $l.toString() == "WARN");
+    then
+       modify( $lm ){
+           setAlarm(true)
+       }
+end
+
+

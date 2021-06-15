@@ -87,7 +87,7 @@
 
                     <mat-form-field style="margin-left:2%" class="example-full-width" appearance="outline">
                         <mat-label>Message type...</mat-label>
-                            <mat-select #typeSelect (selectionChange)="typeChanged(typeSelect.value, 'messageType')">
+                            <mat-select #typeSelect2 (selectionChange)="typeChanged(typeSelect2.value, 'messageType')">
                                 <mat-option *ngFor="let element of messageTypes" [value]="element">
                                 {{ element }}
                                 </mat-option>

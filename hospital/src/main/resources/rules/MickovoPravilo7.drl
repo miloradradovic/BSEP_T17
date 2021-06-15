@@ -1,0 +1,16 @@
+package rules;
+import bsep.hospital.logging.LogModel;
+import java.util.List;
+
+rule "MickovoPravilo7"
+        no-loop true
+        agenda-group "admin-rules"
+    when
+        $lm: LogModel($m: message contains "Porukica");
+    then
+       modify( $lm ){
+           setAlarm(true)
+       }
+end
+
+

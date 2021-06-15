@@ -160,10 +160,10 @@ public class RulesController {
     private String adminChooseTemplate(AdminRuleDTO ruleDTO) {
         String path = "../hospital/src/main/resources/rules/admin-template-all.drt";
         if (ruleDTO.getLevelInput().equals("") && !ruleDTO.getMessageInput().equals("")) {
-            path = "../hospital/src/main/resources/rules/admin-template-without-message.drt";
+            path = "../hospital/src/main/resources/rules/admin-template-without-level.drt";
         }
         else if (!ruleDTO.getLevelInput().equals("") && ruleDTO.getMessageInput().equals("")) {
-            path = "../hospital/src/main/resources/rules/admin-template-without-level.drt";
+            path = "../hospital/src/main/resources/rules/admin-template-without-message.drt";
         }
         else if (ruleDTO.getLevelInput().equals("") && ruleDTO.getMessageInput().equals("")) {
             path = "../hospital/src/main/resources/rules/admin-template-without-all.drt";

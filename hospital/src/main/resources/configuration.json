@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "path": "src/main/resources/simulatedlogs/simulator_logs1.log",
+    "duration": 23,
+    "regexp": ".*INFO.*",
+    "currentRow": 698
+  },
+  {
+    "path": "src/main/resources/simulatedlogs/simulator_logs2.log",
+    "duration": 2,
+    "regexp": ".*WARN.*",
+    "currentRow": 428
+  }
+]

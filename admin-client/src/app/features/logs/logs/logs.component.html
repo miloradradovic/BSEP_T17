@@ -1,1 +1,26 @@
-<p>logs works!</p>
+<div style="width: 50%; margin-left:35%; margin-top:2%">
+    <h1 style="margin-left: 10%;"> Add log configuration </h1>
+
+    <div style="width: 100%;">
+        <form [formGroup]="this.formData" (ngSubmit)="addLogConfiguration()">
+            <div>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Path...</mat-label>
+                        <mat-select #typeSelect (selectionChange)="typeChanged(typeSelect.value, 'path')">
+                            <mat-option *ngFor="let element of paths" [value]="element.value">
+                            {{ element.fileName }}
+                            </mat-option>
+                    </mat-select> 
+                </mat-form-field>
+                <mat-form-field style="margin-left:2%" class="example-full-width" appearance="outline">
+                    <input type="number" matInput id="duration" name="duration" placeholder="Duration..." formControlName="duration">
+                </mat-form-field>
+            </div>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <input matInput id="regexp" name="regexp" placeholder="Regular expression..." formControlName="regexp">
+            </mat-form-field>
+            <button [disabled]="this.formData.invalid" style="margin-left:2%" color="primary" mat-raised-button >Add</button>
+        </form>
+    </div>
+    
+</div>
