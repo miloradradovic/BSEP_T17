@@ -159,7 +159,8 @@ public class KeyStoreReader {
                 return (PrivateKey) ks.getKey(alias, password.toCharArray());
             }
         } catch (KeyStoreException | NoSuchAlgorithmException | CertificateException | IOException | NoSuchProviderException | UnrecoverableKeyException e) {
-            e.printStackTrace();
+            logger.error("Failed to read private key.");
+            return null;
         }
         return null;
     }

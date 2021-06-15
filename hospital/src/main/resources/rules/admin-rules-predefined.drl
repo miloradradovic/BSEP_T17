@@ -13,7 +13,8 @@ rule "Level type is Error"
         $lm: LogModel($l: level, $l.toString() == LogType.ERROR.toString());
     then
        modify( $lm ){
-           setAlarm(true)
+           setAlarm(true),
+           setAlarmDescription("Level type is Error")
        }
 end
 
@@ -27,6 +28,7 @@ rule "Malicious IP address"
 
     then
        modify( $lm ){
-           setAlarm(true)
+           setAlarm(true),
+           setAlarmDescription("Malicious IP address")
        }
 end

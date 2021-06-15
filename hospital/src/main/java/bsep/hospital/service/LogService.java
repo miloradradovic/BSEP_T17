@@ -23,10 +23,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -78,7 +75,7 @@ public class LogService {
     @Scheduled(fixedRate = 5000)
     @Async
     public void logParsing() {
-        logger.info("Parsing logs from files.");
+        logger.info("Parsing app and keycloak logs from files.");
         Pair<List<LogModel>, Integer> parsed = logParser.parseAppLogs(rowNumberAppLogs);
         List<LogModel> parsedAppLogs = parsed.getValue0();
         rowNumberAppLogs = parsed.getValue1();
@@ -88,7 +85,7 @@ public class LogService {
         rowNumberKeycloakLogs = parsed2.getValue1();
 
         parsedAppLogs.addAll(parsedKeyCloakLogs);
-        logger.info("Successfully parsed logs from files.");
+        logger.info("Successfully parsed app and keycloak logs from files.");
 
 
         for (LogModel log : parsedAppLogs) {
@@ -96,6 +93,7 @@ public class LogService {
         }
 
         kieSession.getAgenda().getAgendaGroup("admin-rules").setFocus();
+        logger.info("Firing rules for logs.");
         kieSession.fireAllRules();
 
         Collection<LogModel> newEvents = (Collection<LogModel>) kieSession.getObjects(new ClassObjectFilter(LogModel.class));
@@ -105,10 +103,11 @@ public class LogService {
         for (FactHandle handle : handlers) {
             Object obj = kieSession.getObject(handle);
 
-            if(obj.getClass() != IPAddress.class)
+            if (obj.getClass() != IPAddress.class)
                 kieSession.delete(handle);
         }
         save(newParsedAppLogs);
+        rewriteIPs();
     }
 
     @Scheduled(fixedRate = 5000)
@@ -129,44 +128,45 @@ public class LogService {
     private void readSimulatorLogs(LogConfig logConfig) {
 
         List<LogModel> parsedLogs = null;
-        try {
-            Pair<List<LogModel>, Integer> parsed = logParser.parseSimulatorLogs(logConfig);
-            parsedLogs = parsed.getValue0();
+        Pair<List<LogModel>, Integer> parsed = logParser.parseSimulatorLogs(logConfig);
+        parsedLogs = parsed.getValue0();
 
 
-            for (LogModel log : parsedLogs) {
-                kieSession.insert(log);
-            }
-
-            kieSession.getAgenda().getAgendaGroup("admin-rules").setFocus();
-            kieSession.fireAllRules();
-
-            Collection<LogModel> newEvents = (Collection<LogModel>) kieSession.getObjects(new ClassObjectFilter(LogModel.class));
-
-            ArrayList<LogModel> newParsedLogs = new ArrayList<>(newEvents);
-            Collection<FactHandle> handlers = kieSession.getFactHandles();
-            for (FactHandle handle : handlers) {
-                Object obj = kieSession.getObject(handle);
-
-                if(obj.getClass() != IPAddress.class)
-                    kieSession.delete(handle);
-            }
-
-            logConfig.setCurrentRow(parsed.getValue1());
-            saveConfig(logConfig);
-            save(newParsedLogs);
-            logger.info("Finished parsing simulator logs.");
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
+        for (LogModel log : parsedLogs) {
+            kieSession.insert(log);
         }
+
+        kieSession.getAgenda().getAgendaGroup("admin-rules").setFocus();
+        logger.info("Firing all rules for simulated logs.");
+        kieSession.fireAllRules();
+
+        Collection<LogModel> newEvents = (Collection<LogModel>) kieSession.getObjects(new ClassObjectFilter(LogModel.class));
+
+        ArrayList<LogModel> newParsedLogs = new ArrayList<>(newEvents);
+        Collection<FactHandle> handlers = kieSession.getFactHandles();
+        for (FactHandle handle : handlers) {
+            Object obj = kieSession.getObject(handle);
+
+            if (obj.getClass() != IPAddress.class)
+                kieSession.delete(handle);
+        }
+
+        logConfig.setCurrentRow(parsed.getValue1());
+        saveConfig(logConfig);
+        save(newParsedLogs);
+        rewriteIPs();
+        logger.info("Finished parsing simulator logs.");
     }
 
     private void saveConfig(LogConfig logConfig) {
+        logger.info("Attempting to save log config.");
         try {
             List<LogConfig> configs = getLogModelsFromConfig();
             boolean found = false;
+            logger.info("Checking if config with the same path already exists.");
             for (LogConfig logConfig1 : configs) {
                 if (logConfig1.getPath().equals(logConfig.getPath())) {
+                    logger.info("Overriding the existing log config.");
                     found = true;
                     logConfig1.setRegexp(logConfig.getRegexp());
                     logConfig1.setDuration(logConfig.getDuration());
@@ -180,22 +180,24 @@ public class LogService {
             writeToConfigFile(configs);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Failed to save log config.");
         }
     }
 
     private List<LogConfig> getLogModelsFromConfig() {
         try {
+            logger.info("Getting logs from config json file.");
             Gson gson = new Gson();
             return gson.fromJson(new FileReader(pathToConfigJson), new TypeToken<ArrayList<LogConfig>>() {
             }.getType());
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Failed to get logs from config json file.");
         }
         return new ArrayList<>();
     }
 
     public void createNewConfig(LogConfig logConfig) {
+        logger.info("Attempting to create new log config.");
         try {
             List<LogConfig> configs = getLogModelsFromConfig();
             boolean found = false;
@@ -213,22 +215,26 @@ public class LogService {
             writeToConfigFile(configs);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Failed to create new log config.");
         }
     }
 
     private void writeToConfigFile(List<LogConfig> configs) {
         try {
+            logger.info("Attempting to write to config json file.");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             Writer configWriter = new FileWriter(pathToConfigJson);
             gson.toJson(configs, configWriter);
             configWriter.close();
+            logger.info("Successfully wrote to config json file.");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Failed to write to config json file.");
         }
     }
 
     public Report getReport(LocalDateTime dateFrom, LocalDateTime dateTo) {
+
+        logger.info("Attempting to generate report.");
 
         Report report = new Report();
         report.setCountAll((int) logRepository.countByLogTimeBetween(dateFrom, dateTo));
@@ -237,10 +243,13 @@ public class LogService {
         report.setCountInfo(logRepository.countByLevelAndLogTimeBetween(LogType.INFO, dateFrom, dateTo));
         report.setCountTrace(logRepository.countByLevelAndLogTimeBetween(LogType.TRACE, dateFrom, dateTo));
         report.setCountWarn(logRepository.countByLevelAndLogTimeBetween(LogType.WARN, dateFrom, dateTo));
+        logger.info("Successfully generated report.");
         return report;
     }
 
     public List<LogModel> filterLogs(FilterParams filterParams) {
+
+        logger.info("Filtering logs.");
 
         List<LogModel> filtered = new ArrayList<>();
         List<LogModel> byDate = new ArrayList<>();
@@ -276,10 +285,24 @@ public class LogService {
                 }
             }
         }
+        logger.info("Finished filtering");
         return filtered;
     }
 
-    private void rewriteIPs(){
+    private void rewriteIPs() {
 
+        Collection<IPAddress> newEvents = (Collection<IPAddress>) kieSession.getObjects(new ClassObjectFilter(IPAddress.class));
+        ArrayList<IPAddress> ipAddresses = new ArrayList<>(newEvents);
+
+        File file = new File("src/main/resources/dangerous_ips.txt");
+
+        try (BufferedWriter br = new BufferedWriter(new FileWriter(file))) {
+            for (IPAddress ip : ipAddresses) {
+                br.write(ip.getIp());
+                br.newLine();
+            }
+        } catch (IOException e) {
+            logger.error("Error writing dangerous ip-s to file.");
+        }
     }
 }

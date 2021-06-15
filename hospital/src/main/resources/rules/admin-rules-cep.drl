@@ -4,26 +4,28 @@ import bsep.hospital.logging.LogModel;
 import bsep.hospital.logging.LogType;
 import bsep.hospital.logging.IPAddress;
 import java.util.List;
-/*
+
 rule "Detect IP address"
         agenda-group "admin-rules"
         no-loop true
 	when
 	    $lm: LogModel($ip: ip, $m: message, $m contains "Login unsuccessful");
-		Number(intValue >= 30) from accumulate (
+		Number($v: intValue >= 30) from accumulate (
 			$lm1: LogModel($ip1: ip, $ip1 == $ip, $m1: message, $m1 contains "Login unsuccessful")
 			over window:time(24h),
 			count($lm1)
 		)
 	then
         modify( $lm ){
-                   setAlarm(true)
-               }
+            setAlarm(true),
+            setAlarmDescription("Detected new malicious IP address")
+        }
+        insert(new IPAddress($ip));
 end;
 
 
 
-rule "Detect DoS or Brute-force"
+rule "Detect DoS"
         agenda-group "admin-rules"
         no-loop true
 	when
@@ -35,7 +37,24 @@ rule "Detect DoS or Brute-force"
     		)
     	then
             modify( $lm ){
-                       setAlarm(true)
+                       setAlarm(true),
+                       setAlarmDescription("Detected DoS")
                    }
 end;
-*/
+
+rule "Brute-force"
+        agenda-group "admin-rules"
+        no-loop true
+	when
+    	    $lm: LogModel($l: level, $m: message, $m contains "Login unsuccessful");
+    		Number(intValue >= 50) from accumulate (
+    			$lm1: LogModel($l1: level, $l1.toString() == $l.toString(), $m1: message, $m1 == $m)
+    			over window:time(60s),
+    			count($lm1)
+    		)
+    	then
+            modify( $lm ){
+                       setAlarm(true),
+                       setAlarmDescription("Detected Brute-force")
+                   }
+end;

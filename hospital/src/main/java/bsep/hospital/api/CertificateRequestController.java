@@ -51,7 +51,7 @@ public class CertificateRequestController {
             logger.info("User with the email " + accessToken.getEmail() + " successfully sent a certificate request.");
             return new ResponseEntity<>(true,HttpStatus.OK);
         } else {
-            logger.warn("User with the email " + accessToken.getEmail() + " failed to send a certificate request.");
+            logger.error("User with the email " + accessToken.getEmail() + " failed to send a certificate request.");
             return new ResponseEntity<>(false,HttpStatus.BAD_REQUEST);
         }
     }
@@ -72,7 +72,7 @@ public class CertificateRequestController {
             logger.info("User with the email " + accessToken.getEmail() + " successfully sent a certificate revocation request.");
             return new ResponseEntity<>(true,HttpStatus.OK);
         } else {
-            logger.warn("User with the email " + accessToken.getEmail() + " failed to send a certificate revocation request.");
+            logger.error("User with the email " + accessToken.getEmail() + " failed to send a certificate revocation request.");
             return new ResponseEntity<>(false,HttpStatus.BAD_REQUEST);
         }
     }
@@ -93,7 +93,7 @@ public class CertificateRequestController {
             logger.info("User with the email " + accessToken.getEmail() + " successfully to verify certificate.");
             return new ResponseEntity<>(true,HttpStatus.OK);
         } else {
-            logger.warn("User with the email " + accessToken.getEmail() + " failed tto verify certificate.");
+            logger.error("User with the email " + accessToken.getEmail() + " failed tto verify certificate.");
             return new ResponseEntity<>(false,HttpStatus.BAD_REQUEST);
         }
     }

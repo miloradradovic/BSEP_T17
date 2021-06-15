@@ -54,7 +54,7 @@ public class CertificateController {
         try {
             certificateService.createAdminCertificate(certificateCreationDTO, accessToken.getEmail());
             cerRequestInfoService.delete(certificateCreationDTO.getSubjectID());
-            logger.info("Successfully created certificate.");
+            logger.info("Successfully created certificate and deleted appropriate certificate request.");
             return new ResponseEntity<>(HttpStatus.CREATED);
 
         } catch (Exception e) {

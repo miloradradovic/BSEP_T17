@@ -92,10 +92,17 @@ public class CertificateService {
 
         String email = accessToken.getEmail();
 
-        RestTemplate restTemplate = new RestTemplate();
-        HttpEntity<String> request = new HttpEntity<>("");
-        ResponseEntity<?> responseEntity = restTemplate.exchange("https://localhost:8084/certificate-request/check-certificate-valid/" + email , HttpMethod.GET, request, ResponseEntity.class);
-        return responseEntity.getStatusCode() == HttpStatus.OK;
+        try {
+            RestTemplate restTemplate = new RestTemplate();
+            HttpEntity<String> request = new HttpEntity<>("");
+            ResponseEntity<?> responseEntity = restTemplate.exchange("https://localhost:8084/certificate-request/check-certificate-valid/" + email , HttpMethod.GET, request, ResponseEntity.class);
+            logger.info("Successfully sent request to super admin to verify certificate.");
+            return responseEntity.getStatusCode() == HttpStatus.OK;
+        } catch (Exception e) {
+            logger.error("Failed to send request to super admin to verify certificate.");
+            return false;
+        }
+
 
     }
 
